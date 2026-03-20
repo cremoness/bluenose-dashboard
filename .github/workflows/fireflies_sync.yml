@@ -42,9 +42,9 @@ jobs:
         with:
           python-version: "3.11"
 
-      # 3. Instalar dependencias (solo stdlib — sin pip install necesario)
-      - name: 📦 Verificar dependencias
-        run: python -c "import urllib.request, json, re, subprocess, datetime, os; print('✅ Dependencias OK')"
+      # 3. Instalar dependencias
+      - name: 📦 Instalar dependencias
+        run: pip install anthropic
 
       # 4. Ejecutar sincronización
       - name: 🔄 Ejecutar fireflies_sync.py

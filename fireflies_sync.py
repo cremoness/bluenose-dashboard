@@ -243,31 +243,14 @@ REGLAS:
 - Si no hay items para una categoría, deja el array vacío []
 """
 
-    payload = json.dumps({
-        "model": "claude-3-5-haiku-20241022",
-        "max_tokens": 2000,
-        "messages": [{"role": "user", "content": prompt}]
-    }).encode("utf-8")
-
-    req = urllib.request.Request(
-        "https://api.anthropic.com/v1/messages",
-        data=payload,
-        headers={
-            "x-api-key": ANTHROPIC_API_KEY,
-            "anthropic-version": "2023-06-01",
-            "Content-Type": "application/json",
-        },
-        method="POST",
+    import anthropic
+    client_ai = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
+    message = client_ai.messages.create(
+        model="claude-3-5-haiku-20241022",
+        max_tokens=2000,
+        messages=[{"role": "user", "content": prompt}]
     )
-
-    try:
-        with urllib.request.urlopen(req, timeout=60) as r:
-            response = json.loads(r.read().decode())
-    except urllib.error.HTTPError as e:
-        error_body = e.read().decode()
-        raise RuntimeError(f"Anthropic API error {e.code}: {error_body}")
-
-    content = response["content"][0]["text"].strip()
+    content = message.content[0].text.strip()
 
     # Extraer JSON de la respuesta
     json_match = re.search(r'\{.*\}', content, re.DOTALL)
