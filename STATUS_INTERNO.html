@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Status Interno — Ángelito Chanamé</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #0f172a; color: #e2e8f0; min-height: 100vh; }
+
+  header {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    padding: 20px 32px; border-bottom: 1px solid #334155;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .header-left { display: flex; align-items: center; gap: 16px; }
+  .header-left h1 { font-size: 20px; font-weight: 800; color: white; }
+  .header-left p { font-size: 12px; color: #94a3b8; margin-top: 2px; }
+  .day-badge {
+    padding: 6px 18px; border-radius: 20px; font-size: 13px; font-weight: 700;
+    background: #6366f1; color: white; cursor: pointer; transition: all 0.2s;
+  }
+  .day-badge.thursday { background: #0891b2; }
+  .meeting-toggle { display: flex; gap: 8px; align-items: center; }
+  .toggle-btn {
+    padding: 7px 16px; border-radius: 20px; font-size: 12px; font-weight: 700;
+    cursor: pointer; border: 2px solid #334155; background: transparent; color: #94a3b8;
+    transition: all 0.2s;
+  }
+  .toggle-btn.active { background: #6366f1; border-color: #6366f1; color: white; }
+  .toggle-btn.active.thu { background: #0891b2; border-color: #0891b2; }
+
+  /* Alert bar */
+  .alert-bar {
+    background: linear-gradient(90deg, #7f1d1d, #991b1b);
+    padding: 10px 32px; display: flex; align-items: center; gap: 12px;
+    font-size: 13px; font-weight: 600;
+  }
+  .alert-bar span { opacity: 0.9; }
+  .alert-items { display: flex; gap: 16px; flex-wrap: wrap; }
+  .alert-item { background: rgba(255,255,255,0.15); padding: 3px 10px; border-radius: 20px; font-size: 11px; }
+
+  .container { max-width: 1300px; margin: 0 auto; padding: 24px; }
+
+  /* Account grid */
+  .accounts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 20px; }
+
+  .account-card {
+    background: #1e293b; border-radius: 14px; border: 1px solid #334155;
+    overflow: hidden; transition: all 0.2s; cursor: pointer;
+  }
+  .account-card:hover { border-color: #6366f1; transform: translateY(-1px); }
+  .account-card.expanded { border-color: #6366f1; }
+
+  .account-header {
+    padding: 14px 18px; display: flex; justify-content: space-between; align-items: center;
+  }
+  .account-name { font-size: 14px; font-weight: 800; display: flex; align-items: center; gap: 8px; }
+  .account-sub { font-size: 11px; color: #64748b; margin-top: 2px; }
+  .account-stats { display: flex; gap: 8px; align-items: center; }
+  .stat-pill { font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 10px; }
+  .pill-r { background: #450a0a; color: #fca5a5; }
+  .pill-y { background: #431407; color: #fdba74; }
+  .pill-g { background: #052e16; color: #86efac; }
+  .pill-n { background: #1e293b; color: #64748b; border: 1px solid #334155; }
+
+  .account-body { padding: 0 18px 16px; display: none; }
+  .account-body.open { display: block; }
+
+  /* Status line items */
+  .status-item {
+    display: flex; align-items: flex-start; gap: 8px;
+    padding: 8px 10px; border-radius: 8px; margin-bottom: 6px;
+    border: 1px solid #1e293b; background: #0f172a;
+    transition: all 0.2s; cursor: pointer;
+  }
+  .status-item:hover { border-color: #334155; }
+  .status-item.done { opacity: 0.4; }
+  .status-item.done .si-text { text-decoration: line-through; }
+  .si-chk {
+    width: 16px; height: 16px; border: 2px solid #475569; border-radius: 4px;
+    flex-shrink: 0; margin-top: 1px; display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s;
+  }
+  .si-chk.on { background: #22c55e; border-color: #22c55e; }
+  .si-chk.on::after { content: '✓'; color: #0f172a; font-size: 9px; font-weight: 900; }
+  .si-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; margin-top: 4px; }
+  .d-r { background: #ef4444; } .d-y { background: #f59e0b; } .d-g { background: #22c55e; } .d-b { background: #3b82f6; }
+  .si-text { font-size: 12px; line-height: 1.4; color: #cbd5e1; flex: 1; }
+  .si-owner { font-size: 10px; color: #475569; margin-top: 2px; }
+  .si-tag { font-size: 10px; font-weight: 700; padding: 1px 7px; border-radius: 8px; white-space: nowrap; flex-shrink: 0; color: #94a3b8; background: #1e293b; border: 1px solid #334155; }
+  .si-new { font-size: 10px; font-weight: 700; padding: 1px 7px; border-radius: 8px; background: #312e81; color: #a5b4fc; white-space: nowrap; flex-shrink: 0; }
+
+  .section-divider { font-size: 10px; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 0.8px; margin: 10px 0 6px; padding-left: 2px; }
+
+  /* Summary panel */
+  .summary-panel { background: #1e293b; border-radius: 14px; border: 1px solid #334155; padding: 20px 24px; margin-bottom: 20px; }
+  .summary-title { font-size: 13px; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 16px; }
+  .summary-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+  .sum-kpi { text-align: center; }
+  .sum-num { font-size: 28px; font-weight: 800; }
+  .sum-label { font-size: 11px; color: #64748b; margin-top: 3px; }
+  .n-red { color: #ef4444; } .n-yellow { color: #f59e0b; } .n-green { color: #22c55e; }
+  .n-blue { color: #6366f1; } .n-cyan { color: #0891b2; }
+
+  /* NEW items highlight */
+  .new-badge { display: inline-block; font-size: 9px; font-weight: 800; padding: 1px 5px; border-radius: 4px; background: #312e81; color: #a5b4fc; margin-left: 4px; vertical-align: middle; }
+
+  /* Expand all */
+  .expand-bar { display: flex; justify-content: flex-end; gap: 8px; margin-bottom: 12px; }
+  .exp-btn { padding: 5px 14px; border-radius: 20px; font-size: 11px; font-weight: 600; cursor: pointer; border: 1px solid #334155; background: #1e293b; color: #94a3b8; transition: all 0.2s; }
+  .exp-btn:hover { border-color: #6366f1; color: #a5b4fc; }
+
+  /* Footer */
+  footer { text-align: center; padding: 20px; font-size: 11px; color: #475569; border-top: 1px solid #1e293b; margin-top: 20px; }
+
+  /* New items section */
+  .new-section { background: #1e1b4b; border: 1px solid #3730a3; border-radius: 14px; padding: 18px 22px; margin-bottom: 20px; }
+  .new-section-title { font-size: 13px; font-weight: 700; color: #a5b4fc; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 12px; }
+
+  .color-ucsp { color: #60a5fa; }
+  .color-wv { color: #34d399; }
+  .color-upsjb { color: #fb923c; }
+  .color-vp { color: #a78bfa; }
+  .color-smart { color: #94a3b8; }
+  .color-ica { color: #fbbf24; }
+
+  .dot-ucsp { background: #3b82f6; }
+  .dot-wv { background: #10b981; }
+  .dot-upsjb { background: #f97316; }
+  .dot-vp { background: #8b5cf6; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <div>
+      <h1>📊 Status Interno — Blue Nose</h1>
+      <p>Ángelito Chanamé · Content & Project Manager</p>
+    </div>
+  </div>
+  <div class="meeting-toggle">
+    <button class="toggle-btn active" onclick="setDay('lunes', this)">🗓 Lunes</button>
+    <button class="toggle-btn" onclick="setDay('jueves', this)">🗓 Jueves</button>
+    <div id="day-label" style="font-size:12px;color:#94a3b8;margin-left:8px;">Actualizado: 16.03.26</div>
+  </div>
+</header>
+
+<div class="alert-bar">
+  <span>🚨 ALERTAS HOY:</span>
+  <div class="alert-items">
+    <span class="alert-item">⏰ Reunión WV Perú — hoy 3pm</span>
+    <span class="alert-item">📅 Contrato WV RD — 15 días (31.03)</span>
+    <span class="alert-item">🔨 VP Chile: 2 tickets cerrando HOY</span>
+    <span class="alert-item">🎯 Reunión UPSJB — hoy 11am</span>
+    <span class="alert-item">🟢 WV ES: renovado 1 año más</span>
+    <span class="alert-item">📋 UPSJB: revisar puntos amarillos/rojos de docs Enrique</span>
+    <span class="alert-item">🔍 WV ES SIMMA: cruce con Jorge pendiente</span>
+    <span class="alert-item">🤖 UCSP: fijar reunión equipo operativo César Puma (Agente IA)</span>
+    <span class="alert-item">⚠️ UPSJB ventas: 95% leads sin respuesta — preparar punto para reunión</span>
+    <span class="alert-item">⚠️ Smartimper: servicio pausado — seguimiento BDR c/2-3 semanas</span>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- Summary -->
+  <div class="summary-panel">
+    <div class="summary-title">📈 Resumen de la semana</div>
+    <div class="summary-grid">
+      <div class="sum-kpi"><div class="sum-num n-red">6</div><div class="sum-label">🔴 Urgentes hoy</div></div>
+      <div class="sum-kpi"><div class="sum-num n-yellow">24</div><div class="sum-label">🟡 Esta semana</div></div>
+      <div class="sum-kpi"><div class="sum-num n-green">14</div><div class="sum-label">✅ Completadas</div></div>
+      <div class="sum-kpi"><div class="sum-num n-blue">6</div><div class="sum-label">🏢 Cuentas activas</div></div>
+      <div class="sum-kpi"><div class="sum-num n-cyan">5</div><div class="sum-label">🆕 Nuevos puntos</div></div>
+    </div>
+  </div>
+
+  <!-- NEW items from audio -->
+  <div class="new-section">
+    <div class="new-section-title">🆕 Nuevos puntos del audio 16.03.26</div>
+    <div class="status-item" onclick="toggle(this)">
+      <div class="si-chk"></div><div class="si-dot d-r"></div>
+      <div style="flex:1"><div class="si-text">WV ES: <strong>Contrato renovado 1 año más</strong> — Certificaciones de donación (Pablo) se cobran aparte por única vez</div></div>
+      <span class="si-new">NUEVO ✅</span>
+    </div>
+    <div class="status-item" onclick="toggle(this)">
+      <div class="si-chk"></div><div class="si-dot d-r"></div>
+      <div style="flex:1"><div class="si-text">WV RD: <strong>Argenis es el único contacto que queda</strong> (Yomara, Juan Plata, Juan Miralcázar y Eli Kauri se van) — Enrique debe tener un espacio con él antes del 31.03</div><div class="si-owner">Owner: Enrique + Pablo</div></div>
+      <span class="si-new">NUEVO 🔴</span>
+    </div>
+    <div class="status-item" onclick="toggle(this)">
+      <div class="si-chk"></div><div class="si-dot d-y"></div>
+      <div style="flex:1"><div class="si-text">UCSP Agente IA: Alonso respondió y <strong>derivó las preguntas a César Puma</strong> — Ángelito coordina con Enrique para que él centralice con César Puma</div><div class="si-owner">Owner: Ángelito → Enrique</div></div>
+      <span class="si-new">NUEVO</span>
+    </div>
+    <div class="status-item" onclick="toggle(this)">
+      <div class="si-chk"></div><div class="si-dot d-y"></div>
+      <div style="flex:1"><div class="si-text">UCSP Centro de Idiomas: <strong>próximos pasos supeditados a Renzo</strong> (presupuesto investigaciones adicionales). Mientras tanto: coordinar entrevista Enrique–Ángelo</div><div class="si-owner">Owner: Enrique</div></div>
+      <span class="si-new">NUEVO</span>
+    </div>
+    <div class="status-item" onclick="toggle(this)">
+      <div class="si-chk"></div><div class="si-dot d-y"></div>
+      <div style="flex:1"><div class="si-text">2 nuevos prospectos: <strong>Financiera</strong> (avanzar por ventas, no esperar marketing) + <strong>Constructora</strong> (Juan Camilo de Foxport envía presupuesto de licencias)</div><div class="si-owner">Owner: Pablo + Enrique</div></div>
+      <span class="si-new">NUEVO</span>
+    </div>
+    <div class="status-item" onclick="toggle(this)">
+      <div class="si-chk"></div><div class="si-dot d-r"></div>
+      <div style="flex:1"><div class="si-text">WV HND: Luis envía piezas Wash <strong>HOY/mañana</strong> · Pablo gestiona permisos web con Jorge · Reunión de revisión piezas y WF adelantada al <strong>miércoles</strong></div><div class="si-owner">Owner: Luis + Pablo + Ángelito</div></div>
+      <span class="si-new">HND 17.03</span>
+    </div>
+    <div class="status-item" onclick="toggle(this)">
+      <div class="si-chk"></div><div class="si-dot d-r"></div>
+      <div style="flex:1"><div class="si-text">UPSJB: <strong>4,800 leads sin gestión</strong> en A Distancia · SLA ≤5 min · Kit de confianza para padres · Buyer Persona Estuardo esta semana</div><div class="si-owner">Owner: Blue Nose + Carlos + Estuardo</div></div>
+      <span class="si-new">UPSJB 17.03</span>
+    </div>
+    <div class="status-item" onclick="toggle(this)">
+      <div class="si-chk"></div><div class="si-dot d-r"></div>
+      <div style="flex:1"><div class="si-text">UPSJB: Enrique envió 3 documentos A Distancia con puntos <strong>amarillos (oportunidades)</strong> y <strong>rojos (riesgos)</strong> — Ángelito revisar y responder con fecha de acciones correctivas</div><div class="si-owner">Owner: Ángelito + Enrique</div></div>
+      <span class="si-new">18.03</span>
+    </div>
+    <div class="status-item" onclick="toggle(this)">
+      <div class="si-chk"></div><div class="si-dot d-r"></div>
+      <div style="flex:1"><div class="si-text">WV ES SIMMA: Esther envió revisión técnica detallada de bases (18.03) — <strong>cruce SIMMA vs HubSpot con Jorge pendiente</strong> · propiedades personalizadas (ChildID, datos bancarios) por configurar</div><div class="si-owner">Owner: Sofía + Jorge + Cristian P</div></div>
+      <span class="si-new">18.03</span>
+    </div>
+    <div class="status-item" onclick="toggle(this)">
+      <div class="si-chk"></div><div class="si-dot d-y"></div>
+      <div style="flex:1"><div class="si-text">WV CL: 47 duplicados corregidos · workflow ajustado · importación pendiente (negocios de contactos web) · nóminas validadas (Transdata + Multibank) · facturación F2F manual por Ornella</div><div class="si-owner">Owner: Cristian P + Diana + Ornella</div></div>
+      <span class="si-new">18.03</span>
+    </div>
+    <div class="status-item" onclick="toggle(this)">
+      <div class="si-chk"></div><div class="si-dot d-r"></div>
+      <div style="flex:1"><div class="si-text">UCSP Agente IA: Enrique tuvo reunión con César Puma (30 min) — <strong>siguiente paso: reunión con equipo operativo</strong> (Ángela González, Rudy Hasawi, Juan Daniel Rodríguez) para resolver preguntas del correo de Pablo · Proyecto puede crecer (matrícula, tienda virtual, facturación)</div><div class="si-owner">Owner: Enrique</div></div>
+      <span class="si-new">19.03</span>
+    </div>
+    <div class="status-item" onclick="toggle(this)">
+      <div class="si-chk"></div><div class="si-dot d-r"></div>
+      <div style="flex:1"><div class="si-text">UCSP Mesa de Ayuda: César Puma enviará brief para propuesta (IA + WhatsApp sobre Zoho) — prioridad para él · Plazo: abril/mayo · <strong>Casi seguro</strong></div><div class="si-owner">Owner: Enrique</div></div>
+      <span class="si-new">19.03</span>
+    </div>
+    <div class="status-item" onclick="toggle(this)">
+      <div class="si-chk"></div><div class="si-dot d-r"></div>
+      <div style="flex:1"><div class="si-text">UPSJB Ventas: de 11,000 leads contactados vía WhatsApp — 5,300 abrieron, 325 respondieron, <strong>95% sin respuesta del equipo de ventas</strong> · Preparar análisis para próxima reunión con Pablo</div><div class="si-owner">Owner: Ángelito → Pablo</div></div>
+      <span class="si-new">19.03</span>
+    </div>
+    <div class="status-item" onclick="toggle(this)">
+      <div class="si-chk"></div><div class="si-dot d-y"></div>
+      <div style="flex:1"><div class="si-text">UCSP Coaching SGA: Enrique actualiza propuesta (equipo creció a 5-6 personas, dejaron Dzine Lab) · También: seguimiento a proyecto Alumni con Efraín Centeno (Rector Académico)</div><div class="si-owner">Owner: Enrique</div></div>
+      <span class="si-new">19.03</span>
+    </div>
+    <div class="status-item" onclick="toggle(this)">
+      <div class="si-chk"></div><div class="si-dot d-y"></div>
+      <div style="flex:1"><div class="si-text">Ángelito: crear checklist unificado con IA de todos los puntos de reuniones UCSP (1ra → 5ta) para blindar entregables y facilitar conformidades — compartir con cliente cuando esté listo</div><div class="si-owner">Owner: Ángelito — usar Claude + transcripciones</div></div>
+      <span class="si-new">19.03</span>
+    </div>
+  </div>
+
+  <div class="expand-bar">
+    <button class="exp-btn" onclick="expandAll()">↓ Expandir todo</button>
+    <button class="exp-btn" onclick="collapseAll()">↑ Contraer todo</button>
+  </div>
+
+  <!-- Account cards -->
+  <div class="accounts-grid">
+
+    <!-- UCSP -->
+    <div class="account-card" id="card-ucsp">
+      <div class="account-header" onclick="toggleCard('ucsp')">
+        <div>
+          <div class="account-name color-ucsp">🏛 UCSP</div>
+          <div class="account-sub">Universidad Católica San Pablo · A cargo: Edgardo</div>
+        </div>
+        <div class="account-stats">
+          <span class="stat-pill pill-r">2 urg</span>
+          <span class="stat-pill pill-y">5 prog</span>
+          <span class="stat-pill pill-g">3 ✅</span>
+        </div>
+      </div>
+      <div class="account-body open" id="body-ucsp">
+        <div class="section-divider">🔴 Urgente</div>
+        <div class="status-item" onclick="toggle(this)">
+          <div class="si-chk"></div><div class="si-dot d-r"></div>
+          <div style="flex:1"><div class="si-text">Ángelito → Enrique: centralizar con César Puma las preguntas del Agente IA (Alonso las derivó a él)</div><div class="si-owner">Owner: Ángelito → Enrique</div></div>
+          <span class="si-new">NUEVO</span>
+        </div>
+        <div class="status-item" onclick="toggle(this)">
+          <div class="si-chk"></div><div class="si-dot d-r"></div>
+          <div style="flex:1"><div class="si-text">Ángelito: reenviar ppt SpotLight a Enrique y Pablo para revisión (compartida por Ani el viernes)</div><div class="si-owner">Owner: Ángelito</div></div>
+        </div>
+        <div class="section-divider">🟡 Esta semana</div>
+        <div class="status-item" onclick="toggle(this)">
+          <div class="si-chk"></div><div class="si-dot d-y"></div>
+          <div style="flex:1"><div class="si-text">Enrique: coordinar entrevista con Ángelo sobre Centro de Idiomas (siguiente paso mientras espera a Renzo)</div><div class="si-owner">Owner: Enrique</div></div>
+          <span class="si-new">NUEVO</span>
+        </div>
+        <div class="status-item" onclick="toggle(this)">
+          <div class="si-chk"></div><div class="si-dot d-y"></div>
+          <div style="flex:1"><div class="si-text">Esperar respuesta de Renzo sobre presupuesto investigaciones adicionales (Centro de Idiomas)</div><div class="si-owner">Owner: Enrique</div></div>
+        </div>
+        <div class="status-item" onclick="toggle(this)">
+          <div class="si-chk"></div><div class="si-dot d-y"></div>
+          <div style="flex:1"><div class="si-text">CENDES: María Daniela confirmó (13.03) que están en proceso de revisión — cotización de horas adicionales anulada (filtros, propiedades, flujos, metas, panel históricos, manual). Esperar respuesta formal de aprobación.</div><div class="si-owner">Owner: Ángelito</div></div>
+        </div>
+        <div class="status-item" onclick="toggle(this)">
+          <div class="si-chk"></div><div class="si-dot d-y"></div>
+          <div style="flex:1"><div class="si-text">Marcos: entregar Manual CENDES (pendiente a que cliente revise)</div><div class="si-owner">Owner: Marcos</div></div>
+        </div>
+        <div class="status-item" onclick="toggle(this)">
+          <div class="si-chk"></div><div class="si-dot d-y"></div>
+          <div style="flex:1"><div class="si-text">TDR Cobranzas: Enrique para la mano; esperar cruce fortuito con Paul</div><div class="si-owner">Owner: Enrique</div></div>
+        </div>
+        <div class="section-divider">✅ Completado</div>
+        <div class="status-item done" onclick="toggle(this)">
+          <div class="si-chk on"></div><div class="si-dot d-g"></div>
+          <div style="flex:1"><div class="si-text">Ani: correo de seguimiento enviado a Santiago (Experiencia Estudiante)</div></div>
+        </div>
+        <div class="status-item done" onclick="toggle(this)">
+          <div class="si-chk on"></div><div class="si-dot d-g"></div>
+          <div style="flex:1"><div class="si-text">Alonso respondió — derivó preguntas a César Puma</div></div>
+        </div>
+        <div class="status-item done" onclick="toggle(this)">
+          <div class="si-chk on"></div><div class="si-dot d-g"></div>
+          <div style="flex:1"><div class="si-text">Enrique: presupuesto de investigaciones adicionales enviado a Renzo</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- World Vision -->
+    <div class="account-card" id="card-wv">
+      <div class="account-header" onclick="toggleCard('wv')">
+        <div>
+          <div class="account-name color-wv">🌍 World Vision</div>
+          <div class="account-sub">RD · HND · ES · EC · PE · BR</div>
+        </div>
+        <div class="account-stats">
+          <span class="stat-pill pill-r">3 urg</span>
+          <span class="stat-pill pill-y">8 prog</span>
+          <span class="stat-pill pill-g">3 ✅</span>
+        </div>
+      </div>
+      <div class="account-body open" id="body-wv">
+        <div class="section-divider">🔴 Urgente</div>
+        <div class="status-item" onclick="toggle(this)">
+          <div class="si-chk"></div><div class="si-dot d-r"></div>
+          <div style="flex:1"><div class="si-text">Reunión urgente WV Perú — HOY 3pm | limpieza de listas + consulta web | Ir con claridad, preguntar el doble</div><div class="si-owner">Owner: Ángelito + Cristian P</div></div>
+          <span class="si-tag">PE</span>
+        </div>
+        <div class="status-item" onclick="toggle(this)">
+          <div class="si-chk"></div><div class="si-dot d-r"></div>
+          <div style="flex:1"><div class="si-text">Luis: finalizar piezas Wash HOY/mañana (evento del domingo) + enviar correo a Jorge pidiendo permisos web (CC Pablo) · Reunión con Luis cancelada — reprogramada al lunes</div><div class="si-owner">Owner: Luis · Seguimiento: Ángelito</div></div>
+          <span class="si-tag">HND</span><span class="si-new">19.03</span>
+        </div>
+        <div class="status-item" onclick="toggle(this)">
+          <div class="si-chk"></div><div class="si-dot d-y"></div>
+          <div style="flex:1"><div class="si-text">WV EC: sesión inicial de soporte realizada — múltiples tickets creados (HubSpot + integraciones + nuevas propuestas) · Priorizar débitos y automatizaciones primero · Cristian P + Marcos organizando por prioridad</div><div class="si-owner">Owner: Cristian P + Pablo + Marcos</div></div>
+          <span class="si-tag">EC</span><span class="si-new">19.03</span>
+        </div>
+        <div class="status-item" onclick="toggle(this)">
+          <div class="si-chk"></div><div class="si-dot d-r"></div>
+          <div style="flex:1"><div class="si-text">Pablo: gestionar permisos web para Luis + orientar en plantillas WhatsApp (número termina en 5550) + incluir devs en correos de Express Pago</div><div class="si-owner">Owner: Pablo</div></div>
+          <span class="si-tag">HND</span><span class="si-new">17.03</span>
+        </div>
+        <div class="status-item" onclick="toggle(this)">
+          <div class="si-chk"></div><div class="si-dot d-r"></div>
+          <div style="flex:1"><div class="si-text">Enrique: buscar espacio con Argenis antes del 31.03 — único contacto que queda en RD</div><div class="si-owner">Owner: Enrique + Pablo</div></div>
+          <span class="si-tag">RD</span>
+        </div>
+        <div class="section-divider">📅 Reuniones esta semana</div>
+        <div class="status-item" onclick="toggle(this)">
+          <div class="si-chk"></div><div class="si-dot d-b"></div>
+          <div style="flex:1"><div class="si-text"><strong>MIÉRCOLES</strong> — Revisión piezas y WF con Luis y Pablo (adelantada de jueves) · Luis envía invitación</div></div>
+          <span class="si-tag">HND</span><span class="si-new">17.03</span>
+        </div>
+        <div class="status-item" onclick="toggle(this)">
+          <div class="si-chk"></div><div class="si-dot d-b"></div>
+          <div style="flex:1"><div class="si-text"><strong>JUEVES</strong> — Reunión con Express Pago (pasarela de pagos)</div></div>
+          <span class="si-tag">HND</span>
+        </div>
+        <div class="status-item" onclick="toggle(this)">
+          <div class="si-chk"></div><div class="si-dot d-b"></div>
+          <div style="flex:1"><div class="si-text"><strong>VIERNES</strong> — Pablo apoya a Ángelito con bot de Telegram (sesión de aprendizaje)</div></div>
+          <span class="si-tag">HND</span><span class="si-new">17.03</span>
+        </div>
+        <div class="section-divider">🟡 Esta semana</div>
+        <div class="status-item" onclick="toggle(this)">
+          <div class="si-chk"></div><div class="si-dot d-y"></div>
+          <div style="flex:1"><div class="si-text">Activar soporte con RD (Discord) — que no perciban los cambios de equipo</div><div class="si-owner">Owner: Ángelito</div></div>
+          <span class="si-tag">RD</span>
+        </div>
+        <div class="status-item" onclick="toggle(this)">
+          <div class="si-chk"></div><div class="si-dot d-y"></div>
+          <div style="flex:1"><div class="si-text">Cristian P: revisar correo de Pablo sobre prefijos SMS · Accionables canal: sincronizar campo "nombre de iglesia" en objeto Contactos · investigar URL versión web · cruzar video · sincronizar PartnerID · investigar integración leads proveedores externos · NO usar módulo Operations</div><div class="si-owner">Owner: Cristian P + Sofía</div></div>
+          <span class="si-tag">ES</span><span class="si-new">19.03</span>
+        </div>
+        <div class="status-item" onclick="toggle(this)">
+          <div class="si-chk"></div><div class="si-dot d-r"></div>
+          <div style="flex:1"><div class="si-text">SIMMA: Sofía + Jorge → cruzar base SIMMA vs HubSpot (partners sin contacto/pledge, emails provisionales, campos faltantes) — agendar reunión con Esther para acciones correctivas</div><div class="si-owner">Owner: Sofía + Jorge</div></div>
+          <span class="si-tag">ES</span><span class="si-new">18.03</span>
+        </div>
+        <div class="status-item" onclick="toggle(this)">
+          <div class="si-chk"></div><div class="si-dot d-y"></div>
+          <div style="flex:1"><div class="si-text">SIMMA: Cristian P configurar propiedades personalizadas (ChildID, AddDate, MediaType, datos bancarios en Pledges) + revisar decisión sobre datos bancarios con Esther</div><div class="si-owner">Owner: Cristian P + Sofía</div></div>
+          <span class="si-tag">ES</span><span class="si-new">18.03</span>
+        </div>
+        <div class="status-item" onclick="toggle(this)">
+          <div class="si-chk"></div><div class="si-dot d-y"></div>
+          <div style="flex:1"><div class="si-text">Gonzalo: aprobar Facturación F2F + compartir reglas de negocio con Pablo</div><div class="si-owner">Seguimiento: Enrique</div></div>
+        </div>
+        <div class="status-item" onclick="toggle(this)">
+          <div class="si-chk"></div><div class="si-dot d-y"></div>
+          <div style="flex:1"><div class="si-text">Valeria: convocar reuniones Ecuador martes 11am</div></div>
+          <span class="si-tag">EC</span>
+        </div>
+        <div class="status-item" onclick="toggle(this)">
+          <div class="si-chk"></div><div class="si-dot d-y"></div>
+          <div style="flex:1"><div class="si-text">Isa: seguimiento a respuesta de internacional</div></div>
+          <span class="si-tag">ES</span>
+        </div>
+        <div class="section-divider">✅ Completado</div>
+        <div class="status-item done" onclick="toggle(this)">
+          <div class="si-chk on"></div><div class="si-dot d-g"></div>
+          <div style="flex:1"><div class="si-text">WV ES: contrato renovado por un año más ⭐</div></div>
+        </div>
+        <div class="status-item done" onclick="toggle(this)">
+          <div class="si-chk on"></div><div class="si-dot d-g"></div>
+          <div style="flex:1"><div class="si-text">Esther respondió — base de datos en manos de Jorge y Esther</div></div>
+        </div>
+        <div class="status-item done" onclick="toggle(this)">
+          <div class="si-chk on"></div><div class="si-dot d-g"></div>
+          <div style="flex:1"><div class="si-text">WV HND: reunión de status realizada 17.03 · Piezas + landings entregadas</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- UPSJB -->
+    <div class="account-card" id="card-upsjb">
+      <div class="account-header" onclick="toggleCard('upsjb')">
+        <div>
+          <div class="account-name color-upsjb">🎓 UPSJB</div>
+          <div class="account-sub">Universidad San Juan Bautista · Proceso 2026-2</div>
+        </div>
+        <div class="account-stats">
+          <span class="stat-pill pill-r">3 urg</span>
+          <span class="stat-pill pill-y">6 prog</span>
+          <span class="stat-pill pill-g">3 ✅</span>
+        </div>
+      </div>
+      <div class="account-body open" id="body-upsjb">
+        <div class="section-divider">📋 Agenda reunión hoy 11am</div>
+        <div class="status-item">
+          <div class="si-dot d-b" style="flex-shrink:0;margin-top:4px;"></div>
+          <div style="flex:1"><div class="si-text"><strong>1°</strong> Carlos cuenta cómo va la campaña</div></div>
+        </div>
+        <div class="status-item">
+          <div class="si-dot d-b" style="flex-shrink:0;margin-top:4px;"></div>
+          <div style="flex:1"><div class="si-text"><strong>2°</strong> Ángelito: resumen de TODOs (4-5 puntos)</div></div>
+        </div>
+        <div class="status-item">
+          <div class="si-dot d-b" style="flex-shrink:0;margin-top:4px;"></div>
+          <div style="flex:1"><div class="si-text"><strong>3°</strong> Enrique: presentación análisis A Distancia (puede tomar buena parte de la reunión)</div></div>
+        </div>
+        <div class="section-divider">🔴 Urgente</div>
+        <div class="status-item" onclick="toggle(this)">
+          <div class="si-chk"></div><div class="si-dot d-r"></div>
+          <div style="flex:1"><div class="si-text">Blue Nose: asignar equipo exclusivo para 4,800 leads sin gestión (A Distancia) · SLA ≤5 min</div><div class="si-owner">Owner: Enrique/Pablo</div></div>
+          <span class="si-new">17.03</span>
+        </div>
+        <div class="status-item" onclick="toggle(this)">
+          <div class="si-chk"></div><div class="si-dot d-r"></div>
+          <div style="flex:1"><div class="si-text">Estuardo: entregar Buyer Persona para padres esta semana + coordinar QR en charlas desde quincena de marzo</div><div class="si-owner">Owner: Estuardo</div></div>
+          <span class="si-new">17.03</span>
+        </div>
+        <div class="status-item" onclick="toggle(this)">
+          <div class="si-chk"></div><div class="si-dot d-r"></div>
+          <div style="flex:1"><div class="si-text">Carlos: finalizar limpieza de duplicados en HubSpot + enviar programas de Admón Internacional y Marketing a Blue Nose</div><div class="si-owner">Owner: Carlos</div></div>
+          <span class="si-new">17.03</span>
+        </div>
+        <div class="status-item" onclick="toggle(this)">
+          <div class="si-chk"></div><div class="si-dot d-r"></div>
+          <div style="flex:1"><div class="si-text">Carlos: solicitar entrega final MVP a Atom esta semana</div><div class="si-owner">Owner: Carlos</div></div>
+        </div>
+        <div class="section-divider">🟡 Esta semana</div>
+        <div class="status-item" onclick="toggle(this)">
+          <div class="si-chk"></div><div class="si-dot d-y"></div>
+          <div style="flex:1"><div class="si-text">Blue Nose: desarrollar kit de confianza para padres (video infraestructura + validaciones + simulación ahorro vía WhatsApp)</div><div class="si-owner">Owner: Blue Nose</div></div>
+          <span class="si-new">17.03</span>
+        </div>
+        <div class="status-item" onclick="toggle(this)">
+          <div class="si-chk"></div><div class="si-dot d-y"></div>
+          <div style="flex:1"><div class="si-text">Estuardo: enviar estrategia de marketing individualizada por carrera</div><div class="si-owner">Owner: Estuardo</div></div>
+        </div>
+        <div class="status-item" onclick="toggle(this)">
+          <div class="si-chk"></div><div class="si-dot d-y"></div>
+          <div style="flex:1"><div class="si-text">Carlos: consultar avance contacto a descalificados (100/día por asesor) + compartir estudio de mercado Admón/Conta</div><div class="si-owner">Owner: Carlos</div></div>
+        </div>
+        <div class="section-divider">✅ Completado</div>
+        <div class="status-item done" onclick="toggle(this)">
+          <div class="si-chk on"></div><div class="si-dot d-g"></div>
+          <div style="flex:1"><div class="si-text">Enrique: 3 documentos A Distancia enviados a UPSJB ⭐ (análisis HubSpot + diagnóstico PPT/Word + hoja de ruta) — puntos en amarillo (oportunidades) y rojo (riesgos)</div></div>
+        </div>
+        <div class="status-item" onclick="toggle(this)">
+          <div class="si-chk"></div><div class="si-dot d-r"></div>
+          <div style="flex:1"><div class="si-text">Equipo Blue Nose: revisar puntos resaltados en los 3 documentos de Enrique y definir acciones correctivas — responder correo de Enrique con fecha de presentación</div><div class="si-owner">Owner: Ángelito + Enrique</div></div>
+          <span class="si-new">18.03</span>
+        </div>
+        <div class="status-item done" onclick="toggle(this)">
+          <div class="si-chk on"></div><div class="si-dot d-g"></div>
+          <div style="flex:1"><div class="si-text">BP Provincias completado</div></div>
+        </div>
+        <div class="status-item done" onclick="toggle(this)">
+          <div class="si-chk on"></div><div class="si-dot d-g"></div>
+          <div style="flex:1"><div class="si-text">Feedback de Rex sobre piezas gráficas recibido y comunicado a Estuardo</div></div>
+        </div>
+        <div class="status-item done" onclick="toggle(this)">
+          <div class="si-chk on"></div><div class="si-dot d-g"></div>
+          <div style="flex:1"><div class="si-text">Speech por canal enviado al equipo para activar ASAP</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VirtualPos -->
+    <div class="account-card" id="card-vp">
+      <div class="account-header" onclick="toggleCard('vp')">
+        <div>
+          <div class="account-name color-vp">💳 VirtualPos Chile</div>
+          <div class="account-sub">Soporte Técnico · A cargo: Cristian P</div>
+        </div>
+        <div class="account-stats">
+          <span class="stat-pill pill-r">2 hoy</span>
+          <span class="stat-pill pill-y">2 prog</span>
+          <span class="stat-pill pill-g">2 ✅</span>
+        </div>
+      </div>
+      <div class="account-body" id="body-vp">
+        <div class="section-divider">🔴 Cerrando HOY</div>
+        <div class="status-item" onclick="toggle(this)">
+          <div class="si-chk"></div><div class="si-dot d-r"></div>
+          <div style="flex:1"><div class="si-text">Cristian P: cerrar ticket donaciones únicas (ajuste adicional en integración)</div><div class="si-owner">Owner: Cristian P</div></div>
+        </div>
+        <div class="status-item" onclick="toggle(this)">
+          <div class="si-chk"></div><div class="si-dot d-r"></div>
+          <div style="flex:1"><div class="si-text">Cristian P: cerrar ticket limpieza negocios duplicados F2F (750 contactos — automatización ejecutada)</div><div class="si-owner">Owner: Cristian P</div></div>
+        </div>
+        <div class="section-divider">🟡 Esta semana</div>
+        <div class="status-item" onclick="toggle(this)">
+          <div class="si-chk"></div><div class="si-dot d-y"></div>
+          <div style="flex:1"><div class="si-text">Cristian P: escribir a María (PE) por Discord — más info del ticket "limpieza de lista y consulta web"</div><div class="si-owner">Owner: Cristian P</div></div>
+        </div>
+        <div class="status-item" onclick="toggle(this)">
+          <div class="si-chk"></div><div class="si-dot d-y"></div>
+          <div style="flex:1"><div class="si-text">Compartir reporte de nóminas a Gonzalo, Diana y Ornella para validación</div><div class="si-owner">Owner: Cristian P</div></div>
+        </div>
+        <div class="status-item" onclick="toggle(this)">
+          <div class="si-chk"></div><div class="si-dot d-y"></div>
+          <div style="flex:1"><div class="si-text">WV CL: Cristian P reenviar lista y recursos para importación de negocios pendientes (contactos web importados por Pau — faltan negocios asociados)</div><div class="si-owner">Owner: Cristian P → Diana</div></div>
+          <span class="si-new">18.03</span>
+        </div>
+        <div class="status-item" onclick="toggle(this)">
+          <div class="si-chk"></div><div class="si-dot d-y"></div>
+          <div style="flex:1"><div class="si-text">WV CL: Diana + Ornella revisar 47 contactos con negocios duplicados + regularizar negocios con múltiples métodos de pago (F2F vs VirtualPos)</div><div class="si-owner">Owner: Diana + Ornella (tras regreso)</div></div>
+          <span class="si-new">18.03</span>
+        </div>
+        <div class="status-item" onclick="toggle(this)">
+          <div class="si-chk"></div><div class="si-dot d-y"></div>
+          <div style="flex:1"><div class="si-text">WV CL: Ornella finalizar facturación manual F2F (enero y febrero) — avisar a Pablo para coordinar automatización</div><div class="si-owner">Owner: Ornella</div></div>
+          <span class="si-new">18.03</span>
+        </div>
+        <div class="status-item" onclick="toggle(this)">
+          <div class="si-chk"></div><div class="si-dot d-y"></div>
+          <div style="flex:1"><div class="si-text">WV CL: Diana mostrar demo de gestión niños apadrinados (integración Horizon) a Gonzalo para evaluar implementación local · Pablo presionar a Jorge por estructura objetos en EC/BR</div><div class="si-owner">Owner: Diana + Pablo</div></div>
+          <span class="si-new">18.03</span>
+        </div>
+        <div class="section-divider">✅ Completado</div>
+        <div class="status-item done" onclick="toggle(this)">
+          <div class="si-chk on"></div><div class="si-dot d-g"></div>
+          <div style="flex:1"><div class="si-text">Nóminas Feb Multibanca y Transdata subidas · Importación WV CL completada (Transdata + Multibank)</div></div>
+        </div>
+        <div class="status-item done" onclick="toggle(this)">
+          <div class="si-chk on"></div><div class="si-dot d-g"></div>
+          <div style="flex:1"><div class="si-text">47 contactos con negocios duplicados identificados — workflow corregido para evitar nuevas duplicaciones ✅</div></div>
+        </div>
+        <div class="status-item done" onclick="toggle(this)">
+          <div class="si-chk on"></div><div class="si-dot d-g"></div>
+          <div style="flex:1"><div class="si-text">Error en creación de pagos únicos vía pasarela web corregido por Cristian P ✅</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Smartimper -->
+    <div class="account-card" id="card-smart" style="border-color:#f59e0b;">
+      <div class="account-header" onclick="toggleCard('smart')">
+        <div>
+          <div class="account-name color-smart">⚡ Smartimper</div>
+          <div class="account-sub">⚠️ Servicio pausado · Esperando BDR del cliente</div>
+        </div>
+        <div class="account-stats">
+          <span class="stat-pill pill-y">EN PAUSA</span>
+          <span class="si-new">NUEVO</span>
+        </div>
+      </div>
+      <div class="account-body" id="body-smart">
+        <div class="status-item" style="background:#431407;border-color:#92400e;">
+          <div class="si-dot d-y" style="flex-shrink:0;margin-top:4px;"></div>
+          <div style="flex:1"><div class="si-text" style="color:#fdba74;"><strong>Contexto:</strong> Se trabajó diseño y contenido para todo el año en 1 mes transitorio bajo compromiso de renovación. El cliente no honró el compromiso. La renovación depende de que consiga su BDR.</div></div>
+        </div>
+        <div class="section-divider">🔄 Seguimiento recurrente</div>
+        <div class="status-item" onclick="toggle(this)">
+          <div class="si-chk"></div><div class="si-dot d-y"></div>
+          <div style="flex:1"><div class="si-text">Ángelito: escribirle al cliente ~30.03 — preguntar cómo va con la incorporación del BDR</div><div class="si-owner">Si no responde → avisar a Enrique para que entre él</div></div>
+          <span class="si-new">1er follow-up</span>
+        </div>
+        <div class="status-item" onclick="toggle(this)">
+          <div class="si-chk"></div><div class="si-dot d-y"></div>
+          <div style="flex:1"><div class="si-text">Ángelito: 2do follow-up ~13.04</div><div class="si-owner">Si no hay respuesta → Enrique</div></div>
+        </div>
+        <div class="status-item" onclick="toggle(this)">
+          <div class="si-chk"></div><div class="si-dot d-y"></div>
+          <div style="flex:1"><div class="si-text">Ángelito: 3er follow-up ~27.04</div><div class="si-owner">Si no hay respuesta → Enrique</div></div>
+        </div>
+        <div class="section-divider">✅ Completado</div>
+        <div class="status-item done" onclick="toggle(this)">
+          <div class="si-chk on"></div><div class="si-dot d-g"></div>
+          <div style="flex:1"><div class="si-text">Todos los entregables entregados: contenidos, 2 landings, propiedades contactos y negocios en HubSpot</div></div>
+        </div>
+        <div class="status-item done" onclick="toggle(this)">
+          <div class="si-chk on"></div><div class="si-dot d-g"></div>
+          <div style="flex:1"><div class="si-text">Reunión de continuidad realizada — servicio culminado (de momento)</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Caja Ica + Nuevos prospectos -->
+    <div class="account-card" id="card-ica">
+      <div class="account-header" onclick="toggleCard('ica')">
+        <div>
+          <div class="account-name color-ica">🏦 Caja Ica + Prospectos</div>
+          <div class="account-sub">Pendiente inicio · 2 nuevos prospectos</div>
+        </div>
+        <div class="account-stats">
+          <span class="stat-pill pill-y">3 pend</span>
+          <span class="si-new" style="font-size:10px;padding:3px 8px;">2 NEW</span>
+        </div>
+      </div>
+      <div class="account-body" id="body-ica">
+        <div class="section-divider">⏳ Caja Ica</div>
+        <div class="status-item" onclick="toggle(this)">
+          <div class="si-chk"></div><div class="si-dot d-y"></div>
+          <div style="flex:1"><div class="si-text">Enrique: confirmar inicio del proyecto (alcance listo)</div><div class="si-owner">Owner: Enrique</div></div>
+        </div>
+        <div class="section-divider">🆕 Nuevos prospectos</div>
+        <div class="status-item" onclick="toggle(this)">
+          <div class="si-chk"></div><div class="si-dot d-y"></div>
+          <div style="flex:1"><div class="si-text">Financiera: avanzar por ventas (no esperar a marketing) — Pablo avanza hoy</div><div class="si-owner">Owner: Pablo</div></div>
+          <span class="si-new">NUEVO</span>
+        </div>
+        <div class="status-item" onclick="toggle(this)">
+          <div class="si-chk"></div><div class="si-dot d-y"></div>
+          <div style="flex:1"><div class="si-text">Constructora: Juan Camilo de Foxport enviará presupuesto de licencias — preparar presupuesto de acompañamiento</div><div class="si-owner">Owner: Pablo + Enrique</div></div>
+          <span class="si-new">NUEVO</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<footer>Status Interno · Blue Nose · Ángelito Chanamé · Actualizado 16.03.26</footer>
+
+<script>
+  function toggleCard(id) {
+    const body = document.getElementById('body-' + id);
+    body.classList.toggle('open');
+  }
+  function toggle(el) {
+    el.querySelector('.si-chk').classList.toggle('on');
+    el.classList.toggle('done');
+  }
+  function expandAll() {
+    document.querySelectorAll('.account-body').forEach(b => b.classList.add('open'));
+  }
+  function collapseAll() {
+    document.querySelectorAll('.account-body').forEach(b => b.classList.remove('open'));
+  }
+  function setDay(day, btn) {
+    document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active', 'thu'));
+    btn.classList.add('active');
+    if (day === 'jueves') btn.classList.add('thu');
+    document.getElementById('day-label').textContent = day === 'lunes' ? 'Próximo: Lunes 23.03' : 'Próximo: Jueves 19.03';
+  }
+</script>
+</body>
+</html>

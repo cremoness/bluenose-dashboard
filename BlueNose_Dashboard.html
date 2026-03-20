@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blue Nose Dashboard — Ángelito Chanamé</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #0f172a; color: #e2e8f0; min-height: 100vh; }
+
+  /* ── TOP NAV ── */
+  .top-nav {
+    background: #0a0f1e;
+    border-bottom: 1px solid #1e293b;
+    padding: 0 32px;
+    display: flex; align-items: center; gap: 4px;
+    position: sticky; top: 0; z-index: 100;
+  }
+  .nav-brand {
+    font-size: 14px; font-weight: 900; color: #6366f1;
+    padding: 14px 0; margin-right: 20px; letter-spacing: 0.05em;
+  }
+  .nav-tab {
+    padding: 14px 18px; font-size: 12px; font-weight: 700;
+    color: #64748b; cursor: pointer; border-bottom: 3px solid transparent;
+    transition: all .15s; white-space: nowrap; letter-spacing: 0.03em;
+  }
+  .nav-tab:hover { color: #94a3b8; }
+  .nav-tab.active { color: #e2e8f0; border-bottom-color: #6366f1; }
+  .nav-tab.active.tab-brief { border-bottom-color: #6366f1; }
+  .nav-tab.active.tab-status { border-bottom-color: #0891b2; }
+  .nav-tab.active.tab-cuentas { border-bottom-color: #10b981; }
+  .nav-right { margin-left: auto; display: flex; align-items: center; gap: 10px; }
+  #nav-date { font-size: 11px; color: #475569; }
+
+  /* ── HEADER ── */
+  header {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    padding: 18px 32px; border-bottom: 1px solid #334155;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .header-left h1 { font-size: 19px; font-weight: 800; color: white; }
+  .header-left p  { font-size: 12px; color: #64748b; margin-top: 2px; }
+  .header-right { display: flex; align-items: center; gap: 10px; }
+
+  /* ── VIEWS ── */
+  .view { display: none; }
+  .view.active { display: block; }
+
+  .container { max-width: 1300px; margin: 0 auto; padding: 24px; }
+
+  /* ══════════════════════════════════════════
+     VIEW: DAILY BRIEF
+  ══════════════════════════════════════════ */
+  .brief-container { max-width: 900px; margin: 0 auto; padding: 24px; }
+
+  .counts { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
+  .count-pill { padding: 6px 16px; border-radius: 20px; font-size: 12px; font-weight: 700; display: flex; align-items: center; gap: 6px; }
+  .cp-r { background: rgba(239,68,68,.15);  color: #f87171; }
+  .cp-y { background: rgba(234,179,8,.12);  color: #fbbf24; }
+  .cp-g { background: rgba(34,197,94,.12);  color: #4ade80; }
+
+  .filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+  .filter-btn {
+    padding: 5px 14px; border-radius: 20px; font-size: 11px; font-weight: 700;
+    background: #1e293b; border: 1px solid #334155; color: #94a3b8;
+    cursor: pointer; transition: all .15s;
+  }
+  .filter-btn.active, .filter-btn:hover { background: #6366f1; border-color: #6366f1; color: #fff; }
+
+  .brief-section { margin-bottom: 28px; }
+  .section-title {
+    font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
+    padding: 6px 14px; border-radius: 8px; display: inline-flex; align-items: center; gap: 8px;
+    margin-bottom: 12px;
+  }
+  .s-red   { background: rgba(239,68,68,.15);  color: #f87171; }
+  .s-yel   { background: rgba(234,179,8,.12);  color: #fbbf24; }
+  .s-blue  { background: rgba(99,102,241,.15); color: #818cf8; }
+  .s-green { background: rgba(34,197,94,.12);  color: #4ade80; }
+
+  .task {
+    background: #1e293b; border: 1px solid #334155; border-radius: 12px;
+    padding: 13px 16px; margin-bottom: 8px;
+    display: flex; align-items: flex-start; gap: 12px;
+    cursor: pointer; transition: background .15s, border-color .15s;
+  }
+  .task:hover { background: #263348; border-color: #475569; }
+  .task.done  { opacity: .45; }
+  .task.done .task-text { text-decoration: line-through; }
+  .chk {
+    width: 18px; height: 18px; border-radius: 5px; border: 2px solid #475569;
+    flex-shrink: 0; margin-top: 2px; display: flex; align-items: center; justify-content: center;
+    transition: all .15s;
+  }
+  .task.done .chk { background: #22c55e; border-color: #22c55e; }
+  .chk svg { display: none; }
+  .task.done .chk svg { display: block; }
+  .task-text { font-size: 13.5px; line-height: 1.5; color: #cbd5e1; flex: 1; }
+  .task-text strong { color: #e2e8f0; }
+  .tag { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 10px; flex-shrink: 0; margin-top: 2px; }
+  .tag-wv   { background: rgba(34,197,94,.15);  color: #4ade80; }
+  .tag-up   { background: rgba(251,146,60,.15); color: #fb923c; }
+  .tag-uc   { background: rgba(96,165,250,.15); color: #60a5fa; }
+  .tag-vp   { background: rgba(167,139,250,.15);color: #a78bfa; }
+  .tag-sm   { background: rgba(234,179,8,.15);  color: #fbbf24; }
+  .tag-new  { background: rgba(239,68,68,.2);   color: #f87171; }
+
+  .meeting {
+    background: linear-gradient(90deg, rgba(99,102,241,.12), rgba(99,102,241,.04));
+    border: 1px solid rgba(99,102,241,.3); border-radius: 10px;
+    padding: 11px 16px; margin-bottom: 8px;
+    display: flex; align-items: center; gap: 10px; font-size: 13.5px; color: #c7d2fe;
+  }
+
+  /* ══════════════════════════════════════════
+     VIEW: STATUS INTERNO
+  ══════════════════════════════════════════ */
+  .alert-bar {
+    background: linear-gradient(90deg, #7f1d1d, #991b1b);
+    padding: 10px 32px; display: flex; align-items: center; gap: 12px;
+    font-size: 13px; font-weight: 600; flex-wrap: wrap;
+  }
+  .alert-items { display: flex; gap: 10px; flex-wrap: wrap; }
+  .alert-item { background: rgba(255,255,255,0.15); padding: 3px 10px; border-radius: 20px; font-size: 11px; }
+
+  .summary-panel { background: #1e293b; border-radius: 14px; border: 1px solid #334155; padding: 20px 24px; margin-bottom: 20px; }
+  .summary-title { font-size: 13px; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 16px; }
+  .summary-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+  .sum-kpi { text-align: center; }
+  .sum-num { font-size: 28px; font-weight: 800; }
+  .sum-label { font-size: 11px; color: #64748b; margin-top: 3px; }
+  .n-red { color: #ef4444; } .n-yellow { color: #f59e0b; } .n-green { color: #22c55e; }
+  .n-blue { color: #6366f1; } .n-cyan { color: #0891b2; }
+
+  .meeting-toggle { display: flex; gap: 8px; align-items: center; }
+  .toggle-btn {
+    padding: 7px 16px; border-radius: 20px; font-size: 12px; font-weight: 700;
+    cursor: pointer; border: 2px solid #334155; background: transparent; color: #94a3b8;
+    transition: all 0.2s;
+  }
+  .toggle-btn.active { background: #6366f1; border-color: #6366f1; color: white; }
+  .toggle-btn.active.thu { background: #0891b2; border-color: #0891b2; }
+
+  .new-section { background: #1e1b4b; border: 1px solid #3730a3; border-radius: 14px; padding: 18px 22px; margin-bottom: 20px; }
+  .new-section-title { font-size: 13px; font-weight: 700; color: #a5b4fc; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 12px; }
+
+  .expand-bar { display: flex; justify-content: flex-end; gap: 8px; margin-bottom: 12px; }
+  .exp-btn { padding: 5px 14px; border-radius: 20px; font-size: 11px; font-weight: 600; cursor: pointer; border: 1px solid #334155; background: #1e293b; color: #94a3b8; transition: all 0.2s; }
+  .exp-btn:hover { border-color: #6366f1; color: #a5b4fc; }
+
+  .accounts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 20px; }
+  .account-card {
+    background: #1e293b; border-radius: 14px; border: 1px solid #334155;
+    overflow: hidden; transition: all 0.2s; cursor: pointer;
+  }
+  .account-card:hover { border-color: #6366f1; transform: translateY(-1px); }
+  .account-card.expanded { border-color: #6366f1; }
+
+  .account-header { padding: 14px 18px; display: flex; justify-content: space-between; align-items: center; }
+  .account-name { font-size: 14px; font-weight: 800; display: flex; align-items: center; gap: 8px; }
+  .account-sub { font-size: 11px; color: #64748b; margin-top: 2px; }
+  .account-stats { display: flex; gap: 8px; align-items: center; }
+  .stat-pill { font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 10px; }
+  .pill-r { background: #450a0a; color: #fca5a5; }
+  .pill-y { background: #431407; color: #fdba74; }
+  .pill-g { background: #052e16; color: #86efac; }
+  .pill-n { background: #1e293b; color: #64748b; border: 1px solid #334155; }
+
+  .account-body { padding: 0 18px 16px; display: none; }
+  .account-body.open { display: block; }
+
+  .status-item {
+    display: flex; align-items: flex-start; gap: 8px;
+    padding: 8px 10px; border-radius: 8px; margin-bottom: 6px;
+    border: 1px solid #1e293b; background: #0f172a;
+    transition: all 0.2s; cursor: pointer;
+  }
+  .status-item:hover { border-color: #334155; }
+  .status-item.done { opacity: 0.4; }
+  .status-item.done .si-text { text-decoration: line-through; }
+  .si-chk {
+    width: 16px; height: 16px; border: 2px solid #475569; border-radius: 4px;
+    flex-shrink: 0; margin-top: 1px; display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s;
+  }
+  .si-chk.on { background: #22c55e; border-color: #22c55e; }
+  .si-chk.on::after { content: '✓'; color: #0f172a; font-size: 9px; font-weight: 900; }
+  .si-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; margin-top: 4px; }
+  .d-r { background: #ef4444; } .d-y { background: #f59e0b; } .d-g { background: #22c55e; } .d-b { background: #3b82f6; }
+  .si-text { font-size: 12px; line-height: 1.4; color: #cbd5e1; flex: 1; }
+  .si-owner { font-size: 10px; color: #475569; margin-top: 2px; }
+  .si-tag { font-size: 10px; font-weight: 700; padding: 1px 7px; border-radius: 8px; white-space: nowrap; flex-shrink: 0; color: #94a3b8; background: #1e293b; border: 1px solid #334155; }
+  .si-new { font-size: 10px; font-weight: 700; padding: 1px 7px; border-radius: 8px; background: #312e81; color: #a5b4fc; white-space: nowrap; flex-shrink: 0; }
+  .section-divider { font-size: 10px; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 0.8px; margin: 10px 0 6px; padding-left: 2px; }
+
+  .color-ucsp { color: #60a5fa; }
+  .color-wv { color: #34d399; }
+  .color-upsjb { color: #fb923c; }
+  .color-vp { color: #a78bfa; }
+  .color-smart { color: #94a3b8; }
+  .color-ica { color: #fbbf24; }
+
+  /* ══════════════════════════════════════════
+     VIEW: CUENTAS (proyectos por cuenta)
+  ══════════════════════════════════════════ */
+  .cuentas-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+
+  .cuenta-card {
+    background: #1e293b; border-radius: 16px; border: 1px solid #334155;
+    overflow: hidden;
+  }
+  .cuenta-header {
+    padding: 18px 22px 14px; border-bottom: 1px solid #1e293b;
+  }
+  .cuenta-title { font-size: 16px; font-weight: 900; display: flex; align-items: center; gap: 10px; }
+  .cuenta-sub { font-size: 11px; color: #64748b; margin-top: 4px; }
+  .proyecto-list { padding: 14px 22px; }
+  .proyecto-item {
+    padding: 10px 14px; border-radius: 10px; margin-bottom: 8px;
+    border: 1px solid #334155; background: #0f172a;
+    cursor: pointer; transition: all .15s;
+  }
+  .proyecto-item:hover { border-color: #475569; }
+  .proyecto-item.open { border-color: #6366f1; }
+  .proyecto-header { display: flex; align-items: center; justify-content: space-between; }
+  .proyecto-name { font-size: 13px; font-weight: 700; color: #e2e8f0; display: flex; align-items: center; gap: 8px; }
+  .proyecto-owner { font-size: 10px; color: #475569; margin-top: 2px; }
+  .proyecto-stats { display: flex; gap: 6px; }
+  .ps-r { font-size: 10px; font-weight: 700; background: #450a0a; color: #fca5a5; padding: 2px 7px; border-radius: 8px; }
+  .ps-y { font-size: 10px; font-weight: 700; background: #431407; color: #fdba74; padding: 2px 7px; border-radius: 8px; }
+  .ps-g { font-size: 10px; font-weight: 700; background: #052e16; color: #86efac; padding: 2px 7px; border-radius: 8px; }
+  .ps-b { font-size: 10px; font-weight: 700; background: #1e3a5f; color: #93c5fd; padding: 2px 7px; border-radius: 8px; }
+  .proyecto-tasks { padding-top: 10px; display: none; }
+  .proyecto-tasks.open { display: block; }
+  .pt-item {
+    display: flex; align-items: flex-start; gap: 8px;
+    padding: 6px 8px; border-radius: 6px; margin-bottom: 4px;
+    font-size: 11.5px; color: #cbd5e1; line-height: 1.4; cursor: pointer;
+    transition: background .12s;
+  }
+  .pt-item:hover { background: #1e293b; }
+  .pt-item.done { opacity: .4; }
+  .pt-item.done .pt-text { text-decoration: line-through; }
+  .pt-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; margin-top: 4px; }
+  .pt-chk { width: 14px; height: 14px; border: 2px solid #475569; border-radius: 3px; flex-shrink: 0; margin-top: 1px; display: flex; align-items: center; justify-content: center; transition: all .15s; }
+  .pt-item.done .pt-chk { background: #22c55e; border-color: #22c55e; }
+  .pt-item.done .pt-chk::after { content: '✓'; color: #0f172a; font-size: 8px; font-weight: 900; }
+  .pt-text { flex: 1; }
+  .pt-owner { font-size: 10px; color: #475569; }
+
+  /* cuenta color accents */
+  .c-ucsp .cuenta-title { color: #60a5fa; }
+  .c-ucsp .proyecto-item.open { border-color: #3b82f6; }
+  .c-wv .cuenta-title { color: #34d399; }
+  .c-wv .proyecto-item.open { border-color: #10b981; }
+  .c-upsjb .cuenta-title { color: #fb923c; }
+  .c-vp .cuenta-title { color: #a78bfa; }
+
+  /* pausa / en pausa tag */
+  .badge-pausa { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 8px; background: #431407; color: #fdba74; }
+  .badge-activo { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 8px; background: #052e16; color: #86efac; }
+
+  /* ── FOOTER ── */
+  footer { text-align: center; padding: 20px; font-size: 11px; color: #475569; border-top: 1px solid #1e293b; margin-top: 20px; }
+</style>
+</head>
+<body>
+
+<!-- TOP NAV -->
+<nav class="top-nav">
+  <div class="nav-brand">🔵 BLUE NOSE</div>
+  <div class="nav-tab tab-brief active" onclick="switchView('brief', this)">☀️ Daily Brief</div>
+  <div class="nav-tab tab-status" onclick="switchView('status', this)">📊 Status Interno</div>
+  <div class="nav-tab tab-cuentas" onclick="switchView('cuentas', this)">🏢 Cuentas & Proyectos</div>
+  <div class="nav-right">
+    <div id="nav-date"></div>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════════════
+     VIEW 1: DAILY BRIEF
+══════════════════════════════════════════════════ -->
+<div id="view-brief" class="view active">
+
+  <header>
+    <div class="header-left">
+      <h1>☀️ Daily Brief</h1>
+      <p>Ángelito Chanamé — Blue Nose · Content & Project Manager</p>
+    </div>
+    <div id="fecha-badge" style="background:#6366f1;color:#fff;padding:7px 18px;border-radius:20px;font-size:13px;font-weight:700;">Cargando...</div>
+  </header>
+
+  <div class="brief-container">
+
+    <div class="counts">
+      <div class="count-pill cp-r">🔴 <span id="cnt-r">0</span> urgentes</div>
+      <div class="count-pill cp-y">🟡 <span id="cnt-y">0</span> esta semana</div>
+      <div class="count-pill cp-g">✅ <span id="cnt-done">0</span> completadas</div>
+    </div>
+
+    <div class="filters">
+      <button class="filter-btn active" onclick="filter('all',this)">Todos</button>
+      <button class="filter-btn" onclick="filter('WV',this)">🌍 World Vision</button>
+      <button class="filter-btn" onclick="filter('UPSJB',this)">🎓 UPSJB</button>
+      <button class="filter-btn" onclick="filter('UCSP',this)">🏛 UCSP</button>
+      <button class="filter-btn" onclick="filter('VP',this)">💳 VirtualPos</button>
+      <button class="filter-btn" onclick="filter('Smartimper',this)">⚡ Smartimper</button>
+      <button class="filter-btn" onclick="filter('yo',this)">👤 Yo (Ángelito)</button>
+    </div>
+
+    <div class="brief-section" id="sec-meetings">
+      <div class="section-title s-blue">📅 Reuniones de hoy</div>
+      <div id="meetings-container"></div>
+    </div>
+
+    <div class="brief-section">
+      <div class="section-title s-red">🔴 Urgente — Hoy mismo</div>
+      <div id="tasks-urgente"></div>
+    </div>
+
+    <div class="brief-section">
+      <div class="section-title s-yel">🟡 Esta semana</div>
+      <div id="tasks-semana"></div>
+    </div>
+
+    <div class="brief-section">
+      <div class="section-title s-green">🟢 Próximo mes</div>
+      <div id="tasks-mes"></div>
+    </div>
+
+  </div>
+  <footer>Actualizado: 19.03.2026 — Status interno jueves</footer>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     VIEW 2: STATUS INTERNO
+══════════════════════════════════════════════════ -->
+<div id="view-status" class="view">
+
+  <header>
+    <div class="header-left">
+      <h1>📊 Status Interno — Blue Nose</h1>
+      <p>Ángelito Chanamé · Content & Project Manager</p>
+    </div>
+    <div class="meeting-toggle">
+      <button class="toggle-btn active" onclick="setDay('lunes', this)">🗓 Lunes</button>
+      <button class="toggle-btn" onclick="setDay('jueves', this)">🗓 Jueves</button>
+      <div id="day-label" style="font-size:12px;color:#94a3b8;margin-left:8px;">Actualizado: 19.03.26</div>
+    </div>
+  </header>
+
+  <div class="alert-bar">
+    <span>🚨 ALERTAS HOY:</span>
+    <div class="alert-items">
+      <span class="alert-item">⏰ Reunión WV Perú — hoy 3pm</span>
+      <span class="alert-item">📅 Contrato WV RD — 15 días (31.03)</span>
+      <span class="alert-item">🔨 VP Chile: 2 tickets cerrando HOY</span>
+      <span class="alert-item">🎯 Reunión UPSJB — hoy 11am</span>
+      <span class="alert-item">🟢 WV ES: renovado 1 año más</span>
+      <span class="alert-item">🤖 UCSP: fijar reunión equipo operativo César Puma</span>
+      <span class="alert-item">⚠️ UPSJB ventas: 95% leads sin respuesta</span>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="summary-panel">
+      <div class="summary-title">📈 Resumen de la semana</div>
+      <div class="summary-grid">
+        <div class="sum-kpi"><div class="sum-num n-red">6</div><div class="sum-label">🔴 Urgentes hoy</div></div>
+        <div class="sum-kpi"><div class="sum-num n-yellow">24</div><div class="sum-label">🟡 Esta semana</div></div>
+        <div class="sum-kpi"><div class="sum-num n-green">14</div><div class="sum-label">✅ Completadas</div></div>
+        <div class="sum-kpi"><div class="sum-num n-blue">6</div><div class="sum-label">🏢 Cuentas activas</div></div>
+        <div class="sum-kpi"><div class="sum-num n-cyan">5</div><div class="sum-label">🆕 Nuevos puntos</div></div>
+      </div>
+    </div>
+
+    <!-- Nuevos puntos del status -->
+    <div class="new-section">
+      <div class="new-section-title">🆕 Nuevos puntos del status — 19.03.26</div>
+
+      <div class="status-item" onclick="toggleSI(this)">
+        <div class="si-chk"></div><div class="si-dot d-r"></div>
+        <div style="flex:1"><div class="si-text">UCSP Agente IA: Enrique tuvo reunión con César Puma — <strong>siguiente paso: reunión con equipo operativo</strong> (Ángela González, Rudy Hasawi, Juan Daniel Rodríguez). Proyecto puede crecer (matrícula, tienda virtual, facturación)</div><div class="si-owner">Owner: Enrique</div></div>
+        <span class="si-new">19.03</span>
+      </div>
+      <div class="status-item" onclick="toggleSI(this)">
+        <div class="si-chk"></div><div class="si-dot d-r"></div>
+        <div style="flex:1"><div class="si-text">UCSP Mesa de Ayuda: César Puma enviará brief para propuesta (IA + WhatsApp sobre Zoho) — prioridad para él · Plazo: abril/mayo · <strong>Casi seguro</strong></div><div class="si-owner">Owner: Enrique</div></div>
+        <span class="si-new">19.03</span>
+      </div>
+      <div class="status-item" onclick="toggleSI(this)">
+        <div class="si-chk"></div><div class="si-dot d-r"></div>
+        <div style="flex:1"><div class="si-text">UPSJB Ventas: de 11,000 leads contactados vía WhatsApp — 5,300 abrieron, 325 respondieron, <strong>95% sin respuesta del equipo de ventas</strong> · Preparar análisis para próxima reunión con Pablo</div><div class="si-owner">Owner: Ángelito → Pablo</div></div>
+        <span class="si-new">19.03</span>
+      </div>
+      <div class="status-item" onclick="toggleSI(this)">
+        <div class="si-chk"></div><div class="si-dot d-y"></div>
+        <div style="flex:1"><div class="si-text">UCSP Coaching SGA: Enrique actualiza propuesta (equipo creció a 5-6 personas, dejaron Dzine Lab) · Seguimiento alumni con Efraín Centeno (Rector Académico)</div><div class="si-owner">Owner: Enrique</div></div>
+        <span class="si-new">19.03</span>
+      </div>
+      <div class="status-item" onclick="toggleSI(this)">
+        <div class="si-chk"></div><div class="si-dot d-y"></div>
+        <div style="flex:1"><div class="si-text">Ángelito: crear checklist unificado con IA de todos los puntos de reuniones UCSP (1ra → 5ta) para blindar entregables</div><div class="si-owner">Owner: Ángelito — usar Claude + transcripciones</div></div>
+        <span class="si-new">19.03</span>
+      </div>
+      <div class="status-item" onclick="toggleSI(this)">
+        <div class="si-chk"></div><div class="si-dot d-r"></div>
+        <div style="flex:1"><div class="si-text">WV HND: reunión con Luis <strong>cancelada</strong> — reprogramada al lunes · Push a Luis para campañas Wash (Día del Agua)</div><div class="si-owner">Owner: Ángelito</div></div>
+        <span class="si-new">19.03</span>
+      </div>
+      <div class="status-item" onclick="toggleSI(this)">
+        <div class="si-chk"></div><div class="si-dot d-y"></div>
+        <div style="flex:1"><div class="si-text">WV EC: sesión inicial de soporte realizada — múltiples tickets creados (HubSpot + integraciones + nuevas propuestas) · Cristian P + Marcos organizando por prioridad</div><div class="si-owner">Owner: Cristian P + Pablo + Marcos</div></div>
+        <span class="si-new">19.03</span>
+      </div>
+    </div>
+
+    <div class="expand-bar">
+      <button class="exp-btn" onclick="expandAll()">↓ Expandir todo</button>
+      <button class="exp-btn" onclick="collapseAll()">↑ Contraer todo</button>
+    </div>
+
+    <!-- ACCOUNTS GRID -->
+    <div class="accounts-grid">
+
+      <!-- UCSP -->
+      <div class="account-card" id="card-ucsp">
+        <div class="account-header" onclick="toggleCard('ucsp')">
+          <div>
+            <div class="account-name color-ucsp">🏛 UCSP</div>
+            <div class="account-sub">Universidad Católica San Pablo · A cargo: Edgardo</div>
+          </div>
+          <div class="account-stats">
+            <span class="stat-pill pill-r">2 urg</span>
+            <span class="stat-pill pill-y">5 prog</span>
+            <span class="stat-pill pill-g">3 ✅</span>
+          </div>
+        </div>
+        <div class="account-body open" id="body-ucsp">
+          <div class="section-divider">🔴 Urgente</div>
+          <div class="status-item" onclick="toggleSI(this)">
+            <div class="si-chk"></div><div class="si-dot d-r"></div>
+            <div style="flex:1"><div class="si-text">Enrique: responder a César Puma para fijar reunión con equipo operativo (Ángela González, Rudy Hasawi, Juan Daniel Rodríguez) — resolver preguntas del correo de Pablo | Agente IA</div><div class="si-owner">Owner: Enrique</div></div>
+            <span class="si-new">19.03</span>
+          </div>
+          <div class="status-item" onclick="toggleSI(this)">
+            <div class="si-chk"></div><div class="si-dot d-r"></div>
+            <div style="flex:1"><div class="si-text">Ángelito: mover presentación SpotLight (PPT de Ani) al canal de San Pablo — coordinar por hilo interno antes de presentar al cliente</div><div class="si-owner">Owner: Ángelito</div></div>
+            <span class="si-new">19.03</span>
+          </div>
+          <div class="section-divider">🟡 Esta semana</div>
+          <div class="status-item" onclick="toggleSI(this)">
+            <div class="si-chk"></div><div class="si-dot d-y"></div>
+            <div style="flex:1"><div class="si-text">Enrique: esperar brief de César Puma para Mesa de Ayuda (IA + WhatsApp sobre Zoho) — plazo: abril/mayo</div><div class="si-owner">Owner: Enrique</div></div>
+            <span class="si-new">19.03</span>
+          </div>
+          <div class="status-item" onclick="toggleSI(this)">
+            <div class="si-chk"></div><div class="si-dot d-y"></div>
+            <div style="flex:1"><div class="si-text">Enrique: actualizar propuesta coaching SGA (5-6 personas) + seguimiento alumni con Efraín Centeno (Rector Académico)</div><div class="si-owner">Owner: Enrique</div></div>
+            <span class="si-new">19.03</span>
+          </div>
+          <div class="status-item" onclick="toggleSI(this)">
+            <div class="si-chk"></div><div class="si-dot d-y"></div>
+            <div style="flex:1"><div class="si-text">Enrique: coordinar entrevista con Ángelo sobre Centro de Idiomas + esperar a Renzo sobre presupuesto investigaciones adicionales</div><div class="si-owner">Owner: Enrique</div></div>
+          </div>
+          <div class="status-item" onclick="toggleSI(this)">
+            <div class="si-chk"></div><div class="si-dot d-y"></div>
+            <div style="flex:1"><div class="si-text">CENDES: María Daniela confirmó revisión en proceso (13.03) — cotización previa anulada. Esperar aprobación formal</div><div class="si-owner">Owner: Ángelito</div></div>
+          </div>
+          <div class="section-divider">✅ Completado</div>
+          <div class="status-item done" onclick="toggleSI(this)">
+            <div class="si-chk on"></div><div class="si-dot d-g"></div>
+            <div style="flex:1"><div class="si-text">Alonso respondió — derivó preguntas a César Puma</div></div>
+          </div>
+          <div class="status-item done" onclick="toggleSI(this)">
+            <div class="si-chk on"></div><div class="si-dot d-g"></div>
+            <div style="flex:1"><div class="si-text">Ani: correo de seguimiento enviado a Santiago (Experiencia Estudiante)</div></div>
+          </div>
+          <div class="status-item done" onclick="toggleSI(this)">
+            <div class="si-chk on"></div><div class="si-dot d-g"></div>
+            <div style="flex:1"><div class="si-text">Enrique: presupuesto de investigaciones adicionales enviado a Renzo</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- World Vision -->
+      <div class="account-card" id="card-wv">
+        <div class="account-header" onclick="toggleCard('wv')">
+          <div>
+            <div class="account-name color-wv">🌍 World Vision</div>
+            <div class="account-sub">RD · HND · ES · EC · PE · CL · BR</div>
+          </div>
+          <div class="account-stats">
+            <span class="stat-pill pill-r">3 urg</span>
+            <span class="stat-pill pill-y">8 prog</span>
+            <span class="stat-pill pill-g">3 ✅</span>
+          </div>
+        </div>
+        <div class="account-body open" id="body-wv">
+          <div class="section-divider">🔴 Urgente</div>
+          <div class="status-item" onclick="toggleSI(this)">
+            <div class="si-chk"></div><div class="si-dot d-r"></div>
+            <div style="flex:1"><div class="si-text">Reunión urgente WV Perú — HOY 3pm | limpieza de listas + consulta web</div><div class="si-owner">Owner: Ángelito + Cristian P</div></div>
+            <span class="si-tag">PE</span>
+          </div>
+          <div class="status-item" onclick="toggleSI(this)">
+            <div class="si-chk"></div><div class="si-dot d-r"></div>
+            <div style="flex:1"><div class="si-text">Sofía: subir base de Iglesias — Esther confirmó que Jorge y ella tienen el trabajo listo</div><div class="si-owner">Owner: Sofía</div></div>
+            <span class="si-tag">ES</span>
+          </div>
+          <div class="status-item" onclick="toggleSI(this)">
+            <div class="si-chk"></div><div class="si-dot d-r"></div>
+            <div style="flex:1"><div class="si-text">Luis: finalizar piezas Wash HOY/mañana (evento del domingo) + reunión con Luis cancelada — reprogramada al lunes</div><div class="si-owner">Owner: Luis · Seguimiento: Ángelito</div></div>
+            <span class="si-tag">HND</span><span class="si-new">19.03</span>
+          </div>
+          <div class="section-divider">🟡 Esta semana</div>
+          <div class="status-item" onclick="toggleSI(this)">
+            <div class="si-chk"></div><div class="si-dot d-y"></div>
+            <div style="flex:1"><div class="si-text">WV EC: sesión inicial de soporte realizada — múltiples tickets (HubSpot + integraciones). Cristian P + Marcos organizando por prioridad</div><div class="si-owner">Owner: Cristian P + Pablo + Marcos</div></div>
+            <span class="si-tag">EC</span><span class="si-new">19.03</span>
+          </div>
+          <div class="status-item" onclick="toggleSI(this)">
+            <div class="si-chk"></div><div class="si-dot d-y"></div>
+            <div style="flex:1"><div class="si-text">SIMMA: Sofía + Jorge → cruzar base SIMMA vs HubSpot (partners sin contacto/pledge, emails provisionales, campos faltantes) — agendar reunión con Esther</div><div class="si-owner">Owner: Sofía + Jorge</div></div>
+            <span class="si-tag">ES</span><span class="si-new">18.03</span>
+          </div>
+          <div class="status-item" onclick="toggleSI(this)">
+            <div class="si-chk"></div><div class="si-dot d-y"></div>
+            <div style="flex:1"><div class="si-text">Pablo: gestionar permisos web para Luis + incluir devs en correos Express Pago</div><div class="si-owner">Owner: Pablo</div></div>
+            <span class="si-tag">HND</span><span class="si-new">17.03</span>
+          </div>
+          <div class="status-item" onclick="toggleSI(this)">
+            <div class="si-chk"></div><div class="si-dot d-r"></div>
+            <div style="flex:1"><div class="si-text">Enrique: buscar espacio con Argenis antes del 31.03 — único contacto que queda en RD</div><div class="si-owner">Owner: Enrique + Pablo</div></div>
+            <span class="si-tag">RD</span>
+          </div>
+          <div class="section-divider">📅 Reuniones esta semana</div>
+          <div class="status-item" onclick="toggleSI(this)">
+            <div class="si-chk"></div><div class="si-dot d-b"></div>
+            <div style="flex:1"><div class="si-text"><strong>MIÉRCOLES</strong> — Revisión piezas y WF con Luis y Pablo (adelantada de jueves)</div></div>
+            <span class="si-tag">HND</span>
+          </div>
+          <div class="status-item" onclick="toggleSI(this)">
+            <div class="si-chk"></div><div class="si-dot d-b"></div>
+            <div style="flex:1"><div class="si-text"><strong>JUEVES</strong> — Reunión con Express Pago (pasarela de pagos)</div></div>
+            <span class="si-tag">HND</span>
+          </div>
+          <div class="section-divider">✅ Completado</div>
+          <div class="status-item done" onclick="toggleSI(this)">
+            <div class="si-chk on"></div><div class="si-dot d-g"></div>
+            <div style="flex:1"><div class="si-text">WV ES: contrato renovado por un año más ⭐</div></div>
+          </div>
+          <div class="status-item done" onclick="toggleSI(this)">
+            <div class="si-chk on"></div><div class="si-dot d-g"></div>
+            <div style="flex:1"><div class="si-text">WV HND: piezas + landings entregadas ✅</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- UPSJB -->
+      <div class="account-card" id="card-upsjb">
+        <div class="account-header" onclick="toggleCard('upsjb')">
+          <div>
+            <div class="account-name color-upsjb">🎓 UPSJB</div>
+            <div class="account-sub">Universidad San Juan Bautista · Proceso 2026-2</div>
+          </div>
+          <div class="account-stats">
+            <span class="stat-pill pill-r">3 urg</span>
+            <span class="stat-pill pill-y">4 prog</span>
+            <span class="stat-pill pill-g">4 ✅</span>
+          </div>
+        </div>
+        <div class="account-body open" id="body-upsjb">
+          <div class="section-divider">🔴 Urgente</div>
+          <div class="status-item" onclick="toggleSI(this)">
+            <div class="si-chk"></div><div class="si-dot d-r"></div>
+            <div style="flex:1"><div class="si-text">Ángelito: analizar gestión ventas — 11K leads → 5,300 abrieron → 325 respondieron → <strong>95% sin respuesta</strong>. Preparar punto para próxima reunión</div><div class="si-owner">Owner: Ángelito → Pablo</div></div>
+            <span class="si-new">19.03</span>
+          </div>
+          <div class="status-item" onclick="toggleSI(this)">
+            <div class="si-chk"></div><div class="si-dot d-r"></div>
+            <div style="flex:1"><div class="si-text">Blue Nose: asignar equipo exclusivo para 4,800 leads sin gestión (A Distancia) · SLA ≤5 min</div><div class="si-owner">Owner: Enrique/Pablo</div></div>
+            <span class="si-new">17.03</span>
+          </div>
+          <div class="status-item" onclick="toggleSI(this)">
+            <div class="si-chk"></div><div class="si-dot d-r"></div>
+            <div style="flex:1"><div class="si-text">Estuardo: entregar Buyer Persona para padres esta semana + coordinar QR en charlas</div><div class="si-owner">Owner: Estuardo</div></div>
+            <span class="si-new">17.03</span>
+          </div>
+          <div class="section-divider">🟡 Esta semana</div>
+          <div class="status-item" onclick="toggleSI(this)">
+            <div class="si-chk"></div><div class="si-dot d-y"></div>
+            <div style="flex:1"><div class="si-text">Marcos: crear propiedad HubSpot para segmentar lista Blue Nose (5,600 contactos) en 3 grupos · Permisos ya dados ✅</div><div class="si-owner">Owner: Marcos</div></div>
+            <span class="si-new">19.03</span>
+          </div>
+          <div class="status-item" onclick="toggleSI(this)">
+            <div class="si-chk"></div><div class="si-dot d-y"></div>
+            <div style="flex:1"><div class="si-text">Equipo Blue Nose: revisar puntos amarillos (oportunidades) y rojos (riesgos) en 3 documentos de Enrique — definir acciones correctivas</div><div class="si-owner">Owner: Ángelito + Enrique</div></div>
+            <span class="si-new">18.03</span>
+          </div>
+          <div class="section-divider">✅ Completado</div>
+          <div class="status-item done" onclick="toggleSI(this)">
+            <div class="si-chk on"></div><div class="si-dot d-g"></div>
+            <div style="flex:1"><div class="si-text">Enrique: 3 documentos A Distancia enviados a UPSJB ⭐</div></div>
+          </div>
+          <div class="status-item done" onclick="toggleSI(this)">
+            <div class="si-chk on"></div><div class="si-dot d-g"></div>
+            <div style="flex:1"><div class="si-text">Pablo: permisos dados a Marcos para envío a lista de 5,600 contactos ✅</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- VirtualPos -->
+      <div class="account-card" id="card-vp">
+        <div class="account-header" onclick="toggleCard('vp')">
+          <div>
+            <div class="account-name color-vp">💳 VirtualPos Chile</div>
+            <div class="account-sub">Soporte Técnico · A cargo: Cristian P</div>
+          </div>
+          <div class="account-stats">
+            <span class="stat-pill pill-r">2 hoy</span>
+            <span class="stat-pill pill-y">4 prog</span>
+            <span class="stat-pill pill-g">3 ✅</span>
+          </div>
+        </div>
+        <div class="account-body" id="body-vp">
+          <div class="section-divider">🔴 Cerrando HOY</div>
+          <div class="status-item" onclick="toggleSI(this)">
+            <div class="si-chk"></div><div class="si-dot d-r"></div>
+            <div style="flex:1"><div class="si-text">Cristian P: cerrar ticket donaciones únicas (ajuste adicional en integración)</div><div class="si-owner">Owner: Cristian P</div></div>
+          </div>
+          <div class="status-item" onclick="toggleSI(this)">
+            <div class="si-chk"></div><div class="si-dot d-r"></div>
+            <div style="flex:1"><div class="si-text">Cristian P: cerrar ticket limpieza negocios duplicados F2F (750 contactos — automatización ejecutada)</div><div class="si-owner">Owner: Cristian P</div></div>
+          </div>
+          <div class="section-divider">🟡 Esta semana</div>
+          <div class="status-item" onclick="toggleSI(this)">
+            <div class="si-chk"></div><div class="si-dot d-y"></div>
+            <div style="flex:1"><div class="si-text">Cristian P: instalar MCPs de HubSpot, Cloudpod y GitHub en Antigravity — eliminar skills problemáticos</div><div class="si-owner">Owner: Cristian P</div></div>
+            <span class="si-new">19.03</span>
+          </div>
+          <div class="status-item" onclick="toggleSI(this)">
+            <div class="si-chk"></div><div class="si-dot d-y"></div>
+            <div style="flex:1"><div class="si-text">WV CL: Diana + Ornella revisar 47 contactos con negocios duplicados + regularizar métodos de pago</div><div class="si-owner">Owner: Diana + Ornella</div></div>
+          </div>
+          <div class="status-item" onclick="toggleSI(this)">
+            <div class="si-chk"></div><div class="si-dot d-y"></div>
+            <div style="flex:1"><div class="si-text">WV CL: Ornella finalizar facturación manual F2F (enero y febrero) — avisar a Pablo para coordinar automatización</div><div class="si-owner">Owner: Ornella</div></div>
+          </div>
+          <div class="section-divider">✅ Completado</div>
+          <div class="status-item done" onclick="toggleSI(this)">
+            <div class="si-chk on"></div><div class="si-dot d-g"></div>
+            <div style="flex:1"><div class="si-text">Nóminas Feb Multibanca y Transdata subidas · Importación WV CL completada</div></div>
+          </div>
+          <div class="status-item done" onclick="toggleSI(this)">
+            <div class="si-chk on"></div><div class="si-dot d-g"></div>
+            <div style="flex:1"><div class="si-text">47 contactos con negocios duplicados identificados — workflow corregido ✅</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Smartimper -->
+      <div class="account-card" id="card-smart" style="border-color:#f59e0b;">
+        <div class="account-header" onclick="toggleCard('smart')">
+          <div>
+            <div class="account-name color-smart">⚡ Smartimper</div>
+            <div class="account-sub">⚠️ Servicio pausado · Esperando BDR del cliente</div>
+          </div>
+          <div class="account-stats">
+            <span class="stat-pill pill-y">EN PAUSA</span>
+          </div>
+        </div>
+        <div class="account-body" id="body-smart">
+          <div class="status-item" onclick="toggleSI(this)">
+            <div class="si-chk"></div><div class="si-dot d-y"></div>
+            <div style="flex:1"><div class="si-text">Ángelito: escribirle al cliente cada 2-3 semanas para preguntar cómo va con la incorporación del BDR</div><div class="si-owner">Próximo follow-up: ~30.03.26</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Caja Ica -->
+      <div class="account-card" id="card-ica">
+        <div class="account-header" onclick="toggleCard('ica')">
+          <div>
+            <div class="account-name color-ica">🏦 Caja Ica</div>
+            <div class="account-sub">Sin novedad · Esperando confirmación de inicio</div>
+          </div>
+          <div class="account-stats">
+            <span class="stat-pill pill-n">EN ESPERA</span>
+          </div>
+        </div>
+        <div class="account-body" id="body-ica">
+          <div class="status-item">
+            <div class="si-dot d-y" style="flex-shrink:0;margin-top:4px;"></div>
+            <div style="flex:1"><div class="si-text">Enrique: avisar si hay alguna novedad para confirmar inicio del proyecto</div><div class="si-owner">Owner: Enrique</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end accounts-grid -->
+  </div><!-- end container -->
+  <footer>Status Interno — Actualizado: 19.03.2026 · Lunes y Jueves · Blue Nose</footer>
+</div><!-- end view-status -->
+
+<!-- ══════════════════════════════════════════════════
+     VIEW 3: CUENTAS & PROYECTOS
+══════════════════════════════════════════════════ -->
+<div id="view-cuentas" class="view">
+
+  <header>
+    <div class="header-left">
+      <h1>🏢 Cuentas & Proyectos</h1>
+      <p>Ángelito Chanamé — Blue Nose · Tareas organizadas por proyecto</p>
+    </div>
+    <div id="cuentas-date" style="font-size:12px;color:#94a3b8;"></div>
+  </header>
+
+  <div class="container">
+    <div class="cuentas-grid">
+
+      <!-- ── UCSP ── -->
+      <div class="cuenta-card c-ucsp">
+        <div class="cuenta-header">
+          <div class="cuenta-title">🏛 UCSP <span class="badge-activo">ACTIVO</span></div>
+          <div class="cuenta-sub">Universidad Católica San Pablo · A cargo: Edgardo · 8 proyectos</div>
+        </div>
+        <div class="proyecto-list">
+
+          <div class="proyecto-item" onclick="toggleProyecto(this)">
+            <div class="proyecto-header">
+              <div>
+                <div class="proyecto-name">🤖 Agente IA (Mi propósito)</div>
+                <div class="proyecto-owner">A cargo: Edgardo · Contacto cliente: César Puma / Alonso</div>
+              </div>
+              <div class="proyecto-stats">
+                <span class="ps-r">2 urg</span><span class="ps-y">2 prog</span>
+              </div>
+            </div>
+            <div class="proyecto-tasks">
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-r"></div><div class="pt-text">Enrique: responder a César Puma para fijar reunión con equipo operativo (Ángela González, Rudy Hasawi, Juan Daniel Rodríguez) — resolver preguntas del correo de Pablo <span class="pt-owner">· Owner: Enrique · 🆕 19.03</span></div></div>
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-r"></div><div class="pt-text">Ángelito: mover presentación SpotLight de Ani al canal de San Pablo — coordinar reunión interna antes de presentar al cliente <span class="pt-owner">· Owner: Ángelito · 🆕 19.03</span></div></div>
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-y"></div><div class="pt-text">Ángelito: hacer seguimiento a reunión con equipo operativo UCSP — anotaciones de Enrique sobre matrícula, tienda virtual, facturación <span class="pt-owner">· Owner: Ángelito · 🆕 19.03</span></div></div>
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-y"></div><div class="pt-text">Ángelito: crear checklist unificado con IA de todos los puntos de reuniones UCSP (1ra → 5ta) para blindar entregables <span class="pt-owner">· Owner: Ángelito — Claude + transcripciones · 🆕 19.03</span></div></div>
+            </div>
+          </div>
+
+          <div class="proyecto-item" onclick="toggleProyecto(this)">
+            <div class="proyecto-header">
+              <div>
+                <div class="proyecto-name">🛎 Mesa de Ayuda</div>
+                <div class="proyecto-owner">Propuesta IA + WhatsApp sobre Zoho · Plazo: abril/mayo</div>
+              </div>
+              <div class="proyecto-stats">
+                <span class="ps-y">1 prog</span>
+              </div>
+            </div>
+            <div class="proyecto-tasks">
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-y"></div><div class="pt-text">Enrique: esperar brief de César Puma para propuesta Mesa de Ayuda (IA + WhatsApp sobre Zoho) — plazo: abril/mayo. Pablo confirmó que no hay problema de plataforma <span class="pt-owner">· Owner: Enrique · 🆕 19.03</span></div></div>
+            </div>
+          </div>
+
+          <div class="proyecto-item" onclick="toggleProyecto(this)">
+            <div class="proyecto-header">
+              <div>
+                <div class="proyecto-name">💰 Cobranzas</div>
+                <div class="proyecto-owner">TDR pendiente · En pausa</div>
+              </div>
+              <div class="proyecto-stats">
+                <span class="ps-y">1 prog</span>
+              </div>
+            </div>
+            <div class="proyecto-tasks">
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-y"></div><div class="pt-text">Enrique: buscar espacio fortuito con Paul para preguntar por TDR Cobranzas (parar la mano por ahora) <span class="pt-owner">· Owner: Enrique</span></div></div>
+            </div>
+          </div>
+
+          <div class="proyecto-item" onclick="toggleProyecto(this)">
+            <div class="proyecto-header">
+              <div>
+                <div class="proyecto-name">📣 Comunicaciones</div>
+                <div class="proyecto-owner">HubSpot Spotlight / SpotLight PPT</div>
+              </div>
+              <div class="proyecto-stats">
+                <span class="ps-y">1 prog</span><span class="ps-g">1 ✅</span>
+              </div>
+            </div>
+            <div class="proyecto-tasks">
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-y"></div><div class="pt-text">Ángelito: mover PPT SpotLight de Ani al canal de San Pablo — coordinar por hilo interno <span class="pt-owner">· Owner: Ángelito · 🆕 19.03</span></div></div>
+              <div class="pt-item done" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-g"></div><div class="pt-text">Ani: compartió presentación de SpotLight para revisión ✅ <span class="pt-owner">· Completado</span></div></div>
+            </div>
+          </div>
+
+          <div class="proyecto-item" onclick="toggleProyecto(this)">
+            <div class="proyecto-header">
+              <div>
+                <div class="proyecto-name">🎓 Experiencia del Estudiante</div>
+                <div class="proyecto-owner">Contacto: Santiago</div>
+              </div>
+              <div class="proyecto-stats">
+                <span class="ps-g">1 ✅</span>
+              </div>
+            </div>
+            <div class="proyecto-tasks">
+              <div class="pt-item done" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-g"></div><div class="pt-text">Ani: correo de seguimiento enviado a Santiago (Experiencia al Estudiante) ✅ <span class="pt-owner">· Completado</span></div></div>
+            </div>
+          </div>
+
+          <div class="proyecto-item" onclick="toggleProyecto(this)">
+            <div class="proyecto-header">
+              <div>
+                <div class="proyecto-name">📋 Admisión Pregrado</div>
+                <div class="proyecto-owner">Coaching SGA + Alumni · Contacto: Efraín Centeno</div>
+              </div>
+              <div class="proyecto-stats">
+                <span class="ps-y">2 prog</span>
+              </div>
+            </div>
+            <div class="proyecto-tasks">
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-y"></div><div class="pt-text">Enrique: actualizar propuesta de coaching para equipo SGA (ahora 5-6 personas, dejaron Dzine Lab) y reenviar con alcance revisado <span class="pt-owner">· Owner: Enrique · 🆕 19.03</span></div></div>
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-y"></div><div class="pt-text">Enrique: hacer seguimiento a Efraín Centeno (Rector Académico) quien lidera comisión de alumni — ver si se activa el proyecto <span class="pt-owner">· Owner: Enrique · 🆕 19.03</span></div></div>
+            </div>
+          </div>
+
+          <div class="proyecto-item" onclick="toggleProyecto(this)">
+            <div class="proyecto-header">
+              <div>
+                <div class="proyecto-name">🌐 HubSpot Spotlight</div>
+                <div class="proyecto-owner">Presentación de ideas · Reunión: primer miércoles de abril</div>
+              </div>
+              <div class="proyecto-stats">
+                <span class="ps-b">Abril</span>
+              </div>
+            </div>
+            <div class="proyecto-tasks">
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-y"></div><div class="pt-text">Presentar ideas en reunión de abril (ppt ya lista) — primer miércoles de abril <span class="pt-owner">· Owner: Ángelito · Due: 01.04.26</span></div></div>
+            </div>
+          </div>
+
+          <div class="proyecto-item" onclick="toggleProyecto(this)">
+            <div class="proyecto-header">
+              <div>
+                <div class="proyecto-name">🗣 Centro de Idiomas</div>
+                <div class="proyecto-owner">Supeditado a presupuesto de Renzo</div>
+              </div>
+              <div class="proyecto-stats">
+                <span class="ps-y">2 prog</span>
+              </div>
+            </div>
+            <div class="proyecto-tasks">
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-y"></div><div class="pt-text">Enrique: coordinar entrevista con Ángelo sobre Centro de Idiomas + entrevistas con alumnos, desertores y estudiantes de otras universidades <span class="pt-owner">· Owner: Enrique</span></div></div>
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-y"></div><div class="pt-text">Enrique: esperar respuesta de Renzo sobre presupuesto adicional (cual + cuanti) — todo supeditado a esto <span class="pt-owner">· Owner: Enrique</span></div></div>
+            </div>
+          </div>
+
+          <div class="proyecto-item" onclick="toggleProyecto(this)">
+            <div class="proyecto-header">
+              <div>
+                <div class="proyecto-name">📊 Cendes</div>
+                <div class="proyecto-owner">Cotización en revisión · Contacto: María Daniela</div>
+              </div>
+              <div class="proyecto-stats">
+                <span class="ps-y">2 prog</span>
+              </div>
+            </div>
+            <div class="proyecto-tasks">
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-y"></div><div class="pt-text">María Daniela confirmó revisión en proceso (13.03) — cotización previa anulada. Esperar aprobación formal <span class="pt-owner">· Owner: Ángelito</span></div></div>
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-y"></div><div class="pt-text">Marcos: entregar Manual CENDES (pendiente a que cliente revise y apruebe cotización) <span class="pt-owner">· Owner: Marcos</span></div></div>
+            </div>
+          </div>
+
+        </div><!-- end proyecto-list ucsp -->
+      </div><!-- end cuenta-card ucsp -->
+
+      <!-- ── WORLD VISION ── -->
+      <div class="cuenta-card c-wv">
+        <div class="cuenta-header">
+          <div class="cuenta-title">🌍 World Vision <span class="badge-activo">ACTIVO</span></div>
+          <div class="cuenta-sub">7 países · Soporte técnico: Cristian P · 6 proyectos</div>
+        </div>
+        <div class="proyecto-list">
+
+          <div class="proyecto-item" onclick="toggleProyecto(this)">
+            <div class="proyecto-header">
+              <div>
+                <div class="proyecto-name">🇩🇴 República Dominicana</div>
+                <div class="proyecto-owner">Contacto: Argenis · Cierre contrato: 31.03.26</div>
+              </div>
+              <div class="proyecto-stats">
+                <span class="ps-r">1 urg</span><span class="ps-y">1 prog</span>
+              </div>
+            </div>
+            <div class="proyecto-tasks">
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-r"></div><div class="pt-text">Enrique: tener espacio con Argenis antes del 31.03 — único contacto que queda (Yomara, Juan Plata, Juan Miralcázar, Eli Kauri se van) <span class="pt-owner">· Owner: Enrique + Pablo · 🔴 URGENTE</span></div></div>
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-y"></div><div class="pt-text">Ángelito: asegurarse de que soporte con Dominicana esté activo como con Chile/Perú/Ecuador — actividad en Discord <span class="pt-owner">· Owner: Ángelito</span></div></div>
+            </div>
+          </div>
+
+          <div class="proyecto-item" onclick="toggleProyecto(this)">
+            <div class="proyecto-header">
+              <div>
+                <div class="proyecto-name">🇭🇳 Honduras</div>
+                <div class="proyecto-owner">Contacto: Luis · Express Pago en proceso</div>
+              </div>
+              <div class="proyecto-stats">
+                <span class="ps-r">2 urg</span><span class="ps-y">4 prog</span>
+              </div>
+            </div>
+            <div class="proyecto-tasks">
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-r"></div><div class="pt-text">Ángelito: hacer push a Luis para activar campañas Wash esta semana (Día del Agua) — reunión cancelada, reprogramada al lunes <span class="pt-owner">· Owner: Ángelito · 🆕 19.03</span></div></div>
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-r"></div><div class="pt-text">Luis: finalizar y enviar piezas campaña Wash + enviar correo formal a Jorge solicitando permisos web (CC Pablo) <span class="pt-owner">· Owner: Luis</span></div></div>
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-y"></div><div class="pt-text">Pablo: gestionar permisos web/landing para Luis + incluir desarrolladores en correos Express Pago <span class="pt-owner">· Owner: Pablo</span></div></div>
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-y"></div><div class="pt-text">Luis: hablar con Jorge Girón para conectar WhatsApp a cuenta de Meta <span class="pt-owner">· Owner: Luis · 🆕 19.03</span></div></div>
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-b"></div><div class="pt-text">📅 MIÉRCOLES — Revisión piezas y WF con Luis y Pablo (adelantada de jueves) <span class="pt-owner">· Reunión esta semana</span></div></div>
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-b"></div><div class="pt-text">📅 JUEVES — Reunión con Express Pago (pasarela de pagos) <span class="pt-owner">· Reunión esta semana</span></div></div>
+            </div>
+          </div>
+
+          <div class="proyecto-item" onclick="toggleProyecto(this)">
+            <div class="proyecto-header">
+              <div>
+                <div class="proyecto-name">🇪🇸 España — SIMMA</div>
+                <div class="proyecto-owner">Contacto: Esther / Nieves · Contrato renovado ⭐</div>
+              </div>
+              <div class="proyecto-stats">
+                <span class="ps-r">1 urg</span><span class="ps-y">4 prog</span><span class="ps-g">1 ✅</span>
+              </div>
+            </div>
+            <div class="proyecto-tasks">
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-r"></div><div class="pt-text">Sofía: subir base de Iglesias — Esther confirmó que Jorge y ella tienen el trabajo listo <span class="pt-owner">· Owner: Sofía</span></div></div>
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-y"></div><div class="pt-text">Sofía + Jorge: cruzar base SIMMA vs HubSpot — partners sin contacto/pledge, emails provisionales, campos faltantes · Agendar reunión con Esther para acciones correctivas <span class="pt-owner">· Owner: Sofía + Jorge · 🆕 18.03</span></div></div>
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-y"></div><div class="pt-text">Cristian P: configurar propiedades personalizadas (ChildID, AddDate, MediaType, datos bancarios) según hallazgos Esther <span class="pt-owner">· Owner: Cristian P + Sofía · 🆕 18.03</span></div></div>
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-y"></div><div class="pt-text">Cristian P: accionables canal — sincronizar "nombre de iglesia", PartnerID, URL web · revisar integración leads proveedores externos · revisar prefijos SMS <span class="pt-owner">· Owner: Cristian P + Sofía · 🆕 19.03</span></div></div>
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-y"></div><div class="pt-text">Revisar comentarios de Nieves en Discord (canal general, varias peticiones) <span class="pt-owner">· Owner: Ángelito</span></div></div>
+              <div class="pt-item done" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-g"></div><div class="pt-text">WV ES: contrato renovado por un año más ⭐ <span class="pt-owner">· Completado</span></div></div>
+            </div>
+          </div>
+
+          <div class="proyecto-item" onclick="toggleProyecto(this)">
+            <div class="proyecto-header">
+              <div>
+                <div class="proyecto-name">🔧 Soporte Técnico</div>
+                <div class="proyecto-owner">A cargo: Cristian P · Chile, Ecuador, Perú, Brasil</div>
+              </div>
+              <div class="proyecto-stats">
+                <span class="ps-r">3 urg</span><span class="ps-y">5 prog</span><span class="ps-g">3 ✅</span>
+              </div>
+            </div>
+            <div class="proyecto-tasks">
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-r"></div><div class="pt-text">Cristian P: cerrar ticket donaciones únicas WV CL (ajuste adicional en integración) — HOY <span class="pt-owner">· Owner: Cristian P</span></div></div>
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-r"></div><div class="pt-text">Cristian P: cerrar ticket limpieza negocios duplicados F2F WV CL (750 contactos) — HOY <span class="pt-owner">· Owner: Cristian P</span></div></div>
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-r"></div><div class="pt-text">Cristian P: escribir a María (WV PE) por Discord — más info del ticket "limpieza de lista y consulta web" <span class="pt-owner">· Owner: Cristian P</span></div></div>
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-y"></div><div class="pt-text">Cristian P: crear y organizar tickets WV Ecuador — priorizar débitos y automatizaciones, avanzar de a 2 en paralelo <span class="pt-owner">· Owner: Cristian P + Pablo + Marcos · 🆕 19.03</span></div></div>
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-y"></div><div class="pt-text">Cristian P: reenviar a Diana lista y recursos para importación de negocios pendientes (contactos web de Pau) <span class="pt-owner">· Owner: Cristian P</span></div></div>
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-y"></div><div class="pt-text">Diana + Ornella: revisar 47 contactos con negocios duplicados + regularizar negocios con múltiples métodos de pago <span class="pt-owner">· Owner: Diana + Ornella</span></div></div>
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-y"></div><div class="pt-text">Ornella: finalizar facturación manual F2F (enero y febrero) — avisar a Pablo para coordinar automatización <span class="pt-owner">· Owner: Ornella</span></div></div>
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-y"></div><div class="pt-text">Pablo + Marcos: avanzar clasificación de listas HubSpot Perú (700 listas) — identificar las que tienen leads vs otras <span class="pt-owner">· Owner: Pablo + Marcos · 🆕 19.03</span></div></div>
+              <div class="pt-item done" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-g"></div><div class="pt-text">Nóminas Feb Multibanca y Transdata subidas ✅ <span class="pt-owner">· Completado</span></div></div>
+              <div class="pt-item done" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-g"></div><div class="pt-text">47 contactos con negocios duplicados identificados — workflow corregido ✅ <span class="pt-owner">· Completado</span></div></div>
+              <div class="pt-item done" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-g"></div><div class="pt-text">Cristian P: instalar MCPs de HubSpot, Cloudpod y GitHub en Antigravity ✅ <span class="pt-owner">· Completado · 🆕 19.03</span></div></div>
+            </div>
+          </div>
+
+          <div class="proyecto-item" onclick="toggleProyecto(this)">
+            <div class="proyecto-header">
+              <div>
+                <div class="proyecto-name">🇨🇱 Chile / WV CL</div>
+                <div class="proyecto-owner">Contacto: Diana, Ornella, Gonzalo</div>
+              </div>
+              <div class="proyecto-stats">
+                <span class="ps-y">3 prog</span>
+              </div>
+            </div>
+            <div class="proyecto-tasks">
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-y"></div><div class="pt-text">Diana: mostrar a Gonzalo demo de gestión de niños apadrinados (integración Horizon) para evaluar implementación local <span class="pt-owner">· Owner: Diana · 🆕 18.03</span></div></div>
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-y"></div><div class="pt-text">Pablo: presionar a Jorge para mejorar estructura del objeto niños en países desorganizados (Ecuador, Brasil) <span class="pt-owner">· Owner: Pablo · 🆕 18.03</span></div></div>
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-y"></div><div class="pt-text">Gonzalo: aprobar proyecto Facturación F2F + compartir reglas de negocio con Pablo <span class="pt-owner">· Seguimiento: Enrique</span></div></div>
+            </div>
+          </div>
+
+          <div class="proyecto-item" onclick="toggleProyecto(this)">
+            <div class="proyecto-header">
+              <div>
+                <div class="proyecto-name">🇪🇨 Ecuador / WV EC</div>
+                <div class="proyecto-owner">Contacto: Valeria · Soporte técnico en proceso</div>
+              </div>
+              <div class="proyecto-stats">
+                <span class="ps-y">2 prog</span>
+              </div>
+            </div>
+            <div class="proyecto-tasks">
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-y"></div><div class="pt-text">Cristian P: crear y organizar tickets Ecuador — priorizar por urgencia, avanzar de a 2 en paralelo, NO sacar todos de golpe <span class="pt-owner">· Owner: Cristian P + Pablo + Marcos · 🆕 19.03</span></div></div>
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-y"></div><div class="pt-text">Valeria: convocar reuniones Ecuador — martes 11am Ecuador <span class="pt-owner">· Owner: Valeria</span></div></div>
+            </div>
+          </div>
+
+          <div class="proyecto-item" onclick="toggleProyecto(this)">
+            <div class="proyecto-header">
+              <div>
+                <div class="proyecto-name">🇵🇪 Perú / WV PE</div>
+                <div class="proyecto-owner">Contacto: María · Reunión urgente hoy 3pm</div>
+              </div>
+              <div class="proyecto-stats">
+                <span class="ps-r">1 urg</span><span class="ps-y">1 prog</span>
+              </div>
+            </div>
+            <div class="proyecto-tasks">
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-r"></div><div class="pt-text">Atender reunión urgente World Vision Perú — HOY 3pm | Agenda: limpieza de listas + consulta web <span class="pt-owner">· Owner: Ángelito + Cristian P</span></div></div>
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-y"></div><div class="pt-text">Cristian P: enviar a María listado de consultas sobre edición web/CMS (aún no las han enviado) <span class="pt-owner">· Owner: Cristian P · 🆕 19.03</span></div></div>
+            </div>
+          </div>
+
+          <div class="proyecto-item" onclick="toggleProyecto(this)">
+            <div class="proyecto-header">
+              <div>
+                <div class="proyecto-name">🇧🇷 Brasil</div>
+                <div class="proyecto-owner">Sin novedad</div>
+              </div>
+              <div class="proyecto-stats">
+                <span class="ps-b">En pausa</span>
+              </div>
+            </div>
+            <div class="proyecto-tasks">
+              <div class="pt-item"><div class="pt-dot d-y" style="flex-shrink:0;margin-top:4px;"></div><div class="pt-text">Sin novedad — esperar activación. Pablo: presionar a Jorge por estructura del objeto niños en países desorganizados (Ecuador, Brasil) <span class="pt-owner">· Owner: Pablo</span></div></div>
+            </div>
+          </div>
+
+        </div><!-- end proyecto-list wv -->
+      </div><!-- end cuenta-card wv -->
+
+      <!-- ── UPSJB ── -->
+      <div class="cuenta-card c-upsjb">
+        <div class="cuenta-header">
+          <div class="cuenta-title">🎓 UPSJB <span class="badge-activo">ACTIVO</span></div>
+          <div class="cuenta-sub">Universidad San Juan Bautista · Proceso 2026-2 · Admisión A Distancia</div>
+        </div>
+        <div class="proyecto-list">
+          <div class="proyecto-item" onclick="toggleProyecto(this)">
+            <div class="proyecto-header">
+              <div>
+                <div class="proyecto-name">📊 Admisión 2026-2 · A Distancia</div>
+                <div class="proyecto-owner">Contacto: Carlos, Estuardo · Análisis Enrique enviado</div>
+              </div>
+              <div class="proyecto-stats">
+                <span class="ps-r">3 urg</span><span class="ps-y">5 prog</span><span class="ps-g">3 ✅</span>
+              </div>
+            </div>
+            <div class="proyecto-tasks">
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-r"></div><div class="pt-text">Ángelito: analizar y documentar gestión de ventas — 11K leads → 5,300 abrieron → 325 respondieron → 95% sin respuesta del equipo. Preparar punto para próxima reunión <span class="pt-owner">· Owner: Ángelito → Pablo · 🆕 19.03</span></div></div>
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-r"></div><div class="pt-text">Blue Nose: asignar equipo exclusivo para 4,800 leads sin gestión (A Distancia) · SLA ≤5 min · Kit de confianza para padres <span class="pt-owner">· Owner: Enrique/Pablo</span></div></div>
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-r"></div><div class="pt-text">Estuardo: entregar Buyer Persona para padres esta semana + coordinar QR en charlas desde quincena de marzo <span class="pt-owner">· Owner: Estuardo</span></div></div>
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-y"></div><div class="pt-text">Marcos: crear propiedad HubSpot para segmentar lista Blue Nose (5,600 contactos) en 3 grupos de ~2,000 para envíos mensuales · Permisos dados ✅ <span class="pt-owner">· Owner: Marcos · 🆕 19.03</span></div></div>
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-y"></div><div class="pt-text">Equipo Blue Nose: revisar puntos amarillos (oportunidades) y rojos (riesgos) en 3 documentos de Enrique — definir acciones correctivas y responder correo <span class="pt-owner">· Owner: Ángelito + Enrique · 🆕 18.03</span></div></div>
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-y"></div><div class="pt-text">Carlos: finalizar limpieza de duplicados en HubSpot + enviar programas de Admón Internacional y Marketing <span class="pt-owner">· Owner: Carlos</span></div></div>
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-y"></div><div class="pt-text">Estuardo: enviar estrategia de marketing individualizada por carrera <span class="pt-owner">· Owner: Estuardo</span></div></div>
+              <div class="pt-item done" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-g"></div><div class="pt-text">Enrique: 3 documentos A Distancia enviados a UPSJB ⭐ <span class="pt-owner">· Completado · 17.03</span></div></div>
+              <div class="pt-item done" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-g"></div><div class="pt-text">Pablo: permisos dados a Marcos para envío a lista de 5,600 contactos ✅ <span class="pt-owner">· Completado</span></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── VirtualPos ── -->
+      <div class="cuenta-card c-vp">
+        <div class="cuenta-header">
+          <div class="cuenta-title">💳 VirtualPos Chile <span class="badge-activo">ACTIVO</span></div>
+          <div class="cuenta-sub">Soporte Técnico · A cargo: Cristian P</div>
+        </div>
+        <div class="proyecto-list">
+          <div class="proyecto-item" onclick="toggleProyecto(this)">
+            <div class="proyecto-header">
+              <div>
+                <div class="proyecto-name">🔧 Soporte & Integraciones</div>
+                <div class="proyecto-owner">Tickets F2F / Nóminas / Facturación</div>
+              </div>
+              <div class="proyecto-stats">
+                <span class="ps-r">2 hoy</span><span class="ps-y">4 prog</span><span class="ps-g">3 ✅</span>
+              </div>
+            </div>
+            <div class="proyecto-tasks">
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-r"></div><div class="pt-text">Cristian P: cerrar ticket donaciones únicas (ajuste adicional en integración) — HOY <span class="pt-owner">· Owner: Cristian P</span></div></div>
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-r"></div><div class="pt-text">Cristian P: cerrar ticket limpieza negocios duplicados F2F (750 contactos) — HOY <span class="pt-owner">· Owner: Cristian P</span></div></div>
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-y"></div><div class="pt-text">Cristian P: instalar MCPs de HubSpot, Cloudpod y GitHub en Antigravity — eliminar skills problemáticos, reinstalar solo MCPs necesarios <span class="pt-owner">· Owner: Cristian P · 🆕 19.03</span></div></div>
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-y"></div><div class="pt-text">Diana + Ornella: revisar 47 contactos con negocios duplicados + regularizar negocios con múltiples métodos de pago (F2F vs VirtualPos) <span class="pt-owner">· Owner: Diana + Ornella</span></div></div>
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-y"></div><div class="pt-text">Ornella: finalizar facturación manual F2F (enero y febrero) — avisar a Pablo <span class="pt-owner">· Owner: Ornella</span></div></div>
+              <div class="pt-item" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-y"></div><div class="pt-text">Diana: mostrar a Gonzalo demo de gestión niños apadrinados (Horizon) para evaluar implementación local <span class="pt-owner">· Owner: Diana</span></div></div>
+              <div class="pt-item done" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-g"></div><div class="pt-text">Nóminas Feb Multibanca y Transdata subidas · Importación WV CL completada ✅ <span class="pt-owner">· Completado</span></div></div>
+              <div class="pt-item done" onclick="togglePT(event,this)"><div class="pt-chk"></div><div class="pt-dot d-g"></div><div class="pt-text">47 contactos con negocios duplicados identificados — workflow corregido ✅ <span class="pt-owner">· Completado</span></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end cuentas-grid -->
+  </div><!-- end container -->
+  <footer>Cuentas & Proyectos — Actualizado: 19.03.2026 · Blue Nose</footer>
+</div><!-- end view-cuentas -->
+
+
+<!-- ══════════════════════════════════════════════════
+     SCRIPTS
+══════════════════════════════════════════════════ -->
+<script>
+// ── NAV ──
+function switchView(id, el) {
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('view-' + id).classList.add('active');
+  el.classList.add('active');
+}
+
+// ── DATE ──
+const DIAS  = ["Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado"];
+const MESES = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+(function() {
+  const now = new Date();
+  const str = `${DIAS[now.getDay()]}, ${now.getDate()} de ${MESES[now.getMonth()]} de ${now.getFullYear()}`;
+  document.getElementById('nav-date').textContent = str;
+  document.getElementById('fecha-badge').textContent = str;
+  const cd = document.getElementById('cuentas-date');
+  if (cd) cd.textContent = str;
+
+  // Reuniones del día
+  const MEETINGS_BY_DAY = {
+    0: [{ icon: "📋", text: "Status interno Blue Nose — reunión de inicio de semana" }],
+    2: [{ icon: "🌍", text: "WV HND — revisión piezas y WF con Luis y Pablo (adelantada de jueves)" }],
+    3: [
+      { icon: "📋", text: "Status interno Blue Nose — reunión de cierre de semana" },
+      { icon: "🌍", text: "WV HND — reunión con Express Pago (pasarela de pagos)" },
+    ],
+  };
+  const meetings = MEETINGS_BY_DAY[now.getDay()] || [];
+  const mc = document.getElementById('meetings-container');
+  if (meetings.length === 0) {
+    document.getElementById('sec-meetings').style.display = 'none';
+  } else {
+    meetings.forEach(m => {
+      mc.innerHTML += `<div class="meeting"><span style="font-size:18px">${m.icon}</span>${m.text}</div>`;
+    });
+  }
+})();
+
+// ── DAILY BRIEF DATA ──
+const TASKS = {
+  urgente: [
+    { text: "UCSP Agente IA: Enrique responder a César Puma para fijar reunión con equipo operativo (Ángela González, Rudy Hasawi, Juan Daniel Rodríguez) — resolver preguntas correo Pablo", tag: "UCSP", tagClass: "tag-uc", owner: "Enrique", clients: ["UCSP"], isNew: true },
+    { text: "Mover PPT SpotLight de Ani al canal San Pablo (no en Herramientas y Utilidades) — coordinar reunión interna antes de presentar al cliente", tag: "UCSP", tagClass: "tag-uc", owner: "Ángelito", clients: ["UCSP","yo"], isNew: true },
+    { text: "Analizar gestión ventas UPSJB: 11K leads → 5,300 abrieron → 325 respondieron → 95% sin respuesta del equipo de ventas. Preparar punto para próxima reunión con Pablo", tag: "UPSJB", tagClass: "tag-up", owner: "Ángelito → Pablo", clients: ["UPSJB","yo"], isNew: true },
+    { text: "Atender reunión urgente World Vision Perú — hoy 3pm · Agenda: limpieza de listas + consulta web", tag: "WV", tagClass: "tag-wv", owner: "Ángelito + Cristian P", clients: ["WV","yo"] },
+    { text: "Hacer push a Luis para activar campañas Wash esta semana (Día del Agua) · Reunión cancelada — próxima: lunes", tag: "WV HND", tagClass: "tag-wv", owner: "Ángelito", clients: ["WV","yo"] },
+    { text: "Cristian P: cerrar ticket donaciones únicas (ajuste en integración) — HOY", tag: "VP", tagClass: "tag-vp", owner: "Cristian P", clients: ["VP"] },
+    { text: "Cristian P: cerrar ticket limpieza negocios duplicados F2F (750 contactos) — HOY", tag: "VP", tagClass: "tag-vp", owner: "Cristian P", clients: ["VP"] },
+    { text: "Sofía: subir base de Iglesias — Esther confirmó que Jorge y ella tienen el trabajo listo", tag: "WV ES", tagClass: "tag-wv", owner: "Sofía", clients: ["WV"] },
+  ],
+  semana: [
+    { text: "Enrique: esperar brief de César Puma para propuesta Mesa de Ayuda (IA + WhatsApp sobre Zoho) — casi seguro para abril/mayo", tag: "UCSP", tagClass: "tag-uc", owner: "Enrique", clients: ["UCSP"], isNew: true },
+    { text: "Enrique: actualizar propuesta coaching SGA (5-6 personas, dejaron Dzine Lab) + seguimiento alumni con Efraín Centeno", tag: "UCSP", tagClass: "tag-uc", owner: "Enrique", clients: ["UCSP"], isNew: true },
+    { text: "Crear checklist unificado con IA de todos los puntos de reuniones UCSP (1ra → última) para blindar entregables y facilitar conformidades", tag: "UCSP", tagClass: "tag-uc", owner: "Ángelito", clients: ["UCSP","yo"], isNew: true },
+    { text: "CENDES: esperar respuesta formal de aprobación de cotización (María Daniela en proceso de revisión desde 13.03)", tag: "UCSP", tagClass: "tag-uc", owner: "Ángelito", clients: ["UCSP","yo"] },
+    { text: "Enrique: coordinar entrevista con Ángelo sobre Centro de Idiomas + esperar a Renzo", tag: "UCSP", tagClass: "tag-uc", owner: "Enrique", clients: ["UCSP"] },
+    { text: "Sofía + Jorge: cruzar base SIMMA vs HubSpot — partners sin contacto/pledge, emails provisionales, campos faltantes · Accionables canal WV ES", tag: "WV ES", tagClass: "tag-wv", owner: "Sofía + Jorge + Cristian P", clients: ["WV"], isNew: true },
+    { text: "Cristian P: crear y organizar tickets WV Ecuador por prioridad — empezar con débitos y automatizaciones, avanzar de a 2 en paralelo", tag: "WV EC", tagClass: "tag-wv", owner: "Cristian P + Pablo + Marcos", clients: ["WV"], isNew: true },
+    { text: "Luis: finalizar y enviar piezas campaña Wash + hablar con Jorge Girón para conectar WhatsApp a Meta", tag: "WV HND", tagClass: "tag-wv", owner: "Luis", clients: ["WV"] },
+    { text: "Pablo: gestionar permisos web/landing para Luis + incluir devs en correos Express Pago", tag: "WV HND", tagClass: "tag-wv", owner: "Pablo", clients: ["WV"] },
+    { text: "Blue Nose: asignar equipo exclusivo para 4,800 leads sin gestión (A Distancia) · SLA ≤5 min", tag: "UPSJB", tagClass: "tag-up", owner: "Enrique/Pablo", clients: ["UPSJB"] },
+    { text: "Revisar puntos amarillos y rojos en los 3 docs de Enrique — definir acciones correctivas + responder correo", tag: "UPSJB", tagClass: "tag-up", owner: "Ángelito + Enrique", clients: ["UPSJB","yo"] },
+    { text: "Marcos: crear propiedad HubSpot para segmentar lista Blue Nose (5,600) en 3 grupos de ~2,000 para envíos mensuales · Permisos dados ✅", tag: "UPSJB", tagClass: "tag-up", owner: "Marcos", clients: ["UPSJB"], isNew: true },
+    { text: "Cristian P: reenviar a Diana lista y recursos para importación de negocios pendientes (contactos web Pau)", tag: "VP CL", tagClass: "tag-vp", owner: "Cristian P", clients: ["VP"] },
+    { text: "Diana + Ornella: revisar 47 contactos con negocios duplicados + regularizar negocios con múltiples métodos de pago", tag: "VP CL", tagClass: "tag-vp", owner: "Diana + Ornella", clients: ["VP"] },
+    { text: "Cristian P: instalar MCPs de HubSpot, Cloudpod y GitHub en Antigravity — eliminar skills problemáticos", tag: "VP", tagClass: "tag-vp", owner: "Cristian P", clients: ["VP"], isNew: true },
+    { text: "Escribirle al cliente Smartimper (~30.03) para preguntar cómo va con la incorporación del BDR", tag: "Smartimper", tagClass: "tag-sm", owner: "Ángelito", clients: ["Smartimper","yo"] },
+  ],
+  mes: [
+    { text: "UCSP SpotLight: presentar ideas en reunión de abril (ppt ya lista) — primer miércoles de abril", tag: "UCSP", tagClass: "tag-uc", owner: "Ángelito", clients: ["UCSP","yo"] },
+    { text: "WV RD: gestionar cierre formal de contrato · Due: 31.03.26", tag: "WV RD", tagClass: "tag-wv", owner: "Ángelito + Enrique", clients: ["WV","yo"] },
+  ]
+};
+
+// ── BRIEF RENDER ──
+let doneSet = JSON.parse(localStorage.getItem('brief-done') || '[]');
+let currentFilter = 'all';
+
+function renderTask(t, section, idx) {
+  const id = `${section}-${idx}`;
+  const isDone = doneSet.includes(id);
+  const visible = currentFilter === 'all' || (t.clients && t.clients.includes(currentFilter));
+  return `
+    <div class="task ${isDone ? 'done' : ''}" data-id="${id}" data-clients="${(t.clients||[]).join(',')}"
+         style="${visible ? '' : 'display:none'}" onclick="toggleDone('${id}',this)">
+      <div class="chk">
+        <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+          <path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="task-text">
+        ${t.isNew ? '<span class="tag tag-new">🆕 HOY</span> ' : ''}
+        ${t.text}
+        ${t.owner ? `<span style="color:#475569;font-size:11.5px;"> · ${t.owner}</span>` : ''}
+      </div>
+      <span class="tag ${t.tagClass}">${t.tag}</span>
+    </div>`;
+}
+
+function renderAll() {
+  ['urgente','semana','mes'].forEach(sec => {
+    document.getElementById(`tasks-${sec}`).innerHTML = TASKS[sec].map((t,i) => renderTask(t,sec,i)).join('');
+  });
+  updateCounts();
+}
+
+function toggleDone(id, el) {
+  if (doneSet.includes(id)) {
+    doneSet = doneSet.filter(x => x !== id);
+    el.classList.remove('done');
+  } else {
+    doneSet.push(id);
+    el.classList.add('done');
+  }
+  localStorage.setItem('brief-done', JSON.stringify(doneSet));
+  updateCounts();
+}
+
+function updateCounts() {
+  document.getElementById('cnt-done').textContent = document.querySelectorAll('.task.done').length;
+  document.getElementById('cnt-r').textContent = document.querySelectorAll('#tasks-urgente .task:not(.done)').length;
+  document.getElementById('cnt-y').textContent = document.querySelectorAll('#tasks-semana .task:not(.done)').length;
+}
+
+function filter(client, btn) {
+  currentFilter = client;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.task').forEach(t => {
+    const clients = t.dataset.clients || '';
+    t.style.display = (client === 'all' || clients.split(',').includes(client)) ? '' : 'none';
+  });
+}
+
+renderAll();
+
+// ── STATUS INTERNO: toggle item ──
+function toggleSI(el) {
+  el.classList.toggle('done');
+  const chk = el.querySelector('.si-chk');
+  if (chk) chk.classList.toggle('on');
+}
+
+// ── STATUS INTERNO: card expand ──
+function toggleCard(id) {
+  const body = document.getElementById('body-' + id);
+  body.classList.toggle('open');
+}
+function expandAll() {
+  document.querySelectorAll('#view-status .account-body').forEach(b => b.classList.add('open'));
+}
+function collapseAll() {
+  document.querySelectorAll('#view-status .account-body').forEach(b => b.classList.remove('open'));
+}
+
+// ── STATUS INTERNO: day toggle ──
+function setDay(day, btn) {
+  document.querySelectorAll('.toggle-btn').forEach(b => {b.classList.remove('active','thu');});
+  btn.classList.add('active');
+  if (day === 'jueves') btn.classList.add('thu');
+}
+
+// ── CUENTAS: toggle proyecto ──
+function toggleProyecto(el) {
+  const tasks = el.querySelector('.proyecto-tasks');
+  if (!tasks) return;
+  tasks.classList.toggle('open');
+  el.classList.toggle('open');
+}
+
+// ── CUENTAS: toggle task dentro de proyecto ──
+function togglePT(event, el) {
+  event.stopPropagation();
+  el.classList.toggle('done');
+}
+
+</script>
+</body>
+</html>
