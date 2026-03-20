@@ -9,8 +9,12 @@ Variables de entorno requeridas (GitHub Actions Secrets):
   TRANSCRIPT_ID      — (opcional) ID específico de transcripción
 """
 
-import os, re, json, datetime, subprocess
+import os, re, json, datetime, subprocess, sys, io
 import urllib.request, urllib.parse, urllib.error
+
+# Forzar salida en UTF-8 para evitar UnicodeEncodeError con emojis en Windows
+if hasattr(sys.stdout, 'buffer'):
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 FIREFLIES_API_KEY = os.environ.get("FIREFLIES_API_KEY", "")
 TRANSCRIPT_ID     = os.environ.get("TRANSCRIPT_ID", "")
@@ -72,11 +76,11 @@ def last_sync_ts() -> int:
         c = open(LAST_SYNC_FILE).read().strip()
         if c.isdigit():
             return int(c)
-    return int(datetime.datetime.utcnow().timestamp()) - 7200
+    return int(datetime.datetime.now(datetime.timezone.utc).timestamp()) - 7200
 
 
 def save_sync_ts():
-    open(LAST_SYNC_FILE, "w").write(str(int(datetime.datetime.utcnow().timestamp())))
+    open(LAST_SYNC_FILE, "w").write(str(int(datetime.datetime.now(datetime.timezone.utc).timestamp())))
 
 
 # ── Parsear summary de Fireflies → tareas ────────────────────────────────────
