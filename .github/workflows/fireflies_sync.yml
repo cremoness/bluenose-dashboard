@@ -46,7 +46,15 @@ jobs:
       - name: 📦 Instalar dependencias
         run: pip install anthropic
 
-      # 4. Ejecutar sincronización
+      # 4. Debug: verificar versión del archivo
+      - name: 🔍 Debug versión del archivo
+        run: |
+          echo "Commit en uso: $(git log --oneline -1)"
+          echo "Líneas en fireflies_sync.py: $(wc -l < fireflies_sync.py)"
+          echo "Líneas 244-254:"
+          sed -n '244,254p' fireflies_sync.py
+
+      # 5. Ejecutar sincronización
       - name: 🔄 Ejecutar fireflies_sync.py
         env:
           FIREFLIES_API_KEY: ${{ secrets.FIREFLIES_API_KEY }}
