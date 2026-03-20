@@ -24,6 +24,7 @@ import datetime
 import subprocess
 import urllib.request
 import urllib.parse
+import urllib.error
 
 # ── Configuración ────────────────────────────────────────────────────────────
 FIREFLIES_API_KEY  = os.environ.get("FIREFLIES_API_KEY", "")
@@ -243,7 +244,7 @@ REGLAS:
 """
 
     payload = json.dumps({
-        "model": "claude-sonnet-4-6",
+        "model": "claude-opus-4-5",
         "max_tokens": 2000,
         "messages": [{"role": "user", "content": prompt}]
     }).encode("utf-8")
@@ -259,8 +260,12 @@ REGLAS:
         method="POST",
     )
 
-    with urllib.request.urlopen(req, timeout=60) as r:
-        response = json.loads(r.read().decode())
+    try:
+        with urllib.request.urlopen(req, timeout=60) as r:
+            response = json.loads(r.read().decode())
+    except urllib.error.HTTPError as e:
+        error_body = e.read().decode()
+        raise RuntimeError(f"Anthropic API error {e.code}: {error_body}")
 
     content = response["content"][0]["text"].strip()
 
