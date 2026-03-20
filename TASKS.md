@@ -1,5 +1,5 @@
 # TASKS — Ángelito Chanamé
-> Última actualización: 2026-03-19 | Basado en Status + Audios 16.03 + Reuniones WV HND 17.03, UPSJB 17.03, WV CL 18.03 + Correos 18.03 + Status Interno Jueves 19.03
+> Última actualización: 2026-03-20 | Reunión Fireflies: sja-djkm-cjq 20.03
 
 ---
 
@@ -20,6 +20,32 @@
 ---
 
 ## 🟡 PRÓXIMAS / Esta semana
+
+### WV ⚠️ ACTUALIZADO 18.03
+- [ ] **[WV 🆕 18.03]** Cristian P** | Owner: Cristian
+- [ ] **[WV 🆕 18.03]** Reenviar a Diana y equipo la lista y recursos para la importación de negocios pendientes (03:06) | Owner: Diana
+- [ ] **[WV 🆕 18.03]** Compartir lista con 47 contactos con negocios duplicados para verificación interna (15:57) | Owner: Ángelito
+- [ ] **[WV 🆕 18.03]** Compartir workflow de reintento Face to Face para entender la lógica de asociar pagos a negocios correctos (15:45) | Owner: Ángelito
+- [ ] **[WV 🆕 18.03]** Proveer informe o lista de pagos únicos de donación para validación y creación correcta de negocios (19:32) | Owner: Ángelito
+- [ ] **[WV 🆕 18.03]** Ornella Baldi** | Owner: Ornella
+- [ ] **[WV 🆕 18.03]** Revisar archivo y datos de nóminas subidos a Discord para validar con cifras propias (17:39) | Owner: Ángelito
+- [ ] **[WV 🆕 18.03]** Finalizar facturación mensual para agencias Face to Face y notificar a Pablo para coordinar análisis con sistema automático (38:03) | Owner: Pablo
+
+### General ⚠️ ACTUALIZADO 20.03
+- [ ] **[🆕 20.03]** Comunicaciones Blue Nose** | Owner: Ángelito
+- [ ] **[🆕 20.03]** Generar un token de acceso personal en GitHub con permisos de repositorio y sin expiración para Fireflies (03:54) | Owner: Ángelito
+- [ ] **[🆕 20.03]** Configurar el webhook en GitHub con la URL proporcionada para notificaciones entre Fireflies y GitHub (06:06) | Owner: Ángelito
+- [ ] **[🆕 20.03]** Revisar la sección 'Actions' en GitHub para verificar que el workflow se ejecute correctamente después de cada reunión (10:32) | Owner: Ángelito
+- [ ] **[🆕 20.03]** Usar Fireflies para capturar reuniones en vivo introduciendo el enlace en la función 'Capture add to Live Meeting' (13:09) | Owner: Ángelito
+- [ ] **[🆕 20.03]** Pablo Perez** | Owner: Pablo
+- [ ] **[🆕 20.03]** Ayudar a Comunicaciones Blue Nose a entender cómo configurar el webhook correctamente y la función del header y body en las peticiones (07:41) | Owner: Ángelito
+- [ ] **[🆕 20.03]** Comunicaciones Blue Nose** | Owner: Ángelito
+- [ ] **[🆕 20.03]** Generar un token de acceso personal en GitHub con permisos de repositorio y sin expiración para Fireflies (03:54) | Owner: Ángelito
+- [ ] **[🆕 20.03]** Configurar el webhook en GitHub con la URL proporcionada para notificaciones entre Fireflies y GitHub (06:06) | Owner: Ángelito
+- [ ] **[🆕 20.03]** Revisar la sección 'Actions' en GitHub para verificar que el workflow se ejecute correctamente después de cada reunión (10:32) | Owner: Ángelito
+- [ ] **[🆕 20.03]** Usar Fireflies para capturar reuniones en vivo introduciendo el enlace en la función 'Capture add to Live Meeting' (13:09) | Owner: Ángelito
+- [ ] **[🆕 20.03]** Pablo Perez** | Owner: Pablo
+- [ ] **[🆕 20.03]** Ayudar a Comunicaciones Blue Nose a entender cómo configurar el webhook correctamente y la función del header y body en las peticiones (07:41) | Owner: Ángelito
 
 ### UCSP ⚠️ ACTUALIZADO 19.03.26
 - [ ] **[🆕 19.03]** Enrique: responder a César Puma para fijar reunión con equipo operativo (Ángela González, Rudy Hasawi, Juan Daniel Rodríguez) — resolver preguntas del correo de Pablo sobre Agente IA | Owner: Enrique
@@ -109,6 +135,14 @@
 - [ ] **[NUEVO — CONSTRUCTORA]** Pablo: Juan Camilo de Foxport enviará presupuesto de licencias — preparar presupuesto de acompañamiento | Owner: Pablo + Enrique
 
 ### Smartimper ⚠️ ACTUALIZADO 16.03.26
+- [ ] **[Smartimper 🆕 17.03]** Valdric Tardos** | Owner: Ángelito
+- [ ] **[Smartimper 🆕 17.03]** Poder concretar la contratación de un VDR (representante virtual de ventas) que se encargue de la prospección y generación de reuniones para facilitar cierres de ventas (06:40) | Owner: Ángelito
+- [ ] **[Smartimper 🆕 17.03]** Una vez contratado el VDR, comunicar su incorporación para reiniciar el servicio y seguimiento con el equipo (10:30) | Owner: Ángelito
+- [ ] **[Smartimper 🆕 17.03]** Supervisar personalmente la fase actual de ventas mientras no se cuente con el nuevo recurso (06:40) | Owner: Ángelito
+- [ ] **[Smartimper 🆕 17.03]** Comunicaciones Blue Nose** | Owner: Ángelito
+- [ ] **[Smartimper 🆕 17.03]** Continuar con la coordinación y apoyo temporal en la planificación y organización del proyecto tras la salida de Anita (00:00) | Owner: Ángelito
+- [ ] **[Smartimper 🆕 17.03]** Mantener coordinación para asegurar la correcta entrega y configuración de materiales digitales, confirmando el estado actual de las landing pages y correos (13:50) | Owner: Ángelito
+- [ ] **[Smartimper 🆕 17.03]** Pablo Pérez** | Owner: Pablo
 - [ ] **[NUEVO]** Ángelito: escribirle al cliente cada 2-3 semanas para preguntar cómo va con la incorporación del BDR | Si no hay respuesta → avisar a Enrique para que entre él | Owner: Ángelito
   - Próximo follow-up: ~30.03.26
   - Siguiente: ~13.04.26
