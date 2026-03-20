@@ -1,0 +1,66 @@
+name: 🎙️ Fireflies → TASKS.md Sync
+
+on:
+  # ── Webhook de Fireflies (vía repository_dispatch) ──────────────────────────
+  # Fireflies envía el evento "transcript.ready" a:
+  # POST https://api.github.com/repos/cremoness/bluenose-dashboard/dispatches
+  # Body: { "event_type": "fireflies_transcript", "client_payload": { "transcript_id": "..." } }
+  repository_dispatch:
+    types: [fireflies_transcript]
+
+  # ── Revisión automática cada 30 minutos (días de semana) ────────────────────
+  schedule:
+    - cron: "*/30 7-22 * * 1-5"   # Cada 30 min, 7am-10pm, lunes a viernes (UTC)
+
+  # ── Trigger manual desde GitHub Actions ─────────────────────────────────────
+  workflow_dispatch:
+    inputs:
+      transcript_id:
+        description: "ID de transcripción Fireflies (dejar vacío para buscar nuevas)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write   # Necesario para hacer commit y push de TASKS.md
+
+jobs:
+  sync:
+    name: Sincronizar transcripción con TASKS.md
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout del repositorio
+      - name: 📥 Checkout repositorio
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GH_TOKEN || secrets.GITHUB_TOKEN }}
+
+      # 2. Configurar Python
+      - name: 🐍 Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # 3. Instalar dependencias (solo stdlib — sin pip install necesario)
+      - name: 📦 Verificar dependencias
+        run: python -c "import urllib.request, json, re, subprocess, datetime, os; print('✅ Dependencias OK')"
+
+      # 4. Ejecutar sincronización
+      - name: 🔄 Ejecutar fireflies_sync.py
+        env:
+          FIREFLIES_API_KEY: ${{ secrets.FIREFLIES_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          # Transcript ID: viene del webhook, del input manual, o vacío (busca nuevos)
+          TRANSCRIPT_ID: ${{ github.event.client_payload.transcript_id || github.event.inputs.transcript_id || '' }}
+          # Configurar git para el commit automático
+          GIT_AUTHOR_NAME: "BlueNose Bot"
+          GIT_AUTHOR_EMAIL: "bot@bluenose.ai"
+          GIT_COMMITTER_NAME: "BlueNose Bot"
+          GIT_COMMITTER_EMAIL: "bot@bluenose.ai"
+        run: python fireflies_sync.py
+
+      # 5. Log del resultado
+      - name: 📋 Mostrar TASKS.md actualizado (primeras 40 líneas)
+        if: always()
+        run: head -40 TASKS.md
