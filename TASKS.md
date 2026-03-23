@@ -61,7 +61,7 @@
 - [ ] **[WV HND 🆕 23.03]** Subir datos de donantes y realizar primer contacto para agradecimiento y seguimiento durante esta semana | Owner: Luis Gonzalez
 - [ ] **[WV HND 🆕 23.03]** Obtener aprobación del presupuesto para lanzar campaña en Meta y mantenerla durante el año fiscal | Owner: Luis Gonzalez
 - [ ] **[WV HND 🆕 23.03]** Realizar cambios recomendados por Pablo en Google Ads para la campaña Wash | Owner: Luis Gonzalez
-- [ ] **[WV HND 🆕 19.03]** Ángelito: reunión con Luis cancelada — reprogramada al próximo lunes. Seguir metiéndole presión para revisar contenidos | Owner: Ángelito
+- [x] **[WV HND 🆕 19.03]** Ángelito: reunión con Luis cancelada — reprogramada al próximo lunes. Seguir metiéndole presión para revisar contenidos | Owner: Ángelito
 - [ ] **[WV HND 🆕 19.03]** Luis: hablar con Jorge Girón para conectar WhatsApp a cuenta de Meta | Owner: Luis
 - [ ] **[WV HND 🆕 19.03]** Express Pago: recibió primera documentación para conectar a web + HubSpot — están en espera. Cristian y Ángelito en lista de correos para seguimiento | Owner: Cristian P + Ángelito
 - [ ] **[WV ES 🆕 23.03]** Ornella: enviar listado de RUTs de donantes ya descontados en clawback para marcar en HubSpot | Owner: Ornella
