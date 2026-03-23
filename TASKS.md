@@ -13,7 +13,7 @@
 - [ ] **[VP CHILE]** Cristian P: cerrar ticket donaciones únicas (ajuste en integración) — HOY | Owner: Cristian P
 - [ ] **[VP CHILE]** Cristian P: cerrar ticket limpieza negocios duplicados F2F (750 contactos) — HOY | Owner: Cristian P
 - [ ] **[VP CHILE]** Cristian P: escribir a María (WV PE) por Discord para obtener más info del ticket "limpieza de lista y consulta web" | Owner: Cristian P
-- [ ] **[WV ES]** Sofi: subir base de Iglesias — Esther confirmó que Jorge y ella tienen el trabajo listo. Pendiente ejecución. | Owner: Sofía
+- [x] **[WV ES]** Sofi: subir base de Iglesias — Esther confirmó que Jorge y ella tienen el trabajo listo. Pendiente ejecución. | Owner: Sofía
 
 ---
 
