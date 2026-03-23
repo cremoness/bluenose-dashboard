@@ -7,10 +7,9 @@ const TASKS = {
       "tag": "Agente IA UCSP",
       "tagClass": "tag-def",
       "owner": "Ángelito",
-      "ownerId": "angelito",
       "clients": [],
-      "status": "active",
-      "isNew": true
+      "isNew": true,
+      "isCompleted": true
     },
     {
       "text": "Enrique: esperar brief de César Puma para Mesa de Ayuda (integración IA + WhatsApp sobre Zoho) — propuesta para abril/mayo",
@@ -19,11 +18,9 @@ const TASKS = {
       "tag": "Mesa de Ayuda",
       "tagClass": "tag-uc",
       "owner": "Enrique",
-      "ownerId": "enrique",
       "clients": [
         "UCSP"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -33,11 +30,9 @@ const TASKS = {
       "tag": "UCSP",
       "tagClass": "tag-uc",
       "owner": "Enrique",
-      "ownerId": "enrique",
       "clients": [
         "UCSP"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -47,11 +42,10 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Ángelito + Cristian P",
-      "ownerId": "cristian",
       "clients": [
         "WV"
       ],
-      "status": "active"
+      "isCompleted": true
     },
     {
       "text": "Ángelito: hacer push a Luis para activar campañas Wash esta semana (Día del Agua)",
@@ -60,11 +54,10 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Ángelito",
-      "ownerId": "angelito",
       "clients": [
         "WV"
       ],
-      "status": "active"
+      "isCompleted": true
     },
     {
       "text": "Cristian P: cerrar ticket donaciones únicas (ajuste en integración) — HOY",
@@ -73,11 +66,9 @@ const TASKS = {
       "tag": "VP",
       "tagClass": "tag-vp",
       "owner": "Cristian P",
-      "ownerId": "cristian",
       "clients": [
         "VP"
-      ],
-      "status": "active"
+      ]
     },
     {
       "text": "Cristian P: cerrar ticket limpieza negocios duplicados F2F (750 contactos) — HOY",
@@ -86,11 +77,9 @@ const TASKS = {
       "tag": "VP",
       "tagClass": "tag-vp",
       "owner": "Cristian P",
-      "ownerId": "cristian",
       "clients": [
         "VP"
-      ],
-      "status": "active"
+      ]
     },
     {
       "text": "Cristian P: escribir a María (WV PE) por Discord para obtener más info del ticket \"limpieza de lista y consulta web\"",
@@ -99,11 +88,9 @@ const TASKS = {
       "tag": "VP",
       "tagClass": "tag-vp",
       "owner": "Cristian P",
-      "ownerId": "cristian",
       "clients": [
         "VP"
-      ],
-      "status": "active"
+      ]
     },
     {
       "text": "Sofi: subir base de Iglesias — Esther confirmó que Jorge y ella tienen el trabajo listo. Pendiente ejecución.",
@@ -112,11 +99,10 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Sofía",
-      "ownerId": null,
       "clients": [
         "WV"
       ],
-      "status": "active"
+      "isCompleted": true
     }
   ],
   "semana": [
@@ -127,12 +113,11 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Cristian",
-      "ownerId": "cristian",
       "clients": [
         "WV"
       ],
-      "status": "active",
-      "isNew": true
+      "isNew": true,
+      "isCompleted": true
     },
     {
       "text": "Reenviar a Diana y equipo la lista y recursos para la importación de negocios pendientes (03:06)",
@@ -141,11 +126,9 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Diana",
-      "ownerId": null,
       "clients": [
         "WV"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -155,12 +138,11 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Ángelito",
-      "ownerId": "angelito",
       "clients": [
         "WV"
       ],
-      "status": "active",
-      "isNew": true
+      "isNew": true,
+      "isCompleted": true
     },
     {
       "text": "Compartir workflow de reintento Face to Face para entender la lógica de asociar pagos a negocios correctos (15:45)",
@@ -169,11 +151,9 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Ángelito",
-      "ownerId": "angelito",
       "clients": [
         "WV"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -183,11 +163,9 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Ángelito",
-      "ownerId": "angelito",
       "clients": [
         "WV"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -197,11 +175,9 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Ornella",
-      "ownerId": null,
       "clients": [
         "WV"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -211,11 +187,9 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Ángelito",
-      "ownerId": "angelito",
       "clients": [
         "WV"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -225,11 +199,9 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Pablo",
-      "ownerId": "pablo",
       "clients": [
         "WV"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -239,9 +211,7 @@ const TASKS = {
       "tag": "General",
       "tagClass": "tag-def",
       "owner": "Ángelito",
-      "ownerId": "angelito",
       "clients": [],
-      "status": "active",
       "isNew": true
     },
     {
@@ -251,9 +221,7 @@ const TASKS = {
       "tag": "General",
       "tagClass": "tag-def",
       "owner": "Ángelito",
-      "ownerId": "angelito",
       "clients": [],
-      "status": "active",
       "isNew": true
     },
     {
@@ -263,9 +231,7 @@ const TASKS = {
       "tag": "General",
       "tagClass": "tag-def",
       "owner": "Ángelito",
-      "ownerId": "angelito",
       "clients": [],
-      "status": "active",
       "isNew": true
     },
     {
@@ -275,9 +241,7 @@ const TASKS = {
       "tag": "General",
       "tagClass": "tag-def",
       "owner": "Ángelito",
-      "ownerId": "angelito",
       "clients": [],
-      "status": "active",
       "isNew": true
     },
     {
@@ -287,9 +251,7 @@ const TASKS = {
       "tag": "General",
       "tagClass": "tag-def",
       "owner": "Ángelito",
-      "ownerId": "angelito",
       "clients": [],
-      "status": "active",
       "isNew": true
     },
     {
@@ -299,9 +261,7 @@ const TASKS = {
       "tag": "General",
       "tagClass": "tag-def",
       "owner": "Pablo",
-      "ownerId": "pablo",
       "clients": [],
-      "status": "active",
       "isNew": true
     },
     {
@@ -311,9 +271,7 @@ const TASKS = {
       "tag": "General",
       "tagClass": "tag-def",
       "owner": "Ángelito",
-      "ownerId": "angelito",
       "clients": [],
-      "status": "active",
       "isNew": true
     },
     {
@@ -323,9 +281,7 @@ const TASKS = {
       "tag": "General",
       "tagClass": "tag-def",
       "owner": "Enrique",
-      "ownerId": "enrique",
       "clients": [],
-      "status": "active",
       "isNew": true
     },
     {
@@ -335,9 +291,7 @@ const TASKS = {
       "tag": "General",
       "tagClass": "tag-def",
       "owner": "Ángelito",
-      "ownerId": "angelito",
       "clients": [],
-      "status": "active",
       "isNew": true
     },
     {
@@ -347,9 +301,7 @@ const TASKS = {
       "tag": "General",
       "tagClass": "tag-def",
       "owner": "Cristian P",
-      "ownerId": "cristian",
       "clients": [],
-      "status": "active",
       "isNew": true
     },
     {
@@ -359,11 +311,9 @@ const TASKS = {
       "tag": "Smartimper",
       "tagClass": "tag-sm",
       "owner": "Ángelito",
-      "ownerId": "angelito",
       "clients": [
         "Smartimper"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -373,11 +323,9 @@ const TASKS = {
       "tag": "Mesa de Ayuda",
       "tagClass": "tag-uc",
       "owner": "Enrique",
-      "ownerId": "enrique",
       "clients": [
         "UCSP"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -387,11 +335,9 @@ const TASKS = {
       "tag": "Coaching SGA",
       "tagClass": "tag-uc",
       "owner": "Enrique",
-      "ownerId": "enrique",
       "clients": [
         "UCSP"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -401,11 +347,9 @@ const TASKS = {
       "tag": "Alumni",
       "tagClass": "tag-uc",
       "owner": "Enrique",
-      "ownerId": "enrique",
       "clients": [
         "UCSP"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -415,11 +359,9 @@ const TASKS = {
       "tag": "SpotLight PPT",
       "tagClass": "tag-uc",
       "owner": "Ángelito",
-      "ownerId": "angelito",
       "clients": [
         "UCSP"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -429,11 +371,9 @@ const TASKS = {
       "tag": "UCSP",
       "tagClass": "tag-uc",
       "owner": "Ángelito — usar transcripciones + Claude",
-      "ownerId": "angelito",
       "clients": [
         "UCSP"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -443,11 +383,9 @@ const TASKS = {
       "tag": "⚠️ EN PROCESO",
       "tagClass": "tag-uc",
       "owner": "Ángelito",
-      "ownerId": "angelito",
       "clients": [
         "UCSP"
-      ],
-      "status": "active"
+      ]
     },
     {
       "text": "Enrique: coordinar entrevista con Ángelo sobre Centro de Idiomas + entrevistas con alumnos, desertores y estudiantes de otras universidades",
@@ -456,11 +394,9 @@ const TASKS = {
       "tag": "UCSP",
       "tagClass": "tag-uc",
       "owner": "Enrique",
-      "ownerId": "enrique",
       "clients": [
         "UCSP"
-      ],
-      "status": "active"
+      ]
     },
     {
       "text": "Enrique: esperar respuesta de Renzo sobre presupuesto adicional (cual + cuanti) para Centro de Idiomas — todo supeditado a esto",
@@ -469,11 +405,9 @@ const TASKS = {
       "tag": "UCSP",
       "tagClass": "tag-uc",
       "owner": "Enrique",
-      "ownerId": "enrique",
       "clients": [
         "UCSP"
-      ],
-      "status": "active"
+      ]
     },
     {
       "text": "Enrique: buscar espacio fortuito con Paul para preguntar por TDR Cobranzas (parar la mano por ahora)",
@@ -482,11 +416,9 @@ const TASKS = {
       "tag": "UCSP",
       "tagClass": "tag-uc",
       "owner": "Enrique",
-      "ownerId": "enrique",
       "clients": [
         "UCSP"
-      ],
-      "status": "active"
+      ]
     },
     {
       "text": "Enrique: tener espacio con Argenis (WV RD) para asegurar continuidad",
@@ -495,11 +427,9 @@ const TASKS = {
       "tag": "UCSP",
       "tagClass": "tag-uc",
       "owner": "Enrique + Pablo",
-      "ownerId": "enrique",
       "clients": [
         "UCSP"
-      ],
-      "status": "active"
+      ]
     },
     {
       "text": "Ángelito: soporte continúa · Se respondió inquietud sobre landing (sí la hacemos con el proceso de Trello) · Confirmar que todo fluye correctamente con el cliente",
@@ -508,11 +438,9 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Ángelito",
-      "ownerId": "angelito",
       "clients": [
         "WV"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -522,11 +450,9 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Luis Gonzalez + Marcos",
-      "ownerId": "marcos",
       "clients": [
         "WV"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -536,11 +462,9 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Luis Gonzalez",
-      "ownerId": null,
       "clients": [
         "WV"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -550,11 +474,9 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Luis Gonzalez",
-      "ownerId": null,
       "clients": [
         "WV"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -564,11 +486,9 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Luis Gonzalez",
-      "ownerId": null,
       "clients": [
         "WV"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -578,11 +498,9 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Luis Gonzalez",
-      "ownerId": null,
       "clients": [
         "WV"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -592,11 +510,9 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Ángelito",
-      "ownerId": "angelito",
       "clients": [
         "WV"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -606,11 +522,9 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Luis",
-      "ownerId": null,
       "clients": [
         "WV"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -620,11 +534,9 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Cristian P + Ángelito",
-      "ownerId": "cristian",
       "clients": [
         "WV"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -634,11 +546,9 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Ornella",
-      "ownerId": null,
       "clients": [
         "WV"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -648,11 +558,9 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Pablo",
-      "ownerId": "pablo",
       "clients": [
         "WV"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -662,11 +570,9 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Pablo",
-      "ownerId": "pablo",
       "clients": [
         "WV"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -676,11 +582,9 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Gonzalo",
-      "ownerId": null,
       "clients": [
         "WV"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -690,11 +594,9 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Gonzalo",
-      "ownerId": null,
       "clients": [
         "WV"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -704,11 +606,9 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Gonzalo",
-      "ownerId": null,
       "clients": [
         "WV"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -718,11 +618,9 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Gonzalo",
-      "ownerId": null,
       "clients": [
         "WV"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -732,11 +630,9 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Cristian P + Sofía",
-      "ownerId": "cristian",
       "clients": [
         "WV"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -746,11 +642,9 @@ const TASKS = {
       "tag": "SIMMA",
       "tagClass": "tag-wv",
       "owner": "Sofía + Jorge",
-      "ownerId": null,
       "clients": [
         "WV"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -760,11 +654,9 @@ const TASKS = {
       "tag": "SIMMA",
       "tagClass": "tag-wv",
       "owner": "Sofía",
-      "ownerId": null,
       "clients": [
         "WV"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -774,11 +666,9 @@ const TASKS = {
       "tag": "SIMMA",
       "tagClass": "tag-wv",
       "owner": "Sofía + Cristian P",
-      "ownerId": "cristian",
       "clients": [
         "WV"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -788,11 +678,9 @@ const TASKS = {
       "tag": "SIMMA",
       "tagClass": "tag-wv",
       "owner": "Cristian P",
-      "ownerId": "cristian",
       "clients": [
         "WV"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -802,11 +690,9 @@ const TASKS = {
       "tag": "SIMMA",
       "tagClass": "tag-wv",
       "owner": "Sofía",
-      "ownerId": null,
       "clients": [
         "WV"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -816,11 +702,9 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Ángelito",
-      "ownerId": "angelito",
       "clients": [
         "WV"
-      ],
-      "status": "active"
+      ]
     },
     {
       "text": "Equipo: aprovechar última/s reuniones con Argenis para hablar de continuidad (Yomara, Juan Plata, Juan Miralcázar, Eli Kauri se van — solo queda Argenis)",
@@ -829,11 +713,9 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Enrique + Pablo",
-      "ownerId": "enrique",
       "clients": [
         "WV"
-      ],
-      "status": "active"
+      ]
     },
     {
       "text": "Luis: finalizar y enviar piezas campaña Wash HOY o mañana (vitales para evento del domingo)",
@@ -842,11 +724,9 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Luis",
-      "ownerId": null,
       "clients": [
         "WV"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -856,11 +736,9 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Luis",
-      "ownerId": null,
       "clients": [
         "WV"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -870,11 +748,9 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Pablo",
-      "ownerId": "pablo",
       "clients": [
         "WV"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -884,11 +760,9 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Pablo",
-      "ownerId": "pablo",
       "clients": [
         "WV"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -898,11 +772,9 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Luis",
-      "ownerId": null,
       "clients": [
         "WV"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -912,12 +784,11 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Pablo",
-      "ownerId": "pablo",
       "clients": [
         "WV"
       ],
-      "status": "active",
-      "isNew": true
+      "isNew": true,
+      "isCompleted": true
     },
     {
       "text": "Ángelito: coordinar con Luis y Pablo reunión anticipada de revisión de piezas y workflows — MIÉRCOLES (no jueves)",
@@ -926,11 +797,9 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Ángelito · Luis envía invitación",
-      "ownerId": "angelito",
       "clients": [
         "WV"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -940,12 +809,11 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Pablo",
-      "ownerId": "pablo",
       "clients": [
         "WV"
       ],
-      "status": "active",
-      "isNew": true
+      "isNew": true,
+      "isCompleted": true
     },
     {
       "text": "Acompañar evolución de piezas para iniciar creación y activación de WF",
@@ -954,11 +822,10 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Ángelito",
-      "ownerId": "angelito",
       "clients": [
         "WV"
       ],
-      "status": "active"
+      "isCompleted": true
     },
     {
       "text": "Reunión seguimiento con Express Pago — reprogramada para JUEVES (avance pasarela de pago)",
@@ -967,11 +834,9 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Ángelito",
-      "ownerId": "angelito",
       "clients": [
         "WV"
-      ],
-      "status": "active"
+      ]
     },
     {
       "text": "Cristian P: continuar revisión con desarrolladores para resolver prefijos SMS — revisar correo que Pablo reenvía",
@@ -980,11 +845,9 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Cristian P",
-      "ownerId": "cristian",
       "clients": [
         "WV"
-      ],
-      "status": "active"
+      ]
     },
     {
       "text": "Revisar comentarios de Nieves en Discord (canal general, varias peticiones)",
@@ -993,11 +856,9 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Ángelito",
-      "ownerId": "angelito",
       "clients": [
         "WV"
-      ],
-      "status": "active"
+      ]
     },
     {
       "text": "⭐ Servicio renovado por un año más. Certificaciones de donación (desarrollo de Pablo) se cobran aparte por única vez",
@@ -1006,11 +867,10 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Ángelito (informativo)",
-      "ownerId": "angelito",
       "clients": [
         "WV"
       ],
-      "status": "active"
+      "isCompleted": true
     },
     {
       "text": "Valeria: convocar reuniones martes 11am Ecuador",
@@ -1019,11 +879,9 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Valeria",
-      "ownerId": null,
       "clients": [
         "WV"
-      ],
-      "status": "active"
+      ]
     },
     {
       "text": "Gonzalo: aprobar proyecto Facturación F2F + compartir reglas de negocio con Pablo",
@@ -1032,11 +890,9 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Gonzalo / seguimiento Enrique",
-      "ownerId": "enrique",
       "clients": [
         "WV"
-      ],
-      "status": "active"
+      ]
     },
     {
       "text": "Ángelito: analizar y documentar gestión del equipo de ventas UPSJB — de 11,000 leads contactados vía WhatsApp, 5,300 abrieron el mensaje, 325 respondieron y el 95% no recibió respuesta del equipo de ventas. Preparar punto para próxima reunión",
@@ -1045,11 +901,9 @@ const TASKS = {
       "tag": "UPSJB",
       "tagClass": "tag-up",
       "owner": "Ángelito → Pablo",
-      "ownerId": "pablo",
       "clients": [
         "UPSJB"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -1059,11 +913,9 @@ const TASKS = {
       "tag": "UPSJB",
       "tagClass": "tag-up",
       "owner": "Ángelito + Enrique",
-      "ownerId": "enrique",
       "clients": [
         "UPSJB"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -1073,11 +925,9 @@ const TASKS = {
       "tag": "UPSJB",
       "tagClass": "tag-up",
       "owner": "Ángelito",
-      "ownerId": "angelito",
       "clients": [
         "UPSJB"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -1087,11 +937,9 @@ const TASKS = {
       "tag": "UPSJB",
       "tagClass": "tag-up",
       "owner": "Enrique/Pablo",
-      "ownerId": "enrique",
       "clients": [
         "UPSJB"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -1101,11 +949,9 @@ const TASKS = {
       "tag": "UPSJB",
       "tagClass": "tag-up",
       "owner": "Blue Nose",
-      "ownerId": null,
       "clients": [
         "UPSJB"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -1115,11 +961,9 @@ const TASKS = {
       "tag": "UPSJB",
       "tagClass": "tag-up",
       "owner": "Blue Nose",
-      "ownerId": null,
       "clients": [
         "UPSJB"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -1129,11 +973,9 @@ const TASKS = {
       "tag": "UPSJB",
       "tagClass": "tag-up",
       "owner": "Blue Nose",
-      "ownerId": null,
       "clients": [
         "UPSJB"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -1143,11 +985,9 @@ const TASKS = {
       "tag": "UPSJB",
       "tagClass": "tag-up",
       "owner": "Blue Nose",
-      "ownerId": null,
       "clients": [
         "UPSJB"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -1157,11 +997,9 @@ const TASKS = {
       "tag": "UPSJB",
       "tagClass": "tag-up",
       "owner": "Carlos",
-      "ownerId": null,
       "clients": [
         "UPSJB"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -1171,11 +1009,9 @@ const TASKS = {
       "tag": "UPSJB",
       "tagClass": "tag-up",
       "owner": "Carlos",
-      "ownerId": null,
       "clients": [
         "UPSJB"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -1185,11 +1021,9 @@ const TASKS = {
       "tag": "UPSJB",
       "tagClass": "tag-up",
       "owner": "Carlos",
-      "ownerId": null,
       "clients": [
         "UPSJB"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -1199,11 +1033,9 @@ const TASKS = {
       "tag": "UPSJB",
       "tagClass": "tag-up",
       "owner": "Carlos",
-      "ownerId": null,
       "clients": [
         "UPSJB"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -1213,11 +1045,9 @@ const TASKS = {
       "tag": "UPSJB",
       "tagClass": "tag-up",
       "owner": "Estuardo",
-      "ownerId": null,
       "clients": [
         "UPSJB"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -1227,11 +1057,9 @@ const TASKS = {
       "tag": "UPSJB",
       "tagClass": "tag-up",
       "owner": "Estuardo",
-      "ownerId": null,
       "clients": [
         "UPSJB"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -1241,11 +1069,9 @@ const TASKS = {
       "tag": "UPSJB",
       "tagClass": "tag-up",
       "owner": "Estuardo",
-      "ownerId": null,
       "clients": [
         "UPSJB"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -1255,11 +1081,9 @@ const TASKS = {
       "tag": "UPSJB",
       "tagClass": "tag-up",
       "owner": "Carlos",
-      "ownerId": null,
       "clients": [
         "UPSJB"
-      ],
-      "status": "active"
+      ]
     },
     {
       "text": "Carlos: solicitar entrega final MVP a Atom esta semana",
@@ -1268,11 +1092,9 @@ const TASKS = {
       "tag": "UPSJB",
       "tagClass": "tag-up",
       "owner": "Carlos",
-      "ownerId": null,
       "clients": [
         "UPSJB"
-      ],
-      "status": "active"
+      ]
     },
     {
       "text": "Carlos: compartir nuevo estudio de mercado (Admón y Conta) con Blue Nose",
@@ -1281,11 +1103,9 @@ const TASKS = {
       "tag": "UPSJB",
       "tagClass": "tag-up",
       "owner": "Carlos",
-      "ownerId": null,
       "clients": [
         "UPSJB"
-      ],
-      "status": "active"
+      ]
     },
     {
       "text": "Enrique: presentar análisis estratégico de modalidad A Distancia",
@@ -1294,11 +1114,9 @@ const TASKS = {
       "tag": "UPSJB",
       "tagClass": "tag-up",
       "owner": "Enrique",
-      "ownerId": "enrique",
       "clients": [
         "UPSJB"
-      ],
-      "status": "active"
+      ]
     },
     {
       "text": "Cristian P: crear y organizar tickets de Ecuador (mezcla HubSpot + integraciones + nuevas propuestas) — priorizar por urgencia, avanzar de a 2 en paralelo, NO sacar todos de golpe",
@@ -1307,11 +1125,9 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Cristian P + Pablo + Marcos",
-      "ownerId": "cristian",
       "clients": [
         "WV"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -1321,11 +1137,9 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Cristian P",
-      "ownerId": "cristian",
       "clients": [
         "WV"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -1335,11 +1149,9 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Pablo + Marcos",
-      "ownerId": "marcos",
       "clients": [
         "WV"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -1349,11 +1161,9 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Cristian P",
-      "ownerId": "cristian",
       "clients": [
         "WV"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -1363,11 +1173,9 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Cristian P",
-      "ownerId": "cristian",
       "clients": [
         "WV"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -1377,11 +1185,9 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Cristian P",
-      "ownerId": "cristian",
       "clients": [
         "WV"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -1391,11 +1197,9 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Cristian P",
-      "ownerId": "cristian",
       "clients": [
         "WV"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -1405,11 +1209,9 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Diana + Ornella",
-      "ownerId": null,
       "clients": [
         "WV"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -1419,11 +1221,9 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Ornella",
-      "ownerId": null,
       "clients": [
         "WV"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -1433,11 +1233,9 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Diana",
-      "ownerId": null,
       "clients": [
         "WV"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -1447,11 +1245,9 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Pablo",
-      "ownerId": "pablo",
       "clients": [
         "WV"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -1461,11 +1257,9 @@ const TASKS = {
       "tag": "NUEVO",
       "tagClass": "tag-vp",
       "owner": "Cristian P",
-      "ownerId": "cristian",
       "clients": [
         "VP"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -1475,11 +1269,9 @@ const TASKS = {
       "tag": "VP",
       "tagClass": "tag-vp",
       "owner": "Diani",
-      "ownerId": null,
       "clients": [
         "VP"
-      ],
-      "status": "active"
+      ]
     },
     {
       "text": "Esperar regreso de Ornella para avanzar proceso nóminas con SIMMA",
@@ -1488,11 +1280,9 @@ const TASKS = {
       "tag": "VP",
       "tagClass": "tag-vp",
       "owner": "Equipo",
-      "ownerId": null,
       "clients": [
         "VP"
-      ],
-      "status": "active"
+      ]
     },
     {
       "text": "Pablo: avanzar con la parte de ventas de la financiera (no esperar a marketing)",
@@ -1501,9 +1291,7 @@ const TASKS = {
       "tag": "FINANCIERA",
       "tagClass": "tag-def",
       "owner": "Pablo",
-      "ownerId": "pablo",
       "clients": [],
-      "status": "active",
       "isNew": true
     },
     {
@@ -1513,9 +1301,7 @@ const TASKS = {
       "tag": "CONSTRUCTORA",
       "tagClass": "tag-def",
       "owner": "Pablo + Enrique",
-      "ownerId": "enrique",
       "clients": [],
-      "status": "active",
       "isNew": true
     },
     {
@@ -1525,11 +1311,9 @@ const TASKS = {
       "tag": "Smartimper",
       "tagClass": "tag-sm",
       "owner": "Ángelito",
-      "ownerId": "angelito",
       "clients": [
         "Smartimper"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -1539,11 +1323,9 @@ const TASKS = {
       "tag": "Smartimper",
       "tagClass": "tag-sm",
       "owner": "Ángelito",
-      "ownerId": "angelito",
       "clients": [
         "Smartimper"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -1553,11 +1335,9 @@ const TASKS = {
       "tag": "Smartimper",
       "tagClass": "tag-sm",
       "owner": "Ángelito",
-      "ownerId": "angelito",
       "clients": [
         "Smartimper"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -1567,11 +1347,9 @@ const TASKS = {
       "tag": "Smartimper",
       "tagClass": "tag-sm",
       "owner": "Ángelito",
-      "ownerId": "angelito",
       "clients": [
         "Smartimper"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -1581,11 +1359,9 @@ const TASKS = {
       "tag": "Smartimper",
       "tagClass": "tag-sm",
       "owner": "Ángelito",
-      "ownerId": "angelito",
       "clients": [
         "Smartimper"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -1595,11 +1371,9 @@ const TASKS = {
       "tag": "Smartimper",
       "tagClass": "tag-sm",
       "owner": "Ángelito",
-      "ownerId": "angelito",
       "clients": [
         "Smartimper"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -1609,11 +1383,9 @@ const TASKS = {
       "tag": "Smartimper",
       "tagClass": "tag-sm",
       "owner": "Pablo",
-      "ownerId": "pablo",
       "clients": [
         "Smartimper"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -1623,11 +1395,9 @@ const TASKS = {
       "tag": "NUEVO",
       "tagClass": "tag-sm",
       "owner": "Ángelito",
-      "ownerId": "angelito",
       "clients": [
         "Smartimper"
       ],
-      "status": "active",
       "isNew": true
     },
     {
@@ -1637,11 +1407,9 @@ const TASKS = {
       "tag": "Ica",
       "tagClass": "tag-ci",
       "owner": "Enrique",
-      "ownerId": "enrique",
       "clients": [
         "Ica"
-      ],
-      "status": "active"
+      ]
     }
   ],
   "mes": [
@@ -1652,11 +1420,9 @@ const TASKS = {
       "tag": "UCSP",
       "tagClass": "tag-uc",
       "owner": "Equipo",
-      "ownerId": null,
       "clients": [
         "UCSP"
-      ],
-      "status": "active"
+      ]
     },
     {
       "text": "Gestionar cierre formal de contrato | Due: 31.03.26",
@@ -1665,11 +1431,9 @@ const TASKS = {
       "tag": "WV",
       "tagClass": "tag-wv",
       "owner": "Equipo",
-      "ownerId": null,
       "clients": [
         "WV"
-      ],
-      "status": "active"
+      ]
     }
   ],
   "done": [
@@ -1680,9 +1444,7 @@ const TASKS = {
       "tag": "Agente IA UCSP",
       "tagClass": "tag-def",
       "owner": "Enrique",
-      "ownerId": "enrique",
       "clients": [],
-      "status": "done",
       "isNew": true,
       "isCompleted": true
     },
@@ -1693,11 +1455,9 @@ const TASKS = {
       "tag": "UPSJB",
       "tagClass": "tag-up",
       "owner": "Pablo",
-      "ownerId": "pablo",
       "clients": [
         "UPSJB"
       ],
-      "status": "done",
       "isNew": true,
       "isCompleted": true
     },
@@ -1708,9 +1468,7 @@ const TASKS = {
       "tag": "General",
       "tagClass": "tag-def",
       "owner": "Marcos",
-      "ownerId": "marcos",
       "clients": [],
-      "status": "done",
       "isNew": true,
       "isCompleted": true
     },
@@ -1721,9 +1479,7 @@ const TASKS = {
       "tag": "✅  11:52",
       "tagClass": "tag-def",
       "owner": "Equipo",
-      "ownerId": null,
       "clients": [],
-      "status": "done",
       "isCompleted": true
     },
     {
@@ -1733,9 +1489,7 @@ const TASKS = {
       "tag": "General",
       "tagClass": "tag-def",
       "owner": "Smartimper",
-      "ownerId": null,
       "clients": [],
-      "status": "done",
       "isCompleted": true
     },
     {
@@ -1745,9 +1499,7 @@ const TASKS = {
       "tag": "General",
       "tagClass": "tag-def",
       "owner": "Smartimper",
-      "ownerId": null,
       "clients": [],
-      "status": "done",
       "isCompleted": true
     },
     {
@@ -1757,9 +1509,7 @@ const TASKS = {
       "tag": "General",
       "tagClass": "tag-def",
       "owner": "Smartimper",
-      "ownerId": null,
       "clients": [],
-      "status": "done",
       "isCompleted": true
     },
     {
@@ -1769,9 +1519,7 @@ const TASKS = {
       "tag": "General",
       "tagClass": "tag-def",
       "owner": "Smartimper",
-      "ownerId": null,
       "clients": [],
-      "status": "done",
       "isCompleted": true
     },
     {
@@ -1781,9 +1529,7 @@ const TASKS = {
       "tag": "General",
       "tagClass": "tag-def",
       "owner": "WV RD",
-      "ownerId": null,
       "clients": [],
-      "status": "done",
       "isCompleted": true
     },
     {
@@ -1793,9 +1539,7 @@ const TASKS = {
       "tag": "General",
       "tagClass": "tag-def",
       "owner": "UCSP CENDES",
-      "ownerId": null,
       "clients": [],
-      "status": "done",
       "isCompleted": true
     },
     {
@@ -1805,9 +1549,7 @@ const TASKS = {
       "tag": "General",
       "tagClass": "tag-def",
       "owner": "UCSP",
-      "ownerId": null,
       "clients": [],
-      "status": "done",
       "isCompleted": true
     },
     {
@@ -1817,9 +1559,7 @@ const TASKS = {
       "tag": "General",
       "tagClass": "tag-def",
       "owner": "Ani",
-      "ownerId": null,
       "clients": [],
-      "status": "done",
       "isCompleted": true
     },
     {
@@ -1829,9 +1569,7 @@ const TASKS = {
       "tag": "General",
       "tagClass": "tag-def",
       "owner": "VP Chile",
-      "ownerId": null,
       "clients": [],
-      "status": "done",
       "isCompleted": true
     },
     {
@@ -1841,9 +1579,7 @@ const TASKS = {
       "tag": "General",
       "tagClass": "tag-def",
       "owner": "VP Chile",
-      "ownerId": null,
       "clients": [],
-      "status": "done",
       "isCompleted": true
     },
     {
@@ -1853,9 +1589,7 @@ const TASKS = {
       "tag": "General",
       "tagClass": "tag-def",
       "owner": "WV HND",
-      "ownerId": null,
       "clients": [],
-      "status": "done",
       "isCompleted": true
     },
     {
@@ -1865,9 +1599,7 @@ const TASKS = {
       "tag": "General",
       "tagClass": "tag-def",
       "owner": "WV ES",
-      "ownerId": null,
       "clients": [],
-      "status": "done",
       "isCompleted": true
     },
     {
@@ -1877,9 +1609,7 @@ const TASKS = {
       "tag": "NUEVO ✅",
       "tagClass": "tag-def",
       "owner": "Equipo",
-      "ownerId": null,
       "clients": [],
-      "status": "done",
       "isNew": true,
       "isCompleted": true
     },
@@ -1890,9 +1620,7 @@ const TASKS = {
       "tag": "General",
       "tagClass": "tag-def",
       "owner": "UCSP",
-      "ownerId": null,
       "clients": [],
-      "status": "done",
       "isCompleted": true
     },
     {
@@ -1902,9 +1630,7 @@ const TASKS = {
       "tag": "General",
       "tagClass": "tag-def",
       "owner": "UCSP Agente IA",
-      "ownerId": null,
       "clients": [],
-      "status": "done",
       "isCompleted": true
     },
     {
@@ -1914,9 +1640,7 @@ const TASKS = {
       "tag": "General",
       "tagClass": "tag-def",
       "owner": "Equipo",
-      "ownerId": null,
       "clients": [],
-      "status": "done",
       "isCompleted": true
     },
     {
@@ -1926,9 +1650,7 @@ const TASKS = {
       "tag": "General",
       "tagClass": "tag-def",
       "owner": "Equipo",
-      "ownerId": null,
       "clients": [],
-      "status": "done",
       "isCompleted": true
     },
     {
@@ -1938,317 +1660,8 @@ const TASKS = {
       "tag": "General",
       "tagClass": "tag-def",
       "owner": "Equipo",
-      "ownerId": null,
       "clients": [],
-      "status": "done",
       "isCompleted": true
     }
-  ],
-  "pending": []
+  ]
 };
-
-const TEAM_BN = [
-  {
-    "id": "cristian",
-    "name": "Cristian Palacios",
-    "role": "Especialista Back / Soporte Técnico",
-    "color": "#a78bfa"
-  },
-  {
-    "id": "marcos",
-    "name": "Marcos Peláez",
-    "role": "Especialista CRM / Workflows / BDD",
-    "color": "#fb923c"
-  },
-  {
-    "id": "angel_m",
-    "name": "Ángel Manrique",
-    "role": "Especialista Back",
-    "color": "#c084fc"
-  },
-  {
-    "id": "enrique",
-    "name": "Enrique Vera",
-    "role": "Socio / Estrategia",
-    "color": "#f472b6"
-  },
-  {
-    "id": "pablo",
-    "name": "Pablo Pérez",
-    "role": "Socio / Tecnología",
-    "color": "#38bdf8"
-  },
-  {
-    "id": "angelito",
-    "name": "Ángel Chanamé",
-    "role": "Project, Growth & Inbound Manager",
-    "color": "#818cf8"
-  }
-];
-
-const CLIENT_DIR = [
-  {
-    "client": "Smartimper",
-    "contact": "Valdric Tardos",
-    "mail": "valdric@smartimper.mx",
-    "role": "CEO"
-  },
-  {
-    "client": "WV RD",
-    "contact": "Juan Benalcazar",
-    "mail": "juan_benalcazar@wvi.org",
-    "role": "Coordinador Marketing Digital"
-  },
-  {
-    "client": "WV RD",
-    "contact": "Johmara Vargas",
-    "mail": "johmara_vargas@wvi.org",
-    "role": "Gerente de Marketing"
-  },
-  {
-    "client": "WV RD",
-    "contact": "Erick Urbaez",
-    "mail": "erick_urbaez@wvi.org",
-    "role": "Creador de Contenido"
-  },
-  {
-    "client": "WV RD",
-    "contact": "Argenis Perez",
-    "mail": "argenis.perez@wvi.org",
-    "role": "Asesor Regional"
-  },
-  {
-    "client": "WV RD",
-    "contact": "Juan Plata",
-    "mail": "Juan_Plata@wvi.org",
-    "role": "Atención al cliente"
-  },
-  {
-    "client": "WV HN",
-    "contact": "Luis Gonzalez",
-    "mail": "luis_gonzalez_rivera@wvi.org",
-    "role": "Marketing Specialist"
-  },
-  {
-    "client": "WV HN",
-    "contact": "Ruth Juarez",
-    "mail": "ruth_juarez@wvi.org",
-    "role": "Gerente Marketing y Comunicaciones"
-  },
-  {
-    "client": "WV HN",
-    "contact": "Andrea Medina",
-    "mail": "andrea_medina@wvi.org",
-    "role": "Specialist GAM-Grants"
-  },
-  {
-    "client": "WV HN",
-    "contact": "Lucy Ramos",
-    "mail": "lucymramos2001@gmail.com",
-    "role": ""
-  },
-  {
-    "client": "WV HN",
-    "contact": "Abigail Gonzalez",
-    "mail": "abigail_gonzalez@wvi.org",
-    "role": ""
-  },
-  {
-    "client": "WV ES",
-    "contact": "Isabel Iglesias",
-    "mail": "Isabel_Iglesias@wvi.org",
-    "role": "Marketing & Fundraising"
-  },
-  {
-    "client": "WV ES",
-    "contact": "Esther Solera",
-    "mail": "Esther_Solera@wvi.org",
-    "role": "Coordinadora de CRS y Donantes Estratégicos"
-  },
-  {
-    "client": "WV ES",
-    "contact": "Jesús Trejo",
-    "mail": "Jesus_Trejo@wvi.org",
-    "role": "Captación Digital"
-  },
-  {
-    "client": "WV ES",
-    "contact": "Jeison Peña",
-    "mail": "jeison_pena@wvi.org",
-    "role": "Captación Digital"
-  },
-  {
-    "client": "WV ES",
-    "contact": "Mario Gomez",
-    "mail": "Mario_Gomez@wvi.org",
-    "role": "Telemarketing"
-  },
-  {
-    "client": "WV ES",
-    "contact": "Nieves Carabana",
-    "mail": "Nieves_Carabana@wvi.org",
-    "role": "Iglesias"
-  },
-  {
-    "client": "WV ES",
-    "contact": "Vicente Aceituno",
-    "mail": "Vicente_Aceituno@wvi.org",
-    "role": "Finance Manager"
-  },
-  {
-    "client": "WV Región",
-    "contact": "Jorge Girón",
-    "mail": "jorge_giron@wvi.com",
-    "role": "IT Business Partner, Global Technology & Digital Solutions"
-  },
-  {
-    "client": "WV CL",
-    "contact": "Gonzalo Macaya",
-    "mail": "gonzalo_macaya@wvi.org",
-    "role": "Gerente de Fundraising y Fidelización"
-  },
-  {
-    "client": "WV CL",
-    "contact": "Diana Sanchez",
-    "mail": "diana_sanchez@wvi.org",
-    "role": "Coordinadora de Growth Marketing"
-  },
-  {
-    "client": "WV CL",
-    "contact": "Paula Pineda",
-    "mail": "paula_pineda@wvi.org",
-    "role": ""
-  },
-  {
-    "client": "WV CL",
-    "contact": "Yessenia Soto",
-    "mail": "yessenia_soto@wvi.org",
-    "role": "Coordinadora de Telemarketing"
-  },
-  {
-    "client": "WV CL",
-    "contact": "Ornella Baldi",
-    "mail": "ornella_baldi@wvi.org",
-    "role": "Analista Comercial"
-  },
-  {
-    "client": "WV BR",
-    "contact": "Rodrigo Flaire",
-    "mail": "rodrigo_flaire@wvi.org",
-    "role": "Fundraising e Innovación"
-  },
-  {
-    "client": "WV EC",
-    "contact": "Johmara Vargas",
-    "mail": "johmara_vargas@wvi.org",
-    "role": "Coordinadora de Marketing & Fundraising"
-  },
-  {
-    "client": "WV EC",
-    "contact": "Juan Benalcazar",
-    "mail": "juan_benalcazar@wvi.org",
-    "role": "Coordinador Marketing Digital"
-  },
-  {
-    "client": "WV EC",
-    "contact": "Valeria Yanza",
-    "mail": "martha_yanza@wvi.org",
-    "role": "Analista de Cobranzas al Donante"
-  },
-  {
-    "client": "WV PE",
-    "contact": "Alejandra Barcena",
-    "mail": "alejandra_barcena_navarro@wvi.org",
-    "role": "Coordinadora Nacional de Donantes Individuales"
-  },
-  {
-    "client": "WV PE",
-    "contact": "María Regalado",
-    "mail": "maria_regalado_baldeon@wvi.org",
-    "role": "Asistente de Fidelización al Donante"
-  },
-  {
-    "client": "WV PE",
-    "contact": "Aaron Mescco",
-    "mail": "aaron_mescco_yupanqui@wvi.org",
-    "role": "Analista de Afiliación y Cobranzas"
-  },
-  {
-    "client": "WV CR",
-    "contact": "Rosy Arce",
-    "mail": "rosy_arce@wvi.org",
-    "role": "Supervisora de Marketing Digital y Comunicaciones"
-  },
-  {
-    "client": "UCSP",
-    "contact": "Renzo Bravo",
-    "mail": "rbravo@ucsp.edu.pe",
-    "role": "Director de Marketing"
-  },
-  {
-    "client": "UCSP",
-    "contact": "Cinthia Llaza",
-    "mail": "cllaza@ucsp.edu.pe",
-    "role": "Analista de Marketing"
-  },
-  {
-    "client": "UCSP",
-    "contact": "Paolo Garate",
-    "mail": "prgarate@ucsp.edu.pe",
-    "role": "Analista Diseño Gráfico"
-  },
-  {
-    "client": "UCSP",
-    "contact": "Romina Ampuero",
-    "mail": "rampuero@ucsp.edu.pe",
-    "role": "Auxiliar de Marketing"
-  },
-  {
-    "client": "UCSP",
-    "contact": "Alonso Ugarte",
-    "mail": "amugarte@ucsp.edu.pe",
-    "role": "Jefe de Ventas Pregrado"
-  },
-  {
-    "client": "UCSP",
-    "contact": "Fernando Herrera",
-    "mail": "fmherrera@ucsp.edu.pe",
-    "role": "Analista de Marketing Postgrado"
-  },
-  {
-    "client": "UCSP",
-    "contact": "Pablo Gonzales",
-    "mail": "prgonzales@ucsp.edu.pe",
-    "role": "Director Centro de Idiomas"
-  },
-  {
-    "client": "UCSP",
-    "contact": "Claudia Tapia",
-    "mail": "ctapiap@ucsp.edu.pe",
-    "role": "Coordinadora de Marketing Digital"
-  },
-  {
-    "client": "UCSP",
-    "contact": "César Mogrovejo",
-    "mail": "carmogrovejo@ucsp.edu.pe",
-    "role": "Analista de Marketing Digital"
-  },
-  {
-    "client": "UPSJB",
-    "contact": "Carlos Urquiaga",
-    "mail": "CARLOS.URQUIAGA@UPSJB.EDU.PE",
-    "role": "Director Comercial"
-  },
-  {
-    "client": "UPSJB",
-    "contact": "Estuardo Escobar",
-    "mail": "ESTUARDO.ESCOBAR@UPSJB.EDU.PE",
-    "role": "Jefe de Marketing"
-  },
-  {
-    "client": "UPSJB",
-    "contact": "Edgar Mendoza",
-    "mail": "EDGARE.MENDOZA@upsjb.edu.pe",
-    "role": "Gerente General"
-  }
-];
