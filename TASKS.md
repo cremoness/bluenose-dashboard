@@ -74,7 +74,7 @@
 - [ ] **[WV HND 🆕]** Luis: confirmar a quién está asignado el número WhatsApp (termina en 5550) para conectar plantillas correctamente | Owner: Luis
 - [x] **[WV HND 🆕]** Pablo: incluir a desarrolladores técnicos en correos para integración con pasarela Express Pago | Owner: Pablo
 - [ ] **[WV HND 🆕]** Ángelito: coordinar con Luis y Pablo reunión anticipada de revisión de piezas y workflows — MIÉRCOLES (no jueves) | Owner: Ángelito · Luis envía invitación
-- [ ] **[WV HND 🆕]** Pablo: apoyar a Ángelito con bot de Telegram en sesión de aprendizaje del VIERNES | Owner: Pablo
+- [x] **[WV HND 🆕]** Pablo: apoyar a Ángelito con bot de Telegram en sesión de aprendizaje del VIERNES | Owner: Pablo
 - [ ] **[WV HND]** Acompañar evolución de piezas para iniciar creación y activación de WF | Owner: Ángelito
 - [ ] **[WV HND]** Reunión seguimiento con Express Pago — reprogramada para JUEVES (avance pasarela de pago) | Owner: Ángelito
 - [ ] **[WV ES]** Cristian P: continuar revisión con desarrolladores para resolver prefijos SMS — revisar correo que Pablo reenvía | Owner: Cristian P
