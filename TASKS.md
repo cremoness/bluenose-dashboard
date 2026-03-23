@@ -80,7 +80,7 @@
 - [ ] **[WV RD]** Ángelito: asegurarse de que soporte con Dominicana esté activo como con Chile/Perú/Ecuador — actividad en Discord | Owner: Ángelito
 - [ ] **[WV RD]** Equipo: aprovechar última/s reuniones con Argenis para hablar de continuidad (Yomara, Juan Plata, Juan Miralcázar, Eli Kauri se van — solo queda Argenis) | Owner: Enrique + Pablo
 - [ ] **[WV HND 🆕]** Luis: finalizar y enviar piezas campaña Wash HOY o mañana (vitales para evento del domingo) | Owner: Luis
-- [ ] **[WV HND 🆕]** Luis: enviar correo formal a Jorge solicitando permisos para editar web y publicar landing pages — CC a Pablo | Owner: Luis
+- [x] **[WV HND 🆕]** Luis: enviar correo formal a Jorge solicitando permisos para editar web y publicar landing pages — CC a Pablo | Owner: Luis
 - [ ] **[WV HND 🆕]** Pablo: gestionar y facilitar permisos de edición web/landing para Luis — contacto formal con Jorge | Owner: Pablo
 - [ ] **[WV HND 🆕]** Pablo: orientar a Luis para localizar plantillas WhatsApp en HubSpot + verificar conexión del número que termina en 5550 | Owner: Pablo
 - [ ] **[WV HND 🆕]** Luis: confirmar a quién está asignado el número WhatsApp (termina en 5550) para conectar plantillas correctamente | Owner: Luis
