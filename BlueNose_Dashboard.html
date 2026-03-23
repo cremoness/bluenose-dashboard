@@ -263,6 +263,47 @@
 
   /* ── FOOTER ── */
   footer { text-align: center; padding: 20px; font-size: 11px; color: #475569; border-top: 1px solid #1e293b; margin-top: 20px; }
+
+  /* ── CLIENT LEFT BORDERS ── */
+  .task-border-wv  { border-left: 3px solid #10b981 !important; }
+  .task-border-uc  { border-left: 3px solid #3b82f6 !important; }
+  .task-border-up  { border-left: 3px solid #f97316 !important; }
+  .task-border-vp  { border-left: 3px solid #8b5cf6 !important; }
+  .task-border-sm  { border-left: 3px solid #eab308 !important; }
+  .task-border-def { border-left: 3px solid #6366f1 !important; }
+
+  /* ── URGENTE GLOW ── */
+  .task-urgent-glow { box-shadow: 0 0 0 1px rgba(239,68,68,.12), 0 2px 10px rgba(239,68,68,.07); }
+
+  /* ── OWNER BADGE ── */
+  .owner-badge {
+    display: inline-flex; align-items: center; gap: 4px;
+    background: #0f172a; border: 1px solid #334155;
+    border-radius: 20px; padding: 1px 8px 1px 5px;
+    font-size: 10.5px; color: #94a3b8; margin-left: 8px;
+    vertical-align: middle; white-space: nowrap;
+  }
+  .owner-dot { width: 6px; height: 6px; border-radius: 50%; background: #64748b; flex-shrink: 0; }
+
+  /* ── FILTER BUTTONS CON COLORES POR CLIENTE ── */
+  .filter-btn[data-client="WV"].active,
+  .filter-btn[data-client="WV"]:hover     { background: #064e3b; border-color: #10b981; color: #34d399; }
+  .filter-btn[data-client="UCSP"].active,
+  .filter-btn[data-client="UCSP"]:hover   { background: #1e3a5f; border-color: #3b82f6; color: #60a5fa; }
+  .filter-btn[data-client="UPSJB"].active,
+  .filter-btn[data-client="UPSJB"]:hover  { background: #431407; border-color: #f97316; color: #fb923c; }
+  .filter-btn[data-client="VP"].active,
+  .filter-btn[data-client="VP"]:hover     { background: #2e1065; border-color: #8b5cf6; color: #a78bfa; }
+  .filter-btn[data-client="Smartimper"].active,
+  .filter-btn[data-client="Smartimper"]:hover { background: #3f2a00; border-color: #eab308; color: #fbbf24; }
+
+  /* ── SECTION TITLE CON CONTADOR ── */
+  .section-title-wrap { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+  .section-title-wrap .section-title { margin-bottom: 0; }
+  .section-count { font-size: 11px; font-weight: 800; padding: 3px 12px; border-radius: 20px; }
+  .sc-red   { background: rgba(239,68,68,.2);  color: #f87171; }
+  .sc-yel   { background: rgba(234,179,8,.15); color: #fbbf24; }
+  .sc-green { background: rgba(34,197,94,.15); color: #4ade80; }
 </style>
 </head>
 <body>
@@ -301,11 +342,11 @@
 
     <div class="filters">
       <button class="filter-btn active" onclick="filter('all',this)">Todos</button>
-      <button class="filter-btn" onclick="filter('WV',this)">🌍 World Vision</button>
-      <button class="filter-btn" onclick="filter('UPSJB',this)">🎓 UPSJB</button>
-      <button class="filter-btn" onclick="filter('UCSP',this)">🏛 UCSP</button>
-      <button class="filter-btn" onclick="filter('VP',this)">💳 VirtualPos</button>
-      <button class="filter-btn" onclick="filter('Smartimper',this)">⚡ Smartimper</button>
+      <button class="filter-btn" data-client="WV" onclick="filter('WV',this)">🌍 World Vision</button>
+      <button class="filter-btn" data-client="UPSJB" onclick="filter('UPSJB',this)">🎓 UPSJB</button>
+      <button class="filter-btn" data-client="UCSP" onclick="filter('UCSP',this)">🏛 UCSP</button>
+      <button class="filter-btn" data-client="VP" onclick="filter('VP',this)">💳 VirtualPos</button>
+      <button class="filter-btn" data-client="Smartimper" onclick="filter('Smartimper',this)">⚡ Smartimper</button>
       <button class="filter-btn" onclick="filter('yo',this)">👤 Yo (Ángelito)</button>
     </div>
 
@@ -315,17 +356,26 @@
     </div>
 
     <div class="brief-section">
-      <div class="section-title s-red">🔴 Urgente — Hoy mismo</div>
+      <div class="section-title-wrap">
+        <div class="section-title s-red">🔴 Urgente — Hoy mismo</div>
+        <span class="section-count sc-red" id="sc-urgente">0</span>
+      </div>
       <div id="tasks-urgente"></div>
     </div>
 
     <div class="brief-section">
-      <div class="section-title s-yel">🟡 Esta semana</div>
+      <div class="section-title-wrap">
+        <div class="section-title s-yel">🟡 Esta semana</div>
+        <span class="section-count sc-yel" id="sc-semana">0</span>
+      </div>
       <div id="tasks-semana"></div>
     </div>
 
     <div class="brief-section">
-      <div class="section-title s-green">🟢 Próximo mes</div>
+      <div class="section-title-wrap">
+        <div class="section-title s-green">🟢 Próximo mes</div>
+        <span class="section-count sc-green" id="sc-mes">0</span>
+      </div>
       <div id="tasks-mes"></div>
     </div>
 
@@ -1185,8 +1235,12 @@ function renderTask(t, section, idx) {
   const id = `${section}-${idx}`;
   const isDone = doneSet.includes(id);
   const visible = currentFilter === 'all' || (t.clients && t.clients.includes(currentFilter));
+  const borderMap = { 'tag-wv': 'task-border-wv', 'tag-uc': 'task-border-uc', 'tag-up': 'task-border-up', 'tag-vp': 'task-border-vp', 'tag-sm': 'task-border-sm' };
+  const borderClass = borderMap[t.tagClass] || 'task-border-def';
+  const urgentClass = section === 'urgente' ? 'task-urgent-glow' : '';
+  const ownerHtml = t.owner ? `<span class="owner-badge"><span class="owner-dot"></span>${t.owner}</span>` : '';
   return `
-    <div class="task ${isDone ? 'done' : ''}" data-id="${id}" data-clients="${(t.clients||[]).join(',')}"
+    <div class="task ${borderClass} ${urgentClass} ${isDone ? 'done' : ''}" data-id="${id}" data-clients="${(t.clients||[]).join(',')}"
          style="${visible ? '' : 'display:none'}" onclick="toggleDone('${id}',this)">
       <div class="chk">
         <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
@@ -1196,7 +1250,7 @@ function renderTask(t, section, idx) {
       <div class="task-text">
         ${t.isNew ? '<span class="tag tag-new">🆕 HOY</span> ' : ''}
         ${t.text}
-        ${t.owner ? `<span style="color:#475569;font-size:11.5px;"> · ${t.owner}</span>` : ''}
+        ${ownerHtml}
       </div>
       <span class="tag ${t.tagClass}">${t.tag}</span>
     </div>`;
@@ -1222,9 +1276,15 @@ function toggleDone(id, el) {
 }
 
 function updateCounts() {
+  const ur = document.querySelectorAll('#tasks-urgente .task:not(.done):not([style*="display:none"])').length;
+  const se = document.querySelectorAll('#tasks-semana .task:not(.done):not([style*="display:none"])').length;
+  const me = document.querySelectorAll('#tasks-mes .task:not(.done):not([style*="display:none"])').length;
   document.getElementById('cnt-done').textContent = document.querySelectorAll('.task.done').length;
-  document.getElementById('cnt-r').textContent = document.querySelectorAll('#tasks-urgente .task:not(.done)').length;
-  document.getElementById('cnt-y').textContent = document.querySelectorAll('#tasks-semana .task:not(.done)').length;
+  document.getElementById('cnt-r').textContent = ur;
+  document.getElementById('cnt-y').textContent = se;
+  document.getElementById('sc-urgente').textContent = ur;
+  document.getElementById('sc-semana').textContent = se;
+  document.getElementById('sc-mes').textContent = me;
 }
 
 function filter(client, btn) {
