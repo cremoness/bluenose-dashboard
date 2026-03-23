@@ -1,5 +1,5 @@
 # TASKS — Ángelito Chanamé
-> Última actualización: 2026-03-23 | Reunión Fireflies: Creatividad WV Honduras 23.03
+> Última actualización: 2026-03-23 | Tareas WV Honduras + WV España 23.03
 
 ---
 
@@ -56,9 +56,21 @@
 
 ### World Vision
 - [ ] **[WV RD 🆕 19.03]** Ángelito: soporte continúa · Se respondió inquietud sobre landing (sí la hacemos con el proceso de Trello) · Confirmar que todo fluye correctamente con el cliente | Owner: Ángelito
+- [ ] **[WV HND 🆕 23.03]** Implementar en conjunto los workflow para nutriciones por correo electrónico | Owner: Luis Gonzalez + Marcos
+- [ ] **[WV HND 🆕 23.03]** Coordinar con Lucy la creación y optimización de correos para nutriciones y agradecimientos | Owner: Luis Gonzalez
+- [ ] **[WV HND 🆕 23.03]** Subir datos de donantes y realizar primer contacto para agradecimiento y seguimiento durante esta semana | Owner: Luis Gonzalez
+- [ ] **[WV HND 🆕 23.03]** Obtener aprobación del presupuesto para lanzar campaña en Meta y mantenerla durante el año fiscal | Owner: Luis Gonzalez
+- [ ] **[WV HND 🆕 23.03]** Realizar cambios recomendados por Pablo en Google Ads para la campaña Wash | Owner: Luis Gonzalez
 - [ ] **[WV HND 🆕 19.03]** Ángelito: reunión con Luis cancelada — reprogramada al próximo lunes. Seguir metiéndole presión para revisar contenidos | Owner: Ángelito
 - [ ] **[WV HND 🆕 19.03]** Luis: hablar con Jorge Girón para conectar WhatsApp a cuenta de Meta | Owner: Luis
 - [ ] **[WV HND 🆕 19.03]** Express Pago: recibió primera documentación para conectar a web + HubSpot — están en espera. Cristian y Ángelito en lista de correos para seguimiento | Owner: Cristian P + Ángelito
+- [ ] **[WV ES 🆕 23.03]** Ornella: enviar listado de RUTs de donantes ya descontados en clawback para marcar en HubSpot | Owner: Ornella
+- [ ] **[WV ES 🆕 23.03]** Pablo Pérez: crear propiedad en HubSpot para marcar donantes que ya pasaron por clawback | Owner: Pablo
+- [ ] **[WV ES 🆕 23.03]** Pablo Pérez: ajustar la app con reglas del contrato Más Recursos y preparar versión para producción | Owner: Pablo
+- [ ] **[WV ES 🆕 23.03]** Gonzalo: diagramar proceso completo de aprobaciones para facturación | Owner: Gonzalo
+- [ ] **[WV ES 🆕 23.03]** Gonzalo: compartir diagrama y documentos con reglas de negocio y contratos | Owner: Gonzalo
+- [ ] **[WV ES 🆕 23.03]** Gonzalo: confirmar temas administrativos | Owner: Gonzalo
+- [ ] **[WV ES 🆕 23.03]** Gonzalo: organizar reunión con agencia Más Recursos para presentar la herramienta | Owner: Gonzalo
 - [ ] **[WV ES 🆕 19.03]** Accionables canal: sincronizar campo "nombre de iglesia" en objeto Contactos · Investigar URL versión web · Cruzar video · Sincronizar campos PartnerID · Investigar integración leads con proveedores externos · NO usar módulo Operations · Sofía: confirmar si envió correo a Jorge | Owner: Cristian P + Sofía
 - [ ] **[WV ES — SIMMA 🆕 18.03]** Sofía: cruzar base SIMMA vs HubSpot junto a Jorge para identificar partners sin contacto ni pledge, emails provisionales sin actualizar, y campos faltantes | Owner: Sofía + Jorge
 - [ ] **[WV ES — SIMMA 🆕 18.03]** Sofía: agendar reunión con Esther para revisar hallazgos y definir acciones correctivas sobre las 5 categorías (Partners, Email, Contacts, Phone, Pledges) | Owner: Sofía
@@ -170,17 +182,7 @@
 
 ---
 
-## 📥 INBOX FIREFLIES
-- [ ] **[WV 🆕 23.03]** Luis Gustavo Sierra** | Owner: Luis
-- [ ] **[WV 🆕 23.03]** Realizar cambios recomendados por Pablo en Google Ads para la campaña Wash (06:00) | Owner: Pablo
-- [ ] **[WV 🆕 23.03]** Obtener aprobación del presupuesto para lanzar campaña en Meta y mantenerla durante el año fiscal (08:56) | Owner: Ángelito
-- [ ] **[WV 🆕 23.03]** Continuar subida y ajuste de plantillas de WhatsApp y coordinar creación de plantillas de correos con Lucy (10:05) | Owner: Ángelito
-- [ ] **[WV 🆕 23.03]** Subir datos de donantes y realizar primer contacto para agradecimiento y seguimiento durante esta semana (14:21) | Owner: Ángelito
-- [ ] **[WV 🆕 23.03]** Coordinar con Lucy la creación y optimización de correos para nutriciones y agradecimientos (17:21) | Owner: Ángelito
-- [ ] **[WV 🆕 23.03]** Crear plantillas de correos electrónicos para nutrición y agradecimiento a donantes (11:47) | Owner: Ángelito
-- [ ] **[WV 🆕 23.03]** Implementar conjunto y workflow para nutriciones por correo electrónico (11:21) | Owner: Ángelito
-
----
+## 📌 EN PAUSA / Sin novedad
 
 ## 📌 EN PAUSA / Sin novedad
 
