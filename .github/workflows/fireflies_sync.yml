@@ -62,7 +62,20 @@ jobs:
           GIT_COMMITTER_EMAIL: "bot@bluenose.ai"
         run: python fireflies_sync.py
 
-      # 5. Log del resultado
+      # 5. Regenerar data.js desde TASKS.md actualizado
+      - name: 🔨 Regenerar data.js
+        run: python build_data.py
+
+      # 6. Commit y push de data.js
+      - name: 💾 Commit data.js actualizado
+        run: |
+          git config user.name "BlueNose Bot"
+          git config user.email "bot@bluenose.ai"
+          git add data.js TASKS.md
+          git diff --cached --quiet || git commit -m "auto: sync Fireflies → TASKS.md + data.js [skip ci]"
+          git push
+
+      # 7. Log del resultado
       - name: 📋 Mostrar TASKS.md actualizado (primeras 40 líneas)
         if: always()
         run: head -40 TASKS.md
