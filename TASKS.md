@@ -79,7 +79,7 @@
 - [ ] **[WV HND]** Reunión seguimiento con Express Pago — reprogramada para JUEVES (avance pasarela de pago) | Owner: Ángelito
 - [ ] **[WV ES]** Cristian P: continuar revisión con desarrolladores para resolver prefijos SMS — revisar correo que Pablo reenvía | Owner: Cristian P
 - [ ] **[WV ES]** Revisar comentarios de Nieves en Discord (canal general, varias peticiones) | Owner: Ángelito
-- [ ] **[WV ES]** ⭐ Servicio renovado por un año más. Certificaciones de donación (desarrollo de Pablo) se cobran aparte por única vez | Owner: Ángelito (informativo)
+- [x] **[WV ES]** ⭐ Servicio renovado por un año más. Certificaciones de donación (desarrollo de Pablo) se cobran aparte por única vez | Owner: Ángelito (informativo)
 - [ ] **[WV EC]** Valeria: convocar reuniones martes 11am Ecuador | Owner: Valeria
 - [ ] **[WV]** Gonzalo: aprobar proyecto Facturación F2F + compartir reglas de negocio con Pablo | Owner: Gonzalo / seguimiento Enrique
 
