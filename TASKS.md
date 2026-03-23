@@ -1,5 +1,5 @@
 # TASKS — Ángelito Chanamé
-> Última actualización: 2026-03-23 | Reestructurado automáticamente
+> Última actualización: 2026-03-23 | Reunión Fireflies: Creatividad WV Honduras 23.03
 
 ---
 
@@ -167,6 +167,18 @@
 - [x] **[NUEVO ✅]** WV ES: renovación de contrato cerrada — continúa por un año más | Owner: Equipo
 - [x] UCSP: Enrique le pasó presupuesto a Renzo para investigaciones adicionales (Centro de Idiomas) | Owner: UCSP
 - [x] UCSP Agente IA: Alonso respondió — derivó preguntas a César Puma | Owner: UCSP Agente IA
+
+---
+
+## 📥 INBOX FIREFLIES
+- [ ] **[WV 🆕 23.03]** Luis Gustavo Sierra** | Owner: Luis
+- [ ] **[WV 🆕 23.03]** Realizar cambios recomendados por Pablo en Google Ads para la campaña Wash (06:00) | Owner: Pablo
+- [ ] **[WV 🆕 23.03]** Obtener aprobación del presupuesto para lanzar campaña en Meta y mantenerla durante el año fiscal (08:56) | Owner: Ángelito
+- [ ] **[WV 🆕 23.03]** Continuar subida y ajuste de plantillas de WhatsApp y coordinar creación de plantillas de correos con Lucy (10:05) | Owner: Ángelito
+- [ ] **[WV 🆕 23.03]** Subir datos de donantes y realizar primer contacto para agradecimiento y seguimiento durante esta semana (14:21) | Owner: Ángelito
+- [ ] **[WV 🆕 23.03]** Coordinar con Lucy la creación y optimización de correos para nutriciones y agradecimientos (17:21) | Owner: Ángelito
+- [ ] **[WV 🆕 23.03]** Crear plantillas de correos electrónicos para nutrición y agradecimiento a donantes (11:47) | Owner: Ángelito
+- [ ] **[WV 🆕 23.03]** Implementar conjunto y workflow para nutriciones por correo electrónico (11:21) | Owner: Ángelito
 
 ---
 
