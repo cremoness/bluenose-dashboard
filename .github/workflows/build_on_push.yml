@@ -1,0 +1,38 @@
+name: 🔨 Build data.js on push
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'TASKS.md'
+      - 'build_data.py'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Regenerar data.js
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_TOKEN || secrets.GITHUB_TOKEN }}
+
+      - name: 🐍 Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: 🔨 Regenerar data.js
+        run: python build_data.py
+
+      - name: 💾 Commit data.js
+        run: |
+          git config user.name "BlueNose Bot"
+          git config user.email "bot@bluenose.ai"
+          git add data.js
+          git diff --cached --quiet || git commit -m "auto: regenerar data.js [skip ci]"
+          git push

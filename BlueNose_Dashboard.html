@@ -51,14 +51,63 @@
     letter-spacing: 0.04em; margin-right: 20px;
   }
   .topbar-date { margin-left: auto; font-size: 12px; color: var(--text-3); font-weight: 500; }
-  .export-btn {
-    display: flex; align-items: center; gap: 6px;
-    background: rgba(99,102,241,.15); border: 1px solid rgba(99,102,241,.4);
-    color: #a5b4fc; border-radius: 8px; padding: 6px 14px;
-    font-size: 12px; font-weight: 700; cursor: pointer; transition: all .15s;
+  /* ── GITHUB SYNC ── */
+  .settings-btn {
+    display: flex; align-items: center; gap: 5px;
+    background: transparent; border: 1px solid var(--border);
+    color: var(--text-3); border-radius: 8px; padding: 5px 12px;
+    font-size: 12px; font-weight: 600; cursor: pointer; transition: all .15s;
   }
-  .export-btn:hover { background: rgba(99,102,241,.3); border-color: #6366f1; color: #e0e7ff; }
-  .export-btn.success { background: rgba(34,197,94,.15); border-color: #22c55e; color: #86efac; }
+  .settings-btn:hover { border-color: #6366f1; color: #a5b4fc; }
+  .sync-dot {
+    width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0;
+    background: #475569; transition: background .3s;
+  }
+  .sync-dot.syncing { background: #f59e0b; animation: pulse 1s infinite; }
+  .sync-dot.ok      { background: #22c55e; }
+  .sync-dot.err     { background: #ef4444; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+
+  .modal-overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,.7); z-index: 999;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .modal-overlay.hidden { display: none; }
+  .modal-box {
+    background: #1e293b; border: 1px solid #334155; border-radius: 16px;
+    padding: 28px 32px; width: 420px; max-width: 95vw;
+  }
+  .modal-title { font-size: 16px; font-weight: 800; color: #e2e8f0; margin-bottom: 6px; }
+  .modal-sub   { font-size: 12px; color: #64748b; margin-bottom: 20px; line-height: 1.5; }
+  .modal-label { font-size: 11px; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 6px; display: block; }
+  .modal-input {
+    width: 100%; background: #0f172a; border: 1px solid #334155; border-radius: 8px;
+    padding: 10px 14px; color: #e2e8f0; font-size: 13px; font-family: monospace;
+    outline: none; transition: border-color .15s;
+  }
+  .modal-input:focus { border-color: #6366f1; }
+  .modal-actions { display: flex; gap: 10px; margin-top: 20px; justify-content: flex-end; }
+  .btn-primary {
+    background: #6366f1; color: #fff; border: none; border-radius: 8px;
+    padding: 8px 20px; font-size: 13px; font-weight: 700; cursor: pointer; transition: background .15s;
+  }
+  .btn-primary:hover { background: #4f46e5; }
+  .btn-ghost {
+    background: transparent; color: #64748b; border: 1px solid #334155; border-radius: 8px;
+    padding: 8px 16px; font-size: 13px; cursor: pointer; transition: all .15s;
+  }
+  .btn-ghost:hover { color: #94a3b8; border-color: #475569; }
+
+  .toast {
+    position: fixed; bottom: 24px; right: 24px; z-index: 9999;
+    background: #1e293b; border: 1px solid #334155; border-radius: 10px;
+    padding: 12px 18px; font-size: 13px; color: #e2e8f0;
+    display: flex; align-items: center; gap: 10px;
+    box-shadow: 0 8px 24px rgba(0,0,0,.4); transition: opacity .3s;
+  }
+  .toast.hidden { opacity: 0; pointer-events: none; }
+  .toast.ok  { border-color: #22c55e; }
+  .toast.err { border-color: #ef4444; }
 
   .layout { max-width: 1400px; margin: 0 auto; padding: 24px; }
 
@@ -273,7 +322,31 @@
 <nav class="topbar">
   <div class="topbar-brand">🔵 BLUE NOSE PM</div>
   <div class="topbar-date" id="topbar-date"></div>
+  <button class="settings-btn" onclick="openSettings()">
+    <span class="sync-dot" id="sync-dot"></span> GitHub Sync ⚙
+  </button>
 </nav>
+
+<!-- Settings Modal -->
+<div class="modal-overlay hidden" id="settings-modal" onclick="if(event.target===this)closeSettings()">
+  <div class="modal-box">
+    <div class="modal-title">⚙ GitHub Sync</div>
+    <div class="modal-sub">
+      Guarda tu <strong>Personal Access Token</strong> de GitHub para que los cambios del dashboard se sincronicen automáticamente con TASKS.md.<br><br>
+      <strong>Cómo obtenerlo:</strong> GitHub → Settings → Developer settings → Personal access tokens → Tokens (classic) → New token → selecciona <code>repo</code> → Generate.
+    </div>
+    <label class="modal-label">GitHub Personal Access Token</label>
+    <input class="modal-input" id="gh-token-input" type="password" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" />
+    <div class="modal-actions">
+      <button class="btn-ghost" onclick="clearToken()">Borrar token</button>
+      <button class="btn-ghost" onclick="closeSettings()">Cancelar</button>
+      <button class="btn-primary" onclick="saveToken()">Guardar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast hidden" id="toast"></div>
 
 <div class="layout">
   <div class="kpi-row" id="kpi-row"></div>
@@ -605,10 +678,15 @@ function saveEdit(id) {
 
 function toggleTaskDone(id, el) {
   if(el.getAttribute('data-forced-done')==='true') return;
-  if(doneSet.includes(id)){doneSet=doneSet.filter(x=>x!==id);el.classList.remove('done');}
-  else{doneSet.push(id);el.classList.add('done');}
+  const nowDone = !doneSet.includes(id);
+  if(nowDone){ doneSet.push(id); el.classList.add('done'); }
+  else { doneSet=doneSet.filter(x=>x!==id); el.classList.remove('done'); }
   localStorage.setItem('pm-done',JSON.stringify(doneSet));
   renderKPIs(); updateVisibleCounts();
+
+  // Sync to GitHub TASKS.md
+  const taskText = el.querySelector('.task-text')?.textContent || id;
+  syncTaskToGitHub(taskText, nowDone);
 }
 
 // ── Render grouped by sub-project ──
@@ -729,6 +807,122 @@ function updateVisibleCounts() {
     document.getElementById('cnt-'+sec).textContent=visible;
   });
   document.getElementById('cnt-done').textContent=document.getElementById('grid-done').querySelectorAll('.task-card').length;
+}
+
+// ── GitHub Sync ──────────────────────────────────────────────
+const GH_REPO  = 'cremoness/bluenose-dashboard';
+const GH_FILE  = 'TASKS.md';
+
+function openSettings() {
+  const tok = localStorage.getItem('gh-token') || '';
+  document.getElementById('gh-token-input').value = tok;
+  document.getElementById('settings-modal').classList.remove('hidden');
+}
+function closeSettings() {
+  document.getElementById('settings-modal').classList.add('hidden');
+}
+function saveToken() {
+  const val = document.getElementById('gh-token-input').value.trim();
+  if(val) { localStorage.setItem('gh-token', val); showToast('Token guardado ✓', 'ok'); }
+  else     { localStorage.removeItem('gh-token');  showToast('Token borrado', 'ok'); }
+  closeSettings();
+  updateSyncDot('idle');
+}
+function clearToken() {
+  localStorage.removeItem('gh-token');
+  document.getElementById('gh-token-input').value = '';
+  showToast('Token eliminado', 'ok');
+}
+
+let _toastTimer;
+function showToast(msg, type='ok') {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.className = 'toast ' + type;
+  clearTimeout(_toastTimer);
+  _toastTimer = setTimeout(() => { el.className = 'toast hidden'; }, 4000);
+}
+
+function updateSyncDot(state) {
+  const d = document.getElementById('sync-dot');
+  d.className = 'sync-dot' + (state === 'idle' ? '' : ' ' + state);
+}
+
+async function syncTaskToGitHub(taskText, done) {
+  const token = localStorage.getItem('gh-token');
+  if(!token) {
+    showToast('Configura tu token GitHub primero ⚙', 'err');
+    openSettings();
+    return false;
+  }
+
+  updateSyncDot('syncing');
+
+  try {
+    // 1. Fetch current TASKS.md content + SHA
+    const metaRes = await fetch(
+      `https://api.github.com/repos/${GH_REPO}/contents/${GH_FILE}`,
+      { headers: { Authorization: `token ${token}`, Accept: 'application/vnd.github.v3+json' } }
+    );
+    if(!metaRes.ok) throw new Error(`GitHub API ${metaRes.status}`);
+    const meta = await metaRes.json();
+    const sha  = meta.sha;
+    const currentContent = atob(meta.content.replace(/\n/g,''));
+
+    // 2. Update the matching task line: [ ] → [x]
+    const lines = currentContent.split('\n');
+    let changed = false;
+    const normalized = taskText.replace(/\s+/g,' ').trim().toLowerCase();
+
+    const newLines = lines.map(line => {
+      const m = line.match(/^(\s*- \[)([ x])(\] .+)/);
+      if(!m) return line;
+      const rawText = m[3].slice(2)
+        .replace(/\*\*\[.*?\]\*\*\s*/g,'')
+        .replace(/\| Owner:.*/,'')
+        .replace(/\s+/g,' ').trim().toLowerCase();
+      if(rawText === normalized) {
+        changed = true;
+        return `${m[1]}${done ? 'x' : ' '}${m[3]}`;
+      }
+      return line;
+    });
+
+    if(!changed) {
+      updateSyncDot('ok');
+      showToast('Tarea sincronizada ✓', 'ok');
+      return true; // no-op is fine
+    }
+
+    // 3. Push update
+    const newB64 = btoa(unescape(encodeURIComponent(newLines.join('\n'))));
+    const pushRes = await fetch(
+      `https://api.github.com/repos/${GH_REPO}/contents/${GH_FILE}`,
+      {
+        method: 'PUT',
+        headers: { Authorization: `token ${token}`, Accept: 'application/vnd.github.v3+json', 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          message: `dashboard: mark task ${done ? 'done' : 'undone'} [skip ci]`,
+          content: newB64,
+          sha
+        })
+      }
+    );
+    if(!pushRes.ok) {
+      const err = await pushRes.json();
+      throw new Error(err.message || pushRes.status);
+    }
+
+    updateSyncDot('ok');
+    showToast(done ? 'Tarea completada en GitHub ✓' : 'Tarea reabierta en GitHub ✓', 'ok');
+    return true;
+
+  } catch(e) {
+    console.error('GitHub Sync error:', e);
+    updateSyncDot('err');
+    showToast('Error al sincronizar: ' + e.message, 'err');
+    return false;
+  }
 }
 
 // ── Main render ──
