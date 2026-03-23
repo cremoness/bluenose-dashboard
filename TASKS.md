@@ -20,7 +20,7 @@
 ## 🟡 PRÓXIMAS / Esta semana
 
 ### WV
-- [ ] **[WV 🆕 18.03]** Cristian P** | Owner: Cristian
+- [x] **[WV 🆕 18.03]** Cristian P** | Owner: Cristian
 - [ ] **[WV 🆕 18.03]** Reenviar a Diana y equipo la lista y recursos para la importación de negocios pendientes (03:06) | Owner: Diana
 - [ ] **[WV 🆕 18.03]** Compartir lista con 47 contactos con negocios duplicados para verificación interna (15:57) | Owner: Ángelito
 - [ ] **[WV 🆕 18.03]** Compartir workflow de reintento Face to Face para entender la lógica de asociar pagos a negocios correctos (15:45) | Owner: Ángelito
