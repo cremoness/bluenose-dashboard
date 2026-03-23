@@ -882,7 +882,9 @@ async function syncTaskToGitHub(taskText, done) {
     if(!metaRes.ok) throw new Error(`GitHub API ${metaRes.status}`);
     const meta = await metaRes.json();
     const sha  = meta.sha;
-    const currentContent = atob(meta.content.replace(/\n/g,''));
+    // Decode base64 → UTF-8 (handles Spanish characters correctly)
+    const bytes = Uint8Array.from(atob(meta.content.replace(/\n/g,'')), c => c.charCodeAt(0));
+    const currentContent = new TextDecoder('utf-8').decode(bytes);
 
     // 2. Update the matching task line: [ ] → [x]
     const lines = currentContent.split('\n');
@@ -911,8 +913,9 @@ async function syncTaskToGitHub(taskText, done) {
       return true;
     }
 
-    // 3. Push update
-    const newB64 = btoa(unescape(encodeURIComponent(newLines.join('\n'))));
+    // 3. Push update (encode UTF-8 → base64 correctly)
+    const utf8Bytes = new TextEncoder().encode(newLines.join('\n'));
+    const newB64 = btoa(String.fromCharCode(...utf8Bytes));
     const pushRes = await fetch(
       `https://api.github.com/repos/${GH_REPO}/contents/${GH_FILE}`,
       {
