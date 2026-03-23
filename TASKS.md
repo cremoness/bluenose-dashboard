@@ -9,7 +9,7 @@
 - [ ] **[UCSP — Mesa de Ayuda 🆕 19.03]** Enrique: esperar brief de César Puma para Mesa de Ayuda (integración IA + WhatsApp sobre Zoho) — propuesta para abril/mayo | Owner: Enrique
 - [ ] **[UCSP 🆕 19.03]** Enrique: actualizar propuesta de coaching para equipo SGA de UCSP (ahora son 5-6 personas) y reenviar con alcance revisado | Owner: Enrique
 - [x] **[WV PE]** Atender reunión urgente World Vision Perú — hoy 3pm | Preparar agenda: limpieza de listas + consulta web | Owner: Ángelito + Cristian P
-- [x] **[WV HND]** Ángelito: hacer push a Luis para activar campañas Wash esta semana (Día del Agua) | Owner: Ángelito
+- [ ] **[WV HND]** Ángelito: hacer push a Luis para activar campañas Wash esta semana (Día del Agua) | Owner: Ángelito
 - [ ] **[VP CHILE]** Cristian P: cerrar ticket donaciones únicas (ajuste en integración) — HOY | Owner: Cristian P
 - [ ] **[VP CHILE]** Cristian P: cerrar ticket limpieza negocios duplicados F2F (750 contactos) — HOY | Owner: Cristian P
 - [ ] **[VP CHILE]** Cristian P: escribir a María (WV PE) por Discord para obtener más info del ticket "limpieza de lista y consulta web" | Owner: Cristian P
