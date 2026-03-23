@@ -1480,6 +1480,110 @@ const TASKS = {
       "isCompleted": true
     },
     {
+      "text": "Luis Gustavo Sierra**",
+      "account": "WV",
+      "project": "General",
+      "tag": "WV",
+      "tagClass": "tag-wv",
+      "owner": "Luis",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true,
+      "isCompleted": true
+    },
+    {
+      "text": "Realizar cambios recomendados por Pablo en Google Ads para la campaña Wash (06:00)",
+      "account": "WV",
+      "project": "General",
+      "tag": "WV",
+      "tagClass": "tag-wv",
+      "owner": "Pablo",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true,
+      "isCompleted": true
+    },
+    {
+      "text": "Obtener aprobación del presupuesto para lanzar campaña en Meta y mantenerla durante el año fiscal (08:56)",
+      "account": "WV",
+      "project": "General",
+      "tag": "WV",
+      "tagClass": "tag-wv",
+      "owner": "Ángelito",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true,
+      "isCompleted": true
+    },
+    {
+      "text": "Continuar subida y ajuste de plantillas de WhatsApp y coordinar creación de plantillas de correos con Lucy (10:05)",
+      "account": "WV",
+      "project": "General",
+      "tag": "WV",
+      "tagClass": "tag-wv",
+      "owner": "Ángelito",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true,
+      "isCompleted": true
+    },
+    {
+      "text": "Subir datos de donantes y realizar primer contacto para agradecimiento y seguimiento durante esta semana (14:21)",
+      "account": "WV",
+      "project": "General",
+      "tag": "WV",
+      "tagClass": "tag-wv",
+      "owner": "Ángelito",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true,
+      "isCompleted": true
+    },
+    {
+      "text": "Coordinar con Lucy la creación y optimización de correos para nutriciones y agradecimientos (17:21)",
+      "account": "WV",
+      "project": "General",
+      "tag": "WV",
+      "tagClass": "tag-wv",
+      "owner": "Ángelito",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true,
+      "isCompleted": true
+    },
+    {
+      "text": "Crear plantillas de correos electrónicos para nutrición y agradecimiento a donantes (11:47)",
+      "account": "WV",
+      "project": "General",
+      "tag": "WV",
+      "tagClass": "tag-wv",
+      "owner": "Ángelito",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true,
+      "isCompleted": true
+    },
+    {
+      "text": "Implementar conjunto y workflow para nutriciones por correo electrónico (11:21)",
+      "account": "WV",
+      "project": "General",
+      "tag": "WV",
+      "tagClass": "tag-wv",
+      "owner": "Ángelito",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true,
+      "isCompleted": true
+    },
+    {
       "text": "World Vision Brasil — sin novedad",
       "account": "General",
       "project": "General",
