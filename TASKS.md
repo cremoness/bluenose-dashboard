@@ -72,7 +72,7 @@
 - [ ] **[WV HND 🆕]** Pablo: gestionar y facilitar permisos de edición web/landing para Luis — contacto formal con Jorge | Owner: Pablo
 - [ ] **[WV HND 🆕]** Pablo: orientar a Luis para localizar plantillas WhatsApp en HubSpot + verificar conexión del número que termina en 5550 | Owner: Pablo
 - [ ] **[WV HND 🆕]** Luis: confirmar a quién está asignado el número WhatsApp (termina en 5550) para conectar plantillas correctamente | Owner: Luis
-- [ ] **[WV HND 🆕]** Pablo: incluir a desarrolladores técnicos en correos para integración con pasarela Express Pago | Owner: Pablo
+- [x] **[WV HND 🆕]** Pablo: incluir a desarrolladores técnicos en correos para integración con pasarela Express Pago | Owner: Pablo
 - [ ] **[WV HND 🆕]** Ángelito: coordinar con Luis y Pablo reunión anticipada de revisión de piezas y workflows — MIÉRCOLES (no jueves) | Owner: Ángelito · Luis envía invitación
 - [ ] **[WV HND 🆕]** Pablo: apoyar a Ángelito con bot de Telegram en sesión de aprendizaje del VIERNES | Owner: Pablo
 - [ ] **[WV HND]** Acompañar evolución de piezas para iniciar creación y activación de WF | Owner: Ángelito
