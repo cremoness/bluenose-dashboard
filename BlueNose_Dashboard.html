@@ -273,7 +273,6 @@
 <nav class="topbar">
   <div class="topbar-brand">🔵 BLUE NOSE PM</div>
   <div class="topbar-date" id="topbar-date"></div>
-  <button class="export-btn" id="export-btn" onclick="exportChanges()">⬇ Exportar cambios</button>
 </nav>
 
 <div class="layout">
@@ -752,53 +751,6 @@ document.getElementById('sec-done').addEventListener('click',function(){
 
 renderAll();
 
-// ── EXPORTAR CAMBIOS ─────────────────────────────────────────────────────────
-function exportChanges() {
-  const sections = ['urgente','semana','mes','done'];
-  const doneTasks = [], editedTasks = [];
-
-  sections.forEach(sec => {
-    if (!TASKS[sec]) return;
-    TASKS[sec].forEach((t, i) => {
-      const id = `${sec}-${i}`;
-      if (doneSet.includes(id))
-        doneTasks.push({ id, text: t.text, tag: t.tag||'', owner: t.owner||'' });
-      if (editOverrides && editOverrides[id])
-        editedTasks.push({ id, original: t.text, edited: editOverrides[id], tag: t.tag||'', owner: t.owner||'' });
-    });
-  });
-
-  const toList = (arr) => arr.map(id => {
-    const [sec, idx] = id.split('-');
-    const t = TASKS[sec] && TASKS[sec][parseInt(idx)];
-    return t ? { id, text: t.text, tag: t.tag||'', owner: t.owner||'' } : null;
-  }).filter(Boolean);
-
-  const approvedList  = typeof approvedTasks  !== 'undefined' ? toList(approvedTasks)  : [];
-  const rejectedList  = typeof rejectedSet    !== 'undefined' ? toList(rejectedSet)    : [];
-
-  const payload = {
-    exported_at: new Date().toISOString(),
-    done:     doneTasks,
-    edited:   editedTasks,
-    approved: approvedList,
-    rejected: rejectedList
-  };
-
-  const total = doneTasks.length + editedTasks.length + approvedList.length + rejectedList.length;
-  if (total === 0) { alert('No hay cambios pendientes para exportar.'); return; }
-
-  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = `changes_${new Date().toISOString().slice(0,10)}.json`;
-  a.click();
-
-  const btn = document.getElementById('export-btn');
-  btn.classList.add('success');
-  btn.textContent = `✅ ${total} cambio(s) exportados`;
-  setTimeout(() => { btn.classList.remove('success'); btn.textContent = '⬇ Exportar cambios'; }, 3000);
-}
 
 </script>
 </body>
