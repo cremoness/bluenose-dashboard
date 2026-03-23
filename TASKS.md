@@ -5,7 +5,7 @@
 
 ## 🔴 URGENTE / Hoy mismo
 
-- [ ] **[Blue Nose — Agente IA UCSP 🆕 19.03]** Ángelito: mover presentación SpotLight (PPT de Ani) al canal de San Pablo — no a Herramientas y Utilidades. Coordinar por hilo interno antes de presentar al cliente | Owner: Ángelito
+- [x] **[Blue Nose — Agente IA UCSP 🆕 19.03]** Ángelito: mover presentación SpotLight (PPT de Ani) al canal de San Pablo — no a Herramientas y Utilidades. Coordinar por hilo interno antes de presentar al cliente | Owner: Ángelito
 - [ ] **[UCSP — Mesa de Ayuda 🆕 19.03]** Enrique: esperar brief de César Puma para Mesa de Ayuda (integración IA + WhatsApp sobre Zoho) — propuesta para abril/mayo | Owner: Enrique
 - [ ] **[UCSP 🆕 19.03]** Enrique: actualizar propuesta de coaching para equipo SGA de UCSP (ahora son 5-6 personas) y reenviar con alcance revisado | Owner: Enrique
 - [ ] **[WV PE]** Atender reunión urgente World Vision Perú — hoy 3pm | Preparar agenda: limpieza de listas + consulta web | Owner: Ángelito + Cristian P
