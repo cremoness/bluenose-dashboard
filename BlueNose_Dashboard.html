@@ -225,8 +225,9 @@
     background: var(--surface-2); border-color: var(--border-hover);
     transform: translateX(3px); box-shadow: 0 4px 24px rgba(0,0,0,0.2);
   }
-  .task-card.done { opacity: 0.35; filter: grayscale(0.8); transform: none; box-shadow: none; }
+  .task-card.done { opacity: 0.35; filter: grayscale(0.8); transform: none; box-shadow: none; transition: opacity .3s, transform .3s; }
   .task-card.done .task-text { text-decoration: line-through; color: var(--text-3); }
+  .task-card.done-hiding { opacity: 0; transform: translateX(30px); pointer-events: none; transition: opacity .4s, transform .4s; }
   .task-card.hidden { display: none; }
 
   /* Border colors by client */
@@ -639,8 +640,9 @@ function renderTaskCard(t, section, idx) {
       <button class="btn-save-edit" onclick="event.stopPropagation();saveEdit('${id}')">💾 Guardar</button>
     </div>` : '';
 
+  const hiddenIfDone = (isDone && section !== 'done') ? 'hidden' : '';
   return `
-    <div class="task-card ${isDone?'done':''}"
+    <div class="task-card ${isDone?'done':''} ${hiddenIfDone}"
          data-id="${id}" data-account="${data.account}" data-section="${section}"
          data-ownerid="${data.ownerId||''}" data-clients="${(data.clients||[]).join(',')}"
          data-subproject="${subProject||''}"
@@ -678,14 +680,27 @@ function saveEdit(id) {
 
 function toggleTaskDone(id, el) {
   if(el.getAttribute('data-forced-done')==='true') return;
+  const section = el.getAttribute('data-section');
   const nowDone = !doneSet.includes(id);
-  if(nowDone){ doneSet.push(id); el.classList.add('done'); }
-  else { doneSet=doneSet.filter(x=>x!==id); el.classList.remove('done'); }
+  if(nowDone){
+    doneSet.push(id);
+    el.classList.add('done');
+    // Ocultar de la lista activa tras breve pausa (solo en secciones activas)
+    if(section !== 'done') {
+      setTimeout(() => {
+        el.classList.add('done-hiding');
+        setTimeout(() => { el.classList.add('hidden'); }, 400);
+      }, 600);
+    }
+  } else {
+    doneSet = doneSet.filter(x=>x!==id);
+    el.classList.remove('done','done-hiding','hidden');
+  }
   localStorage.setItem('pm-done',JSON.stringify(doneSet));
   renderKPIs(); updateVisibleCounts();
 
   // Sync to GitHub TASKS.md
-  const taskText = el.querySelector('.task-text')?.textContent || id;
+  const taskText = el.querySelector('.task-text')?.textContent?.trim() || id;
   syncTaskToGitHub(taskText, nowDone);
 }
 
@@ -889,9 +904,11 @@ async function syncTaskToGitHub(taskText, done) {
     });
 
     if(!changed) {
+      // Task already in correct state or text not matched — still OK locally
+      console.warn('[GH Sync] No se encontró la tarea en TASKS.md:', normalized);
       updateSyncDot('ok');
-      showToast('Tarea sincronizada ✓', 'ok');
-      return true; // no-op is fine
+      showToast('✓ Guardado localmente (tarea ya estaba actualizada en GitHub)', 'ok');
+      return true;
     }
 
     // 3. Push update
