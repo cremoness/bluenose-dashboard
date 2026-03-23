@@ -3,1013 +3,803 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blue Nose Dashboard — Ángelito Chanamé</title>
+<title>Blue Nose — Project Manager</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { 
-    font-family: 'Outfit', system-ui, sans-serif; 
-    background: #09090b; 
-    background-image: radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.07), transparent 30%), radial-gradient(circle at 90% 80%, rgba(16, 185, 129, 0.06), transparent 30%);
+
+  :root {
+    --bg: #0a0a0f;
+    --surface-1: rgba(18, 18, 28, 0.85);
+    --surface-2: rgba(24, 24, 38, 0.7);
+    --surface-3: rgba(32, 32, 50, 0.6);
+    --border: rgba(255, 255, 255, 0.06);
+    --border-hover: rgba(255, 255, 255, 0.12);
+    --text-1: #f0f0f5;
+    --text-2: #a0a0b8;
+    --text-3: #6b6b85;
+    --accent: #6366f1;
+    --accent-glow: rgba(99, 102, 241, 0.15);
+    --red: #ef4444; --orange: #f59e0b; --green: #10b981; --cyan: #06b6d4; --pink: #ec4899;
+    --c-wv: #34d399; --c-ucsp: #60a5fa; --c-upsjb: #fb923c;
+    --c-vp: #a78bfa; --c-smart: #fbbf24; --c-ica: #22d3ee; --c-bn: #818cf8;
+    --radius: 14px; --radius-sm: 8px;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    background-image:
+      radial-gradient(ellipse at 15% 10%, rgba(99, 102, 241, 0.06), transparent 50%),
+      radial-gradient(ellipse at 85% 90%, rgba(16, 185, 129, 0.04), transparent 50%);
     background-attachment: fixed;
-    color: #e4e4e7; 
-    min-height: 100vh;
-    font-size: 14px;
-    line-height: 1.5;
+    color: var(--text-1); min-height: 100vh; font-size: 13px; line-height: 1.5;
     -webkit-font-smoothing: antialiased;
   }
 
-  /* ── GLOBALS ── */
-  .container { max-width: 1300px; margin: 0 auto; padding: 32px 24px; }
-  .view { display: none; animation: fadeIn 0.4s ease; }
-  .view.active { display: block; }
-  @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
-
-  /* ── TOP NAV ── */
-  .top-nav {
-    background: rgba(10, 15, 30, 0.6);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 0 32px;
-    display: flex; align-items: center; gap: 8px;
-    position: sticky; top: 0; z-index: 100;
+  /* ── TOP BAR ── */
+  .topbar {
+    background: rgba(10, 10, 18, 0.8); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border); padding: 0 28px;
+    display: flex; align-items: center; gap: 16px;
+    position: sticky; top: 0; z-index: 100; height: 56px;
   }
-  .nav-brand {
-    font-size: 15px; font-weight: 800; 
-    background: linear-gradient(90deg, #818cf8, #c084fc);
+  .topbar-brand {
+    font-size: 14px; font-weight: 900;
+    background: linear-gradient(135deg, #818cf8, #c084fc);
     -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    padding: 16px 0; margin-right: 28px; letter-spacing: 0.03em;
+    letter-spacing: 0.04em; margin-right: 20px;
   }
-  .nav-tab {
-    padding: 16px 18px; font-size: 13px; font-weight: 600;
-    color: #a1a1aa; cursor: pointer; border-bottom: 3px solid transparent;
-    transition: all 0.2s ease; white-space: nowrap; letter-spacing: 0.02em;
+  .topbar-date { margin-left: auto; font-size: 12px; color: var(--text-3); font-weight: 500; }
+  .export-btn {
+    display: flex; align-items: center; gap: 6px;
+    background: rgba(99,102,241,.15); border: 1px solid rgba(99,102,241,.4);
+    color: #a5b4fc; border-radius: 8px; padding: 6px 14px;
+    font-size: 12px; font-weight: 700; cursor: pointer; transition: all .15s;
   }
-  .nav-tab:hover { color: #f4f4f5; text-shadow: 0 0 10px rgba(255,255,255,0.1); }
-  .nav-tab.active { color: #f4f4f5; }
-  .nav-tab.active.tab-brief { border-bottom-color: #818cf8; }
-  .nav-tab.active.tab-status { border-bottom-color: #22d3ee; }
-  .nav-tab.active.tab-cuentas { border-bottom-color: #34d399; }
-  .nav-right { margin-left: auto; display: flex; align-items: center; gap: 10px; }
-  #nav-date { font-size: 12px; color: #71717a; font-weight: 500; }
+  .export-btn:hover { background: rgba(99,102,241,.3); border-color: #6366f1; color: #e0e7ff; }
+  .export-btn.success { background: rgba(34,197,94,.15); border-color: #22c55e; color: #86efac; }
 
-  /* ── HEADER ── */
-  header {
-    background: linear-gradient(180deg, rgba(24, 24, 27, 0.8) 0%, rgba(9, 9, 11, 0) 100%);
-    padding: 32px 32px 24px; border-bottom: 1px solid rgba(39, 39, 42, 0.5);
-    display: flex; justify-content: space-between; align-items: flex-end;
-  }
-  .header-left h1 { font-size: 26px; font-weight: 800; color: #fff; letter-spacing: -0.02em; }
-  .header-left p  { font-size: 13px; color: #a1a1aa; margin-top: 6px; font-weight: 400; }
-  #fecha-badge {
-    background: rgba(99, 102, 241, 0.15); color: #818cf8; padding: 8px 20px;
-    border-radius: 99px; font-size: 13px; font-weight: 700;
-    border: 1px solid rgba(99, 102, 241, 0.3);
-    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.1);
-  }
+  .layout { max-width: 1400px; margin: 0 auto; padding: 24px; }
 
-  /* ══════════════════════════════════════════
-     VIEW: DAILY BRIEF
-  ══════════════════════════════════════════ */
-  .brief-container { max-width: 900px; margin: 0 auto; padding: 0 24px 32px; }
-
-  .counts { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 32px; margin-top: 24px; }
-  .count-pill { 
-    padding: 8px 20px; border-radius: 99px; font-size: 13px; font-weight: 700; 
-    display: flex; align-items: center; gap: 8px; backdrop-filter: blur(4px); border: 1px solid transparent;
+  /* ── SECTION HEADERS ── */
+  .section-header {
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 16px; padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
   }
-  .cp-r { background: rgba(239, 68, 68, 0.1); color: #f87171; border-color: rgba(239, 68, 68, 0.2); }
-  .cp-y { background: rgba(234, 179, 8, 0.1); color: #fbbf24; border-color: rgba(234, 179, 8, 0.2); }
-  .cp-g { background: rgba(34, 197, 94, 0.1); color: #4ade80; border-color: rgba(34, 197, 94, 0.2); }
-
-  .filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px; }
-  .filter-btn {
-    padding: 6px 16px; border-radius: 99px; font-size: 12px; font-weight: 600;
-    background: rgba(39, 39, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.05); color: #a1a1aa;
-    cursor: pointer; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  .section-icon { font-size: 18px; }
+  .section-label { font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; }
+  .section-count { font-size: 11px; font-weight: 800; padding: 3px 10px; border-radius: 99px; margin-left: 4px; }
+  .sc-red   { background: rgba(239,68,68,0.12); color: #fca5a5; border: 1px solid rgba(239,68,68,0.25); }
+  .sc-amber { background: rgba(245,158,11,0.12); color: #fcd34d; border: 1px solid rgba(245,158,11,0.25); }
+  .sc-green { background: rgba(16,185,129,0.12); color: #6ee7b7; border: 1px solid rgba(16,185,129,0.25); }
+  .sc-blue  { background: rgba(99,102,241,0.12); color: #a5b4fc; border: 1px solid rgba(99,102,241,0.25); }
+  .section-toggle {
+    margin-left: auto; font-size: 11px; font-weight: 600;
+    color: var(--text-3); cursor: pointer; padding: 4px 12px;
+    border-radius: 6px; border: 1px solid var(--border); transition: all 0.2s;
   }
-  .filter-btn.active, .filter-btn:hover { background: #6366f1; border-color: #818cf8; color: #fff; box-shadow: 0 0 12px rgba(99,102,241,0.3); transform: translateY(-1px); }
+  .section-toggle:hover { border-color: var(--accent); color: var(--text-2); }
 
-  /* Filtros cliente colores */
-  .filter-btn[data-client="WV"].active,
-  .filter-btn[data-client="WV"]:hover     { background: rgba(16,185,129,0.2); border-color: #34d399; color: #34d399; box-shadow: 0 0 12px rgba(16,185,129,0.2); }
-  .filter-btn[data-client="UCSP"].active,
-  .filter-btn[data-client="UCSP"]:hover   { background: rgba(59,130,246,0.2); border-color: #60a5fa; color: #60a5fa; box-shadow: 0 0 12px rgba(59,130,246,0.2); }
-  .filter-btn[data-client="UPSJB"].active,
-  .filter-btn[data-client="UPSJB"]:hover  { background: rgba(249,115,22,0.2); border-color: #fb923c; color: #fb923c; box-shadow: 0 0 12px rgba(249,115,22,0.2); }
-  .filter-btn[data-client="VP"].active,
-  .filter-btn[data-client="VP"]:hover     { background: rgba(139,92,246,0.2); border-color: #a78bfa; color: #a78bfa; box-shadow: 0 0 12px rgba(139,92,246,0.2); }
-  .filter-btn[data-client="Smartimper"].active,
-  .filter-btn[data-client="Smartimper"]:hover { background: rgba(234,179,8,0.2); border-color: #fbbf24; color: #fbbf24; box-shadow: 0 0 12px rgba(234,179,8,0.2); }
+  /* ── PROJECT SUB-GROUP HEADERS ── */
+  .project-group-header {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 16px; margin: 20px 0 8px;
+    border-radius: 10px; font-size: 12px; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 0.08em;
+  }
+  .project-group-header .pg-line {
+    flex: 1; height: 1px; opacity: 0.3;
+  }
+  .project-group-header .pg-count {
+    font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 99px;
+    opacity: 0.7;
+  }
+  /* WV sub-project colors */
+  .pg-wv { color: var(--c-wv); background: rgba(52,211,153,0.05); border: 1px solid rgba(52,211,153,0.15); }
+  .pg-wv .pg-line { background: var(--c-wv); }
+  .pg-wv .pg-count { background: rgba(52,211,153,0.15); }
+  /* UCSP sub-project colors */
+  .pg-ucsp { color: var(--c-ucsp); background: rgba(96,165,250,0.05); border: 1px solid rgba(96,165,250,0.15); }
+  .pg-ucsp .pg-line { background: var(--c-ucsp); }
+  .pg-ucsp .pg-count { background: rgba(96,165,250,0.15); }
 
-  .brief-section { margin-bottom: 32px; }
-  .section-title {
-    font-size: 13px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
-    padding: 8px 16px; border-radius: 8px; display: inline-flex; align-items: center; gap: 8px;
-    margin-bottom: 16px; border: 1px solid transparent;
+  /* ── FILTER BAR ── */
+  .filter-bar {
+    display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; padding: 16px 20px;
+    background: var(--surface-1); border: 1px solid var(--border); border-radius: var(--radius);
   }
-  .s-red   { background: rgba(239,68,68,0.1);  color: #fca5a5; border-color: rgba(239,68,68,0.15); }
-  .s-yel   { background: rgba(234,179,8,0.1);  color: #fde047; border-color: rgba(234,179,8,0.15); }
-  .s-blue  { background: rgba(99,102,241,0.1); color: #a5b4fc; border-color: rgba(99,102,241,0.15); }
-  .s-green { background: rgba(34,197,94,0.1);  color: #86efac; border-color: rgba(34,197,94,0.15); }
+  .filter-group { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+  .filter-sep { width: 1px; height: 24px; background: var(--border); margin: 0 8px; }
+  .filter-label { font-size: 10px; font-weight: 700; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.1em; margin-right: 4px; }
+  .fbtn {
+    padding: 5px 14px; border-radius: 99px; font-size: 11px; font-weight: 600;
+    background: var(--surface-3); border: 1px solid var(--border); color: var(--text-2);
+    cursor: pointer; transition: all 0.2s; white-space: nowrap;
+  }
+  .fbtn:hover { border-color: var(--border-hover); color: var(--text-1); background: rgba(99,102,241,0.08); }
+  .fbtn.active { background: var(--accent); border-color: var(--accent); color: #fff; box-shadow: 0 0 14px var(--accent-glow); }
 
-  .task {
-    background: rgba(24, 24, 27, 0.4); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px;
-    padding: 16px; margin-bottom: 10px;
-    display: flex; align-items: flex-start; gap: 14px;
-    cursor: pointer; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    backdrop-filter: blur(8px);
+  /* ── KPI ROW ── */
+  .kpi-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-bottom: 28px; }
+  .kpi-card {
+    background: var(--surface-1); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 18px; text-align: center;
+    transition: transform 0.2s, border-color 0.2s;
   }
-  .task:hover { background: rgba(39, 39, 42, 0.6); border-color: rgba(255, 255, 255, 0.1); transform: translateX(2px); box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
-  .task.done  { opacity: 0.4; filter: grayscale(100%); background: rgba(24, 24, 27, 0.2); transform: none; box-shadow: none; }
-  .task.done .task-text { text-decoration: line-through; color: #71717a; }
-  
-  .chk {
-    width: 20px; height: 20px; border-radius: 6px; border: 2px solid #52525b;
-    flex-shrink: 0; margin-top: 1px; display: flex; align-items: center; justify-content: center;
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  .kpi-card:hover { transform: translateY(-2px); border-color: var(--border-hover); }
+  .kpi-num { font-size: 28px; font-weight: 900; line-height: 1; margin-bottom: 6px; }
+  .kpi-label { font-size: 11px; font-weight: 600; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.06em; }
+
+  /* ── INBOX ── */
+  .inbox-section { margin-bottom: 32px; }
+  .inbox-card {
+    background: linear-gradient(135deg, rgba(99,102,241,0.06), rgba(139,92,246,0.03));
+    border: 1px solid rgba(99,102,241,0.2);
+    border-radius: var(--radius); padding: 16px 18px; margin-bottom: 10px;
+    animation: slideIn 0.3s ease;
   }
-  .task:hover .chk { border-color: #818cf8; }
-  .task.done .chk { background: #10b981; border-color: #10b981; }
-  .chk svg { display: none; width: 12px; height: 12px; }
-  .task.done .chk svg { display: block; }
-  
-  .task-text { font-size: 14px; line-height: 1.5; color: #d4d4d8; flex: 1; font-weight: 400; }
+  @keyframes slideIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+  .inbox-text { font-size: 13px; color: var(--text-1); margin-bottom: 12px; line-height: 1.6; font-weight: 500; }
+  .inbox-controls { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  .inbox-select, .edit-select {
+    padding: 5px 10px; border-radius: 6px; font-size: 11px; font-weight: 600;
+    background: rgba(0,0,0,0.3); border: 1px solid var(--border);
+    color: var(--text-1); outline: none; cursor: pointer; font-family: 'Inter', sans-serif;
+  }
+  .inbox-select:focus, .edit-select:focus { border-color: var(--accent); }
+  .inbox-input, .edit-input {
+    padding: 5px 10px; border-radius: 6px; font-size: 11px; font-weight: 600;
+    background: rgba(0,0,0,0.3); border: 1px solid var(--border);
+    color: var(--text-1); outline: none; width: 130px; font-family: 'Inter', sans-serif;
+  }
+  .inbox-input:focus, .edit-input:focus { border-color: var(--accent); }
+  .inbox-btn, .edit-btn {
+    padding: 5px 14px; border-radius: 6px; font-size: 11px; font-weight: 700;
+    border: none; cursor: pointer; transition: all 0.2s; font-family: 'Inter', sans-serif;
+  }
+  .btn-approve { background: var(--green); color: #fff; }
+  .btn-approve:hover { background: #059669; box-shadow: 0 0 12px rgba(16,185,129,0.4); }
+  .btn-reject { background: rgba(239,68,68,0.15); color: #fca5a5; border: 1px solid rgba(239,68,68,0.3); }
+  .btn-reject:hover { background: rgba(239,68,68,0.25); }
+
+  /* ── TASK CARDS ── */
+  .tasks-grid { display: flex; flex-direction: column; gap: 8px; margin-bottom: 28px; }
+  .task-card {
+    background: var(--surface-1); border: 1px solid var(--border);
+    border-left: 4px solid var(--border); border-radius: var(--radius);
+    padding: 14px 18px; display: flex; align-items: flex-start; gap: 14px;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); position: relative;
+  }
+  .task-card:hover {
+    background: var(--surface-2); border-color: var(--border-hover);
+    transform: translateX(3px); box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+  }
+  .task-card.done { opacity: 0.35; filter: grayscale(0.8); transform: none; box-shadow: none; }
+  .task-card.done .task-text { text-decoration: line-through; color: var(--text-3); }
+  .task-card.hidden { display: none; }
+
+  /* Border colors by client */
+  .task-card[data-account="WV"]        { border-left-color: var(--c-wv); }
+  .task-card[data-account="UCSP"]      { border-left-color: var(--c-ucsp); }
+  .task-card[data-account="UPSJB"]     { border-left-color: var(--c-upsjb); }
+  .task-card[data-account="VP"]        { border-left-color: var(--c-vp); }
+  .task-card[data-account="Smartimper"]{ border-left-color: var(--c-smart); }
+  .task-card[data-account="Ica"]       { border-left-color: var(--c-ica); }
+  .task-card[data-account="BLUENOSE"]  { border-left-color: var(--c-bn); }
+
+  /* Checkbox */
+  .task-chk {
+    width: 20px; height: 20px; border-radius: 6px;
+    border: 2px solid var(--text-3); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s; margin-top: 1px; cursor: pointer;
+  }
+  .task-card:hover .task-chk { border-color: var(--accent); }
+  .task-card.done .task-chk { background: var(--green); border-color: var(--green); }
+  .task-chk svg { display: none; }
+  .task-card.done .task-chk svg { display: block; }
+
+  .task-body { flex: 1; min-width: 0; }
+  .task-text { font-size: 13px; line-height: 1.6; color: var(--text-1); font-weight: 400; margin-bottom: 8px; }
   .task-text strong { color: #fff; font-weight: 700; }
-  .tag { font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 99px; flex-shrink: 0; margin-top: 2px; text-transform: uppercase; letter-spacing: 0.05em; }
-  
-  /* Task Tags */
-  .tag-wv   { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.2); }
-  .tag-up   { background: rgba(249, 115, 22, 0.15); color: #fb923c; border: 1px solid rgba(249, 115, 22, 0.2); }
-  .tag-uc   { background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.2); }
-  .tag-vp   { background: rgba(139, 92, 246, 0.15); color: #a78bfa; border: 1px solid rgba(139, 92, 246, 0.2); }
-  .tag-sm   { background: rgba(234, 179, 8, 0.15);  color: #fde047; border: 1px solid rgba(234, 179, 8, 0.2); }
-  .tag-ci   { background: rgba(52, 211, 153, 0.15); color: #6ee7b7; border: 1px solid rgba(52, 211, 153, 0.2); }
-  .tag-new  { background: linear-gradient(135deg, rgba(239, 68, 68, 0.2), rgba(220, 38, 38, 0.3)); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.4); animation: pulseRed 2s infinite; }
-  @keyframes pulseRed { 0% { box-shadow: 0 0 0 0 rgba(239,68,68,0.4); } 70% { box-shadow: 0 0 0 6px rgba(239,68,68,0); } 100% { box-shadow: 0 0 0 0 rgba(239,68,68,0); } }
 
-  .meeting {
-    background: linear-gradient(90deg, rgba(99,102,241,0.1) 0%, rgba(99,102,241,0.02) 100%);
-    border: 1px solid rgba(99,102,241,0.2); border-radius: 12px;
-    padding: 14px 18px; margin-bottom: 10px;
-    display: flex; align-items: center; gap: 12px; font-size: 14px; color: #c7d2fe;
-    backdrop-filter: blur(8px); font-weight: 500;
+  /* Chips row */
+  .task-chips { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 4px;
+    padding: 3px 10px; border-radius: 99px; font-size: 10px; font-weight: 700;
+    white-space: nowrap; letter-spacing: 0.02em;
   }
-  .meeting-icon { font-size: 18px; filter: drop-shadow(0 0 8px rgba(255,255,255,0.4)); }
+  .chip-owner { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); color: var(--text-2); }
+  .chip-owner .chip-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+  .chip-project { text-transform: uppercase; letter-spacing: 0.04em; }
+  .chip-wv   { background: rgba(52,211,153,0.12); color: var(--c-wv); border: 1px solid rgba(52,211,153,0.2); }
+  .chip-uc   { background: rgba(96,165,250,0.12); color: var(--c-ucsp); border: 1px solid rgba(96,165,250,0.2); }
+  .chip-up   { background: rgba(251,146,60,0.12); color: var(--c-upsjb); border: 1px solid rgba(251,146,60,0.2); }
+  .chip-vp   { background: rgba(167,139,250,0.12); color: var(--c-vp); border: 1px solid rgba(167,139,250,0.2); }
+  .chip-sm   { background: rgba(251,191,36,0.12); color: var(--c-smart); border: 1px solid rgba(251,191,36,0.2); }
+  .chip-ci   { background: rgba(34,211,238,0.12); color: var(--c-ica); border: 1px solid rgba(34,211,238,0.2); }
+  .chip-bn   { background: rgba(129,140,248,0.12); color: var(--c-bn); border: 1px solid rgba(129,140,248,0.2); }
+  .chip-def  { background: rgba(255,255,255,0.04); color: var(--text-3); border: 1px solid rgba(255,255,255,0.08); }
+  .chip-deadline { background: rgba(245,158,11,0.1); color: #fcd34d; border: 1px solid rgba(245,158,11,0.2); }
+  .chip-new { background: linear-gradient(135deg, rgba(99,102,241,0.15), rgba(139,92,246,0.2)); color: #a5b4fc; border: 1px solid rgba(99,102,241,0.3); }
 
-  /* ══════════════════════════════════════════
-     VIEW: STATUS INTERNO
-  ══════════════════════════════════════════ */
-  .alert-bar {
-    background: linear-gradient(90deg, rgba(153,27,27,0.8), rgba(127,29,29,0.9));
-    padding: 12px 32px; display: flex; align-items: center; gap: 16px;
-    font-size: 13px; font-weight: 700; flex-wrap: wrap; box-shadow: 0 4px 12px rgba(127,29,29,0.3);
-    border-bottom: 1px solid rgba(239,68,68,0.3);
+  /* ── EDIT BUTTON ── */
+  .task-edit-btn {
+    position: absolute; top: 10px; right: 12px;
+    padding: 4px 10px; border-radius: 6px; font-size: 10px; font-weight: 700;
+    background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.2);
+    color: #a5b4fc; cursor: pointer; transition: all 0.2s;
+    opacity: 0; font-family: 'Inter', sans-serif;
   }
-  .alert-items { display: flex; gap: 10px; flex-wrap: wrap; flex: 1; }
-  .alert-item { background: rgba(255,255,255,0.15); padding: 4px 12px; border-radius: 99px; font-size: 12px; border: 1px solid rgba(255,255,255,0.1); text-shadow: 0 1px 2px rgba(0,0,0,0.5); }
+  .task-card:hover .task-edit-btn { opacity: 1; }
+  .task-edit-btn:hover { background: rgba(99,102,241,0.2); border-color: rgba(99,102,241,0.4); }
 
-  .summary-panel { 
-    background: rgba(24, 24, 27, 0.5); border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.05); 
-    padding: 24px; margin-bottom: 24px; backdrop-filter: blur(10px);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  /* ── EDIT PANEL (inline) ── */
+  .task-edit-panel {
+    display: none; margin-top: 10px; padding: 10px 14px;
+    background: rgba(0,0,0,0.25); border: 1px solid rgba(99,102,241,0.2);
+    border-radius: 10px;
+    gap: 8px; align-items: center; flex-wrap: wrap;
   }
-  .summary-title { font-size: 14px; font-weight: 800; color: #a1a1aa; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 20px; }
-  .summary-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
-  .sum-kpi { text-align: center; background: rgba(255,255,255,0.02); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.03); transition: transform 0.2s; }
-  .sum-kpi:hover { transform: translateY(-3px); background: rgba(255,255,255,0.04); }
-  .sum-num { font-size: 32px; font-weight: 900; line-height: 1.1; margin-bottom: 4px; }
-  .sum-label { font-size: 12px; color: #71717a; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; }
-  .n-red { color: #f87171; text-shadow: 0 0 16px rgba(248,113,113,0.3); } .n-yellow { color: #fbbf24; text-shadow: 0 0 16px rgba(251,191,36,0.3); } .n-green { color: #34d399; text-shadow: 0 0 16px rgba(52,211,153,0.3); }
-  .n-blue { color: #818cf8; text-shadow: 0 0 16px rgba(129,140,248,0.3); } .n-cyan { color: #22d3ee; text-shadow: 0 0 16px rgba(34,211,238,0.3); }
-
-  .meeting-toggle { display: flex; gap: 8px; align-items: center; }
-  .toggle-btn {
-    padding: 8px 18px; border-radius: 99px; font-size: 13px; font-weight: 700;
-    cursor: pointer; border: 1px solid rgba(255,255,255,0.1); background: rgba(24,24,27,0.6); color: #a1a1aa;
-    transition: all 0.2s; backdrop-filter: blur(4px);
+  .task-edit-panel.open { display: flex; }
+  .edit-label { font-size: 10px; font-weight: 700; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.08em; }
+  .btn-save-edit {
+    padding: 5px 14px; border-radius: 6px; font-size: 11px; font-weight: 700;
+    background: var(--accent); border: none; color: #fff; cursor: pointer;
+    transition: all 0.2s; font-family: 'Inter', sans-serif;
   }
-  .toggle-btn.active { background: #6366f1; border-color: #818cf8; color: white; box-shadow: 0 0 12px rgba(99,102,241,0.3); }
-  .toggle-btn.active.thu { background: #0891b2; border-color: #22d3ee; box-shadow: 0 0 12px rgba(8,145,178,0.3); }
+  .btn-save-edit:hover { background: #4f46e5; box-shadow: 0 0 12px var(--accent-glow); }
 
-  .new-section { 
-    background: linear-gradient(135deg, rgba(49, 46, 129, 0.4), rgba(30, 27, 75, 0.6)); 
-    border: 1px solid rgba(99, 102, 241, 0.3); border-radius: 16px; padding: 24px; margin-bottom: 24px; 
-    box-shadow: 0 8px 24px rgba(49, 46, 129, 0.2); backdrop-filter: blur(10px);
-  }
-  .new-section-title { font-size: 14px; font-weight: 800; color: #a5b4fc; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
-  .new-section-title::before { content: '✨'; font-size: 16px; }
+  /* ── DONE SECTION ── */
+  .done-section { margin-bottom: 32px; }
+  .done-section .tasks-grid { display: none; }
+  .done-section.open .tasks-grid { display: flex; }
 
-  .expand-bar { display: flex; justify-content: flex-end; gap: 10px; margin-bottom: 16px; }
-  .exp-btn { 
-    padding: 6px 16px; border-radius: 99px; font-size: 12px; font-weight: 600; cursor: pointer; 
-    border: 1px solid rgba(255,255,255,0.05); background: rgba(24,24,27,0.6); color: #a1a1aa; 
-    transition: all 0.2s; backdrop-filter: blur(4px);
-  }
-  .exp-btn:hover { border-color: #6366f1; color: #fff; background: rgba(99,102,241,0.1); }
+  footer { text-align: center; padding: 20px; font-size: 11px; color: var(--text-3); border-top: 1px solid var(--border); margin-top: 20px; font-weight: 500; }
 
-  .accounts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 32px; }
-  .account-card {
-    background: rgba(24, 24, 27, 0.5); border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.05);
-    overflow: hidden; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer;
-    backdrop-filter: blur(10px);
-    display: flex; flex-direction: column;
-  }
-  .account-card:hover { border-color: rgba(255, 255, 255, 0.15); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
-  .account-card.expanded { border-color: rgba(99, 102, 241, 0.3); background: rgba(24, 24, 27, 0.7); }
-
-  .account-header { padding: 18px 20px; display: flex; justify-content: space-between; align-items: flex-start; }
-  .account-name { font-size: 16px; font-weight: 800; display: flex; align-items: center; gap: 8px; letter-spacing: -0.01em; }
-  .account-sub { font-size: 12px; color: #71717a; margin-top: 4px; font-weight: 500; }
-  .account-stats { display: flex; gap: 6px; align-items: center; flex-direction: column; }
-  .account-stats .stat-row { display: flex; gap: 6px; }
-  
-  .stat-pill { font-size: 11px; font-weight: 800; padding: 4px 10px; border-radius: 6px; letter-spacing: 0.05em; }
-  .pill-r { background: rgba(239, 68, 68, 0.1); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.2); }
-  .pill-y { background: rgba(249, 115, 22, 0.1); color: #fdba74; border: 1px solid rgba(249, 115, 22, 0.2); }
-  .pill-g { background: rgba(34, 197, 94, 0.1); color: #86efac; border: 1px solid rgba(34, 197, 94, 0.2); }
-  .pill-n { background: rgba(255, 255, 255, 0.02); color: #a1a1aa; border: 1px solid rgba(255, 255, 255, 0.1); }
-
-  .account-body { padding: 0 20px 20px; display: none; }
-  .account-body.open { display: block; }
-
-  .status-item {
-    display: flex; align-items: flex-start; gap: 10px;
-    padding: 12px 14px; border-radius: 10px; margin-bottom: 8px;
-    border: 1px solid rgba(255,255,255,0.03); background: rgba(9, 9, 11, 0.4);
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer;
-  }
-  .status-item:hover { border-color: rgba(255,255,255,0.1); background: rgba(24, 24, 27, 0.8); }
-  .status-item.done { opacity: 0.4; filter: grayscale(100%); }
-  .status-item.done .si-text { text-decoration: line-through; }
-  .si-chk {
-    width: 18px; height: 18px; border: 2px solid #52525b; border-radius: 5px;
-    flex-shrink: 0; margin-top: 1px; display: flex; align-items: center; justify-content: center;
-    transition: all 0.2s;
-  }
-  .si-chk.on { background: #10b981; border-color: #10b981; }
-  .si-chk.on::after { content: '✓'; color: #fff; font-size: 11px; font-weight: 900; }
-  .si-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; margin-top: 6px; box-shadow: 0 0 8px currentColor; }
-  .d-r { background: #ef4444; color: rgba(239,68,68,0.5); } .d-y { background: #f59e0b; color: rgba(245,158,11,0.5); } .d-g { background: #10b981; color: rgba(16,185,129,0.5); } .d-b { background: #3b82f6; color: rgba(59,130,246,0.5); }
-  .si-text { font-size: 13px; line-height: 1.5; color: #d4d4d8; flex: 1; font-weight: 400; }
-  .si-text strong { color: #fff; font-weight: 700; }
-  .si-owner { font-size: 11px; color: #71717a; margin-top: 4px; font-weight: 500; }
-  .si-tag { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 6px; white-space: nowrap; flex-shrink: 0; color: #a1a1aa; background: rgba(39, 39, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.05); }
-  .si-new { font-size: 10px; font-weight: 800; padding: 2px 8px; border-radius: 6px; background: rgba(99, 102, 241, 0.15); color: #818cf8; white-space: nowrap; flex-shrink: 0; border: 1px solid rgba(99, 102, 241, 0.2); }
-  .section-divider { font-size: 11px; font-weight: 800; color: #71717a; text-transform: uppercase; letter-spacing: 0.1em; margin: 16px 0 8px; padding-left: 4px; }
-
-  /* Client colors */
-  .color-ucsp { color: #60a5fa; text-shadow: 0 0 12px rgba(96,165,250,0.3); }
-  .color-wv { color: #34d399; text-shadow: 0 0 12px rgba(52,211,153,0.3); }
-  .color-upsjb { color: #fb923c; text-shadow: 0 0 12px rgba(251,146,60,0.3); }
-  .color-vp { color: #a78bfa; text-shadow: 0 0 12px rgba(167,139,250,0.3); }
-  .color-smart { color: #fbbf24; text-shadow: 0 0 12px rgba(251,191,36,0.3); }
-  .color-ica { color: #22d3ee; text-shadow: 0 0 12px rgba(34,211,238,0.3); }
-
-  /* ══════════════════════════════════════════
-     VIEW: CUENTAS (proyectos por cuenta)
-  ══════════════════════════════════════════ */
-  .cuentas-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 32px; }
-
-  .cuenta-card {
-    background: rgba(24, 24, 27, 0.5); border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.05);
-    overflow: hidden; backdrop-filter: blur(10px); box-shadow: 0 8px 32px rgba(0,0,0,0.15);
-  }
-  .cuenta-header {
-    padding: 24px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); background: rgba(9, 9, 11, 0.3);
-  }
-  .cuenta-title { font-size: 18px; font-weight: 900; display: flex; align-items: center; gap: 12px; letter-spacing: -0.01em; }
-  .cuenta-sub { font-size: 13px; color: #71717a; margin-top: 6px; font-weight: 500; }
-  .proyecto-list { padding: 20px 24px; }
-  .proyecto-item {
-    padding: 14px 16px; border-radius: 12px; margin-bottom: 12px;
-    border: 1px solid rgba(255,255,255,0.05); background: rgba(9, 9, 11, 0.4);
-    cursor: pointer; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .proyecto-item:hover { border-color: rgba(255,255,255,0.15); background: rgba(24, 24, 27, 0.8); }
-  .proyecto-item.open { border-color: rgba(99, 102, 241, 0.4); background: rgba(24, 24, 27, 0.6); box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
-  .proyecto-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
-  .proyecto-name { font-size: 14px; font-weight: 800; color: #f4f4f5; display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
-  .proyecto-owner { font-size: 11px; color: #71717a; font-weight: 500; }
-  .proyecto-stats { display: flex; gap: 6px; flex-shrink: 0; }
-  .ps-r { font-size: 11px; font-weight: 800; background: rgba(239, 68, 68, 0.1); color: #fca5a5; padding: 3px 8px; border-radius: 6px; border: 1px solid rgba(239, 68, 68, 0.2); }
-  .ps-y { font-size: 11px; font-weight: 800; background: rgba(249, 115, 22, 0.1); color: #fdba74; padding: 3px 8px; border-radius: 6px; border: 1px solid rgba(249, 115, 22, 0.2); }
-  .ps-g { font-size: 11px; font-weight: 800; background: rgba(34, 197, 94, 0.1); color: #86efac; padding: 3px 8px; border-radius: 6px; border: 1px solid rgba(34, 197, 94, 0.2); }
-  .ps-b { font-size: 11px; font-weight: 800; background: rgba(59, 130, 246, 0.1); color: #93c5fd; padding: 3px 8px; border-radius: 6px; border: 1px solid rgba(59, 130, 246, 0.2); }
-  .proyecto-tasks { padding-top: 14px; display: none; margin-top: 10px; border-top: 1px solid rgba(255,255,255,0.05); }
-  .proyecto-tasks.open { display: block; animation: fadeIn 0.3s ease; }
-  .pt-item {
-    display: flex; align-items: flex-start; gap: 10px;
-    padding: 8px 10px; border-radius: 8px; margin-bottom: 6px;
-    font-size: 12.5px; color: #d4d4d8; line-height: 1.5; cursor: pointer;
-    transition: all 0.2s;
-  }
-  .pt-item:hover { background: rgba(255,255,255,0.03); }
-  .pt-item.done { opacity: 0.4; filter: grayscale(100%); }
-  .pt-item.done .pt-text { text-decoration: line-through; }
-  .pt-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; margin-top: 6px; box-shadow: 0 0 6px currentColor; }
-  .pt-chk { width: 16px; height: 16px; border: 2px solid #52525b; border-radius: 4px; flex-shrink: 0; margin-top: 1px; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
-  .pt-item.done .pt-chk { background: #10b981; border-color: #10b981; }
-  .pt-item.done .pt-chk::after { content: '✓'; color: #fff; font-size: 10px; font-weight: 900; }
-  .pt-text { flex: 1; }
-  .pt-owner { font-size: 11px; color: #71717a; font-weight: 500; }
-
-  /* cuenta color accents */
-  .c-ucsp .cuenta-title { color: #60a5fa; text-shadow: 0 0 16px rgba(96,165,250,0.3); }
-  .c-ucsp .proyecto-item.open { border-color: rgba(59,130,246,0.3); }
-  .c-wv .cuenta-title { color: #34d399; text-shadow: 0 0 16px rgba(52,211,153,0.3); }
-  .c-wv .proyecto-item.open { border-color: rgba(16,185,129,0.3); }
-  .c-upsjb .cuenta-title { color: #fb923c; text-shadow: 0 0 16px rgba(251,146,60,0.3); }
-  .c-vp .cuenta-title { color: #a78bfa; text-shadow: 0 0 16px rgba(167,139,250,0.3); }
-
-  /* tags de estado proyecto */
-  .badge-pausa { font-size: 10px; font-weight: 800; padding: 4px 10px; border-radius: 6px; background: rgba(249, 115, 22, 0.1); color: #fdba74; border: 1px solid rgba(249, 115, 22, 0.2); letter-spacing: 0.1em; }
-  .badge-activo { font-size: 10px; font-weight: 800; padding: 4px 10px; border-radius: 6px; background: rgba(34, 197, 94, 0.1); color: #86efac; border: 1px solid rgba(34, 197, 94, 0.2); letter-spacing: 0.1em; }
-
-  /* ── FOOTER ── */
-  footer { text-align: center; padding: 24px; font-size: 12px; color: #71717a; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 24px; font-weight: 500; }
-
-  /* ── URGENTE GLOW ── */
-  .task-urgent-glow { box-shadow: 0 0 0 1px rgba(239,68,68,0.2), 0 4px 20px rgba(239,68,68,0.15); border-color: rgba(239,68,68,0.4); }
-
-  /* ── OWNER BADGE ── */
-  .owner-badge {
-    display: inline-flex; align-items: center; gap: 6px;
-    background: rgba(9, 9, 11, 0.5); border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 99px; padding: 2px 10px 2px 6px;
-    font-size: 11px; font-weight: 600; color: #a1a1aa; margin-left: 10px;
-    vertical-align: middle; white-space: nowrap;
-  }
-  .owner-dot { width: 6px; height: 6px; border-radius: 50%; background: #71717a; flex-shrink: 0; }
-  .owner-link { cursor: pointer; transition: all .15s; }
-  .owner-link:hover { background: #1e3a5f; border-color: #3b82f6; color: #93c5fd; }
-
-  /* ── CONTACT POPUP ── */
-  .contact-popup {
-    position: fixed; z-index: 9999;
-    background: #1e293b; border: 1px solid #475569; border-radius: 14px;
-    padding: 16px 20px 14px; min-width: 270px; max-width: 330px;
-    box-shadow: 0 12px 40px rgba(0,0,0,.6);
-  }
-  .cp-name  { font-size: 15px; font-weight: 800; color: #e2e8f0; padding-right: 20px; }
-  .cp-role  { font-size: 11.5px; color: #64748b; margin-top: 3px; }
-  .cp-badge { font-size: 10px; font-weight: 700; padding: 2px 9px; border-radius: 10px; display: inline-block; margin: 8px 0 4px; }
-  .cp-row   { display: flex; align-items: center; gap: 8px; font-size: 12px; color: #cbd5e1; margin-top: 5px; }
-  .cp-row a { color: #60a5fa; text-decoration: none; }
-  .cp-row a:hover { text-decoration: underline; }
-  .cp-close { position: absolute; top: 10px; right: 14px; cursor: pointer; color: #475569; font-size: 16px; line-height:1; }
-  .cp-close:hover { color: #94a3b8; }
-
-  /* ── SECTION TITLE CON CONTADOR ── */
-  .section-title-wrap { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 8px; }
-  .section-title-wrap .section-title { margin-bottom: 0; border: none; padding: 0; font-size: 14px; background: none; }
-  .section-title-wrap .s-red { color: #fca5a5; text-shadow: 0 0 12px rgba(239,68,68,0.4); }
-  .section-title-wrap .s-yel { color: #fde047; text-shadow: 0 0 12px rgba(234,179,8,0.4); }
-  .section-title-wrap .s-green { color: #86efac; text-shadow: 0 0 12px rgba(34,197,94,0.4); }
-  
-  .section-count { font-size: 12px; font-weight: 800; padding: 4px 12px; border-radius: 99px; }
-  .sc-red   { background: rgba(239,68,68,0.15); color: #fca5a5; border: 1px solid rgba(239,68,68,0.3); }
-  .sc-yel   { background: rgba(234,179,8,0.15); color: #fde047; border: 1px solid rgba(234,179,8,0.3); }
-  .sc-green { background: rgba(34,197,94,0.15); color: #86efac; border: 1px solid rgba(34,197,94,0.3); }
-
-  /* Responsive Adjustments */
   @media (max-width: 768px) {
-    .accounts-grid { grid-template-columns: 1fr; }
-    .cuentas-grid { grid-template-columns: 1fr; }
-    .summary-grid { grid-template-columns: repeat(2, 1fr); }
-    .summary-grid .sum-kpi:last-child { grid-column: span 2; }
-    .header-left h1 { font-size: 22px; }
-    .top-nav { padding: 0 16px; overflow-x: auto; }
-    .nav-tab { padding: 16px 12px; }
+    .kpi-row { grid-template-columns: repeat(2, 1fr); }
+    .kpi-row .kpi-card:last-child { grid-column: span 2; }
+    .layout { padding: 16px; }
+    .topbar { padding: 0 16px; }
   }
-
-  /* ── UX FINA ANIMACIONES ── */
-  .task {
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1), max-height 0.4s ease, opacity 0.3s ease, margin 0.4s ease, padding 0.4s ease;
-    max-height: 300px;
-    opacity: 1;
-    overflow: hidden;
-  }
-  .task.hidden {
-    max-height: 0 !important;
-    opacity: 0 !important;
-    margin-bottom: 0 !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    border-width: 0 !important;
-    transform: scale(0.95);
-    pointer-events: none;
-  }
-  .task.done {
-    transform: scale(0.98);
-  }
-  
-  .view {
-    transition: opacity 0.3s ease, transform 0.3s ease;
-  }
-
 </style>
 </head>
 <body>
 
-<!-- TOP NAV -->
-<nav class="top-nav">
-  <div class="nav-brand">🔵 BLUE NOSE</div>
-  <div class="nav-tab tab-brief active" onclick="switchView('brief', this)">☀️ Daily Brief</div>
-  <div class="nav-tab tab-status" onclick="switchView('status', this)">📊 Status Interno</div>
-  <div class="nav-tab tab-cuentas" onclick="switchView('cuentas', this)">🏢 Cuentas & Proyectos</div>
-  <div class="nav-right">
-    <div id="nav-date"></div>
-  </div>
+<nav class="topbar">
+  <div class="topbar-brand">🔵 BLUE NOSE PM</div>
+  <div class="topbar-date" id="topbar-date"></div>
+  <button class="export-btn" id="export-btn" onclick="exportChanges()">⬇ Exportar cambios</button>
 </nav>
 
-<!-- ══════════════════════════════════════════════════
-     VIEW 1: DAILY BRIEF
-══════════════════════════════════════════════════ -->
-<div id="view-brief" class="view active">
+<div class="layout">
+  <div class="kpi-row" id="kpi-row"></div>
 
-  <header>
-    <div class="header-left">
-      <h1>☀️ Daily Brief</h1>
-      <p>Ángelito Chanamé — Blue Nose · Content & Project Manager</p>
+  <div class="filter-bar">
+    <div class="filter-group">
+      <span class="filter-label">👤 Equipo</span>
+      <button class="fbtn active" data-filter="all" onclick="applyFilter('all', this)">Todos</button>
+      <div id="team-filters" style="display:contents;"></div>
     </div>
-    <div id="fecha-badge" style="background:#6366f1;color:#fff;padding:7px 18px;border-radius:20px;font-size:13px;font-weight:700;">Cargando...</div>
-  </header>
-
-  <div class="brief-container">
-
-    <div class="counts">
-      <div class="count-pill cp-r">🔴 <span id="cnt-r">0</span> urgentes</div>
-      <div class="count-pill cp-y">🟡 <span id="cnt-y">0</span> esta semana</div>
-      <div class="count-pill cp-g">✅ <span id="cnt-done">0</span> completadas</div>
+    <div class="filter-sep"></div>
+    <div class="filter-group">
+      <span class="filter-label">🏢 Cliente</span>
+      <div id="client-filters" style="display:contents;"></div>
     </div>
-
-    <div class="filters">
-      <button class="filter-btn active" onclick="filter('all',this)">Todos</button>
-      <button class="filter-btn" data-client="WV" onclick="filter('WV',this)">🌍 World Vision</button>
-      <button class="filter-btn" data-client="UPSJB" onclick="filter('UPSJB',this)">🎓 UPSJB</button>
-      <button class="filter-btn" data-client="UCSP" onclick="filter('UCSP',this)">🏛 UCSP</button>
-      <button class="filter-btn" data-client="VP" onclick="filter('VP',this)">💳 VirtualPos</button>
-      <button class="filter-btn" data-client="Smartimper" onclick="filter('Smartimper',this)">⚡ Smartimper</button>
-      <button class="filter-btn" onclick="filter('yo',this)">👤 Yo (Ángelito)</button>
+    <div class="filter-sep"></div>
+    <div class="filter-group">
+      <span class="filter-label">⚡ Prioridad</span>
+      <button class="fbtn" data-filter="p-urgente" onclick="applyFilter('p-urgente', this)">🔴 Urgente</button>
+      <button class="fbtn" data-filter="p-semana" onclick="applyFilter('p-semana', this)">🟡 Semana</button>
+      <button class="fbtn" data-filter="p-mes" onclick="applyFilter('p-mes', this)">🟢 Mes</button>
     </div>
-
-    <div class="brief-section" id="sec-meetings">
-      <div class="section-title s-blue">📅 Reuniones de hoy</div>
-      <div id="meetings-container"></div>
-    </div>
-
-    <div class="brief-section">
-      <div class="section-title-wrap">
-        <div class="section-title s-red">🔴 Urgente — Hoy mismo</div>
-        <span class="section-count sc-red" id="sc-urgente">0</span>
-      </div>
-      <div id="tasks-urgente"></div>
-    </div>
-
-    <div class="brief-section">
-      <div class="section-title-wrap">
-        <div class="section-title s-yel">🟡 Esta semana</div>
-        <span class="section-count sc-yel" id="sc-semana">0</span>
-      </div>
-      <div id="tasks-semana"></div>
-    </div>
-
-    <div class="brief-section">
-      <div class="section-title-wrap">
-        <div class="section-title s-green">🟢 Próximo mes</div>
-        <span class="section-count sc-green" id="sc-mes">0</span>
-      </div>
-      <div id="tasks-mes"></div>
-    </div>
-
   </div>
-  <footer>Actualizado: 19.03.2026 — Status interno jueves</footer>
+
+  <!-- INBOX FIREFLIES -->
+  <div class="inbox-section" id="inbox-section" style="display:none;">
+    <div class="section-header">
+      <span class="section-icon">📥</span>
+      <span class="section-label" style="color:#a5b4fc;">Inbox Fireflies</span>
+      <span class="section-count sc-blue" id="inbox-count">0</span>
+    </div>
+    <div id="inbox-cards"></div>
+  </div>
+
+  <!-- URGENTE -->
+  <div id="sec-urgente">
+    <div class="section-header">
+      <span class="section-icon">🔴</span>
+      <span class="section-label" style="color:#fca5a5;">Urgente — Hoy mismo</span>
+      <span class="section-count sc-red" id="cnt-urgente">0</span>
+    </div>
+    <div class="tasks-grid" id="grid-urgente"></div>
+  </div>
+
+  <!-- ESTA SEMANA -->
+  <div id="sec-semana">
+    <div class="section-header">
+      <span class="section-icon">🟡</span>
+      <span class="section-label" style="color:#fcd34d;">Esta Semana</span>
+      <span class="section-count sc-amber" id="cnt-semana">0</span>
+    </div>
+    <div class="tasks-grid" id="grid-semana"></div>
+  </div>
+
+  <!-- PRÓXIMO MES -->
+  <div id="sec-mes">
+    <div class="section-header">
+      <span class="section-icon">🟢</span>
+      <span class="section-label" style="color:#6ee7b7;">Próximo Mes</span>
+      <span class="section-count sc-green" id="cnt-mes">0</span>
+    </div>
+    <div class="tasks-grid" id="grid-mes"></div>
+  </div>
+
+  <!-- COMPLETADO -->
+  <div class="done-section" id="sec-done">
+    <div class="section-header" onclick="document.getElementById('sec-done').classList.toggle('open')" style="cursor:pointer;">
+      <span class="section-icon">✅</span>
+      <span class="section-label" style="color:#6ee7b7;">Completado</span>
+      <span class="section-count sc-green" id="cnt-done">0</span>
+      <span class="section-toggle" id="done-toggle">▼ Mostrar</span>
+    </div>
+    <div class="tasks-grid" id="grid-done"></div>
+  </div>
 </div>
 
-<!-- ══════════════════════════════════════════════════
-     VIEW 2: STATUS INTERNO
-══════════════════════════════════════════════════ -->
-<div id="view-status" class="view">
+<footer>Blue Nose — Project Manager · Actualizado automáticamente</footer>
 
-  <header>
-    <div class="header-left">
-      <h1>📊 Status Interno — Blue Nose</h1>
-      <p>Ángelito Chanamé · Content & Project Manager</p>
-    </div>
-    <div class="meeting-toggle">
-      <button class="toggle-btn active" onclick="setDay('lunes', this)">🗓 Lunes</button>
-      <button class="toggle-btn" onclick="setDay('jueves', this)">🗓 Jueves</button>
-      <div id="day-label" style="font-size:12px;color:#94a3b8;margin-left:8px;">Actualizado: 19.03.26</div>
-    </div>
-  </header>
-
-  <div class="alert-bar">
-    <span>🚨 ALERTAS HOY:</span>
-    <div class="alert-items" id="status-alerts"></div>
-  </div>
-
-  <div class="container">
-
-    <div class="summary-panel">
-      <div class="summary-title">📈 Resumen de la semana</div>
-      <div class="summary-grid" id="status-summary"></div>
-    </div>
-
-    <!-- Nuevos puntos del status -->
-    <div class="new-section" id="status-new"></div>
-
-    <div class="expand-bar">
-      <button class="exp-btn" onclick="expandAll()">↓ Expandir todo</button>
-      <button class="exp-btn" onclick="collapseAll()">↑ Contraer todo</button>
-    </div>
-
-    <!-- ACCOUNTS GRID -->
-    <div class="accounts-grid" id="status-accounts"></div><!-- end accounts-grid -->
-  </div><!-- end container -->
-  <footer>Status Interno — Actualizado: 19.03.2026 · Lunes y Jueves · Blue Nose</footer>
-</div><!-- end view-status -->
-
-<!-- ══════════════════════════════════════════════════
-     VIEW 3: CUENTAS & PROYECTOS
-══════════════════════════════════════════════════ -->
-<div id="view-cuentas" class="view">
-
-  <header>
-    <div class="header-left">
-      <h1>🏢 Cuentas & Proyectos</h1>
-      <p>Ángelito Chanamé — Blue Nose · Tareas organizadas por proyecto</p>
-    </div>
-    <div id="cuentas-date" style="font-size:12px;color:#94a3b8;"></div>
-  </header>
-
-  <div class="container">
-    <div class="cuentas-grid" id="cuentas-grid"></div><!-- end cuentas-grid -->
-  </div><!-- end container -->
-  <footer>Cuentas & Proyectos — Actualizado: 19.03.2026 · Blue Nose</footer>
-</div><!-- end view-cuentas -->
-
-
-<!-- ══════════════════════════════════════════════════
-     SCRIPTS
-══════════════════════════════════════════════════ -->
 <script src="data.js"></script>
 <script>
-// ── NAV ──
-function switchView(id, el) {
-  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
-  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
-  document.getElementById('view-' + id).classList.add('active');
-  el.classList.add('active');
-}
-
-// ── DATE ──
-const DIAS  = ["Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado"];
-const MESES = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
-(function() {
-  const now = new Date();
-  const str = `${DIAS[now.getDay()]}, ${now.getDate()} de ${MESES[now.getMonth()]} de ${now.getFullYear()}`;
-  document.getElementById('nav-date').textContent = str;
-  document.getElementById('fecha-badge').textContent = str;
-  const cd = document.getElementById('cuentas-date');
-  if (cd) cd.textContent = str;
-
-  // Reuniones del día
-  const MEETINGS_BY_DAY = {
-    0: [{ icon: "📋", text: "Status interno Blue Nose — reunión de inicio de semana" }],
-    2: [{ icon: "🌍", text: "WV HND — revisión piezas y WF con Luis y Pablo (adelantada de jueves)" }],
-    3: [
-      { icon: "📋", text: "Status interno Blue Nose — reunión de cierre de semana" },
-      { icon: "🌍", text: "WV HND — reunión con Express Pago (pasarela de pagos)" },
-    ],
-  };
-  const meetings = MEETINGS_BY_DAY[now.getDay()] || [];
-  const mc = document.getElementById('meetings-container');
-  if (meetings.length === 0) {
-    document.getElementById('sec-meetings').style.display = 'none';
-  } else {
-    meetings.forEach(m => {
-      mc.innerHTML += `<div class="meeting"><span style="font-size:18px">${m.icon}</span>${m.text}</div>`;
-    });
-  }
+// ── Date ──
+(function(){
+  const D=["Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado"];
+  const M=["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+  const n=new Date();
+  document.getElementById('topbar-date').textContent=`${D[n.getDay()]}, ${n.getDate()} de ${M[n.getMonth()]} de ${n.getFullYear()}`;
 })();
 
-// ── DAILY BRIEF DATA ──
-
-// ── BRIEF RENDER ──
-let doneSet = JSON.parse(localStorage.getItem('brief-done') || '[]');
+// ── State ──
+let doneSet = JSON.parse(localStorage.getItem('pm-done') || '[]');
+let rejectedSet = JSON.parse(localStorage.getItem('pm-rejected') || '[]');
+let approvedTasks = JSON.parse(localStorage.getItem('pm-approved') || '[]');
+let editOverrides = JSON.parse(localStorage.getItem('pm-edits') || '{}');
 let currentFilter = 'all';
 
-function renderTask(t, section, idx) {
-  const id = `${section}-${idx}`;
-  const isDone = t.isCompleted || doneSet.includes(id);
-  const forcedDoneAttr = t.isCompleted ? `data-forced-done="true"` : '';
-  const visible = currentFilter === 'all' || (t.clients && t.clients.includes(currentFilter));
-  const borderMap = { 'tag-wv': 'task-border-wv', 'tag-uc': 'task-border-uc', 'tag-up': 'task-border-up', 'tag-vp': 'task-border-vp', 'tag-sm': 'task-border-sm' };
-  const borderClass = borderMap[t.tagClass] || 'task-border-def';
-  const urgentClass = section === 'urgente' ? 'task-urgent-glow' : '';
-  const ownerHtml = renderOwnerBadges(t.owner);
-  return `
-    <div class="task ${borderClass} ${urgentClass} ${isDone ? 'done' : ''} ${visible ? '' : 'hidden'}" data-id="${id}" data-clients="${(t.clients||[]).join(',')}"
-          onclick="toggleDone('${id}',this)" ${forcedDoneAttr}>
-      <div class="chk">
-        <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
-          <path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-      </div>
-      <div class="task-text">
-        ${t.isNew ? '<span class="tag tag-new">🆕 HOY</span> ' : ''}
-        ${t.text}
-        ${ownerHtml}
-      </div>
-      <span class="tag ${t.tagClass}">${t.tag}</span>
-    </div>`;
-}
+// ── Team color map ──
+const teamColorMap = {};
+TEAM_BN.forEach(m => { teamColorMap[m.id] = m.color; });
 
-function renderAll() {
-  ['urgente','semana','mes'].forEach(sec => {
-    document.getElementById(`tasks-${sec}`).innerHTML = TASKS[sec].map((t,i) => renderTask(t,sec,i)).join('');
-  });
-  updateCounts();
-}
-
-function toggleDone(id, el) {
-  if (el.getAttribute('data-forced-done') === 'true') {
-    alert("Bloqueado: Esta tarea ya fue marcada como completada en tu archivo físico TASKS.md. Para deshacer el cambio, quita la [x] allí y corre build_data.py de nuevo.");
-    return;
-  }
-  if (doneSet.includes(id)) {
-    doneSet = doneSet.filter(x => x !== id);
-    el.classList.remove('done');
-  } else {
-    doneSet.push(id);
-    el.classList.add('done');
-  }
-  localStorage.setItem('brief-done', JSON.stringify(doneSet));
-  updateCounts();
-}
-
-function updateCounts() {
-  const ur = document.querySelectorAll('#tasks-urgente .task:not(.done):not([style*="display:none"])').length;
-  const se = document.querySelectorAll('#tasks-semana .task:not(.done):not([style*="display:none"])').length;
-  const me = document.querySelectorAll('#tasks-mes .task:not(.done):not([style*="display:none"])').length;
-  document.getElementById('cnt-done').textContent = document.querySelectorAll('.task.done').length;
-  document.getElementById('cnt-r').textContent = ur;
-  document.getElementById('cnt-y').textContent = se;
-  document.getElementById('sc-urgente').textContent = ur;
-  document.getElementById('sc-semana').textContent = se;
-  document.getElementById('sc-mes').textContent = me;
-}
-
-function filter(client, btn) {
-  currentFilter = client;
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  document.querySelectorAll('.task').forEach(t => {
-    const clients = t.dataset.clients || '';
-    if (client === 'all' || clients.split(',').includes(client)) { t.classList.remove('hidden'); } else { t.classList.add('hidden'); }
-  });
-}
-
-// ── DIRECTORIO DE CONTACTOS (debe ir antes de renderAll) ────────────────────
-const CONTACTS = {
-  "gonzalo":       { name:"Gonzalo Macaya",      client:"WV CL",     cc:"wv", email:"gonzalo_macaya@wvi.org",          phone:"+56 9 6120 8842",    role:"Gerente de Fundraising y Fidelización",        canal:"Discord + Correo + Whatsapp" },
-  "diana":         { name:"Diana Sánchez",        client:"WV CL",     cc:"wv", email:"diana_sanchez@wvi.org",           phone:"",                   role:"Coordinadora de Growth Marketing",              canal:"Discord" },
-  "diani":         { name:"Diana Sánchez",        client:"WV CL",     cc:"wv", email:"diana_sanchez@wvi.org",           phone:"",                   role:"Coordinadora de Growth Marketing",              canal:"Discord" },
-  "paula":         { name:"Paula Pineda",         client:"WV CL",     cc:"wv", email:"nidia_pineda@wvi.org",            phone:"",                   role:"Soporte Portal Donante",                        canal:"Discord" },
-  "yesenia":       { name:"Yesenia Soto",         client:"WV CL",     cc:"wv", email:"yessenia_soto@wvi.org",           phone:"",                   role:"Coordinadora de Telemarketing",                 canal:"Discord + Correo" },
-  "ornella":       { name:"Ornella Baldi",        client:"WV CL",     cc:"wv", email:"ornella_baldi@wvi.org",           phone:"",                   role:"Analista Comercial",                            canal:"Discord + Correo" },
-  "luis":          { name:"Luis González",        client:"WV HN",     cc:"wv", email:"luis_gonzalez_rivera@wvi.org",    phone:"+504 8992-7483",     role:"Marketing Specialist",                          canal:"Discord y WP" },
-  "ruth":          { name:"Ruth Juárez",          client:"WV HN",     cc:"wv", email:"ruth_juarez@wvi.org",             phone:"",                   role:"Gerente Marketing y Comunicaciones",            canal:"Discord" },
-  "andrea":        { name:"Andrea Medina",        client:"WV HN",     cc:"wv", email:"andrea_medina@wvi.org",           phone:"",                   role:"Specialist Private Sector GAM",                 canal:"Discord" },
-  "abigail":       { name:"Abigail González",     client:"WV HN",     cc:"wv", email:"abigail_gonzalez@wvi.org",        phone:"",                   role:"Contenidos y Hubspot",                          canal:"Correo" },
-  "isabel":        { name:"Isabel Iglesias",      client:"WV ES",     cc:"wv", email:"Isabel_Iglesias@wvi.org",         phone:"",                   role:"Marketing & Fundraising",                       canal:"Discord" },
-  "esther":        { name:"Esther Solera",        client:"WV ES",     cc:"wv", email:"Esther_Solera@wvi.org",           phone:"",                   role:"Coordinadora de CRS y Donantes Estratégicos",  canal:"Discord" },
-  "nieves":        { name:"Nieves Carabana",      client:"WV ES",     cc:"wv", email:"Nieves_Carabana@wvi.org",         phone:"",                   role:"Iglesias",                                      canal:"Discord" },
-  "jesús trejo":   { name:"Jesús Trejo",          client:"WV ES",     cc:"wv", email:"Jesus_Trejo@wvi.org",             phone:"",                   role:"Captación Digital",                             canal:"Discord" },
-  "jeison":        { name:"Jeison Peña",          client:"WV ES",     cc:"wv", email:"jeison_pena@wvi.org",             phone:"",                   role:"Captación Digital",                             canal:"Discord" },
-  "vicente":       { name:"Vicente Aceituño",     client:"WV ES",     cc:"wv", email:"Vicente_Aceituño@wvi.org",        phone:"",                   role:"Finance Manager",                               canal:"Discord y Correo" },
-  "jorge girón":   { name:"Jorge Girón",          client:"WV Región", cc:"wv", email:"jorge_giron@wvi.com",             phone:"+504 3175-6818",     role:"IT Business Partner, Global Technology",        canal:"Discord y WP" },
-  "jorge":         { name:"Jorge Girón",          client:"WV Región", cc:"wv", email:"jorge_giron@wvi.com",             phone:"+504 3175-6818",     role:"IT Business Partner, Global Technology",        canal:"Discord y WP" },
-  "argenis":       { name:"Argenis Pérez",        client:"WV RD",     cc:"wv", email:"argenis_perez@wvi.org",           phone:"",                   role:"Asesor Regional",                               canal:"Discord" },
-  "johmara":       { name:"Johmara Vargas",       client:"WV RD/EC",  cc:"wv", email:"johmara_vargas@wvi.org",          phone:"+593 98 343 3403",   role:"Gerente de Marketing",                          canal:"Urgencias WP" },
-  "juan benalcazar":{ name:"Juan Benalcazar",     client:"WV RD",     cc:"wv", email:"juan_benalcazar@wvi.org",         phone:"+593 99 650 6506",   role:"Coordinador Marketing Digital",                 canal:"Discord" },
-  "erick":         { name:"Erick Urbaez",         client:"WV RD",     cc:"wv", email:"erick_urbaez@wvi.org",            phone:"",                   role:"Creador de Contenido y Community Manager",      canal:"Discord" },
-  "juan plata":    { name:"Juan Plata",           client:"WV RD",     cc:"wv", email:"Juan_Plata@wvi.org",              phone:"",                   role:"Atención al cliente",                           canal:"Discord" },
-  "valeria":       { name:"Valeria Yanza",        client:"WV EC",     cc:"wv", email:"martha_yanza@wvi.org",            phone:"",                   role:"Analista de Cobranzas al Donante",              canal:"Discord" },
-  "alejandra":     { name:"Alejandra Bárcena",    client:"WV PE",     cc:"wv", email:"alejandra_barcena_navarro@wvi.org",phone:"+51 948 706 384",  role:"Coordinadora Nacional de Donantes Individuales",canal:"Correo" },
-  "maria regalado":{ name:"María Regalado",       client:"WV PE",     cc:"wv", email:"maria_regalado_baldeon@wvi.org",  phone:"",                   role:"Asistente de Atención y Fidelización",          canal:"Correo" },
-  "aaron":         { name:"Aaron Mesco",          client:"WV PE",     cc:"wv", email:"aaron_mesco_yupanqui@wvi.org",    phone:"",                   role:"Analista de Afiliación y Cobranzas",            canal:"Correo" },
-  "rosy":          { name:"Rosy Arce",            client:"WV CR",     cc:"wv", email:"rosy_arce@wvi.org",               phone:"",                   role:"Supervisora de Marketing Digital",               canal:"Discord" },
-  "rodrigo":       { name:"Rodrigo Flaire",       client:"WV BR",     cc:"wv", email:"rodrigo_flaire@wvi.org",          phone:"+55 11 91622 0421",  role:"Fundraising e Innovación",                      canal:"Correo + Whatsapp" },
-  "renzo":         { name:"Renzo Bravo",          client:"UCSP",      cc:"uc", email:"rbravo@ucsp.edu.pe",              phone:"+51 958 343 534",    role:"Director de Marketing",                         canal:"Whatsapp + Correo" },
-  "cinthia":       { name:"Cinthia Llaza",        client:"UCSP",      cc:"uc", email:"cllaza@ucsp.edu.pe",              phone:"+51 958 099 336",    role:"Analista de Marketing",                         canal:"Whatsapp + Correo" },
-  "pablo garate":  { name:"Pablo Gárate",         client:"UCSP",      cc:"uc", email:"prgarate@ucsp.edu.pe",            phone:"+51 991 581 900",    role:"Analista Diseño Gráfico",                       canal:"Whatsapp + Correo" },
-  "romina":        { name:"Romina Ampuero",       client:"UCSP",      cc:"uc", email:"rampuero@ucsp.edu.pe",            phone:"+51 980 730 973",    role:"Auxiliar de Marketing",                         canal:"Discord + Correo" },
-  "alonso":        { name:"Alonso Ugarte",        client:"UCSP",      cc:"uc", email:"amugarte@ucsp.edu.pe",            phone:"+51 932 122 265",    role:"Jefe de Ventas Pregrado",                       canal:"Whatsapp + Correo" },
-  "fernando herrera":{ name:"Fernando Herrera",   client:"UCSP",      cc:"uc", email:"fmherrera@ucsp.edu.pe",           phone:"+51 959 771 727",    role:"Analista de Marketing Postgrado",               canal:"Whatsapp + Correo" },
-  "pablo gonzales":{ name:"Pablo Gonzales",       client:"UCSP",      cc:"uc", email:"prgonzales@ucsp.edu.pe",          phone:"",                   role:"Director Centro de Idiomas",                    canal:"Correo + Discord" },
-  "claudia":       { name:"Claudia Tapia",        client:"UCSP",      cc:"uc", email:"ctapia@ucsp.edu.pe",              phone:"",                   role:"Coordinadora de Marketing Digital",             canal:"Correo + Discord" },
-  "césar mogrovejo":{ name:"César Mogrovejo",     client:"UCSP",      cc:"uc", email:"camogrovejo@ucsp.edu.pe",         phone:"",                   role:"Analista de Marketing Digital",                 canal:"Correo + Discord" },
-  "carlos":        { name:"Carlos Urquiaga",      client:"UPSJB",     cc:"up", email:"CARLOS.URQUIAGA@UPSJB.EDU.PE",   phone:"",                   role:"Director Comercial",                            canal:"Correo + Discord" },
-  "estuardo":      { name:"Estuardo Escobar",     client:"UPSJB",     cc:"up", email:"ESTUARDO.ESCOBAR@UPSJB.EDU.PE",  phone:"+51 986 886 825",    role:"Jefe de Marketing",                             canal:"Correo + Discord" },
-  "edgar":         { name:"Edgar Mendoza",        client:"UPSJB",     cc:"up", email:"EDGARE.MENDOZA@upsjb.edu.pe",    phone:"",                   role:"Gerente General",                               canal:"Correo + Discord" },
-  "valdric":       { name:"Valdric Tardós",       client:"Smartimper",cc:"sm", email:"valdric@smartimper.mx",          phone:"+52 55 3097 4266",   role:"CEO",                                           canal:"Discord" },
+const ACCOUNT_CHIPS = {
+  'WV':'chip-wv','UCSP':'chip-uc','UPSJB':'chip-up',
+  'VP':'chip-vp','Smartimper':'chip-sm','Ica':'chip-ci','BLUENOSE':'chip-bn'
 };
-const CLIENT_COLORS = { wv:"#10b981", uc:"#3b82f6", up:"#f97316", vp:"#8b5cf6", sm:"#eab308" };
 
-function lookupContact(ownerStr) {
-  if (!ownerStr) return null;
-  const lower = ownerStr.toLowerCase().trim();
-  if (CONTACTS[lower]) return CONTACTS[lower];
-  for (const [key, c] of Object.entries(CONTACTS)) {
-    if (lower.includes(key) || key.includes(lower)) return c;
+// ── WV sub-project icons ──
+const WV_SUBPROJECTS = {
+  'WV RD': '🇩🇴', 'WV HND': '🇭🇳', 'WV HN': '🇭🇳', 'WV ES': '🇪🇸', 'WV CL': '🇨🇱',
+  'WV EC': '🇪🇨', 'WV PE': '🇵🇪', 'WV BR': '🇧🇷', 'WV CR': '🇨🇷', 'SIMMA': '🔗',
+};
+
+// Build owner options HTML (BN team + client contacts grouped by client)
+let ownerOptsHtml = `<optgroup label="🔵 Equipo Blue Nose">`;
+ownerOptsHtml += TEAM_BN.map(m => `<option value="${m.name}">${m.name} — ${m.role}</option>`).join('');
+ownerOptsHtml += `</optgroup>`;
+// Group client contacts by client
+const clientGroups = {};
+CLIENT_DIR.forEach(c => {
+  if(!clientGroups[c.client]) clientGroups[c.client] = [];
+  clientGroups[c.client].push(c);
+});
+Object.keys(clientGroups).sort().forEach(client => {
+  ownerOptsHtml += `<optgroup label="🏢 ${client}">`;
+  clientGroups[client].forEach(c => {
+    const label = c.role ? `${c.contact} — ${c.role}` : c.contact;
+    ownerOptsHtml += `<option value="${c.contact} (${client})">${label}</option>`;
+  });
+  ownerOptsHtml += `</optgroup>`;
+});
+const teamOptsHtml = ownerOptsHtml;
+const clientsList = [
+  'WV RD','WV HN','WV ES','WV CL','WV EC','WV PE','WV BR','WV CR','WV Región',
+  'UCSP — Mi Propósito','UCSP — Cobranzas','UCSP — Comunicaciones','UCSP — Experiencia al Estudiante',
+  'UCSP — Admisión Pregrado','UCSP — HubSpot SpotLight','UCSP — Centro de Idiomas','UCSP — CENDES',
+  'UPSJB','VP','Smartimper','BLUENOSE','Ica','General'
+];
+const clientIcons = {
+  'WV RD':'🇩🇴','WV HN':'🇭🇳','WV ES':'🇪🇸','WV CL':'🇨🇱','WV EC':'🇪🇨','WV PE':'🇵🇪','WV BR':'🇧🇷','WV CR':'🇨🇷','WV Región':'🌎',
+  'UCSP — Mi Propósito':'🎯','UCSP — Cobranzas':'💰','UCSP — Comunicaciones':'📢','UCSP — Experiencia al Estudiante':'🎓',
+  'UCSP — Admisión Pregrado':'📝','UCSP — HubSpot SpotLight':'🔦','UCSP — Centro de Idiomas':'🌐','UCSP — CENDES':'🏛',
+  'UPSJB':'🎓','VP':'💳','Smartimper':'⚡','BLUENOSE':'🔵','Ica':'🏦','General':'📋'
+};
+const clientOptsHtml = clientsList.map(c => `<option value="${c}">${clientIcons[c]||''} ${c}</option>`).join('');
+
+// ── Build filter buttons ──
+(function(){
+  const tf=document.getElementById('team-filters');
+  TEAM_BN.forEach(m => {
+    const b=document.createElement('button');
+    b.className='fbtn'; b.dataset.filter='team-'+m.id; b.dataset.team=m.id;
+    b.textContent=m.name.split(' ')[0];
+    b.onclick=function(){applyFilter('team-'+m.id,this);};
+    tf.appendChild(b);
+  });
+  const cf=document.getElementById('client-filters');
+  const clients=['WV','UCSP','UPSJB','VP','Smartimper','BLUENOSE'];
+  const icons={'WV':'🌍','UCSP':'🏛','UPSJB':'🎓','VP':'💳','Smartimper':'⚡','BLUENOSE':'🔵'};
+  clients.forEach(c => {
+    const b=document.createElement('button');
+    b.className='fbtn'; b.dataset.filter='client-'+c;
+    b.textContent=(icons[c]||'')+' '+c;
+    b.onclick=function(){applyFilter('client-'+c,this);};
+    cf.appendChild(b);
+  });
+})();
+
+// ── Filter ──
+function applyFilter(filter, btn) {
+  currentFilter=filter;
+  document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('active'));
+  if(filter==='all') document.querySelector('.fbtn[data-filter="all"]').classList.add('active');
+  else btn.classList.add('active');
+  filterTasks();
+}
+function filterTasks() {
+  document.querySelectorAll('.task-card').forEach(card => {
+    if(currentFilter==='all'){card.classList.remove('hidden');return;}
+    const owner=card.dataset.ownerid||'';
+    const account=card.dataset.account||'';
+    const section=card.dataset.section||'';
+    let show=false;
+    if(currentFilter.startsWith('team-')) show=owner===currentFilter.replace('team-','');
+    else if(currentFilter.startsWith('client-')) show=account===currentFilter.replace('client-','');
+    else if(currentFilter.startsWith('p-')) show=section===currentFilter.replace('p-','');
+    card.classList.toggle('hidden',!show);
+  });
+  // Also hide/show project group headers
+  document.querySelectorAll('.project-group-header').forEach(h => {
+    if(currentFilter==='all'){h.style.display='';return;}
+    // Check if any visible tasks in this group
+    let next = h.nextElementSibling;
+    let hasVisible = false;
+    while(next && !next.classList.contains('project-group-header') && next.classList.contains('task-card')){
+      if(!next.classList.contains('hidden')) hasVisible=true;
+      next=next.nextElementSibling;
+    }
+    h.style.display=hasVisible?'':'none';
+  });
+  updateVisibleCounts();
+}
+
+// ── Get effective task data (with overrides) ──
+function getTaskData(t, section, idx) {
+  const id = `${section}-${idx}`;
+  const overrides = editOverrides[id] || {};
+  return {
+    ...t,
+    owner: overrides.owner || t.owner,
+    due: overrides.due || t.due || '',
+    account: overrides.account || t.account,
+  };
+}
+
+// ── Render KPIs ──
+function renderKPIs() {
+  const urgCount=TASKS.urgente.filter((t,i)=>!t.isCompleted&&!doneSet.includes('urgente-'+i)).length;
+  const semCount=TASKS.semana.filter((t,i)=>!t.isCompleted&&!doneSet.includes('semana-'+i)).length;
+  const doneCount=TASKS.done.length+doneSet.length;
+  const pendCount=(TASKS.pending||[]).filter(t=>!rejectedSet.includes(t.text)).length;
+  const allActive=[...TASKS.urgente,...TASKS.semana,...TASKS.mes];
+  const accounts=new Set(allActive.filter(t=>t.account!=='General').map(t=>t.account));
+  document.getElementById('kpi-row').innerHTML=`
+    <div class="kpi-card"><div class="kpi-num" style="color:#fca5a5;">${urgCount}</div><div class="kpi-label">🔴 Urgentes</div></div>
+    <div class="kpi-card"><div class="kpi-num" style="color:#fcd34d;">${semCount}</div><div class="kpi-label">🟡 Esta Semana</div></div>
+    <div class="kpi-card"><div class="kpi-num" style="color:#6ee7b7;">${doneCount}</div><div class="kpi-label">✅ Completadas</div></div>
+    <div class="kpi-card"><div class="kpi-num" style="color:#a5b4fc;">${pendCount}</div><div class="kpi-label">📥 Por Validar</div></div>
+    <div class="kpi-card"><div class="kpi-num" style="color:#38bdf8;">${accounts.size}</div><div class="kpi-label">🏢 Cuentas</div></div>`;
+}
+
+// ── Detect WV/UCSP sub-project from task text ──
+function detectSubProject(t) {
+  const text = (t.text + ' ' + (t.tag || '') + ' ' + (t.project || '')).toLowerCase();
+  // WV sub-projects
+  if(t.account === 'WV') {
+    if(text.includes('hnd') || text.includes('honduras') || text.includes('luis')) return 'WV HND';
+    if(text.includes(' es ') || text.includes('españa') || text.includes('esther') || text.includes('nieves') || text.includes('simma') || text.includes('iglesia')) return 'WV ES';
+    if(text.includes(' cl ') || text.includes('chile') || text.includes('diana') || text.includes('ornella') || text.includes('gonzalo') || text.includes('f2f') || text.includes('nómina')) return 'WV CL';
+    if(text.includes(' rd ') || text.includes('dominicana') || text.includes('argenis') || text.includes('trello')) return 'WV RD';
+    if(text.includes(' ec ') || text.includes('ecuador') || text.includes('valeria')) return 'WV EC';
+    if(text.includes(' pe ') || text.includes('perú') || text.includes('peru') || text.includes('maría') || text.includes('maria')) return 'WV PE';
+    if(text.includes(' br ') || text.includes('brasil')) return 'WV BR';
+    return 'WV General';
+  }
+  // UCSP sub-projects
+  if(t.account === 'UCSP') {
+    if(text.includes('agente ia') || text.includes('spotlight') || text.includes('spot light')) return 'UCSP — Agente IA / SpotLight';
+    if(text.includes('mesa de ayuda')) return 'UCSP — Mesa de Ayuda';
+    if(text.includes('coaching') || text.includes('sga')) return 'UCSP — Coaching SGA';
+    if(text.includes('alumni') || text.includes('efraín')) return 'UCSP — Alumni';
+    if(text.includes('cendes')) return 'UCSP — CENDES';
+    if(text.includes('idiomas') || text.includes('renzo')) return 'UCSP — Centro de Idiomas';
+    if(text.includes('cobranza') || text.includes('tdr')) return 'UCSP — Cobranzas TDR';
+    return 'UCSP — General';
   }
   return null;
 }
 
-function renderOwnerBadges(ownerStr) {
-  if (!ownerStr) return '';
-  return ownerStr.split(/\s*[+\/]\s*/).map(part => {
-    const name = part.trim();
-    const c = lookupContact(name);
-    if (c) {
-      const data = encodeURIComponent(JSON.stringify(c));
-      return `<span class="owner-badge owner-link" onclick="showContact(event,'${data}')"><span class="owner-dot" style="background:${CLIENT_COLORS[c.cc]||'#64748b'}"></span>${name}</span>`;
+// ── Render Task Card (with edit button) ──
+function renderTaskCard(t, section, idx) {
+  const id=`${section}-${idx}`;
+  const data = getTaskData(t, section, idx);
+  const isDone=data.isCompleted||doneSet.includes(id);
+  const ownerColor=data.ownerId&&teamColorMap[data.ownerId]?teamColorMap[data.ownerId]:'#71717a';
+  const chipClass=ACCOUNT_CHIPS[data.account]||'chip-def';
+  const subProject = detectSubProject(data);
+  const subIcon = subProject ? (WV_SUBPROJECTS[subProject] || '') : '';
+
+  let chipsHtml='';
+  chipsHtml+=`<span class="chip chip-owner"><span class="chip-dot" style="background:${ownerColor};box-shadow:0 0 6px ${ownerColor};"></span>${data.owner||'Sin asignar'}</span>`;
+  if(data.account!=='General') chipsHtml+=`<span class="chip chip-project ${chipClass}">${subIcon?subIcon+' ':''}${data.account}</span>`;
+  if(data.project&&data.project!=='General'&&data.project!==data.account) chipsHtml+=`<span class="chip chip-project ${chipClass}">${data.project}</span>`;
+  if(data.due) chipsHtml+=`<span class="chip chip-deadline">📅 ${data.due}</span>`;
+  if(data.isNew) chipsHtml+=`<span class="chip chip-new">🆕 NUEVO</span>`;
+
+  const forcedDone=data.isCompleted?'data-forced-done="true"':'';
+  const editPanel = section !== 'done' ? `
+    <button class="task-edit-btn" onclick="event.stopPropagation();toggleEdit('${id}')">✏️ Editar</button>
+    <div class="task-edit-panel" id="edit-${id}">
+      <span class="edit-label">Owner:</span>
+      <select class="edit-select" id="eown-${id}">
+        <option value="${data.owner}" selected>${data.owner}</option>
+        ${teamOptsHtml}
+      </select>
+      <span class="edit-label">Proyecto:</span>
+      <select class="edit-select" id="eacc-${id}">
+        <option value="${data.account}" selected>${data.account}</option>
+        ${clientOptsHtml}
+      </select>
+      <span class="edit-label">Deadline:</span>
+      <input type="date" class="edit-input" id="edue-${id}" value="${data.due||''}">
+      <button class="btn-save-edit" onclick="event.stopPropagation();saveEdit('${id}')">💾 Guardar</button>
+    </div>` : '';
+
+  return `
+    <div class="task-card ${isDone?'done':''}"
+         data-id="${id}" data-account="${data.account}" data-section="${section}"
+         data-ownerid="${data.ownerId||''}" data-clients="${(data.clients||[]).join(',')}"
+         data-subproject="${subProject||''}"
+         onclick="toggleTaskDone('${id}', this)" ${forcedDone}>
+      <div class="task-chk" onclick="event.stopPropagation();toggleTaskDone('${id}', this.closest('.task-card'))">
+        <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+          <path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="task-body">
+        <div class="task-text">${data.text}</div>
+        <div class="task-chips">${chipsHtml}</div>
+        ${editPanel}
+      </div>
+    </div>`;
+}
+
+function toggleEdit(id) {
+  const panel = document.getElementById('edit-' + id);
+  if(panel) panel.classList.toggle('open');
+}
+
+function saveEdit(id) {
+  const owner = document.getElementById('eown-' + id).value;
+  const account = document.getElementById('eacc-' + id).value;
+  const due = document.getElementById('edue-' + id).value;
+
+  editOverrides[id] = { owner, account, due };
+  localStorage.setItem('pm-edits', JSON.stringify(editOverrides));
+
+  // Re-render
+  renderAll();
+  filterTasks();
+}
+
+function toggleTaskDone(id, el) {
+  if(el.getAttribute('data-forced-done')==='true') return;
+  if(doneSet.includes(id)){doneSet=doneSet.filter(x=>x!==id);el.classList.remove('done');}
+  else{doneSet.push(id);el.classList.add('done');}
+  localStorage.setItem('pm-done',JSON.stringify(doneSet));
+  renderKPIs(); updateVisibleCounts();
+}
+
+// ── Render grouped by sub-project ──
+function renderGroupedTasks(tasks, section, gridId) {
+  const grid = document.getElementById(gridId);
+  const groups = {};
+  const order = [];
+
+  tasks.forEach((t, idx) => {
+    const data = getTaskData(t, section, idx);
+    const sub = detectSubProject(data) || '_other';
+    if(!groups[sub]) { groups[sub] = []; order.push(sub); }
+    groups[sub].push({ t, idx });
+  });
+
+  let html = '';
+  order.forEach(sub => {
+    const items = groups[sub];
+    if(sub !== '_other' && (sub.startsWith('WV') || sub.startsWith('UCSP'))) {
+      const pgClass = sub.startsWith('WV') ? 'pg-wv' : 'pg-ucsp';
+      const icon = WV_SUBPROJECTS[sub] || (sub.startsWith('UCSP') ? '🏛' : '🌍');
+      html += `<div class="project-group-header ${pgClass}">
+        <span>${icon} ${sub}</span>
+        <div class="pg-line"></div>
+        <span class="pg-count">${items.length}</span>
+      </div>`;
     }
-    return `<span class="owner-badge"><span class="owner-dot"></span>${name}</span>`;
-  }).join('');
+    items.forEach(({t, idx}) => { html += renderTaskCard(t, section, idx); });
+  });
+
+  grid.innerHTML = html;
 }
 
-function showContact(event, data) {
-  event.stopPropagation();
-  const c = JSON.parse(decodeURIComponent(data));
-  const color = CLIENT_COLORS[c.cc] || '#6366f1';
-  const popup = document.getElementById('contact-popup');
-  popup.innerHTML = `
-    <span class="cp-close" onclick="document.getElementById('contact-popup').style.display='none'">✕</span>
-    <div class="cp-name">${c.name}</div>
-    <div class="cp-role">${c.role}</div>
-    <span class="cp-badge" style="background:${color}20;color:${color}">${c.client}</span>
-    ${c.email ? `<div class="cp-row">📧 <a href="mailto:${c.email}">${c.email}</a></div>` : ''}
-    ${c.phone ? `<div class="cp-row">📱 ${c.phone}</div>` : ''}
-    ${c.canal ? `<div class="cp-row">💬 ${c.canal}</div>` : ''}
-  `;
-  popup.style.display = 'block';
-  const rect = event.target.getBoundingClientRect();
-  popup.style.top  = (rect.bottom + 8 + window.scrollY) + 'px';
-  popup.style.left = Math.min(rect.left, window.innerWidth - 350) + 'px';
+// ── Render Inbox ──
+function renderInbox() {
+  const pending=(TASKS.pending||[]).filter(t=>!rejectedSet.includes(t.text));
+  const section=document.getElementById('inbox-section');
+  const container=document.getElementById('inbox-cards');
+  document.getElementById('inbox-count').textContent=pending.length;
+  if(pending.length===0){section.style.display='none';return;}
+  section.style.display='block';
+  container.innerHTML=pending.map((t,i)=>`
+    <div class="inbox-card" id="inbox-${i}">
+      <div class="inbox-text">${t.text}</div>
+      <div class="inbox-controls">
+        <span class="edit-label">OWNER:</span>
+        <select class="inbox-select" id="inbox-owner-${i}">
+          <option value="${t.owner}" selected>${t.owner}</option>
+          ${teamOptsHtml}
+        </select>
+        <span class="edit-label">PROYECTO:</span>
+        <select class="inbox-select" id="inbox-project-${i}">
+          <option value="${t.account}" selected>${t.account}</option>
+          ${clientOptsHtml}
+        </select>
+        <span class="edit-label">DEADLINE:</span>
+        <input type="date" class="inbox-input" id="inbox-due-${i}" value="">
+        <button class="inbox-btn btn-approve" onclick="approveTask(${i})">✅ Aprobar</button>
+        <button class="inbox-btn btn-reject" onclick="rejectTask(${i})">❌ Rechazar</button>
+      </div>
+    </div>`).join('');
 }
 
-document.addEventListener('click', () => {
-  const p = document.getElementById('contact-popup');
-  if (p) p.style.display = 'none';
+function approveTask(idx) {
+  const pending=(TASKS.pending||[]).filter(t=>!rejectedSet.includes(t.text));
+  const t=pending[idx]; if(!t) return;
+  const owner=document.getElementById('inbox-owner-'+idx).value;
+  const project=document.getElementById('inbox-project-'+idx).value;
+  const due=document.getElementById('inbox-due-'+idx).value;
+  const approved={...t,owner,account:project,project:'General',status:'active'};
+  if(due) approved.due=due;
+  approvedTasks.push(approved);
+  localStorage.setItem('pm-approved',JSON.stringify(approvedTasks));
+  document.getElementById('inbox-'+idx).remove();
+  renderKPIs(); renderApprovedTasks();
+  const remaining=document.querySelectorAll('.inbox-card').length;
+  document.getElementById('inbox-count').textContent=remaining;
+  if(remaining===0) document.getElementById('inbox-section').style.display='none';
+}
+
+function rejectTask(idx) {
+  const pending=(TASKS.pending||[]).filter(t=>!rejectedSet.includes(t.text));
+  const t=pending[idx]; if(!t) return;
+  rejectedSet.push(t.text);
+  localStorage.setItem('pm-rejected',JSON.stringify(rejectedSet));
+  document.getElementById('inbox-'+idx).remove();
+  renderKPIs();
+  const remaining=document.querySelectorAll('.inbox-card').length;
+  document.getElementById('inbox-count').textContent=remaining;
+  if(remaining===0) document.getElementById('inbox-section').style.display='none';
+}
+
+function renderApprovedTasks() {
+  const grid=document.getElementById('grid-semana');
+  grid.querySelectorAll('[data-approved]').forEach(el=>el.remove());
+  approvedTasks.forEach((t,i) => {
+    const chipClass=ACCOUNT_CHIPS[t.account]||'chip-def';
+    const html=`<div class="task-card" data-approved="true" data-account="${t.account}" data-section="semana" data-ownerid="">
+      <div class="task-chk"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+      <div class="task-body">
+        <div class="task-text">${t.text}</div>
+        <div class="task-chips">
+          <span class="chip chip-owner"><span class="chip-dot" style="background:#818cf8;"></span>${t.owner}</span>
+          <span class="chip chip-project ${chipClass}">${t.account}</span>
+          ${t.due?`<span class="chip chip-deadline">📅 ${t.due}</span>`:''}
+          <span class="chip chip-new">📥 VALIDADA</span>
+        </div>
+      </div>
+    </div>`;
+    grid.insertAdjacentHTML('afterbegin', html);
+  });
+}
+
+function updateVisibleCounts() {
+  ['urgente','semana','mes'].forEach(sec => {
+    const grid=document.getElementById('grid-'+sec);
+    const visible=grid.querySelectorAll('.task-card:not(.hidden):not(.done)').length;
+    document.getElementById('cnt-'+sec).textContent=visible;
+  });
+  document.getElementById('cnt-done').textContent=document.getElementById('grid-done').querySelectorAll('.task-card').length;
+}
+
+// ── Main render ──
+function renderAll() {
+  ['urgente','semana','mes'].forEach(sec => {
+    renderGroupedTasks(TASKS[sec], sec, 'grid-' + sec);
+  });
+  const doneGrid=document.getElementById('grid-done');
+  doneGrid.innerHTML=TASKS.done.map((t,i)=>renderTaskCard(t,'done',i)).join('');
+
+  renderInbox();
+  renderApprovedTasks();
+  renderKPIs();
+  updateVisibleCounts();
+}
+
+document.getElementById('sec-done').addEventListener('click',function(){
+  document.getElementById('done-toggle').textContent=this.classList.contains('open')?'▲ Ocultar':'▼ Mostrar';
 });
 
 renderAll();
 
-// ── STATUS INTERNO: toggle item ──
-function toggleSI(el) {
-  el.classList.toggle('done');
-  const chk = el.querySelector('.si-chk');
-  if (chk) chk.classList.toggle('on');
-}
+// ── EXPORTAR CAMBIOS ─────────────────────────────────────────────────────────
+function exportChanges() {
+  const sections = ['urgente','semana','mes','done'];
+  const doneTasks = [], editedTasks = [];
 
-// ── STATUS INTERNO: card expand ──
-function toggleCard(id) {
-  const body = document.getElementById('body-' + id);
-  body.classList.toggle('open');
-}
-function expandAll() {
-  document.querySelectorAll('#view-status .account-body').forEach(b => b.classList.add('open'));
-}
-function collapseAll() {
-  document.querySelectorAll('#view-status .account-body').forEach(b => b.classList.remove('open'));
-}
-
-// ── STATUS INTERNO: day toggle ──
-function setDay(day, btn) {
-  document.querySelectorAll('.toggle-btn').forEach(b => {b.classList.remove('active','thu');});
-  btn.classList.add('active');
-  if (day === 'jueves') btn.classList.add('thu');
-}
-
-// ── CUENTAS: toggle proyecto ──
-function toggleProyecto(el) {
-  const tasks = el.querySelector('.proyecto-tasks');
-  if (!tasks) return;
-  tasks.classList.toggle('open');
-  el.classList.toggle('open');
-}
-
-// ── CUENTAS: toggle task dentro de proyecto ──
-function togglePT(event, el) {
-  event.stopPropagation();
-  el.classList.toggle('done');
-}
-
-
-// ── ARQUITECTURA DINÁMICA: Status Interno y Cuentas ──
-
-function getAllTasks() {
-  return [...TASKS.urgente, ...TASKS.semana, ...TASKS.mes, ...TASKS.done];
-}
-
-function renderStatusInterno() {
-  const allTasks = getAllTasks();
-  
-  // 1. Alertas: top 5 tareas urgentes de la semana no hechas (simulado)
-  const urgentesNoHechas = TASKS.urgente.filter(t => !t.isCompleted);
-  const alertsHtml = urgentesNoHechas.slice(0, 5).map(t => `<span class="alert-item">🚧 ${t.text.substring(0, 40)}...</span>`).join('');
-  let sa = document.getElementById('status-alerts');
-  if(sa) sa.innerHTML = alertsHtml || '<span class="alert-item">✅ Sin urgencias críticas</span>';
-
-  // 2. Summary Grid (Kpis reales)
-  const kpis = {
-    urg: urgentesNoHechas.length,
-    prog: TASKS.semana.filter(t => !t.isCompleted).length,
-    done: TASKS.done.length + TASKS.urgente.filter(t=>t.isCompleted).length + TASKS.semana.filter(t=>t.isCompleted).length,
-    cuentas: new Set(allTasks.filter(t=> t.account !== 'General').map(t => t.account)).size,
-    news: allTasks.filter(t => t.isNew).length
-  };
-  let ss = document.getElementById('status-summary');
-  if(ss) {
-      ss.innerHTML = `
-        <div class="sum-kpi"><div class="sum-num n-red">${kpis.urg}</div><div class="sum-label">🔴 Urgentes hoy</div></div>
-        <div class="sum-kpi"><div class="sum-num n-yellow">${kpis.prog}</div><div class="sum-label">🟡 Esta semana</div></div>
-        <div class="sum-kpi"><div class="sum-num n-green">${kpis.done}</div><div class="sum-label">✅ Completadas</div></div>
-        <div class="sum-kpi"><div class="sum-num n-blue">${kpis.cuentas}</div><div class="sum-label">🏢 Cuentas activas</div></div>
-        <div class="sum-kpi"><div class="sum-num n-cyan">${kpis.news}</div><div class="sum-label">🆕 Nuevos puntos</div></div>
-      `;
-  }
-
-  // 3. New Section
-  const news = allTasks.filter(t => t.isNew && !t.isCompleted);
-  let sn = document.getElementById('status-new');
-  if(sn) {
-      const topTitle = `<div class="new-section-title">🆕 Nuevos puntos del status</div>`;
-      const htmlNews = news.map(t => `
-      <div class="status-item" onclick="toggleSI(this)">
-        <div class="si-chk"></div><div class="si-dot d-y"></div>
-        <div style="flex:1"><div class="si-text">${t.text}</div><div class="si-owner">Owner: ${t.owner}</div></div>
-        <span class="si-new">HOY</span>
-      </div>`).join('');
-      sn.innerHTML = topTitle + htmlNews;
-  }
-
-  // 4. Accounts Grid (Status Interno)
-  const accMap = {};
-  allTasks.forEach(t => {
-      if (t.account == 'General') return;
-      if (!accMap[t.account]) accMap[t.account] = { urg: [], sem: [], done: [] };
-      if (t.isCompleted || TASKS.done.includes(t)) {
-          accMap[t.account].done.push(t);
-      } else {
-          if (TASKS.urgente.includes(t)) accMap[t.account].urg.push(t);
-          else if (TASKS.semana.includes(t)) accMap[t.account].sem.push(t);
-      }
+  sections.forEach(sec => {
+    if (!TASKS[sec]) return;
+    TASKS[sec].forEach((t, i) => {
+      const id = `${sec}-${i}`;
+      if (doneSet.includes(id))
+        doneTasks.push({ id, text: t.text, tag: t.tag||'', owner: t.owner||'' });
+      if (editOverrides && editOverrides[id])
+        editedTasks.push({ id, original: t.text, edited: editOverrides[id], tag: t.tag||'', owner: t.owner||'' });
+    });
   });
 
-  let htmlAccs = '';
-  // Custom definitions for known accounts
-  const AccDefs = {
-      'UCSP': { title: '🏛 UCSP', sub: 'Universidad Católica San Pablo', color: 'color-ucsp' },
-      'WV': { title: '🌍 World Vision', sub: 'Varias regiones LATAM/ES', color: 'color-wv' },
-      'UPSJB': { title: '🎓 UPSJB', sub: 'Universidad San Juan Bautista', color: 'color-upsjb' },
-      'VP': { title: '💳 VirtualPos Chile', sub: 'Soporte Técnico', color: 'color-vp' },
-      'Smartimper': { title: '⚡ Smartimper', sub: 'Servicio pausado', color: 'color-smart' },
-      'Ica': { title: '🏦 Caja Ica', sub: 'En preparación', color: 'color-ica' }
+  const toList = (arr) => arr.map(id => {
+    const [sec, idx] = id.split('-');
+    const t = TASKS[sec] && TASKS[sec][parseInt(idx)];
+    return t ? { id, text: t.text, tag: t.tag||'', owner: t.owner||'' } : null;
+  }).filter(Boolean);
+
+  const approvedList  = typeof approvedTasks  !== 'undefined' ? toList(approvedTasks)  : [];
+  const rejectedList  = typeof rejectedSet    !== 'undefined' ? toList(rejectedSet)    : [];
+
+  const payload = {
+    exported_at: new Date().toISOString(),
+    done:     doneTasks,
+    edited:   editedTasks,
+    approved: approvedList,
+    rejected: rejectedList
   };
 
-  Object.keys(accMap).forEach(acc => {
-      const def = AccDefs[acc] || { title: `🏢 ${acc}`, sub: 'Proyecto', color: '' };
-      const d = accMap[acc];
-      
-      let bodyHtml = '';
-      if(d.urg.length) {
-          bodyHtml += `<div class="section-divider">🔴 Urgente</div>`;
-          bodyHtml += d.urg.map(t => `<div class="status-item"><div class="si-chk"></div><div class="si-dot d-r"></div><div style="flex:1"><div class="si-text">${t.text}</div><div class="si-owner">${t.owner}</div></div></div>`).join('');
-      }
-      if(d.sem.length) {
-          bodyHtml += `<div class="section-divider">🟡 Esta semana</div>`;
-          bodyHtml += d.sem.map(t => `<div class="status-item"><div class="si-chk"></div><div class="si-dot d-y"></div><div style="flex:1"><div class="si-text">${t.text}</div><div class="si-owner">${t.owner}</div></div></div>`).join('');
-      }
-      if(d.done.length) {
-          bodyHtml += `<div class="section-divider">✅ Completado</div>`;
-          bodyHtml += d.done.map(t => `<div class="status-item done"><div class="si-chk on"></div><div class="si-dot d-g"></div><div style="flex:1"><div class="si-text">${t.text}</div></div></div>`).join('');
-      }
+  const total = doneTasks.length + editedTasks.length + approvedList.length + rejectedList.length;
+  if (total === 0) { alert('No hay cambios pendientes para exportar.'); return; }
 
-      htmlAccs += `
-      <div class="account-card" id="card-${acc}">
-        <div class="account-header" onclick="toggleCard('${acc}')">
-          <div>
-            <div class="account-name ${def.color}">${def.title}</div>
-            <div class="account-sub">${def.sub}</div>
-          </div>
-          <div class="account-stats">
-            <span class="stat-pill pill-r">${d.urg.length} urg</span>
-            <span class="stat-pill pill-y">${d.sem.length} prog</span>
-            <span class="stat-pill pill-g">${d.done.length} ✅</span>
-          </div>
-        </div>
-        <div class="account-body open" id="body-${acc}">
-            ${bodyHtml}
-        </div>
-      </div>
-      `;
-  });
-  
-  let sg = document.getElementById('status-accounts');
-  if(sg) sg.innerHTML = htmlAccs;
+  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `changes_${new Date().toISOString().slice(0,10)}.json`;
+  a.click();
+
+  const btn = document.getElementById('export-btn');
+  btn.classList.add('success');
+  btn.textContent = `✅ ${total} cambio(s) exportados`;
+  setTimeout(() => { btn.classList.remove('success'); btn.textContent = '⬇ Exportar cambios'; }, 3000);
 }
-
-function renderCuentasYProyectos() {
-  const allTasks = getAllTasks();
-  
-  // Group by Account -> Project
-  const accMap = {};
-  allTasks.forEach(t => {
-      if (t.account == 'General') return;
-      if (!accMap[t.account]) accMap[t.account] = { projects: {} };
-      if (!accMap[t.account].projects[t.project]) accMap[t.account].projects[t.project] = [];
-      accMap[t.account].projects[t.project].push(t);
-  });
-
-  const AccDefs = {
-      'UCSP': { title: '🏛 UCSP', sub: 'Universidad Católica San Pablo', css: 'c-ucsp' },
-      'WV': { title: '🌍 World Vision', sub: 'Programas LATAM', css: 'c-wv' },
-      'UPSJB': { title: '🎓 UPSJB', sub: 'Universidad San Juan Bautista', css: 'c-upsjb' },
-      'VP': { title: '💳 VirtualPos Chile', sub: 'Soporte Técnico', css: 'c-vp' },
-      'Smartimper': { title: '⚡ Smartimper', sub: 'Pausado', css: 'c-smart' },
-      'Ica': { title: '🏦 Caja Ica', sub: 'Standby', css: 'c-ica' }
-  };
-
-  let htmlAccs = '';
-  Object.keys(accMap).forEach(acc => {
-      const def = AccDefs[acc] || { title: `🏢 ${acc}`, sub: 'Cuenta', css: '' };
-      let projsHtml = '';
-      
-      Object.keys(accMap[acc].projects).forEach(proj => {
-          const tasks = accMap[acc].projects[proj];
-          const urgs = tasks.filter(t => !t.isCompleted && TASKS.urgente.includes(t)).length;
-          const progs = tasks.filter(t => !t.isCompleted && TASKS.semana.includes(t)).length;
-          const dones = tasks.filter(t => t.isCompleted || TASKS.done.includes(t)).length;
-          
-          let tHtml = tasks.map(t => {
-              const isD = (t.isCompleted || TASKS.done.includes(t));
-              return `<div class="pt-item ${isD ? 'done':''}">
-                  <div class="pt-chk"></div><div class="pt-dot ${isD ? 'd-g':'d-y'}"></div>
-                  <div class="pt-text">${t.text} <span class="pt-owner">· ${t.owner}</span></div>
-              </div>`;
-          }).join('');
-
-          projsHtml += `
-          <div class="proyecto-item" onclick="toggleProyecto(this)">
-            <div class="proyecto-header">
-              <div>
-                <div class="proyecto-name">${proj == 'General' ? '⚙️ Operaciones Generales' : '📁 '+proj}</div>
-              </div>
-              <div class="proyecto-stats">
-                ${urgs ? `<span class="ps-r">${urgs} urg</span>` : ''}
-                ${progs ? `<span class="ps-y">${progs} prog</span>` : ''}
-                ${dones ? `<span class="ps-g">${dones} ✅</span>` : ''}
-              </div>
-            </div>
-            <div class="proyecto-tasks">
-                ${tHtml}
-            </div>
-          </div>
-          `;
-      });
-
-      htmlAccs += `
-      <div class="cuenta-card ${def.css}">
-        <div class="cuenta-header">
-          <div class="cuenta-title">${def.title} <span class="badge-activo">ACTIVO</span></div>
-          <div class="cuenta-sub">${def.sub} · ${Object.keys(accMap[acc].projects).length} proyectos</div>
-        </div>
-        <div class="proyecto-list">
-          ${projsHtml}
-        </div>
-      </div>
-      `;
-  });
-  
-  let cg = document.getElementById('cuentas-grid');
-  if(cg) cg.innerHTML = htmlAccs;
-}
-
-// Llama las funciones al terminar el primer renderAll
-setTimeout(() => {
-    renderStatusInterno();
-    renderCuentasYProyectos();
-}, 200);
-
 
 </script>
-
-<div id="contact-popup" class="contact-popup" style="display:none"></div>
-
 </body>
 </html>
