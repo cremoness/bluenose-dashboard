@@ -336,19 +336,19 @@ function renderClientCard(acc) {
 
   let body = '';
 
-  if (acc === 'WV') {
-    // Group WV by sub-country
-    const byCountry = {};
-    const addC = (items, sec) => items.forEach(t => {
-      const c = t.project || 'General';
-      if (!byCountry[c]) byCountry[c] = [];
-      byCountry[c].push({ t, sec });
+  if (acc === 'WV' || acc === 'UCSP') {
+    // Group WV by sub-country, UCSP by sub-project
+    const byGroup = {};
+    const addG = (items, sec) => items.forEach(t => {
+      const g = t.project || 'General';
+      if (!byGroup[g]) byGroup[g] = [];
+      byGroup[g].push({ t, sec });
     });
-    addC(urgente, 'urgente'); addC(semana, 'semana'); addC(mes, 'mes');
+    addG(urgente, 'urgente'); addG(semana, 'semana'); addG(mes, 'mes');
 
-    Object.entries(byCountry).forEach(([c, items]) => {
-      body += `<div class="section-divider">${WV_COUNTRY[c] || c}</div>`;
-      // urgente first, then semana, then mes within each country
+    Object.entries(byGroup).forEach(([g, items]) => {
+      const label = acc === 'WV' ? (WV_COUNTRY[g] || g) : `📁 ${g}`;
+      body += `<div class="section-divider">${label}</div>`;
       ['urgente','semana','mes'].forEach(s => {
         items.filter(i => i.sec === s).forEach(({ t, sec }) => { body += renderItem(t, sec); });
       });

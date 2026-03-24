@@ -262,8 +262,8 @@ const TASKS = {
     {
       "text": "César: confirmar con el equipo cuál WordPress se usará para el formulario y evaluar posibles implicancias técnicas",
       "account": "UCSP",
-      "project": "General",
-      "tag": "UCSP",
+      "project": "Simulador de Pensión",
+      "tag": "Simulador de Pensión",
       "tagClass": "tag-uc",
       "owner": "César",
       "clients": [
@@ -273,8 +273,8 @@ const TASKS = {
     {
       "text": "César: consultar con Claudia y Renzo aprobación para modificar plantilla WordPress y habilitar ambiente de prueba",
       "account": "UCSP",
-      "project": "General",
-      "tag": "UCSP",
+      "project": "Simulador de Pensión",
+      "tag": "Simulador de Pensión",
       "tagClass": "tag-uc",
       "owner": "César",
       "clients": [
@@ -284,8 +284,8 @@ const TASKS = {
     {
       "text": "César: coordinar habilitación del ambiente de prueba con Cristian y equipo BlueNose una vez aprobada la propuesta",
       "account": "UCSP",
-      "project": "General",
-      "tag": "UCSP",
+      "project": "Simulador de Pensión",
+      "tag": "Simulador de Pensión",
       "tagClass": "tag-uc",
       "owner": "César",
       "clients": [
@@ -295,8 +295,8 @@ const TASKS = {
     {
       "text": "César: informar a Paul y Jorge sobre fecha de habilitación del ambiente de prueba para actualizar planificación",
       "account": "UCSP",
-      "project": "General",
-      "tag": "UCSP",
+      "project": "Simulador de Pensión",
+      "tag": "Simulador de Pensión",
       "tagClass": "tag-uc",
       "owner": "César",
       "clients": [
@@ -306,8 +306,8 @@ const TASKS = {
     {
       "text": "Cristian: apoyar en creación y pruebas del formulario en WordPress, crear página de ejemplo para evitar impactos en producción",
       "account": "UCSP",
-      "project": "General",
-      "tag": "UCSP",
+      "project": "Simulador de Pensión",
+      "tag": "Simulador de Pensión",
       "tagClass": "tag-uc",
       "owner": "Cristian",
       "clients": [
@@ -317,8 +317,8 @@ const TASKS = {
     {
       "text": "Cristian: proporcionar documentación del API al equipo de base de datos para envío y recepción de datos",
       "account": "UCSP",
-      "project": "General",
-      "tag": "UCSP",
+      "project": "Simulador de Pensión",
+      "tag": "Simulador de Pensión",
       "tagClass": "tag-uc",
       "owner": "Cristian",
       "clients": [
