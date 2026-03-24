@@ -1,6 +1,139 @@
 const TASKS = {
   "urgente": [],
-  "semana": [],
+  "semana": [
+    {
+      "text": "Implementar workflows para nutriciones por correo electrónico",
+      "account": "WV",
+      "project": "General",
+      "tag": "WV",
+      "tagClass": "tag-wv",
+      "owner": "Luis Gonzalez + Marcos",
+      "clients": [
+        "WV"
+      ]
+    },
+    {
+      "text": "Coordinar con Lucy la creación y optimización de correos para nutriciones y agradecimientos",
+      "account": "WV",
+      "project": "General",
+      "tag": "WV",
+      "tagClass": "tag-wv",
+      "owner": "Luis Gonzalez",
+      "clients": [
+        "WV"
+      ]
+    },
+    {
+      "text": "Subir datos de donantes y realizar primer contacto esta semana",
+      "account": "WV",
+      "project": "General",
+      "tag": "WV",
+      "tagClass": "tag-wv",
+      "owner": "Luis Gonzalez",
+      "clients": [
+        "WV"
+      ]
+    },
+    {
+      "text": "Obtener aprobación del presupuesto para lanzar campaña en Meta",
+      "account": "WV",
+      "project": "General",
+      "tag": "WV",
+      "tagClass": "tag-wv",
+      "owner": "Luis Gonzalez",
+      "clients": [
+        "WV"
+      ]
+    },
+    {
+      "text": "Realizar cambios recomendados por Pablo en Google Ads para la campaña Wash",
+      "account": "WV",
+      "project": "General",
+      "tag": "WV",
+      "tagClass": "tag-wv",
+      "owner": "Luis Gonzalez",
+      "clients": [
+        "WV"
+      ]
+    },
+    {
+      "text": "Ornella: enviar listado de RUTs de donantes ya descontados en clawback para marcar en HubSpot",
+      "account": "WV",
+      "project": "General",
+      "tag": "WV",
+      "tagClass": "tag-wv",
+      "owner": "Ornella",
+      "clients": [
+        "WV"
+      ]
+    },
+    {
+      "text": "Pablo Pérez: crear propiedad en HubSpot para marcar donantes que ya pasaron por clawback",
+      "account": "WV",
+      "project": "General",
+      "tag": "WV",
+      "tagClass": "tag-wv",
+      "owner": "Pablo",
+      "clients": [
+        "WV"
+      ]
+    },
+    {
+      "text": "Pablo Pérez: ajustar la app con reglas del contrato Más Recursos y preparar versión para producción",
+      "account": "WV",
+      "project": "General",
+      "tag": "WV",
+      "tagClass": "tag-wv",
+      "owner": "Pablo",
+      "clients": [
+        "WV"
+      ]
+    },
+    {
+      "text": "Gonzalo: diagramar proceso completo de aprobaciones para facturación",
+      "account": "WV",
+      "project": "General",
+      "tag": "WV",
+      "tagClass": "tag-wv",
+      "owner": "Gonzalo",
+      "clients": [
+        "WV"
+      ]
+    },
+    {
+      "text": "Gonzalo: compartir diagrama y documentos con reglas de negocio y contratos",
+      "account": "WV",
+      "project": "General",
+      "tag": "WV",
+      "tagClass": "tag-wv",
+      "owner": "Gonzalo",
+      "clients": [
+        "WV"
+      ]
+    },
+    {
+      "text": "Gonzalo: confirmar temas administrativos",
+      "account": "WV",
+      "project": "General",
+      "tag": "WV",
+      "tagClass": "tag-wv",
+      "owner": "Gonzalo",
+      "clients": [
+        "WV"
+      ]
+    },
+    {
+      "text": "Gonzalo: organizar reunión con agencia Más Recursos para presentar la herramienta",
+      "account": "WV",
+      "project": "General",
+      "tag": "WV",
+      "tagClass": "tag-wv",
+      "owner": "Gonzalo",
+      "clients": [
+        "WV"
+      ]
+    }
+  ],
   "mes": [],
   "done": [
     {
