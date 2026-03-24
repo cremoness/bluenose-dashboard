@@ -60,6 +60,12 @@
 ### WV Perú
 
 ### WV RD
+- [ ] **[WV RD]** Implementar landing page y flujos para convertir donantes únicos en mensuales mediante correos personalizados | Owner: Luis Gonzalez
+- [ ] **[WV RD]** Añadir iconos de seguridad PCI DSS y Visa en landing page para aumentar confianza del donante | Owner: Luis Gonzalez
+- [ ] **[WV RD]** Presupuesto Meta aprobado — ajustar y adaptar contenido para lanzar campaña | Owner: Luis Gonzalez
+- [ ] **[WV RD]** Monitoreo post-lanzamiento: ajustes rápidos por Discord y subir data a HubSpot para seguimiento | Owner: Luis Gonzalez
+- [ ] **[WV RD]** Crear plantillas de correos y WhatsApp tras evento actual — comunicación continua por Discord | Owner: Luis Gonzalez
+- [ ] **[WV RD]** Integrar iconos de seguridad en pasarela de pago para legitimar proceso de donación | Owner: Luis Gonzalez
 
 ### UCSP
 #### Mi Propósito

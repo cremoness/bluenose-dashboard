@@ -326,6 +326,72 @@ const TASKS = {
       ]
     },
     {
+      "text": "Implementar landing page y flujos para convertir donantes únicos en mensuales mediante correos personalizados",
+      "account": "WV",
+      "project": "RD",
+      "tag": "RD",
+      "tagClass": "tag-wv",
+      "owner": "Luis Gonzalez",
+      "clients": [
+        "WV"
+      ]
+    },
+    {
+      "text": "Añadir iconos de seguridad PCI DSS y Visa en landing page para aumentar confianza del donante",
+      "account": "WV",
+      "project": "RD",
+      "tag": "RD",
+      "tagClass": "tag-wv",
+      "owner": "Luis Gonzalez",
+      "clients": [
+        "WV"
+      ]
+    },
+    {
+      "text": "Presupuesto Meta aprobado — ajustar y adaptar contenido para lanzar campaña",
+      "account": "WV",
+      "project": "RD",
+      "tag": "RD",
+      "tagClass": "tag-wv",
+      "owner": "Luis Gonzalez",
+      "clients": [
+        "WV"
+      ]
+    },
+    {
+      "text": "Monitoreo post-lanzamiento: ajustes rápidos por Discord y subir data a HubSpot para seguimiento",
+      "account": "WV",
+      "project": "RD",
+      "tag": "RD",
+      "tagClass": "tag-wv",
+      "owner": "Luis Gonzalez",
+      "clients": [
+        "WV"
+      ]
+    },
+    {
+      "text": "Crear plantillas de correos y WhatsApp tras evento actual — comunicación continua por Discord",
+      "account": "WV",
+      "project": "RD",
+      "tag": "RD",
+      "tagClass": "tag-wv",
+      "owner": "Luis Gonzalez",
+      "clients": [
+        "WV"
+      ]
+    },
+    {
+      "text": "Integrar iconos de seguridad en pasarela de pago para legitimar proceso de donación",
+      "account": "WV",
+      "project": "RD",
+      "tag": "RD",
+      "tagClass": "tag-wv",
+      "owner": "Luis Gonzalez",
+      "clients": [
+        "WV"
+      ]
+    },
+    {
       "text": "Estuardo: enviar buyer persona de padres de Lima para validación del equipo",
       "account": "UPSJB",
       "project": "General",
