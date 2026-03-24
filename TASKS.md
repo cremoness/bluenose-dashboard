@@ -18,7 +18,7 @@
 - [ ] **[WV HND]** Subir información de donantes recientes a HubSpot para monitoreo | Owner: Luis Gonzalez
 - [ ] **[WV HND]** Mantener comunicación continua por Discord y WhatsApp con soporte y ajustes post-evento | Owner: Luis Gonzalez
 - [ ] **[WV HND]** Implementar workflows para nutriciones por correo electrónico | Owner: Luis Gonzalez + Marcos
-- [ ] **[WV HND]** Coordinar con Lucy la creación y optimización de correos para nutriciones y agradecimientos | Owner: Luis Gonzalez
+- [x] **[WV HND]** Coordinar con Lucy la creación y optimización de correos para nutriciones y agradecimientos | Owner: Luis Gonzalez
 - [ ] **[WV HND]** Subir datos de donantes y realizar primer contacto esta semana | Owner: Luis Gonzalez
 - [ ] **[WV HND]** Obtener aprobación del presupuesto para lanzar campaña en Meta | Owner: Luis Gonzalez
 - [ ] **[WV HND]** Realizar cambios recomendados por Pablo en Google Ads para la campaña Wash | Owner: Luis Gonzalez
