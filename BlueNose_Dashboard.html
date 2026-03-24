@@ -732,17 +732,22 @@ function renderGroupedTasks(tasks, section, gridId) {
 
   tasks.forEach((t, idx) => {
     const data = getTaskData(t, section, idx);
-    const sub = detectSubProject(data) || '_other';
+    let sub = detectSubProject(data);
+    // If no sub-project detected, group by account
+    if(!sub) sub = data.account && data.account !== 'General' ? data.account : '_other';
     if(!groups[sub]) { groups[sub] = []; order.push(sub); }
     groups[sub].push({ t, idx });
   });
 
+  const ACCOUNT_ICONS = { 'UPSJB':'🎓', 'Smartimper':'⚡', 'BLUENOSE':'🔵', 'VP':'💳', 'Ica':'🏦', 'General':'📋' };
+  const ACCOUNT_PG_CLASS = { 'UPSJB':'pg-ucsp', 'Smartimper':'pg-sm', 'BLUENOSE':'pg-bn', 'VP':'pg-wv' };
+
   let html = '';
   order.forEach(sub => {
     const items = groups[sub];
-    if(sub !== '_other' && (sub.startsWith('WV') || sub.startsWith('UCSP'))) {
-      const pgClass = sub.startsWith('WV') ? 'pg-wv' : 'pg-ucsp';
-      const icon = WV_SUBPROJECTS[sub] || (sub.startsWith('UCSP') ? '🏛' : '🌍');
+    if(sub !== '_other') {
+      const pgClass = sub.startsWith('WV') ? 'pg-wv' : (sub.startsWith('UCSP') ? 'pg-ucsp' : (ACCOUNT_PG_CLASS[sub] || 'pg-ucsp'));
+      const icon = WV_SUBPROJECTS[sub] || (sub.startsWith('UCSP') ? '🏛' : (ACCOUNT_ICONS[sub] || '📋'));
       html += `<div class="project-group-header ${pgClass}">
         <span>${icon} ${sub}</span>
         <div class="pg-line"></div>
