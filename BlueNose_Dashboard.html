@@ -582,28 +582,44 @@ function renderKPIs() {
 
 // ── Detect WV/UCSP sub-project from task text ──
 function detectSubProject(t) {
-  const text = (t.text + ' ' + (t.tag || '') + ' ' + (t.project || '')).toLowerCase();
-  // WV sub-projects
+  // Use the project field from data.js (set by build_data.py from the **[TAG]** in TASKS.md)
+  const proj = (t.project || '').trim().toUpperCase();
   if(t.account === 'WV') {
-    if(text.includes('hnd') || text.includes('honduras') || text.includes('luis')) return 'WV HND';
-    if(text.includes(' es ') || text.includes('españa') || text.includes('esther') || text.includes('nieves') || text.includes('simma') || text.includes('iglesia')) return 'WV ES';
-    if(text.includes(' cl ') || text.includes('chile') || text.includes('diana') || text.includes('ornella') || text.includes('gonzalo') || text.includes('f2f') || text.includes('nómina')) return 'WV CL';
-    if(text.includes(' rd ') || text.includes('dominicana') || text.includes('argenis') || text.includes('trello')) return 'WV RD';
-    if(text.includes(' ec ') || text.includes('ecuador') || text.includes('valeria')) return 'WV EC';
-    if(text.includes(' pe ') || text.includes('perú') || text.includes('peru') || text.includes('maría') || text.includes('maria')) return 'WV PE';
-    if(text.includes(' br ') || text.includes('brasil')) return 'WV BR';
-    return 'WV General';
+    const WV_MAP = {
+      'HND':'WV HND','HN':'WV HND',
+      'ES':'WV ES',
+      'CL':'WV CL',
+      'RD':'WV RD',
+      'EC':'WV EC',
+      'PE':'WV PE',
+      'BR':'WV BR',
+      'CR':'WV CR',
+    };
+    if(WV_MAP[proj]) return WV_MAP[proj];
+    // Fallback: tag field (e.g. "WV HND")
+    const tag = (t.tag || '').toUpperCase();
+    for(const [k,v] of Object.entries(WV_MAP)) {
+      if(tag.includes(k)) return v;
+    }
+    return null; // Don't show "WV General" — skip grouping header
   }
-  // UCSP sub-projects
   if(t.account === 'UCSP') {
-    if(text.includes('agente ia') || text.includes('spotlight') || text.includes('spot light')) return 'UCSP — Agente IA / SpotLight';
-    if(text.includes('mesa de ayuda')) return 'UCSP — Mesa de Ayuda';
-    if(text.includes('coaching') || text.includes('sga')) return 'UCSP — Coaching SGA';
-    if(text.includes('alumni') || text.includes('efraín')) return 'UCSP — Alumni';
-    if(text.includes('cendes')) return 'UCSP — CENDES';
-    if(text.includes('idiomas') || text.includes('renzo')) return 'UCSP — Centro de Idiomas';
-    if(text.includes('cobranza') || text.includes('tdr')) return 'UCSP — Cobranzas TDR';
-    return 'UCSP — General';
+    const UCSP_MAP = {
+      'MI PROPÓSITO':'UCSP — Mi Propósito', 'MI PROPOSITO':'UCSP — Mi Propósito',
+      'COBRANZAS':'UCSP — Cobranzas', 'TDR':'UCSP — Cobranzas',
+      'COMUNICACIONES':'UCSP — Comunicaciones',
+      'EXPERIENCIA AL ESTUDIANTE':'UCSP — Experiencia al Estudiante',
+      'ADMISIÓN PREGRADO':'UCSP — Admisión Pregrado', 'ADMISION PREGRADO':'UCSP — Admisión Pregrado',
+      'HUBSPOT SPOTLIGHT':'UCSP — HubSpot SpotLight', 'SPOTLIGHT':'UCSP — HubSpot SpotLight',
+      'CENTRO DE IDIOMAS':'UCSP — Centro de Idiomas',
+      'CENDES':'UCSP — CENDES',
+    };
+    if(UCSP_MAP[proj]) return UCSP_MAP[proj];
+    const tag = (t.tag || '').toUpperCase();
+    for(const [k,v] of Object.entries(UCSP_MAP)) {
+      if(tag.includes(k)) return v;
+    }
+    return null;
   }
   return null;
 }

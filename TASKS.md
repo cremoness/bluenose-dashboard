@@ -19,14 +19,6 @@
 - [ ] **[WV HND]** Realizar cambios recomendados por Pablo en Google Ads para la campaña Wash | Owner: Luis Gonzalez
 
 ### WV España
-- [ ] **[WV ES]** Ornella: enviar listado de RUTs de donantes ya descontados en clawback para marcar en HubSpot | Owner: Ornella
-- [ ] **[WV ES]** Pablo Pérez: crear propiedad en HubSpot para marcar donantes que ya pasaron por clawback | Owner: Pablo
-- [ ] **[WV ES]** Pablo Pérez: ajustar la app con reglas del contrato Más Recursos y preparar versión para producción | Owner: Pablo
-- [ ] **[WV ES]** Gonzalo: diagramar proceso completo de aprobaciones para facturación | Owner: Gonzalo
-- [ ] **[WV ES]** Gonzalo: compartir diagrama y documentos con reglas de negocio y contratos | Owner: Gonzalo
-- [ ] **[WV ES]** Gonzalo: confirmar temas administrativos | Owner: Gonzalo
-- [ ] **[WV ES]** Gonzalo: organizar reunión con agencia Más Recursos para presentar la herramienta | Owner: Gonzalo
-
 #### Migración
 
 #### Digital
@@ -34,6 +26,14 @@
 #### Iglesias
 
 ### WV Chile
+- [ ] **[WV CL]** Ornella: enviar listado de RUTs de donantes ya descontados en clawback para marcar en HubSpot | Owner: Ornella
+- [ ] **[WV CL]** Pablo Pérez: crear propiedad en HubSpot para marcar donantes que ya pasaron por clawback | Owner: Pablo
+- [ ] **[WV CL]** Pablo Pérez: ajustar la app con reglas del contrato Más Recursos y preparar versión para producción | Owner: Pablo
+- [ ] **[WV CL]** Gonzalo: diagramar proceso completo de aprobaciones para facturación | Owner: Gonzalo
+- [ ] **[WV CL]** Gonzalo: compartir diagrama y documentos con reglas de negocio y contratos | Owner: Gonzalo
+- [ ] **[WV CL]** Gonzalo: confirmar temas administrativos | Owner: Gonzalo
+- [ ] **[WV CL]** Gonzalo: organizar reunión con agencia Más Recursos para presentar la herramienta | Owner: Gonzalo
+
 #### VirtualPos
 
 #### Tickets Pendientes
