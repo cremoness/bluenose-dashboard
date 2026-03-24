@@ -105,7 +105,9 @@ def parse_tag(raw_tag, current_account):
         acct_candidate = get_account_from_header(v)
         if acct_candidate != "General":
             account = acct_candidate
-            project = "General"
+            # Extract sub-code: "WV HND" → "HND", "WV ES" → "ES", "WV" → "General"
+            tokens = val.split(" ", 1)
+            project = tokens[1].strip() if len(tokens) > 1 else "General"
         else:
             if v.startswith("wv "):
                 account = "WV"

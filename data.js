@@ -4,8 +4,8 @@ const TASKS = {
     {
       "text": "Implementar workflows para nutriciones por correo electrónico",
       "account": "WV",
-      "project": "General",
-      "tag": "WV",
+      "project": "HND",
+      "tag": "HND",
       "tagClass": "tag-wv",
       "owner": "Luis Gonzalez + Marcos",
       "clients": [
@@ -15,8 +15,8 @@ const TASKS = {
     {
       "text": "Coordinar con Lucy la creación y optimización de correos para nutriciones y agradecimientos",
       "account": "WV",
-      "project": "General",
-      "tag": "WV",
+      "project": "HND",
+      "tag": "HND",
       "tagClass": "tag-wv",
       "owner": "Luis Gonzalez",
       "clients": [
@@ -26,8 +26,8 @@ const TASKS = {
     {
       "text": "Subir datos de donantes y realizar primer contacto esta semana",
       "account": "WV",
-      "project": "General",
-      "tag": "WV",
+      "project": "HND",
+      "tag": "HND",
       "tagClass": "tag-wv",
       "owner": "Luis Gonzalez",
       "clients": [
@@ -37,8 +37,8 @@ const TASKS = {
     {
       "text": "Obtener aprobación del presupuesto para lanzar campaña en Meta",
       "account": "WV",
-      "project": "General",
-      "tag": "WV",
+      "project": "HND",
+      "tag": "HND",
       "tagClass": "tag-wv",
       "owner": "Luis Gonzalez",
       "clients": [
@@ -48,8 +48,8 @@ const TASKS = {
     {
       "text": "Realizar cambios recomendados por Pablo en Google Ads para la campaña Wash",
       "account": "WV",
-      "project": "General",
-      "tag": "WV",
+      "project": "HND",
+      "tag": "HND",
       "tagClass": "tag-wv",
       "owner": "Luis Gonzalez",
       "clients": [
@@ -59,8 +59,8 @@ const TASKS = {
     {
       "text": "Ornella: enviar listado de RUTs de donantes ya descontados en clawback para marcar en HubSpot",
       "account": "WV",
-      "project": "General",
-      "tag": "WV",
+      "project": "CL",
+      "tag": "CL",
       "tagClass": "tag-wv",
       "owner": "Ornella",
       "clients": [
@@ -70,8 +70,8 @@ const TASKS = {
     {
       "text": "Pablo Pérez: crear propiedad en HubSpot para marcar donantes que ya pasaron por clawback",
       "account": "WV",
-      "project": "General",
-      "tag": "WV",
+      "project": "CL",
+      "tag": "CL",
       "tagClass": "tag-wv",
       "owner": "Pablo",
       "clients": [
@@ -81,8 +81,8 @@ const TASKS = {
     {
       "text": "Pablo Pérez: ajustar la app con reglas del contrato Más Recursos y preparar versión para producción",
       "account": "WV",
-      "project": "General",
-      "tag": "WV",
+      "project": "CL",
+      "tag": "CL",
       "tagClass": "tag-wv",
       "owner": "Pablo",
       "clients": [
@@ -92,8 +92,8 @@ const TASKS = {
     {
       "text": "Gonzalo: diagramar proceso completo de aprobaciones para facturación",
       "account": "WV",
-      "project": "General",
-      "tag": "WV",
+      "project": "CL",
+      "tag": "CL",
       "tagClass": "tag-wv",
       "owner": "Gonzalo",
       "clients": [
@@ -103,8 +103,8 @@ const TASKS = {
     {
       "text": "Gonzalo: compartir diagrama y documentos con reglas de negocio y contratos",
       "account": "WV",
-      "project": "General",
-      "tag": "WV",
+      "project": "CL",
+      "tag": "CL",
       "tagClass": "tag-wv",
       "owner": "Gonzalo",
       "clients": [
@@ -114,8 +114,8 @@ const TASKS = {
     {
       "text": "Gonzalo: confirmar temas administrativos",
       "account": "WV",
-      "project": "General",
-      "tag": "WV",
+      "project": "CL",
+      "tag": "CL",
       "tagClass": "tag-wv",
       "owner": "Gonzalo",
       "clients": [
@@ -125,8 +125,8 @@ const TASKS = {
     {
       "text": "Gonzalo: organizar reunión con agencia Más Recursos para presentar la herramienta",
       "account": "WV",
-      "project": "General",
-      "tag": "WV",
+      "project": "CL",
+      "tag": "CL",
       "tagClass": "tag-wv",
       "owner": "Gonzalo",
       "clients": [
