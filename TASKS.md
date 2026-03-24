@@ -13,7 +13,7 @@
 
 ### WV Honduras
 - [x] **[WV 🆕 24.03]** Luis Gustavo Gonzalez** | Owner: Luis
-- [ ] **[WV 🆕 24.03]** Consultar con su equipo si Ruth y Luci se integran para completar el equipo (07:35) | Owner: Ángelito
+- [x] **[WV 🆕 24.03]** Consultar con su equipo si Ruth y Luci se integran para completar el equipo (07:35) | Owner: Ángelito
 - [ ] **[WV 🆕 24.03]** Agregar íconos de seguridad (como PCI DSS) a la landing page y coordinar con Express Pago para incluirlos en la pasarela de pagos iframe (11:14) | Owner: Ángelito
 - [ ] **[WV 🆕 24.03]** Coordinar con Luz para creación y optimización de plantillas de correos y mensajes de nutrición post-donación (11:53) | Owner: Ángelito
 - [ ] **[WV 🆕 24.03]** Armar la campaña en Meta con presupuesto aprobado y solicitar adaptaciones a equipo Root para formatos y videos (12:39) | Owner: Ángelito
