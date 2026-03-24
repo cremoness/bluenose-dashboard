@@ -1,5 +1,5 @@
 # TASKS — Ángelito Chanamé
-> Última actualización: 2026-03-23 | +UPSJB 8 tareas
+> Última actualización: 2026-03-24 | Reunión Fireflies: Reunión BN - World Vision España 24.03
 
 ---
 
@@ -12,6 +12,13 @@
 ## 🟡 PRÓXIMAS / Esta semana
 
 ### WV Honduras
+- [ ] **[WV 🆕 24.03]** Esther Solera Suárez** | Owner: Ángelito
+- [ ] **[WV 🆕 24.03]** Compartir el enlace del calendario a todos los participantes para asegurar acceso a la reunión (05:15) | Owner: Ángelito
+- [ ] **[WV 🆕 24.03]** Revisar manualmente el listado de negocios asociados a más de dos contactos para validar asociación correcta y enviar reporte a Sofía (06:12) | Owner: Sofía
+- [ ] **[WV 🆕 24.03]** Crear y gestionar grabación de la reunión en Teams para preservar registro completo de la sesión (20:01) | Owner: Ángelito
+- [ ] **[WV 🆕 24.03]** Isa Iglesias** | Owner: Ángelito
+- [ ] **[WV 🆕 24.03]** Confirmar los nombres y detalles precisos para las etiquetas de pagador y sponsor para su creación y uso en automatizaciones (09:33) | Owner: Ángelito
+- [ ] **[WV 🆕 24.03]** Continuar desarrollando y compartiendo el modelo de datos en HubSpot incluyendo detalles sobre asociaciones y propiedades (11:40) | Owner: Ángelito
 - [ ] **[WV HND]** Implementar workflows para nutriciones por correo electrónico | Owner: Luis Gonzalez + Marcos
 - [ ] **[WV HND]** Coordinar con Lucy la creación y optimización de correos para nutriciones y agradecimientos | Owner: Luis Gonzalez
 - [ ] **[WV HND]** Subir datos de donantes y realizar primer contacto esta semana | Owner: Luis Gonzalez
