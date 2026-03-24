@@ -119,6 +119,67 @@
   .dot-vp { background: #8b5cf6; }
 
   .empty-state { font-size: 12px; color: #475569; text-align: center; padding: 16px 0; font-style: italic; }
+
+  /* Delete button on status items */
+  .status-item { position: relative; }
+  .si-del {
+    position: absolute; right: 8px; top: 50%; transform: translateY(-50%);
+    background: transparent; border: none; color: #475569; font-size: 14px;
+    cursor: pointer; opacity: 0; transition: all 0.15s; padding: 2px 6px;
+    border-radius: 4px; line-height: 1; font-weight: 700;
+  }
+  .status-item:hover .si-del { opacity: 1; }
+  .si-del:hover { background: rgba(239,68,68,0.15); color: #f87171; }
+
+  /* GitHub token modal */
+  .modal-overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,.7); z-index: 999;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .modal-overlay.hidden { display: none; }
+  .modal-box {
+    background: #1e293b; border: 1px solid #334155; border-radius: 16px;
+    padding: 24px 28px; width: 400px; max-width: 95vw;
+  }
+  .modal-title { font-size: 15px; font-weight: 800; color: #e2e8f0; margin-bottom: 6px; }
+  .modal-sub   { font-size: 11px; color: #64748b; margin-bottom: 16px; line-height: 1.5; }
+  .modal-input {
+    width: 100%; background: #0f172a; border: 1px solid #334155; border-radius: 8px;
+    padding: 9px 12px; color: #e2e8f0; font-size: 12px; font-family: monospace;
+    outline: none; transition: border-color .15s;
+  }
+  .modal-input:focus { border-color: #6366f1; }
+  .modal-actions { display: flex; gap: 8px; margin-top: 16px; justify-content: flex-end; }
+  .btn-save {
+    background: #6366f1; color: #fff; border: none; border-radius: 8px;
+    padding: 7px 18px; font-size: 12px; font-weight: 700; cursor: pointer;
+  }
+  .btn-cancel {
+    background: transparent; color: #64748b; border: 1px solid #334155; border-radius: 8px;
+    padding: 7px 14px; font-size: 12px; cursor: pointer;
+  }
+  .gh-btn {
+    padding: 6px 14px; border-radius: 20px; font-size: 11px; font-weight: 700;
+    cursor: pointer; border: 1px solid #334155; background: transparent; color: #64748b;
+    transition: all 0.2s;
+  }
+  .gh-btn:hover { border-color: #6366f1; color: #a5b4fc; }
+  .sync-dot {
+    width: 7px; height: 7px; border-radius: 50%; display: inline-block;
+    background: #475569; transition: background .3s; margin-right: 5px;
+  }
+  .sync-dot.ok { background: #22c55e; }
+  .sync-dot.err { background: #ef4444; }
+  .sync-dot.syncing { background: #f59e0b; animation: pulse 1s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+  .toast {
+    position: fixed; bottom: 24px; right: 24px; z-index: 1000;
+    background: #1e293b; border: 1px solid #334155; color: #e2e8f0;
+    padding: 10px 18px; border-radius: 10px; font-size: 12px; font-weight: 600;
+    opacity: 1; transition: opacity .3s;
+  }
+  .toast.hidden { opacity: 0; pointer-events: none; }
+  .toast.err { border-color: #7f1d1d; color: #f87171; }
 </style>
 </head>
 <body>
@@ -130,12 +191,27 @@
       <p>Ángelito Chanamé · Content & Project Manager</p>
     </div>
   </div>
-  <div class="meeting-toggle">
+  <div class="meeting-toggle" style="align-items:center;">
+    <button class="gh-btn" onclick="openTokenModal()"><span class="sync-dot" id="sync-dot"></span>GitHub ⚙</button>
     <button class="toggle-btn active" onclick="setDay('lunes', this)">🗓 Lunes</button>
     <button class="toggle-btn" onclick="setDay('jueves', this)">🗓 Jueves</button>
     <div id="day-label" style="font-size:12px;color:#94a3b8;margin-left:8px;">Cargando...</div>
   </div>
 </header>
+
+<!-- GitHub token modal -->
+<div class="modal-overlay hidden" id="token-modal" onclick="if(event.target===this)closeTokenModal()">
+  <div class="modal-box">
+    <div class="modal-title">⚙ GitHub Sync</div>
+    <div class="modal-sub">Personal Access Token para sincronizar eliminaciones con TASKS.md.<br>GitHub → Settings → Developer settings → Tokens (classic) → <code>repo</code></div>
+    <input class="modal-input" id="token-input" type="password" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx">
+    <div class="modal-actions">
+      <button class="btn-cancel" onclick="closeTokenModal()">Cancelar</button>
+      <button class="btn-save" onclick="saveToken()">Guardar</button>
+    </div>
+  </div>
+</div>
+<div class="toast hidden" id="toast"></div>
 
 <div class="container">
 
@@ -229,15 +305,17 @@ function renderItem(t, sec) {
   const proj   = (t.project && t.project !== 'General') ? `<span class="si-tag">${t.project}</span>` : '';
   const isNew  = t.isNew ? `<span class="si-new">🆕</span>` : '';
   const client = (!isDone && isClientSide(t.owner)) ? `<span class="si-client">👤 Cliente</span>` : '';
+  const safeText = t.text.replace(/'/g,"&#39;").replace(/"/g,'&quot;');
   return `
-    <div class="status-item${isDone ? ' done' : ''}" onclick="toggle(this)">
+    <div class="status-item${isDone ? ' done' : ''}" onclick="toggle(this)" data-task-text="${safeText}">
       <div class="si-chk${isDone ? ' on' : ''}"></div>
       <div class="si-dot ${dot(sec)}"></div>
-      <div style="flex:1">
+      <div style="flex:1;padding-right:24px;">
         <div class="si-text">${t.text}</div>
         ${t.owner ? `<div class="si-owner">Owner: ${t.owner}</div>` : ''}
       </div>
       ${proj}${client}${isNew}
+      <button class="si-del" onclick="event.stopPropagation();deleteTask(this.closest('.status-item'))" title="Eliminar tarea">✕</button>
     </div>`;
 }
 
@@ -304,6 +382,79 @@ function renderClientCard(acc) {
         ${body}
       </div>
     </div>`;
+}
+
+// ── GitHub Sync ──────────────────────────────────────────────────────────────
+const GH_REPO = 'cremoness/bluenose-dashboard';
+const GH_FILE = 'TASKS.md';
+
+let _toastTimer;
+function showToast(msg, type='ok') {
+  const el = document.getElementById('toast');
+  el.textContent = msg; el.className = 'toast' + (type==='err' ? ' err' : '');
+  clearTimeout(_toastTimer);
+  _toastTimer = setTimeout(() => { el.className = 'toast hidden'; }, 3500);
+}
+function setSyncDot(state) {
+  const d = document.getElementById('sync-dot');
+  d.className = 'sync-dot' + (state !== 'idle' ? ' ' + state : '');
+}
+function openTokenModal() {
+  document.getElementById('token-input').value = localStorage.getItem('gh-token') || '';
+  document.getElementById('token-modal').classList.remove('hidden');
+}
+function closeTokenModal() { document.getElementById('token-modal').classList.add('hidden'); }
+function saveToken() {
+  const v = document.getElementById('token-input').value.trim();
+  if (v) { localStorage.setItem('gh-token', v); showToast('Token guardado ✓'); }
+  else   { localStorage.removeItem('gh-token'); showToast('Token borrado'); }
+  closeTokenModal();
+}
+
+async function deleteTask(el) {
+  if (!confirm('¿Eliminar esta tarea de TASKS.md?')) return;
+  const token = localStorage.getItem('gh-token');
+  if (!token) { showToast('Configura tu token GitHub primero ⚙', 'err'); openTokenModal(); return; }
+  const taskText = el.dataset.taskText || '';
+  setSyncDot('syncing');
+  try {
+    const metaRes = await fetch(
+      `https://api.github.com/repos/${GH_REPO}/contents/${GH_FILE}`,
+      { headers: { Authorization: `token ${token}`, Accept: 'application/vnd.github.v3+json' } }
+    );
+    if (!metaRes.ok) throw new Error(`GitHub ${metaRes.status}`);
+    const meta = await metaRes.json();
+    const bytes = Uint8Array.from(atob(meta.content.replace(/\n/g,'')), c => c.charCodeAt(0));
+    const content = new TextDecoder('utf-8').decode(bytes);
+    const norm = taskText.replace(/\s+/g,' ').trim().toLowerCase();
+    let removed = false;
+    const newLines = content.split('\n').filter(line => {
+      if (!/^\s*- \[[ x]\]/.test(line)) return true;
+      const raw = line.replace(/^\s*- \[[ x]\]\s*/,'').replace(/\*\*\[.*?\]\*\*\s*/g,'').replace(/\| Owner:.*/,'').replace(/\s+/g,' ').trim().toLowerCase();
+      if (raw === norm) { removed = true; return false; }
+      return true;
+    });
+    if (removed) {
+      const b64 = btoa(String.fromCharCode(...new TextEncoder().encode(newLines.join('\n'))));
+      const res = await fetch(
+        `https://api.github.com/repos/${GH_REPO}/contents/${GH_FILE}`,
+        {
+          method: 'PUT',
+          headers: { Authorization: `token ${token}`, Accept: 'application/vnd.github.v3+json', 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message: 'status: delete task [skip ci]', content: b64, sha: meta.sha })
+        }
+      );
+      if (!res.ok) { const e = await res.json(); throw new Error(e.message || res.status); }
+    }
+    el.style.transition = 'opacity 0.25s, max-height 0.3s';
+    el.style.opacity = '0'; el.style.maxHeight = '0'; el.style.overflow = 'hidden';
+    setTimeout(() => el.remove(), 320);
+    setSyncDot('ok');
+    showToast(removed ? 'Tarea eliminada ✓' : 'Eliminada localmente (no encontrada en GitHub)');
+  } catch(e) {
+    setSyncDot('err');
+    showToast('Error: ' + e.message, 'err');
+  }
 }
 
 // ── Main render ─────────────────────────────────────────────────────────────

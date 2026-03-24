@@ -22,7 +22,6 @@
 
   .container { max-width: 900px; margin: 0 auto; padding: 28px 20px; }
 
-  /* Sección */
   .section { margin-bottom: 28px; }
   .section-title {
     font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
@@ -34,12 +33,13 @@
   .s-blue  { background: rgba(99,102,241,.15); color: #818cf8; }
   .s-green { background: rgba(34,197,94,.12);  color: #4ade80; }
 
-  /* Tarjeta de tarea */
+  /* Task card */
   .task {
     background: #1e293b; border: 1px solid #334155; border-radius: 12px;
     padding: 13px 16px; margin-bottom: 8px;
     display: flex; align-items: flex-start; gap: 12px;
     cursor: pointer; transition: background .15s, border-color .15s;
+    position: relative;
   }
   .task:hover { background: #263348; border-color: #475569; }
   .task.done  { opacity: .45; }
@@ -54,8 +54,9 @@
   .chk svg { display: none; }
   .task.done .chk svg { display: block; }
 
-  .task-text { font-size: 13.5px; line-height: 1.5; color: #cbd5e1; flex: 1; }
+  .task-text { font-size: 13.5px; line-height: 1.5; color: #cbd5e1; flex: 1; padding-right: 28px; }
   .task-text strong { color: #e2e8f0; }
+  .task-owner { font-size: 11px; color: #475569; margin-top: 3px; }
 
   .tag {
     font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 10px;
@@ -69,7 +70,17 @@
   .tag-ci   { background: rgba(52,211,153,.15); color: #34d399; }
   .tag-new  { background: rgba(239,68,68,.2);   color: #f87171; }
 
-  /* Reuniones del día */
+  /* Delete button */
+  .task-del {
+    position: absolute; right: 10px; top: 50%; transform: translateY(-50%);
+    background: transparent; border: none; color: #475569; font-size: 14px;
+    cursor: pointer; opacity: 0; transition: all 0.15s; padding: 2px 6px;
+    border-radius: 4px; font-weight: 700;
+  }
+  .task:hover .task-del { opacity: 1; }
+  .task-del:hover { background: rgba(239,68,68,0.15); color: #f87171; }
+
+  /* Meeting */
   .meeting {
     background: linear-gradient(90deg, rgba(99,102,241,.12), rgba(99,102,241,.04));
     border: 1px solid rgba(99,102,241,.3); border-radius: 10px;
@@ -78,7 +89,6 @@
   }
   .meeting-icon { font-size: 18px; }
 
-  /* Contador */
   .counts { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 24px; }
   .count-pill {
     padding: 6px 16px; border-radius: 20px; font-size: 12px; font-weight: 700;
@@ -88,7 +98,6 @@
   .cp-y { background: rgba(234,179,8,.12);  color: #fbbf24; }
   .cp-g { background: rgba(34,197,94,.12);  color: #4ade80; }
 
-  /* Filtros cliente */
   .filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
   .filter-btn {
     padding: 5px 14px; border-radius: 20px; font-size: 11px; font-weight: 700;
@@ -99,11 +108,51 @@
     background: #6366f1; border-color: #6366f1; color: #fff;
   }
 
-  /* Footer */
-  footer {
-    text-align: center; padding: 20px; color: #475569; font-size: 11px;
-    border-top: 1px solid #1e293b; margin-top: 20px;
+  /* GitHub token modal */
+  .gh-btn {
+    padding: 6px 14px; border-radius: 20px; font-size: 11px; font-weight: 700;
+    cursor: pointer; border: 1px solid #334155; background: transparent; color: #64748b;
+    transition: all 0.2s;
   }
+  .gh-btn:hover { border-color: #6366f1; color: #a5b4fc; }
+  .sync-dot {
+    width: 7px; height: 7px; border-radius: 50%; display: inline-block;
+    background: #475569; transition: background .3s; margin-right: 5px;
+  }
+  .sync-dot.ok { background: #22c55e; }
+  .sync-dot.err { background: #ef4444; }
+  .sync-dot.syncing { background: #f59e0b; animation: pulse 1s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+  .modal-overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,.7); z-index: 999;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .modal-overlay.hidden { display: none; }
+  .modal-box {
+    background: #1e293b; border: 1px solid #334155; border-radius: 16px;
+    padding: 24px 28px; width: 400px; max-width: 95vw;
+  }
+  .modal-title { font-size: 15px; font-weight: 800; color: #e2e8f0; margin-bottom: 6px; }
+  .modal-sub   { font-size: 11px; color: #64748b; margin-bottom: 16px; line-height: 1.5; }
+  .modal-input {
+    width: 100%; background: #0f172a; border: 1px solid #334155; border-radius: 8px;
+    padding: 9px 12px; color: #e2e8f0; font-size: 12px; font-family: monospace; outline: none;
+  }
+  .modal-input:focus { border-color: #6366f1; }
+  .modal-actions { display: flex; gap: 8px; margin-top: 16px; justify-content: flex-end; }
+  .btn-save   { background: #6366f1; color: #fff; border: none; border-radius: 8px; padding: 7px 18px; font-size: 12px; font-weight: 700; cursor: pointer; }
+  .btn-cancel { background: transparent; color: #64748b; border: 1px solid #334155; border-radius: 8px; padding: 7px 14px; font-size: 12px; cursor: pointer; }
+  .toast {
+    position: fixed; bottom: 24px; right: 24px; z-index: 1000;
+    background: #1e293b; border: 1px solid #334155; color: #e2e8f0;
+    padding: 10px 18px; border-radius: 10px; font-size: 12px; font-weight: 600;
+    opacity: 1; transition: opacity .3s;
+  }
+  .toast.hidden { opacity: 0; pointer-events: none; }
+  .toast.err { border-color: #7f1d1d; color: #f87171; }
+
+  footer { text-align: center; padding: 20px; color: #475569; font-size: 11px; border-top: 1px solid #1e293b; margin-top: 20px; }
+  .empty-msg { color: #334155; font-size: 12px; font-style: italic; padding: 8px 4px; }
 </style>
 </head>
 <body>
@@ -113,48 +162,53 @@
     <h1>☀️ Daily Brief</h1>
     <p>Ángelito Chanamé — Blue Nose</p>
   </div>
-  <div id="fecha-badge">Cargando...</div>
+  <div style="display:flex;gap:10px;align-items:center;">
+    <button class="gh-btn" onclick="openTokenModal()"><span class="sync-dot" id="sync-dot"></span>GitHub ⚙</button>
+    <div id="fecha-badge">Cargando...</div>
+  </div>
 </header>
+
+<!-- GitHub token modal -->
+<div class="modal-overlay hidden" id="token-modal" onclick="if(event.target===this)closeTokenModal()">
+  <div class="modal-box">
+    <div class="modal-title">⚙ GitHub Sync</div>
+    <div class="modal-sub">Personal Access Token para eliminar tareas de TASKS.md.<br>GitHub → Settings → Developer settings → Tokens (classic) → <code>repo</code></div>
+    <input class="modal-input" id="token-input" type="password" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx">
+    <div class="modal-actions">
+      <button class="btn-cancel" onclick="closeTokenModal()">Cancelar</button>
+      <button class="btn-save" onclick="saveToken()">Guardar</button>
+    </div>
+  </div>
+</div>
+<div class="toast hidden" id="toast"></div>
 
 <div class="container">
 
-  <!-- Contadores -->
   <div class="counts">
     <div class="count-pill cp-r">🔴 <span id="cnt-r">0</span> urgentes</div>
     <div class="count-pill cp-y">🟡 <span id="cnt-y">0</span> esta semana</div>
     <div class="count-pill cp-g">✅ <span id="cnt-done">0</span> completadas</div>
   </div>
 
-  <!-- Filtros por cliente -->
-  <div class="filters">
-    <button class="filter-btn active" onclick="filter('all',this)">Todos</button>
-    <button class="filter-btn" onclick="filter('WV',this)">🌍 World Vision</button>
-    <button class="filter-btn" onclick="filter('UPSJB',this)">🎓 UPSJB</button>
-    <button class="filter-btn" onclick="filter('UCSP',this)">🏛 UCSP</button>
-    <button class="filter-btn" onclick="filter('VP',this)">💳 VirtualPos</button>
-    <button class="filter-btn" onclick="filter('Smartimper',this)">⚡ Smartimper</button>
-    <button class="filter-btn" onclick="filter('yo',this)">👤 Yo (Ángelito)</button>
+  <div class="filters" id="filter-bar">
+    <button class="filter-btn active" onclick="applyFilter('all',this)">Todos</button>
   </div>
 
-  <!-- Reuniones del día -->
-  <div class="section" id="sec-meetings">
+  <div class="section" id="sec-meetings" style="display:none;">
     <div class="section-title s-blue">📅 Reuniones de hoy</div>
     <div id="meetings-container"></div>
   </div>
 
-  <!-- URGENTE -->
   <div class="section">
     <div class="section-title s-red">🔴 Urgente — Hoy mismo</div>
     <div id="tasks-urgente"></div>
   </div>
 
-  <!-- ESTA SEMANA -->
   <div class="section">
     <div class="section-title s-yel">🟡 Esta semana</div>
     <div id="tasks-semana"></div>
   </div>
 
-  <!-- PRÓXIMO MES -->
   <div class="section">
     <div class="section-title s-green">🟢 Próximo mes</div>
     <div id="tasks-mes"></div>
@@ -162,127 +216,170 @@
 
 </div>
 
-<footer id="footer-update">Actualizado: 19.03.2026 — Status interno jueves</footer>
+<footer id="footer-update">Daily Brief · Blue Nose · Ángelito Chanamé</footer>
 
+<script src="data.js"></script>
 <script>
-// ═══════════════════════════════════════════════════════════════
-// DATOS — sincronizados con TASKS.md 18.03.2026
-// ═══════════════════════════════════════════════════════════════
-const TASKS = {
-  urgente: [
-    { text: "UCSP Agente IA: Enrique responder a César Puma para fijar reunión con equipo operativo (Ángela González, Rudy Hasawi, Juan Daniel Rodríguez) — resolver preguntas correo Pablo", tag: "UCSP", tagClass: "tag-uc", owner: "Enrique", clients: ["UCSP"], isNew: true },
-    { text: "Mover PPT SpotLight de Ani al canal San Pablo (no en Herramientas y Utilidades) — coordinar reunión interna antes de presentar al cliente", tag: "UCSP", tagClass: "tag-uc", owner: "Ángelito", clients: ["UCSP","yo"], isNew: true },
-    { text: "Analizar gestión ventas UPSJB: 11K leads enviados → 5,300 abrieron → 325 respondieron → 95% sin respuesta del equipo de ventas. Preparar punto para próxima reunión con Pablo", tag: "UPSJB", tagClass: "tag-up", owner: "Ángelito → Pablo", clients: ["UPSJB","yo"], isNew: true },
-    { text: "Atender reunión urgente World Vision Perú — hoy 3pm · Agenda: limpieza de listas + consulta web", tag: "WV", tagClass: "tag-wv", owner: "Ángelito + Cristian P", clients: ["WV","yo"] },
-    { text: "Hacer push a Luis para activar campañas Wash esta semana (Día del Agua) · Reunión cancelada — próxima: lunes", tag: "WV HND", tagClass: "tag-wv", owner: "Ángelito", clients: ["WV","yo"] },
-    { text: "Cristian P: cerrar ticket donaciones únicas (ajuste en integración) — HOY", tag: "VP", tagClass: "tag-vp", owner: "Cristian P", clients: ["VP"] },
-    { text: "Cristian P: cerrar ticket limpieza negocios duplicados F2F (750 contactos) — HOY", tag: "VP", tagClass: "tag-vp", owner: "Cristian P", clients: ["VP"] },
-    { text: "Cristian P: escribir a María (WV PE) por Discord para obtener más info del ticket 'limpieza de lista y consulta web'", tag: "VP", tagClass: "tag-vp", owner: "Cristian P", clients: ["VP","WV"] },
-    { text: "Sofía: subir base de Iglesias — Esther confirmó que Jorge y ella tienen el trabajo listo", tag: "WV ES", tagClass: "tag-wv", owner: "Sofía", clients: ["WV"] },
-  ],
-  semana: [
-    // UCSP
-    { text: "Enrique: esperar brief de César Puma para propuesta Mesa de Ayuda (IA + WhatsApp sobre Zoho) — casi seguro para abril/mayo", tag: "UCSP", tagClass: "tag-uc", owner: "Enrique", clients: ["UCSP"], isNew: true },
-    { text: "Enrique: actualizar propuesta coaching SGA (5-6 personas, dejaron Dzine Lab) + seguimiento alumni con Efraín Centeno", tag: "UCSP", tagClass: "tag-uc", owner: "Enrique", clients: ["UCSP"], isNew: true },
-    { text: "Crear checklist unificado con IA de todos los puntos de reuniones UCSP (1ra → última) para blindar entregables y facilitar conformidades", tag: "UCSP", tagClass: "tag-uc", owner: "Ángelito", clients: ["UCSP","yo"], isNew: true },
-    { text: "CENDES: esperar respuesta formal de aprobación de cotización (María Daniela en proceso de revisión desde 13.03)", tag: "UCSP", tagClass: "tag-uc", owner: "Ángelito", clients: ["UCSP","yo"] },
-    { text: "Enrique: coordinar entrevista con Ángelo sobre Centro de Idiomas + entrevistas con alumnos y desertores", tag: "UCSP", tagClass: "tag-uc", owner: "Enrique", clients: ["UCSP"] },
-    // WV ES SIMMA
-    { text: "Sofía + Jorge: cruzar base SIMMA vs HubSpot — partners sin contacto/pledge, emails provisionales, campos faltantes · Accionables canal: sincronizar nombre iglesia, PartnerID, URL web, integración leads proveedores", tag: "WV ES", tagClass: "tag-wv", owner: "Sofía + Jorge + Cristian P", clients: ["WV"], isNew: true },
-    { text: "Sofía: agendar reunión con Esther para revisar hallazgos SIMMA y definir acciones correctivas (5 categorías)", tag: "WV ES", tagClass: "tag-wv", owner: "Sofía", clients: ["WV"] },
-    { text: "Cristian P: configurar propiedades personalizadas (ChildID, AddDate, MediaType, datos bancarios) según hallazgos Esther", tag: "WV ES", tagClass: "tag-wv", owner: "Cristian P", clients: ["WV"] },
-    // WV HND
-    { text: "Luis: finalizar y enviar piezas campaña Wash + hablar con Jorge Girón para conectar WhatsApp a cuenta de Meta", tag: "WV HND", tagClass: "tag-wv", owner: "Luis", clients: ["WV"] },
-    { text: "Pablo: gestionar permisos web/landing para Luis + incluir devs en correos Express Pago (recibieron documentación, en espera)", tag: "WV HND", tagClass: "tag-wv", owner: "Pablo", clients: ["WV"] },
-    // WV EC
-    { text: "Cristian P: organizar tickets WV Ecuador por prioridad — empezar con débitos y automatizaciones, avanzar de a 2 en paralelo. NO sacar todos de golpe", tag: "WV EC", tagClass: "tag-wv", owner: "Cristian P + Pablo + Marcos", clients: ["WV"], isNew: true },
-    // UPSJB
-    { text: "Blue Nose: asignar equipo exclusivo para 4,800 leads sin gestión (A Distancia) · SLA ≤5 min", tag: "UPSJB", tagClass: "tag-up", owner: "Enrique/Pablo", clients: ["UPSJB"] },
-    { text: "Revisar puntos amarillos y rojos en los 3 docs de Enrique — definir acciones correctivas + responder correo de Enrique", tag: "UPSJB", tagClass: "tag-up", owner: "Ángelito + Enrique", clients: ["UPSJB","yo"] },
-    { text: "Marcos: crear propiedad HubSpot para segmentar lista Blue Nose (5,600) en 3 grupos de ~2,000 para envíos mensuales · Permisos dados ✅", tag: "UPSJB", tagClass: "tag-up", owner: "Marcos", clients: ["UPSJB"], isNew: true },
-    { text: "Estuardo: entregar Buyer Persona para padres esta semana + coordinar QR en charlas desde quincena de marzo", tag: "UPSJB", tagClass: "tag-up", owner: "Estuardo", clients: ["UPSJB"] },
-    { text: "Carlos: finalizar limpieza de duplicados en HubSpot + enviar programas de Admón Internacional y Marketing", tag: "UPSJB", tagClass: "tag-up", owner: "Carlos", clients: ["UPSJB"] },
-    // VirtualPos CL
-    { text: "Cristian P: reenviar a Diana lista y recursos para importación de negocios pendientes (contactos web Pau)", tag: "VP CL", tagClass: "tag-vp", owner: "Cristian P", clients: ["VP"] },
-    { text: "Diana + Ornella: revisar 47 contactos con negocios duplicados + regularizar negocios con múltiples métodos de pago", tag: "VP CL", tagClass: "tag-vp", owner: "Diana + Ornella", clients: ["VP"] },
-    { text: "Ornella: finalizar facturación manual F2F (enero y febrero) — avisar a Pablo para coordinar automatización", tag: "VP CL", tagClass: "tag-vp", owner: "Ornella", clients: ["VP"] },
-    { text: "Cristian P: instalar MCPs de HubSpot, Cloudpod y GitHub en Antigravity — eliminar skills problemáticos", tag: "VP", tagClass: "tag-vp", owner: "Cristian P", clients: ["VP"], isNew: true },
-    // Smartimper
-    { text: "Escribirle al cliente (~30.03) para preguntar cómo va con la incorporación del BDR. Sin respuesta → avisar a Enrique", tag: "Smartimper", tagClass: "tag-sm", owner: "Ángelito", clients: ["Smartimper","yo"] },
-  ],
-  mes: [
-    { text: "UCSP SpotLight: presentar ideas en reunión de abril (ppt ya lista) — primer miércoles de abril", tag: "UCSP", tagClass: "tag-uc", owner: "Ángelito", clients: ["UCSP","yo"] },
-    { text: "WV RD: gestionar cierre formal de contrato · Due: 31.03.26", tag: "WV RD", tagClass: "tag-wv", owner: "Ángelito + Enrique", clients: ["WV","yo"] },
-  ]
-};
 
-const MEETINGS_BY_DAY = {
-  0: [
-    { icon: "📋", text: "Status interno Blue Nose — reunión de inicio de semana" },
-  ],
-  2: [
-    { icon: "🌍", text: "WV HND — revisión piezas y WF con Luis y Pablo (esta semana: adelantada de jueves)" },
-  ],
-  3: [
-    { icon: "📋", text: "Status interno Blue Nose — reunión de cierre de semana" },
-    { icon: "🌍", text: "WV HND — reunión con Express Pago (pasarela de pagos)" },
-  ],
-};
+// ── GitHub Sync ───────────────────────────────────────────────────────────────
+const GH_REPO = 'cremoness/bluenose-dashboard';
+const GH_FILE = 'TASKS.md';
 
-// ═══════════════════════════════════════════════════════════════
-// RENDER
-// ═══════════════════════════════════════════════════════════════
-let doneSet = JSON.parse(localStorage.getItem('brief-done') || '[]');
-let currentFilter = 'all';
+let _toastTimer;
+function showToast(msg, type='ok') {
+  const el = document.getElementById('toast');
+  el.textContent = msg; el.className = 'toast' + (type==='err' ? ' err' : '');
+  clearTimeout(_toastTimer);
+  _toastTimer = setTimeout(() => { el.className = 'toast hidden'; }, 3500);
+}
+function setSyncDot(state) {
+  const d = document.getElementById('sync-dot');
+  d.className = 'sync-dot' + (state !== 'idle' ? ' ' + state : '');
+}
+function openTokenModal() {
+  document.getElementById('token-input').value = localStorage.getItem('gh-token') || '';
+  document.getElementById('token-modal').classList.remove('hidden');
+}
+function closeTokenModal() { document.getElementById('token-modal').classList.add('hidden'); }
+function saveToken() {
+  const v = document.getElementById('token-input').value.trim();
+  if (v) { localStorage.setItem('gh-token', v); showToast('Token guardado ✓'); }
+  else   { localStorage.removeItem('gh-token'); showToast('Token borrado'); }
+  closeTokenModal();
+}
 
-const DIAS = ["Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado"];
-const MESES = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
-
-function initDate() {
-  const now = new Date();
-  const d = DIAS[now.getDay()];
-  const m = MESES[now.getMonth()];
-  document.getElementById('fecha-badge').textContent = `${d}, ${now.getDate()} de ${m} de ${now.getFullYear()}`;
-
-  // Reuniones del día
-  const meetings = MEETINGS_BY_DAY[now.getDay()] || [];
-  const mc = document.getElementById('meetings-container');
-  if (meetings.length === 0) {
-    document.getElementById('sec-meetings').style.display = 'none';
-  } else {
-    meetings.forEach(m => {
-      mc.innerHTML += `<div class="meeting"><span class="meeting-icon">${m.icon}</span>${m.text}</div>`;
+async function deleteTask(el) {
+  if (!confirm('¿Eliminar esta tarea de TASKS.md?')) return;
+  const token = localStorage.getItem('gh-token');
+  if (!token) { showToast('Configura tu token GitHub primero ⚙', 'err'); openTokenModal(); return; }
+  const taskText = el.dataset.taskText || '';
+  setSyncDot('syncing');
+  try {
+    const metaRes = await fetch(
+      `https://api.github.com/repos/${GH_REPO}/contents/${GH_FILE}`,
+      { headers: { Authorization: `token ${token}`, Accept: 'application/vnd.github.v3+json' } }
+    );
+    if (!metaRes.ok) throw new Error(`GitHub ${metaRes.status}`);
+    const meta = await metaRes.json();
+    const bytes = Uint8Array.from(atob(meta.content.replace(/\n/g,'')), c => c.charCodeAt(0));
+    const content = new TextDecoder('utf-8').decode(bytes);
+    const norm = taskText.replace(/\s+/g,' ').trim().toLowerCase();
+    let removed = false;
+    const newLines = content.split('\n').filter(line => {
+      if (!/^\s*- \[[ x]\]/.test(line)) return true;
+      const raw = line.replace(/^\s*- \[[ x]\]\s*/,'').replace(/\*\*\[.*?\]\*\*\s*/g,'').replace(/\| Owner:.*/,'').replace(/\s+/g,' ').trim().toLowerCase();
+      if (raw === norm) { removed = true; return false; }
+      return true;
     });
+    if (removed) {
+      const b64 = btoa(String.fromCharCode(...new TextEncoder().encode(newLines.join('\n'))));
+      const res = await fetch(
+        `https://api.github.com/repos/${GH_REPO}/contents/${GH_FILE}`,
+        {
+          method: 'PUT',
+          headers: { Authorization: `token ${token}`, Accept: 'application/vnd.github.v3+json', 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message: 'daily: delete task [skip ci]', content: b64, sha: meta.sha })
+        }
+      );
+      if (!res.ok) { const e = await res.json(); throw new Error(e.message || res.status); }
+    }
+    el.style.transition = 'opacity 0.25s';
+    el.style.opacity = '0';
+    setTimeout(() => { el.remove(); updateCounts(); }, 260);
+    setSyncDot('ok');
+    showToast(removed ? 'Tarea eliminada ✓' : 'Eliminada localmente');
+  } catch(e) {
+    setSyncDot('err');
+    showToast('Error: ' + e.message, 'err');
   }
 }
 
+// ── State ─────────────────────────────────────────────────────────────────────
+let doneSet = JSON.parse(localStorage.getItem('brief-done') || '[]');
+let currentFilter = 'all';
+
+const DIAS  = ["Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado"];
+const MESES = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+
+// Meetings that appear on specific weekdays (0=Sun, 1=Mon, ..., 4=Thu)
+const WEEKLY_MEETINGS = {
+  1: [{ icon: "📋", text: "Status interno Blue Nose — reunión de lunes 9:30am (PE)" }],
+  4: [{ icon: "📋", text: "Status interno Blue Nose — reunión de jueves 9:30am (PE)" }],
+};
+
+// ── Account chip colors ───────────────────────────────────────────────────────
+const TAG_CLASS = { 'WV':'tag-wv', 'UCSP':'tag-uc', 'UPSJB':'tag-up', 'VP':'tag-vp', 'Smartimper':'tag-sm', 'Ica':'tag-ci' };
+
+function tagClass(account) { return TAG_CLASS[account] || 'tag-wv'; }
+
+// ── Render ────────────────────────────────────────────────────────────────────
 function renderTask(t, section, idx) {
   const id = `${section}-${idx}`;
-  const isDone = doneSet.includes(id);
-  const visible = currentFilter === 'all' || (t.clients && t.clients.includes(currentFilter));
+  const isDone = doneSet.includes(id) || t.isCompleted;
+  const safeText = (t.text || '').replace(/'/g,"&#39;").replace(/"/g,'&quot;');
+  const clientsAttr = (t.clients || [t.account]).join(',');
+  const tagLabel = t.project && t.project !== 'General' ? `${t.account} ${t.project}` : (t.account || t.tag || '');
+
   return `
-    <div class="task ${isDone ? 'done' : ''}" data-id="${id}" data-clients="${(t.clients||[]).join(',')}"
-         style="${visible ? '' : 'display:none'}" onclick="toggleDone('${id}',this)">
+    <div class="task${isDone ? ' done' : ''}" data-id="${id}" data-clients="${clientsAttr}" data-task-text="${safeText}"
+         onclick="toggleDone('${id}',this)">
       <div class="chk">
         <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
           <path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="2" stroke-linecap="round"/>
         </svg>
       </div>
-      <div class="task-text">
-        ${t.isNew ? '<span class="tag tag-new">🆕 HOY</span> ' : ''}
-        ${t.text}
-        ${t.owner ? `<span style="color:#475569;font-size:11.5px;"> · ${t.owner}</span>` : ''}
+      <div style="flex:1">
+        <div class="task-text">
+          ${t.isNew ? '<span class="tag tag-new">🆕 HOY</span> ' : ''}${t.text}
+        </div>
+        ${t.owner ? `<div class="task-owner">· ${t.owner}</div>` : ''}
       </div>
-      <span class="tag ${t.tagClass}">${t.tag}</span>
+      <span class="tag ${tagClass(t.account)}">${tagLabel}</span>
+      <button class="task-del" onclick="event.stopPropagation();deleteTask(this.closest('.task'))" title="Eliminar">✕</button>
     </div>`;
 }
 
 function renderAll() {
   ['urgente','semana','mes'].forEach(sec => {
     const container = document.getElementById(`tasks-${sec}`);
-    container.innerHTML = TASKS[sec].map((t,i) => renderTask(t, sec, i)).join('');
+    const tasks = (TASKS[sec] || []).filter(t => !t.isCompleted);
+    container.innerHTML = tasks.length
+      ? tasks.map((t,i) => renderTask(t, sec, i)).join('')
+      : `<div class="empty-msg">Sin tareas</div>`;
   });
+  buildFilters();
+  applyCurrentFilter();
   updateCounts();
+}
+
+function buildFilters() {
+  const bar = document.getElementById('filter-bar');
+  const allAccounts = new Set();
+  ['urgente','semana','mes'].forEach(sec => {
+    (TASKS[sec]||[]).forEach(t => { if (t.account) allAccounts.add(t.account); });
+  });
+  const CLIENT_ICONS = { 'WV':'🌍', 'UCSP':'🏛', 'UPSJB':'🎓', 'VP':'💳', 'Smartimper':'⚡', 'Ica':'🏦' };
+  const extra = [...allAccounts].map(acc =>
+    `<button class="filter-btn" onclick="applyFilter('${acc}',this)">${CLIENT_ICONS[acc]||''} ${acc}</button>`
+  ).join('');
+  // Check if there's a BN team member named Ángelito
+  const meBtn = `<button class="filter-btn" onclick="applyFilter('yo',this)">👤 Yo</button>`;
+  bar.innerHTML = `<button class="filter-btn active" onclick="applyFilter('all',this)">Todos</button>${extra}${meBtn}`;
+}
+
+function applyFilter(client, btn) {
+  currentFilter = client;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  applyCurrentFilter();
+}
+
+function applyCurrentFilter() {
+  document.querySelectorAll('.task').forEach(t => {
+    const clients = t.dataset.clients || '';
+    const match = currentFilter === 'all' || clients.split(',').includes(currentFilter);
+    t.style.display = match ? '' : 'none';
+  });
 }
 
 function toggleDone(id, el) {
@@ -298,34 +395,34 @@ function toggleDone(id, el) {
 }
 
 function updateCounts() {
-  const allTasks = document.querySelectorAll('.task');
-  const done = document.querySelectorAll('.task.done').length;
+  const done     = document.querySelectorAll('.task.done').length;
+  const urgentes = document.querySelectorAll('#tasks-urgente .task:not(.done):not([style*="display: none"])').length;
+  const semana   = document.querySelectorAll('#tasks-semana .task:not(.done):not([style*="display: none"])').length;
   document.getElementById('cnt-done').textContent = done;
-
-  const urgentes = document.querySelectorAll('#tasks-urgente .task:not(.done)').length;
-  const semana   = document.querySelectorAll('#tasks-semana .task:not(.done)').length;
-  document.getElementById('cnt-r').textContent = urgentes;
-  document.getElementById('cnt-y').textContent = semana;
+  document.getElementById('cnt-r').textContent    = urgentes;
+  document.getElementById('cnt-y').textContent    = semana;
 }
 
-function filter(client, btn) {
-  currentFilter = client;
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
+// ── Init ──────────────────────────────────────────────────────────────────────
+(function init() {
+  const now = new Date();
+  document.getElementById('fecha-badge').textContent =
+    `${DIAS[now.getDay()]}, ${now.getDate()} de ${MESES[now.getMonth()]} de ${now.getFullYear()}`;
 
-  document.querySelectorAll('.task').forEach(t => {
-    const clients = t.dataset.clients || '';
-    if (client === 'all' || clients.split(',').includes(client)) {
-      t.style.display = '';
-    } else {
-      t.style.display = 'none';
-    }
-  });
-}
+  const meetings = WEEKLY_MEETINGS[now.getDay()] || [];
+  const mc = document.getElementById('meetings-container');
+  if (meetings.length > 0) {
+    document.getElementById('sec-meetings').style.display = '';
+    meetings.forEach(m => {
+      mc.innerHTML += `<div class="meeting"><span class="meeting-icon">${m.icon}</span>${m.text}</div>`;
+    });
+  }
 
-// Init
-initDate();
-renderAll();
+  const d = now.toLocaleDateString('es-PE', {day:'2-digit', month:'2-digit', year:'2-digit'}).replace(/\//g,'.');
+  document.getElementById('footer-update').textContent = `Daily Brief · Blue Nose · Ángelito Chanamé · ${d}`;
+
+  renderAll();
+})();
 </script>
 </body>
 </html>
