@@ -12,11 +12,6 @@
 ## 🟡 PRÓXIMAS / Esta semana
 
 ### WV Honduras
-- [ ] **[WV HND]** Agregar íconos de seguridad PCI DSS a landing page y coordinar con Express Pago para incluirlos en pasarela de pagos iframe | Owner: Luis Gonzalez
-- [ ] **[WV HND]** Coordinar con Lucy plantillas de correos y mensajes de nutrición post-donación | Owner: Luis Gonzalez
-- [ ] **[WV HND]** Armar campaña en Meta con presupuesto aprobado y solicitar adaptaciones a equipo Root para formatos y videos | Owner: Luis Gonzalez
-- [ ] **[WV HND]** Subir información de donantes recientes a HubSpot para monitoreo | Owner: Luis Gonzalez
-- [x] **[WV HND]** Mantener comunicación continua por Discord y WhatsApp con soporte y ajustes post-evento | Owner: Luis Gonzalez
 - [ ] **[WV HND]** Implementar workflows para nutriciones por correo electrónico | Owner: Luis Gonzalez + Marcos
 - [x] **[WV HND]** Coordinar con Lucy la creación y optimización de correos para nutriciones y agradecimientos | Owner: Luis Gonzalez
 - [x] **[WV HND]** Subir datos de donantes y realizar primer contacto esta semana | Owner: Luis Gonzalez
@@ -55,11 +50,11 @@
 
 ### WV RD
 - [ ] **[WV RD]** Implementar landing page y flujos para convertir donantes únicos en mensuales mediante correos personalizados | Owner: Luis Gonzalez
-- [ ] **[WV RD]** Añadir iconos de seguridad PCI DSS y Visa en landing page para aumentar confianza del donante | Owner: Luis Gonzalez
-- [ ] **[WV RD]** Presupuesto Meta aprobado — ajustar y adaptar contenido para lanzar campaña | Owner: Luis Gonzalez
-- [ ] **[WV RD]** Monitoreo post-lanzamiento: ajustes rápidos por Discord y subir data a HubSpot para seguimiento | Owner: Luis Gonzalez
-- [ ] **[WV RD]** Crear plantillas de correos y WhatsApp tras evento actual — comunicación continua por Discord | Owner: Luis Gonzalez
-- [ ] **[WV RD]** Integrar iconos de seguridad en pasarela de pago para legitimar proceso de donación | Owner: Luis Gonzalez
+- [ ] **[WV RD]** Agregar íconos de seguridad PCI DSS a landing page y coordinar con Express Pago para incluirlos en pasarela de pagos iframe | Owner: Luis Gonzalez
+- [ ] **[WV RD]** Armar campaña en Meta con presupuesto aprobado y solicitar adaptaciones a equipo Root para formatos y videos | Owner: Luis Gonzalez
+- [ ] **[WV RD]** Subir información de donantes recientes a HubSpot para monitoreo | Owner: Luis Gonzalez
+- [ ] **[WV RD]** Coordinar con Lucy plantillas de correos y mensajes de nutrición post-donación | Owner: Luis Gonzalez
+- [ ] **[WV RD]** Mantener comunicación continua por Discord y WhatsApp con soporte y ajustes post-evento | Owner: Luis Gonzalez
 
 ### UCSP
 #### Mi Propósito

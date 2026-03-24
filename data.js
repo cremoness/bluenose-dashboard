@@ -14,61 +14,6 @@ const TASKS = {
   ],
   "semana": [
     {
-      "text": "Agregar íconos de seguridad PCI DSS a landing page y coordinar con Express Pago para incluirlos en pasarela de pagos iframe",
-      "account": "WV",
-      "project": "HND",
-      "tag": "HND",
-      "tagClass": "tag-wv",
-      "owner": "Luis Gonzalez",
-      "clients": [
-        "WV"
-      ]
-    },
-    {
-      "text": "Coordinar con Lucy plantillas de correos y mensajes de nutrición post-donación",
-      "account": "WV",
-      "project": "HND",
-      "tag": "HND",
-      "tagClass": "tag-wv",
-      "owner": "Luis Gonzalez",
-      "clients": [
-        "WV"
-      ]
-    },
-    {
-      "text": "Armar campaña en Meta con presupuesto aprobado y solicitar adaptaciones a equipo Root para formatos y videos",
-      "account": "WV",
-      "project": "HND",
-      "tag": "HND",
-      "tagClass": "tag-wv",
-      "owner": "Luis Gonzalez",
-      "clients": [
-        "WV"
-      ]
-    },
-    {
-      "text": "Subir información de donantes recientes a HubSpot para monitoreo",
-      "account": "WV",
-      "project": "HND",
-      "tag": "HND",
-      "tagClass": "tag-wv",
-      "owner": "Luis Gonzalez",
-      "clients": [
-        "WV"
-      ]
-    },
-    {
-      "text": "Mantener comunicación continua por Discord y WhatsApp con soporte y ajustes post-evento",
-      "account": "WV",
-      "project": "HND",
-      "tag": "HND",
-      "tagClass": "tag-wv",
-      "owner": "Luis Gonzalez",
-      "clients": [
-        "WV"
-      ]
-    },
-    {
       "text": "Implementar workflows para nutriciones por correo electrónico",
       "account": "WV",
       "project": "HND",
@@ -88,7 +33,8 @@ const TASKS = {
       "owner": "Luis Gonzalez",
       "clients": [
         "WV"
-      ]
+      ],
+      "isCompleted": true
     },
     {
       "text": "Subir datos de donantes y realizar primer contacto esta semana",
@@ -99,7 +45,8 @@ const TASKS = {
       "owner": "Luis Gonzalez",
       "clients": [
         "WV"
-      ]
+      ],
+      "isCompleted": true
     },
     {
       "text": "Obtener aprobación del presupuesto para lanzar campaña en Meta",
@@ -110,7 +57,8 @@ const TASKS = {
       "owner": "Luis Gonzalez",
       "clients": [
         "WV"
-      ]
+      ],
+      "isCompleted": true
     },
     {
       "text": "Realizar cambios recomendados por Pablo en Google Ads para la campaña Wash",
@@ -121,7 +69,8 @@ const TASKS = {
       "owner": "Luis Gonzalez",
       "clients": [
         "WV"
-      ]
+      ],
+      "isCompleted": true
     },
     {
       "text": "Compartir enlace del calendario a todos los participantes para asegurar acceso a la reunión",
@@ -256,7 +205,7 @@ const TASKS = {
       ]
     },
     {
-      "text": "Añadir iconos de seguridad PCI DSS y Visa en landing page para aumentar confianza del donante",
+      "text": "Agregar íconos de seguridad PCI DSS a landing page y coordinar con Express Pago para incluirlos en pasarela de pagos iframe",
       "account": "WV",
       "project": "RD",
       "tag": "RD",
@@ -267,7 +216,7 @@ const TASKS = {
       ]
     },
     {
-      "text": "Presupuesto Meta aprobado — ajustar y adaptar contenido para lanzar campaña",
+      "text": "Armar campaña en Meta con presupuesto aprobado y solicitar adaptaciones a equipo Root para formatos y videos",
       "account": "WV",
       "project": "RD",
       "tag": "RD",
@@ -278,7 +227,7 @@ const TASKS = {
       ]
     },
     {
-      "text": "Monitoreo post-lanzamiento: ajustes rápidos por Discord y subir data a HubSpot para seguimiento",
+      "text": "Subir información de donantes recientes a HubSpot para monitoreo",
       "account": "WV",
       "project": "RD",
       "tag": "RD",
@@ -289,7 +238,7 @@ const TASKS = {
       ]
     },
     {
-      "text": "Crear plantillas de correos y WhatsApp tras evento actual — comunicación continua por Discord",
+      "text": "Coordinar con Lucy plantillas de correos y mensajes de nutrición post-donación",
       "account": "WV",
       "project": "RD",
       "tag": "RD",
@@ -300,7 +249,7 @@ const TASKS = {
       ]
     },
     {
-      "text": "Integrar iconos de seguridad en pasarela de pago para legitimar proceso de donación",
+      "text": "Mantener comunicación continua por Discord y WhatsApp con soporte y ajustes post-evento",
       "account": "WV",
       "project": "RD",
       "tag": "RD",
