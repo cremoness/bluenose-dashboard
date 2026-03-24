@@ -57,6 +57,14 @@
 - [ ] **[WV RD]** Mantener comunicación continua por Discord y WhatsApp con soporte y ajustes post-evento | Owner: Luis Gonzalez
 
 ### UCSP
+#### Simulador de Pensión
+- [ ] **[UCSP]** César: confirmar con el equipo cuál WordPress se usará para el formulario y evaluar posibles implicancias técnicas | Owner: César
+- [ ] **[UCSP]** César: consultar con Claudia y Renzo aprobación para modificar plantilla WordPress y habilitar ambiente de prueba | Owner: César
+- [ ] **[UCSP]** César: coordinar habilitación del ambiente de prueba con Cristian y equipo BlueNose una vez aprobada la propuesta | Owner: César
+- [ ] **[UCSP]** César: informar a Paul y Jorge sobre fecha de habilitación del ambiente de prueba para actualizar planificación | Owner: César
+- [ ] **[UCSP]** Cristian: apoyar en creación y pruebas del formulario en WordPress, crear página de ejemplo para evitar impactos en producción | Owner: Cristian
+- [ ] **[UCSP]** Cristian: proporcionar documentación del API al equipo de base de datos para envío y recepción de datos | Owner: Cristian
+
 #### Mi Propósito
 
 #### Cobranzas
