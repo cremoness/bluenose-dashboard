@@ -21,7 +21,7 @@
 - [x] **[WV HND]** Coordinar con Lucy la creación y optimización de correos para nutriciones y agradecimientos | Owner: Luis Gonzalez
 - [ ] **[WV HND]** Subir datos de donantes y realizar primer contacto esta semana | Owner: Luis Gonzalez
 - [x] **[WV HND]** Obtener aprobación del presupuesto para lanzar campaña en Meta | Owner: Luis Gonzalez
-- [ ] **[WV HND]** Realizar cambios recomendados por Pablo en Google Ads para la campaña Wash | Owner: Luis Gonzalez
+- [x] **[WV HND]** Realizar cambios recomendados por Pablo en Google Ads para la campaña Wash | Owner: Luis Gonzalez
 
 ### WV España
 #### Migración
