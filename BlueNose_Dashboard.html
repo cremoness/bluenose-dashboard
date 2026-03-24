@@ -286,6 +286,15 @@
   }
   .task-card:hover .task-edit-btn { opacity: 1; }
   .task-edit-btn:hover { background: rgba(99,102,241,0.2); border-color: rgba(99,102,241,0.4); }
+  .task-del-btn {
+    position: absolute; top: 10px; right: 84px;
+    padding: 4px 10px; border-radius: 6px; font-size: 10px; font-weight: 700;
+    background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.2);
+    color: #f87171; cursor: pointer; transition: all 0.2s;
+    opacity: 0; font-family: 'Inter', sans-serif;
+  }
+  .task-card:hover .task-del-btn { opacity: 1; }
+  .task-del-btn:hover { background: rgba(239,68,68,0.2); border-color: rgba(239,68,68,0.4); }
 
   /* ── EDIT PANEL (inline) ── */
   .task-edit-panel {
@@ -643,6 +652,7 @@ function renderTaskCard(t, section, idx) {
 
   const forcedDone=data.isCompleted?'data-forced-done="true"':'';
   const editPanel = section !== 'done' ? `
+    <button class="task-del-btn" onclick="event.stopPropagation();deleteTask('${id}', this.closest('.task-card'))">🗑 Eliminar</button>
     <button class="task-edit-btn" onclick="event.stopPropagation();toggleEdit('${id}')">✏️ Editar</button>
     <div class="task-edit-panel" id="edit-${id}">
       <span class="edit-label">Owner:</span>
@@ -696,6 +706,59 @@ function saveEdit(id) {
   // Re-render
   renderAll();
   filterTasks();
+}
+
+async function deleteTask(id, el) {
+  if (!confirm('¿Eliminar esta tarea de TASKS.md?\nEsta acción no se puede deshacer.')) return;
+  const token = localStorage.getItem('gh-token');
+  if (!token) { showToast('Configura tu token GitHub primero ⚙', 'err'); openSettings(); return; }
+  const taskText = el.querySelector('.task-text')?.textContent?.trim() || '';
+  updateSyncDot('syncing');
+  try {
+    const metaRes = await fetch(
+      `https://api.github.com/repos/${GH_REPO}/contents/${GH_FILE}`,
+      { headers: { Authorization: `token ${token}`, Accept: 'application/vnd.github.v3+json' } }
+    );
+    if (!metaRes.ok) throw new Error(`GitHub API ${metaRes.status}`);
+    const meta = await metaRes.json();
+    const bytes = Uint8Array.from(atob(meta.content.replace(/\n/g,'')), c => c.charCodeAt(0));
+    const currentContent = new TextDecoder('utf-8').decode(bytes);
+    const normalized = taskText.replace(/\s+/g,' ').trim().toLowerCase();
+    const lines = currentContent.split('\n');
+    let removed = false;
+    const newLines = lines.filter(line => {
+      if (!/^\s*- \[[ x]\]/.test(line)) return true;
+      const rawText = line
+        .replace(/^\s*- \[[ x]\]\s*/,'')
+        .replace(/\*\*\[.*?\]\*\*\s*/g,'')
+        .replace(/\| Owner:.*/,'')
+        .replace(/\s+/g,' ').trim().toLowerCase();
+      if (rawText === normalized) { removed = true; return false; }
+      return true;
+    });
+    if (removed) {
+      const utf8Bytes = new TextEncoder().encode(newLines.join('\n'));
+      const newB64 = btoa(String.fromCharCode(...utf8Bytes));
+      const pushRes = await fetch(
+        `https://api.github.com/repos/${GH_REPO}/contents/${GH_FILE}`,
+        {
+          method: 'PUT',
+          headers: { Authorization: `token ${token}`, Accept: 'application/vnd.github.v3+json', 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message: 'dashboard: delete task [skip ci]', content: newB64, sha: meta.sha })
+        }
+      );
+      if (!pushRes.ok) { const e = await pushRes.json(); throw new Error(e.message || pushRes.status); }
+    }
+    el.style.transition = 'opacity 0.3s, transform 0.3s';
+    el.style.opacity = '0'; el.style.transform = 'scale(0.95)';
+    setTimeout(() => { el.remove(); renderKPIs(); updateVisibleCounts(); }, 320);
+    updateSyncDot('ok');
+    showToast(removed ? 'Tarea eliminada de TASKS.md ✓' : 'Eliminada localmente (no encontrada en GitHub)', 'ok');
+  } catch(e) {
+    console.error('Delete error:', e);
+    updateSyncDot('err');
+    showToast('Error al eliminar: ' + e.message, 'err');
+  }
 }
 
 function toggleTaskDone(id, el) {
