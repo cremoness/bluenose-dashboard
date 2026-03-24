@@ -73,6 +73,72 @@ const TASKS = {
       "isCompleted": true
     },
     {
+      "text": "Implementar landing page y flujos para convertir donantes únicos en mensuales mediante correos personalizados",
+      "account": "WV",
+      "project": "HND",
+      "tag": "HND",
+      "tagClass": "tag-wv",
+      "owner": "Luis Gonzalez",
+      "clients": [
+        "WV"
+      ]
+    },
+    {
+      "text": "Agregar íconos de seguridad PCI DSS a landing page y coordinar con Express Pago para incluirlos en pasarela de pagos iframe",
+      "account": "WV",
+      "project": "HND",
+      "tag": "HND",
+      "tagClass": "tag-wv",
+      "owner": "Luis Gonzalez",
+      "clients": [
+        "WV"
+      ]
+    },
+    {
+      "text": "Armar campaña en Meta con presupuesto aprobado y solicitar adaptaciones a equipo Root para formatos y videos",
+      "account": "WV",
+      "project": "HND",
+      "tag": "HND",
+      "tagClass": "tag-wv",
+      "owner": "Luis Gonzalez",
+      "clients": [
+        "WV"
+      ]
+    },
+    {
+      "text": "Subir información de donantes recientes a HubSpot para monitoreo",
+      "account": "WV",
+      "project": "HND",
+      "tag": "HND",
+      "tagClass": "tag-wv",
+      "owner": "Luis Gonzalez",
+      "clients": [
+        "WV"
+      ]
+    },
+    {
+      "text": "Coordinar con Lucy plantillas de correos y mensajes de nutrición post-donación",
+      "account": "WV",
+      "project": "HND",
+      "tag": "HND",
+      "tagClass": "tag-wv",
+      "owner": "Luis Gonzalez",
+      "clients": [
+        "WV"
+      ]
+    },
+    {
+      "text": "Mantener comunicación continua por Discord y WhatsApp con soporte y ajustes post-evento",
+      "account": "WV",
+      "project": "HND",
+      "tag": "HND",
+      "tagClass": "tag-wv",
+      "owner": "Luis Gonzalez",
+      "clients": [
+        "WV"
+      ]
+    },
+    {
       "text": "Compartir enlace del calendario a todos los participantes para asegurar acceso a la reunión",
       "account": "WV",
       "project": "ES",
@@ -189,72 +255,6 @@ const TASKS = {
       "tag": "CL",
       "tagClass": "tag-wv",
       "owner": "Gonzalo",
-      "clients": [
-        "WV"
-      ]
-    },
-    {
-      "text": "Implementar landing page y flujos para convertir donantes únicos en mensuales mediante correos personalizados",
-      "account": "WV",
-      "project": "RD",
-      "tag": "RD",
-      "tagClass": "tag-wv",
-      "owner": "Luis Gonzalez",
-      "clients": [
-        "WV"
-      ]
-    },
-    {
-      "text": "Agregar íconos de seguridad PCI DSS a landing page y coordinar con Express Pago para incluirlos en pasarela de pagos iframe",
-      "account": "WV",
-      "project": "RD",
-      "tag": "RD",
-      "tagClass": "tag-wv",
-      "owner": "Luis Gonzalez",
-      "clients": [
-        "WV"
-      ]
-    },
-    {
-      "text": "Armar campaña en Meta con presupuesto aprobado y solicitar adaptaciones a equipo Root para formatos y videos",
-      "account": "WV",
-      "project": "RD",
-      "tag": "RD",
-      "tagClass": "tag-wv",
-      "owner": "Luis Gonzalez",
-      "clients": [
-        "WV"
-      ]
-    },
-    {
-      "text": "Subir información de donantes recientes a HubSpot para monitoreo",
-      "account": "WV",
-      "project": "RD",
-      "tag": "RD",
-      "tagClass": "tag-wv",
-      "owner": "Luis Gonzalez",
-      "clients": [
-        "WV"
-      ]
-    },
-    {
-      "text": "Coordinar con Lucy plantillas de correos y mensajes de nutrición post-donación",
-      "account": "WV",
-      "project": "RD",
-      "tag": "RD",
-      "tagClass": "tag-wv",
-      "owner": "Luis Gonzalez",
-      "clients": [
-        "WV"
-      ]
-    },
-    {
-      "text": "Mantener comunicación continua por Discord y WhatsApp con soporte y ajustes post-evento",
-      "account": "WV",
-      "project": "RD",
-      "tag": "RD",
-      "tagClass": "tag-wv",
-      "owner": "Luis Gonzalez",
       "clients": [
         "WV"
       ]
