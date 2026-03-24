@@ -343,6 +343,10 @@
       <button class="btn-ghost" onclick="closeSettings()">Cancelar</button>
       <button class="btn-primary" onclick="saveToken()">Guardar</button>
     </div>
+    <hr style="border:none;border-top:1px solid #1e3a5f;margin:20px 0;">
+    <div class="modal-label">Caché local</div>
+    <div class="modal-sub" style="margin-bottom:12px;">Borra todas las tareas marcadas, aprobadas y rechazadas guardadas en este navegador. Útil tras un reset del dashboard.</div>
+    <button class="btn-ghost" style="color:#ef4444;border-color:#7f1d1d;width:100%;" onclick="resetLocalCache()">🗑 Limpiar caché del navegador</button>
   </div>
 </div>
 
@@ -847,6 +851,12 @@ function clearToken() {
   localStorage.removeItem('gh-token');
   document.getElementById('gh-token-input').value = '';
   showToast('Token eliminado', 'ok');
+}
+function resetLocalCache() {
+  ['pm-done','pm-approved','pm-rejected','pm-edits'].forEach(k => localStorage.removeItem(k));
+  closeSettings();
+  showToast('Caché limpiada — recargando...', 'ok');
+  setTimeout(() => location.reload(), 1200);
 }
 
 let _toastTimer;
