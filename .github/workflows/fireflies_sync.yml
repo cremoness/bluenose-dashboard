@@ -9,8 +9,9 @@ on:
     types: [fireflies_transcript]
 
   # ── Revisión automática cada 30 minutos (días de semana) ────────────────────
-  schedule:
-    - cron: "*/30 7-22 * * 1-5"   # Cada 30 min, 7am-10pm, lunes a viernes (UTC)
+  # PAUSADO — reactivar cuando se quiera sync automático
+  # schedule:
+  #   - cron: "*/30 7-22 * * 1-5"   # Cada 30 min, 7am-10pm, lunes a viernes (UTC)
 
   # ── Trigger manual desde GitHub Actions ─────────────────────────────────────
   workflow_dispatch:
