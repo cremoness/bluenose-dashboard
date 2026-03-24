@@ -14,6 +14,102 @@ const TASKS = {
   ],
   "semana": [
     {
+      "text": "Luis Gustavo Gonzalez**",
+      "account": "WV",
+      "project": "General",
+      "tag": "WV",
+      "tagClass": "tag-wv",
+      "owner": "Luis",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "Consultar con su equipo si Ruth y Luci se integran para completar el equipo (07:35)",
+      "account": "WV",
+      "project": "General",
+      "tag": "WV",
+      "tagClass": "tag-wv",
+      "owner": "Ángelito",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "Agregar íconos de seguridad (como PCI DSS) a la landing page y coordinar con Express Pago para incluirlos en la pasarela de pagos iframe (11:14)",
+      "account": "WV",
+      "project": "General",
+      "tag": "WV",
+      "tagClass": "tag-wv",
+      "owner": "Ángelito",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "Coordinar con Luz para creación y optimización de plantillas de correos y mensajes de nutrición post-donación (11:53)",
+      "account": "WV",
+      "project": "General",
+      "tag": "WV",
+      "tagClass": "tag-wv",
+      "owner": "Ángelito",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "Armar la campaña en Meta con presupuesto aprobado y solicitar adaptaciones a equipo Root para formatos y videos (12:39)",
+      "account": "WV",
+      "project": "General",
+      "tag": "WV",
+      "tagClass": "tag-wv",
+      "owner": "Ángelito",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "Subir información de donantes recientes a HubSpot para monitoreo (13:32)",
+      "account": "WV",
+      "project": "General",
+      "tag": "WV",
+      "tagClass": "tag-wv",
+      "owner": "Ángelito",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "Mantener comunicación constante para soporte y ajustes vía Discord y WhatsApp y comunicar avances post-evento (14:22)",
+      "account": "WV",
+      "project": "General",
+      "tag": "WV",
+      "tagClass": "tag-wv",
+      "owner": "Ángelito",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "Comunicaciones BN**",
+      "account": "WV",
+      "project": "General",
+      "tag": "WV",
+      "tagClass": "tag-wv",
+      "owner": "Ángelito",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
       "text": "Esther Solera Suárez**",
       "account": "WV",
       "project": "General",
