@@ -1,5 +1,5 @@
 # TASKS — Ángelito Chanamé
-> Última actualización: 2026-03-24 | Reunión Fireflies: Reunión BN - World Vision España 24.03
+> Última actualización: 2026-03-24 | Reunión Fireflies: WV HN | Estatus semanal Smartimper | Blue Nose 24.03
 
 ---
 
@@ -12,6 +12,14 @@
 ## 🟡 PRÓXIMAS / Esta semana
 
 ### WV Honduras
+- [ ] **[WV 🆕 24.03]** Luis Gustavo Gonzalez** | Owner: Luis
+- [ ] **[WV 🆕 24.03]** Consultar con su equipo si Ruth y Luci se integran para completar el equipo (07:35) | Owner: Ángelito
+- [ ] **[WV 🆕 24.03]** Agregar íconos de seguridad (como PCI DSS) a la landing page y coordinar con Express Pago para incluirlos en la pasarela de pagos iframe (11:14) | Owner: Ángelito
+- [ ] **[WV 🆕 24.03]** Coordinar con Luz para creación y optimización de plantillas de correos y mensajes de nutrición post-donación (11:53) | Owner: Ángelito
+- [ ] **[WV 🆕 24.03]** Armar la campaña en Meta con presupuesto aprobado y solicitar adaptaciones a equipo Root para formatos y videos (12:39) | Owner: Ángelito
+- [ ] **[WV 🆕 24.03]** Subir información de donantes recientes a HubSpot para monitoreo (13:32) | Owner: Ángelito
+- [ ] **[WV 🆕 24.03]** Mantener comunicación constante para soporte y ajustes vía Discord y WhatsApp y comunicar avances post-evento (14:22) | Owner: Ángelito
+- [ ] **[WV 🆕 24.03]** Comunicaciones BN** | Owner: Ángelito
 - [ ] **[WV 🆕 24.03]** Esther Solera Suárez** | Owner: Ángelito
 - [ ] **[WV 🆕 24.03]** Compartir el enlace del calendario a todos los participantes para asegurar acceso a la reunión (05:15) | Owner: Ángelito
 - [ ] **[WV 🆕 24.03]** Revisar manualmente el listado de negocios asociados a más de dos contactos para validar asociación correcta y enviar reporte a Sofía (06:12) | Owner: Sofía
