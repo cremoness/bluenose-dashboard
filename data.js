@@ -35,3 +35,397 @@ const TASKS = {
     }
   ]
 };
+
+const TEAM_BN = [
+  {
+    "id": "enrique",
+    "name": "Enrique",
+    "role": "Socio y estratega",
+    "color": "#818cf8"
+  },
+  {
+    "id": "pablo",
+    "name": "Pablo",
+    "role": "Socio, líder tecnología",
+    "color": "#60a5fa"
+  },
+  {
+    "id": "cristian",
+    "name": "Cristian",
+    "role": "Backend y soporte técnico",
+    "color": "#34d399"
+  },
+  {
+    "id": "marcos",
+    "name": "Marcos",
+    "role": "Especialista en CRMs",
+    "color": "#fb923c"
+  },
+  {
+    "id": "angelm",
+    "name": "Angel M.",
+    "role": "Soporte técnico",
+    "color": "#fbbf24"
+  },
+  {
+    "id": "angelito",
+    "name": "Ángelito",
+    "role": "Project manager y creativo",
+    "color": "#c084fc"
+  }
+];
+
+const CLIENT_DIR = [
+  {
+    "client": "Smartimper",
+    "name": "Valdric Tardós",
+    "email": "valdric@smartimper.mx",
+    "phone": "+52 55 3097 4266",
+    "role": "CEO",
+    "canal": "Discord"
+  },
+  {
+    "client": "WV RD",
+    "name": "Juan Benalcazar",
+    "email": "juan_benalcazar@wvi.org",
+    "phone": "+593 99 650 6506",
+    "role": "Coordinador Marketing Digital",
+    "canal": "Discord"
+  },
+  {
+    "client": "WV RD",
+    "name": "Johmara Vargas",
+    "email": "johmara_vargas@wvi.org",
+    "phone": "+593 98 343 3403",
+    "role": "Gerente de Marketing (secondment)",
+    "canal": "Urgencias WP"
+  },
+  {
+    "client": "WV RD",
+    "name": "Erick Urbaez",
+    "email": "erick_urbaez@wvi.org",
+    "phone": "",
+    "role": "Creador de Contenido y Community Manager",
+    "canal": "Discord"
+  },
+  {
+    "client": "WV RD",
+    "name": "Argenis Perez",
+    "email": "argenis_perez@wvi.org",
+    "phone": "",
+    "role": "Asesor Regional",
+    "canal": "Discord"
+  },
+  {
+    "client": "WV RD",
+    "name": "Juan Plata",
+    "email": "Juan_Plata@wvi.org",
+    "phone": "",
+    "role": "Atención al cliente",
+    "canal": "Discord"
+  },
+  {
+    "client": "WV HN",
+    "name": "Luis Gonzalez",
+    "email": "luis_gonzalez_rivera@wvi.org",
+    "phone": "+504 8992-7483",
+    "role": "Marketing Specialist",
+    "canal": "Discord y WP"
+  },
+  {
+    "client": "WV HN",
+    "name": "Ruth Juarez",
+    "email": "ruth_juarez@wvi.org",
+    "phone": "",
+    "role": "Gerente Marketing y Comunicaciones",
+    "canal": "Correo"
+  },
+  {
+    "client": "WV HN",
+    "name": "Andrea Medina",
+    "email": "andrea_medina@wvi.org",
+    "phone": "",
+    "role": "Specialist, Private Sector GAM-Grants Acquisition",
+    "canal": "Correo"
+  },
+  {
+    "client": "WV HN",
+    "name": "Lucy Ramos",
+    "email": "lucymramos2001@gmail.com",
+    "phone": "",
+    "role": "",
+    "canal": "Correo"
+  },
+  {
+    "client": "WV HN",
+    "name": "Abigail Gonzalez",
+    "email": "abigail_gonzalez@wvi.org",
+    "phone": "",
+    "role": "",
+    "canal": ""
+  },
+  {
+    "client": "WV ES",
+    "name": "Isabel Iglesias",
+    "email": "Isabel_Iglesias@wvi.org",
+    "phone": "",
+    "role": "Marketing & Fundraising",
+    "canal": "Discord"
+  },
+  {
+    "client": "WV ES",
+    "name": "Esther Solera",
+    "email": "Esther_Solera@wvi.org",
+    "phone": "",
+    "role": "Coordinadora de CRS y Donantes Estratégicos",
+    "canal": "Discord"
+  },
+  {
+    "client": "WV ES",
+    "name": "Jesús Trejo",
+    "email": "Jesus_Trejo@wvi.org",
+    "phone": "",
+    "role": "Captación Digital",
+    "canal": "Discord"
+  },
+  {
+    "client": "WV ES",
+    "name": "Jeison Peña",
+    "email": "jeison_pena@wvi.org",
+    "phone": "",
+    "role": "Captación Digital",
+    "canal": "Discord"
+  },
+  {
+    "client": "WV ES",
+    "name": "Mario Gomez",
+    "email": "Mario_Gomez@wvi.org",
+    "phone": "",
+    "role": "Telemarketing",
+    "canal": "Discord"
+  },
+  {
+    "client": "WV ES",
+    "name": "Nieves Carabana",
+    "email": "Nieves_Carabana@wvi.org",
+    "phone": "",
+    "role": "Iglesias",
+    "canal": "Discord"
+  },
+  {
+    "client": "WV ES",
+    "name": "Vicente Aceituno",
+    "email": "Vicente_Aceituno@wvi.org",
+    "phone": "",
+    "role": "Finance Manager",
+    "canal": "Discord y Correo"
+  },
+  {
+    "client": "WV Región",
+    "name": "Jorge Girón",
+    "email": "jorge_giron@wvi.com",
+    "phone": "+504 3175-6818",
+    "role": "IT Business Partner, Global Technology & Digital Solutions",
+    "canal": "Discord y WP"
+  },
+  {
+    "client": "WV CL",
+    "name": "Gonzalo Macaya",
+    "email": "gonzalo_macaya@wvi.org",
+    "phone": "+56 9 6120 8842",
+    "role": "Gerente de Fundraising y Fidelización",
+    "canal": "Discord + Correo + WhatsApp"
+  },
+  {
+    "client": "WV CL",
+    "name": "Diana Sanchez",
+    "email": "diana_sanchez@wvi.org",
+    "phone": "",
+    "role": "Coordinadora de Growth Marketing",
+    "canal": "Discord"
+  },
+  {
+    "client": "WV CL",
+    "name": "Paola Pineda",
+    "email": "nidia_pineda@wvi.org",
+    "phone": "",
+    "role": "",
+    "canal": "Discord"
+  },
+  {
+    "client": "WV CL",
+    "name": "Yesenia Soto",
+    "email": "yessenia_soto@wvi.org",
+    "phone": "",
+    "role": "Coordinadora de Telemarketing",
+    "canal": "Discord + Correo"
+  },
+  {
+    "client": "WV CL",
+    "name": "Ornella Baldi",
+    "email": "ornella_baldi@wvi.org",
+    "phone": "",
+    "role": "Analista Comercial",
+    "canal": "Discord"
+  },
+  {
+    "client": "WV BR",
+    "name": "Rodrigo Flaire",
+    "email": "rodrigo_flaire@wvi.org",
+    "phone": "+55 11 91622 042",
+    "role": "Fundraising e Innovación",
+    "canal": "Correo + WhatsApp"
+  },
+  {
+    "client": "WV EC",
+    "name": "Johmara Vargas",
+    "email": "johmara_vargas@wvi.org",
+    "phone": "",
+    "role": "Coordinadora de Marketing & Fundraising",
+    "canal": "Discord"
+  },
+  {
+    "client": "WV EC",
+    "name": "Juan Benalcazar",
+    "email": "juan_benalcazar@wvi.org",
+    "phone": "",
+    "role": "Coordinador Marketing Digital",
+    "canal": "Discord"
+  },
+  {
+    "client": "WV EC",
+    "name": "Valeria Yanza",
+    "email": "martha_yanza@wvi.org",
+    "phone": "",
+    "role": "Analista de Cobranzas al Donante",
+    "canal": "Discord"
+  },
+  {
+    "client": "WV PE",
+    "name": "Alejandra Barcena",
+    "email": "alejandra_barcena_navarro@wvi.org",
+    "phone": "+51 948 706 384",
+    "role": "Coordinadora Nacional de Donantes Individuales",
+    "canal": "Correo"
+  },
+  {
+    "client": "WV PE",
+    "name": "María Regalado",
+    "email": "maria_regalado_baldeon@wvi.org",
+    "phone": "",
+    "role": "Asistente de Atención y Fidelización al Donante",
+    "canal": "Correo"
+  },
+  {
+    "client": "WV PE",
+    "name": "Aaron Mescco",
+    "email": "aaron_mescco_yupanqui@wvi.org",
+    "phone": "",
+    "role": "Analista de Afiliación y Cobranzas",
+    "canal": "Correo"
+  },
+  {
+    "client": "WV CR",
+    "name": "Rosy Arce",
+    "email": "rosy_arce@wvi.org",
+    "phone": "",
+    "role": "Supervisora de Marketing Digital y Comunicaciones",
+    "canal": "Discord"
+  },
+  {
+    "client": "UCSP",
+    "name": "Renzo Bravo",
+    "email": "rbravo@ucsp.edu.pe",
+    "phone": "+51 958 343 534",
+    "role": "Director de Marketing",
+    "canal": "WhatsApp + Correo"
+  },
+  {
+    "client": "UCSP",
+    "name": "Cinthia Llaza",
+    "email": "cllaza@ucsp.edu.pe",
+    "phone": "+51 958 099 336",
+    "role": "Analista de Marketing",
+    "canal": "WhatsApp + Correo"
+  },
+  {
+    "client": "UCSP",
+    "name": "Paolo Garate",
+    "email": "prgarate@ucsp.edu.pe",
+    "phone": "+51 991 581 900",
+    "role": "Analista Diseño Gráfico",
+    "canal": "WhatsApp + Correo"
+  },
+  {
+    "client": "UCSP",
+    "name": "Romina Ampuero",
+    "email": "rampuero@ucsp.edu.pe",
+    "phone": "+51 980 730 973",
+    "role": "Auxiliar de Marketing",
+    "canal": "WhatsApp + Correo"
+  },
+  {
+    "client": "UCSP",
+    "name": "Alonso Ugarte",
+    "email": "amugarte@ucsp.edu.pe",
+    "phone": "+51 932 122 285",
+    "role": "Jefe de Ventas Pregrado",
+    "canal": "WhatsApp + Correo"
+  },
+  {
+    "client": "UCSP",
+    "name": "Fernando Herrera",
+    "email": "fmherrera@ucsp.edu.pe",
+    "phone": "+51 959 771 727",
+    "role": "Analista de Marketing Postgrado",
+    "canal": "WhatsApp + Correo"
+  },
+  {
+    "client": "UCSP",
+    "name": "Pablo Gonzales",
+    "email": "prgonzales@ucsp.edu.pe",
+    "phone": "",
+    "role": "Director Centro de Idiomas",
+    "canal": "Correo"
+  },
+  {
+    "client": "UCSP",
+    "name": "Claudia Tapia",
+    "email": "ctapiap@ucsp.edu.pe",
+    "phone": "",
+    "role": "Coordinadora de Marketing Digital",
+    "canal": "Correo + Discord"
+  },
+  {
+    "client": "UCSP",
+    "name": "César Mogrovejo",
+    "email": "camogrovejo@ucsp.edu.pe",
+    "phone": "",
+    "role": "Analista de Marketing Digital",
+    "canal": "Correo + Discord"
+  },
+  {
+    "client": "UPSJB",
+    "name": "Carlos Urquiaga",
+    "email": "CARLOS.URQUIAGA@UPSJB.EDU.PE",
+    "phone": "",
+    "role": "Director Comercial",
+    "canal": "Correo + Discord"
+  },
+  {
+    "client": "UPSJB",
+    "name": "Estuardo Escobar",
+    "email": "ESTUARDO.ESCOBAR@UPSJB.EDU.PE",
+    "phone": "+51 986 886 825",
+    "role": "Jefe de Marketing",
+    "canal": "Correo + Discord"
+  },
+  {
+    "client": "UPSJB",
+    "name": "Edgar Mendoza",
+    "email": "EDGARE.MENDOZA@upsjb.edu.pe",
+    "phone": "",
+    "role": "Gerente General",
+    "canal": "Correo + Discord"
+  }
+];
