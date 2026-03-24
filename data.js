@@ -14,6 +14,90 @@ const TASKS = {
   ],
   "semana": [
     {
+      "text": "Esther Solera Suárez**",
+      "account": "WV",
+      "project": "General",
+      "tag": "WV",
+      "tagClass": "tag-wv",
+      "owner": "Ángelito",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "Compartir el enlace del calendario a todos los participantes para asegurar acceso a la reunión (05:15)",
+      "account": "WV",
+      "project": "General",
+      "tag": "WV",
+      "tagClass": "tag-wv",
+      "owner": "Ángelito",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "Revisar manualmente el listado de negocios asociados a más de dos contactos para validar asociación correcta y enviar reporte a Sofía (06:12)",
+      "account": "WV",
+      "project": "General",
+      "tag": "WV",
+      "tagClass": "tag-wv",
+      "owner": "Sofía",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "Crear y gestionar grabación de la reunión en Teams para preservar registro completo de la sesión (20:01)",
+      "account": "WV",
+      "project": "General",
+      "tag": "WV",
+      "tagClass": "tag-wv",
+      "owner": "Ángelito",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "Isa Iglesias**",
+      "account": "WV",
+      "project": "General",
+      "tag": "WV",
+      "tagClass": "tag-wv",
+      "owner": "Ángelito",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "Confirmar los nombres y detalles precisos para las etiquetas de pagador y sponsor para su creación y uso en automatizaciones (09:33)",
+      "account": "WV",
+      "project": "General",
+      "tag": "WV",
+      "tagClass": "tag-wv",
+      "owner": "Ángelito",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "Continuar desarrollando y compartiendo el modelo de datos en HubSpot incluyendo detalles sobre asociaciones y propiedades (11:40)",
+      "account": "WV",
+      "project": "General",
+      "tag": "WV",
+      "tagClass": "tag-wv",
+      "owner": "Ángelito",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
       "text": "Implementar workflows para nutriciones por correo electrónico",
       "account": "WV",
       "project": "HND",
