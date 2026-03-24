@@ -1,5 +1,17 @@
 const TASKS = {
-  "urgente": [],
+  "urgente": [
+    {
+      "text": "Enrique + Pablo: análisis de gestión de leads campaña examen domingo — 11k impactados, 5k aperturas, 325 respuestas, 95% sin gestión comercial. Campaña de emergencia WhatsApp en marcha. Esperar número exacto de matriculados el miércoles",
+      "account": "UPSJB",
+      "project": "General",
+      "tag": "UPSJB",
+      "tagClass": "tag-up",
+      "owner": "Enrique + Pablo",
+      "clients": [
+        "UPSJB"
+      ]
+    }
+  ],
   "semana": [
     {
       "text": "Implementar workflows para nutriciones por correo electrónico",
@@ -131,6 +143,83 @@ const TASKS = {
       "owner": "Gonzalo",
       "clients": [
         "WV"
+      ]
+    },
+    {
+      "text": "Estuardo: enviar buyer persona de padres de Lima para validación del equipo",
+      "account": "UPSJB",
+      "project": "General",
+      "tag": "UPSJB",
+      "tagClass": "tag-up",
+      "owner": "Estuardo",
+      "clients": [
+        "UPSJB"
+      ]
+    },
+    {
+      "text": "Estuardo + Carlos: confirmar viabilidad e implementación de registro digital de asistencia en ferias de padres",
+      "account": "UPSJB",
+      "project": "General",
+      "tag": "UPSJB",
+      "tagClass": "tag-up",
+      "owner": "Estuardo + Carlos",
+      "clients": [
+        "UPSJB"
+      ]
+    },
+    {
+      "text": "Estuardo: confirmar si mejoras de flujo de nutrición 2026-2 ya fueron implementadas y compartir estructura del flujo (segmentación por comportamiento, presencial y a distancia)",
+      "account": "UPSJB",
+      "project": "General",
+      "tag": "UPSJB",
+      "tagClass": "tag-up",
+      "owner": "Estuardo",
+      "clients": [
+        "UPSJB"
+      ]
+    },
+    {
+      "text": "Estuardo: enviar estrategia de marketing por carrera para revisión estratégica",
+      "account": "UPSJB",
+      "project": "General",
+      "tag": "UPSJB",
+      "tagClass": "tag-up",
+      "owner": "Estuardo",
+      "clients": [
+        "UPSJB"
+      ]
+    },
+    {
+      "text": "Carlos: completar depuración de registros duplicados en HubSpot — negocios huérfanos y cautivos ya limpios, falta duplicados en distintas etapas del embudo",
+      "account": "UPSJB",
+      "project": "General",
+      "tag": "UPSJB",
+      "tagClass": "tag-up",
+      "owner": "Carlos",
+      "clients": [
+        "UPSJB"
+      ]
+    },
+    {
+      "text": "Carlos: confirmar con consultora Atom novedades sobre entrega del MVP — Pablo indica que ya deberían estar entregando la implementación",
+      "account": "UPSJB",
+      "project": "General",
+      "tag": "UPSJB",
+      "tagClass": "tag-up",
+      "owner": "Carlos",
+      "clients": [
+        "UPSJB"
+      ]
+    },
+    {
+      "text": "Carlos: socializar internamente el estudio de mercado de Administración y Contabilidad y remitir a Blue Nose para evaluación",
+      "account": "UPSJB",
+      "project": "General",
+      "tag": "UPSJB",
+      "tagClass": "tag-up",
+      "owner": "Carlos",
+      "clients": [
+        "UPSJB"
       ]
     }
   ],

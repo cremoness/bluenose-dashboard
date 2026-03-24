@@ -1,11 +1,11 @@
 # TASKS — Ángelito Chanamé
-> Última actualización: 2026-03-23 | Tareas WV Honduras + WV España
+> Última actualización: 2026-03-23 | +UPSJB 8 tareas
 
 ---
 
 ## 🔴 URGENTE / Hoy mismo
 
-
+- [ ] **[UPSJB]** Enrique + Pablo: análisis de gestión de leads campaña examen domingo — 11k impactados, 5k aperturas, 325 respuestas, 95% sin gestión comercial. Campaña de emergencia WhatsApp en marcha. Esperar número exacto de matriculados el miércoles | Owner: Enrique + Pablo
 
 ---
 
@@ -64,6 +64,13 @@
 #### CENDES
 
 ### UPSJB
+- [ ] **[UPSJB]** Estuardo: enviar buyer persona de padres de Lima para validación del equipo | Owner: Estuardo
+- [ ] **[UPSJB]** Estuardo + Carlos: confirmar viabilidad e implementación de registro digital de asistencia en ferias de padres | Owner: Estuardo + Carlos
+- [ ] **[UPSJB]** Estuardo: confirmar si mejoras de flujo de nutrición 2026-2 ya fueron implementadas y compartir estructura del flujo (segmentación por comportamiento, presencial y a distancia) | Owner: Estuardo
+- [ ] **[UPSJB]** Estuardo: enviar estrategia de marketing por carrera para revisión estratégica | Owner: Estuardo
+- [ ] **[UPSJB]** Carlos: completar depuración de registros duplicados en HubSpot — negocios huérfanos y cautivos ya limpios, falta duplicados en distintas etapas del embudo | Owner: Carlos
+- [ ] **[UPSJB]** Carlos: confirmar con consultora Atom novedades sobre entrega del MVP — Pablo indica que ya deberían estar entregando la implementación | Owner: Carlos
+- [ ] **[UPSJB]** Carlos: socializar internamente el estudio de mercado de Administración y Contabilidad y remitir a Blue Nose para evaluación | Owner: Carlos
 
 ### Smartimper
 
