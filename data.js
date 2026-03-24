@@ -14,184 +14,59 @@ const TASKS = {
   ],
   "semana": [
     {
-      "text": "Luis Gustavo Gonzalez**",
+      "text": "Agregar íconos de seguridad PCI DSS a landing page y coordinar con Express Pago para incluirlos en pasarela de pagos iframe",
       "account": "WV",
-      "project": "General",
-      "tag": "WV",
+      "project": "HND",
+      "tag": "HND",
       "tagClass": "tag-wv",
-      "owner": "Luis",
+      "owner": "Luis Gonzalez",
       "clients": [
         "WV"
-      ],
-      "isNew": true
+      ]
     },
     {
-      "text": "Consultar con su equipo si Ruth y Luci se integran para completar el equipo (07:35)",
+      "text": "Coordinar con Lucy plantillas de correos y mensajes de nutrición post-donación",
       "account": "WV",
-      "project": "General",
-      "tag": "WV",
+      "project": "HND",
+      "tag": "HND",
       "tagClass": "tag-wv",
-      "owner": "Ángelito",
+      "owner": "Luis Gonzalez",
       "clients": [
         "WV"
-      ],
-      "isNew": true
+      ]
     },
     {
-      "text": "Agregar íconos de seguridad (como PCI DSS) a la landing page y coordinar con Express Pago para incluirlos en la pasarela de pagos iframe (11:14)",
+      "text": "Armar campaña en Meta con presupuesto aprobado y solicitar adaptaciones a equipo Root para formatos y videos",
       "account": "WV",
-      "project": "General",
-      "tag": "WV",
+      "project": "HND",
+      "tag": "HND",
       "tagClass": "tag-wv",
-      "owner": "Ángelito",
+      "owner": "Luis Gonzalez",
       "clients": [
         "WV"
-      ],
-      "isNew": true
+      ]
     },
     {
-      "text": "Coordinar con Luz para creación y optimización de plantillas de correos y mensajes de nutrición post-donación (11:53)",
+      "text": "Subir información de donantes recientes a HubSpot para monitoreo",
       "account": "WV",
-      "project": "General",
-      "tag": "WV",
+      "project": "HND",
+      "tag": "HND",
       "tagClass": "tag-wv",
-      "owner": "Ángelito",
+      "owner": "Luis Gonzalez",
       "clients": [
         "WV"
-      ],
-      "isNew": true
+      ]
     },
     {
-      "text": "Armar la campaña en Meta con presupuesto aprobado y solicitar adaptaciones a equipo Root para formatos y videos (12:39)",
+      "text": "Mantener comunicación continua por Discord y WhatsApp con soporte y ajustes post-evento",
       "account": "WV",
-      "project": "General",
-      "tag": "WV",
+      "project": "HND",
+      "tag": "HND",
       "tagClass": "tag-wv",
-      "owner": "Ángelito",
+      "owner": "Luis Gonzalez",
       "clients": [
         "WV"
-      ],
-      "isNew": true
-    },
-    {
-      "text": "Subir información de donantes recientes a HubSpot para monitoreo (13:32)",
-      "account": "WV",
-      "project": "General",
-      "tag": "WV",
-      "tagClass": "tag-wv",
-      "owner": "Ángelito",
-      "clients": [
-        "WV"
-      ],
-      "isNew": true
-    },
-    {
-      "text": "Mantener comunicación constante para soporte y ajustes vía Discord y WhatsApp y comunicar avances post-evento (14:22)",
-      "account": "WV",
-      "project": "General",
-      "tag": "WV",
-      "tagClass": "tag-wv",
-      "owner": "Ángelito",
-      "clients": [
-        "WV"
-      ],
-      "isNew": true
-    },
-    {
-      "text": "Comunicaciones BN**",
-      "account": "WV",
-      "project": "General",
-      "tag": "WV",
-      "tagClass": "tag-wv",
-      "owner": "Ángelito",
-      "clients": [
-        "WV"
-      ],
-      "isNew": true
-    },
-    {
-      "text": "Esther Solera Suárez**",
-      "account": "WV",
-      "project": "General",
-      "tag": "WV",
-      "tagClass": "tag-wv",
-      "owner": "Ángelito",
-      "clients": [
-        "WV"
-      ],
-      "isNew": true
-    },
-    {
-      "text": "Compartir el enlace del calendario a todos los participantes para asegurar acceso a la reunión (05:15)",
-      "account": "WV",
-      "project": "General",
-      "tag": "WV",
-      "tagClass": "tag-wv",
-      "owner": "Ángelito",
-      "clients": [
-        "WV"
-      ],
-      "isNew": true
-    },
-    {
-      "text": "Revisar manualmente el listado de negocios asociados a más de dos contactos para validar asociación correcta y enviar reporte a Sofía (06:12)",
-      "account": "WV",
-      "project": "General",
-      "tag": "WV",
-      "tagClass": "tag-wv",
-      "owner": "Sofía",
-      "clients": [
-        "WV"
-      ],
-      "isNew": true
-    },
-    {
-      "text": "Crear y gestionar grabación de la reunión en Teams para preservar registro completo de la sesión (20:01)",
-      "account": "WV",
-      "project": "General",
-      "tag": "WV",
-      "tagClass": "tag-wv",
-      "owner": "Ángelito",
-      "clients": [
-        "WV"
-      ],
-      "isNew": true
-    },
-    {
-      "text": "Isa Iglesias**",
-      "account": "WV",
-      "project": "General",
-      "tag": "WV",
-      "tagClass": "tag-wv",
-      "owner": "Ángelito",
-      "clients": [
-        "WV"
-      ],
-      "isNew": true
-    },
-    {
-      "text": "Confirmar los nombres y detalles precisos para las etiquetas de pagador y sponsor para su creación y uso en automatizaciones (09:33)",
-      "account": "WV",
-      "project": "General",
-      "tag": "WV",
-      "tagClass": "tag-wv",
-      "owner": "Ángelito",
-      "clients": [
-        "WV"
-      ],
-      "isNew": true
-    },
-    {
-      "text": "Continuar desarrollando y compartiendo el modelo de datos en HubSpot incluyendo detalles sobre asociaciones y propiedades (11:40)",
-      "account": "WV",
-      "project": "General",
-      "tag": "WV",
-      "tagClass": "tag-wv",
-      "owner": "Ángelito",
-      "clients": [
-        "WV"
-      ],
-      "isNew": true
+      ]
     },
     {
       "text": "Implementar workflows para nutriciones por correo electrónico",
@@ -244,6 +119,50 @@ const TASKS = {
       "tag": "HND",
       "tagClass": "tag-wv",
       "owner": "Luis Gonzalez",
+      "clients": [
+        "WV"
+      ]
+    },
+    {
+      "text": "Compartir enlace del calendario a todos los participantes para asegurar acceso a la reunión",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Esther",
+      "clients": [
+        "WV"
+      ]
+    },
+    {
+      "text": "Revisar negocios con más de 2 contactos en HubSpot, validar asociación correcta y enviar reporte a Sofía",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Sofía",
+      "clients": [
+        "WV"
+      ]
+    },
+    {
+      "text": "Confirmar nombres y detalles precisos para etiquetas pagador y sponsor para uso en automatizaciones",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Ángelito",
+      "clients": [
+        "WV"
+      ]
+    },
+    {
+      "text": "Continuar desarrollando modelo de datos en HubSpot con asociaciones y propiedades",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Ángelito",
       "clients": [
         "WV"
       ]

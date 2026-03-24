@@ -12,21 +12,11 @@
 ## 🟡 PRÓXIMAS / Esta semana
 
 ### WV Honduras
-- [x] **[WV 🆕 24.03]** Luis Gustavo Gonzalez** | Owner: Luis
-- [x] **[WV 🆕 24.03]** Consultar con su equipo si Ruth y Luci se integran para completar el equipo (07:35) | Owner: Ángelito
-- [ ] **[WV 🆕 24.03]** Agregar íconos de seguridad (como PCI DSS) a la landing page y coordinar con Express Pago para incluirlos en la pasarela de pagos iframe (11:14) | Owner: Ángelito
-- [ ] **[WV 🆕 24.03]** Coordinar con Luz para creación y optimización de plantillas de correos y mensajes de nutrición post-donación (11:53) | Owner: Ángelito
-- [ ] **[WV 🆕 24.03]** Armar la campaña en Meta con presupuesto aprobado y solicitar adaptaciones a equipo Root para formatos y videos (12:39) | Owner: Ángelito
-- [ ] **[WV 🆕 24.03]** Subir información de donantes recientes a HubSpot para monitoreo (13:32) | Owner: Ángelito
-- [ ] **[WV 🆕 24.03]** Mantener comunicación constante para soporte y ajustes vía Discord y WhatsApp y comunicar avances post-evento (14:22) | Owner: Ángelito
-- [ ] **[WV 🆕 24.03]** Comunicaciones BN** | Owner: Ángelito
-- [ ] **[WV 🆕 24.03]** Esther Solera Suárez** | Owner: Ángelito
-- [ ] **[WV 🆕 24.03]** Compartir el enlace del calendario a todos los participantes para asegurar acceso a la reunión (05:15) | Owner: Ángelito
-- [ ] **[WV 🆕 24.03]** Revisar manualmente el listado de negocios asociados a más de dos contactos para validar asociación correcta y enviar reporte a Sofía (06:12) | Owner: Sofía
-- [ ] **[WV 🆕 24.03]** Crear y gestionar grabación de la reunión en Teams para preservar registro completo de la sesión (20:01) | Owner: Ángelito
-- [ ] **[WV 🆕 24.03]** Isa Iglesias** | Owner: Ángelito
-- [ ] **[WV 🆕 24.03]** Confirmar los nombres y detalles precisos para las etiquetas de pagador y sponsor para su creación y uso en automatizaciones (09:33) | Owner: Ángelito
-- [ ] **[WV 🆕 24.03]** Continuar desarrollando y compartiendo el modelo de datos en HubSpot incluyendo detalles sobre asociaciones y propiedades (11:40) | Owner: Ángelito
+- [ ] **[WV HND]** Agregar íconos de seguridad PCI DSS a landing page y coordinar con Express Pago para incluirlos en pasarela de pagos iframe | Owner: Luis Gonzalez
+- [ ] **[WV HND]** Coordinar con Lucy plantillas de correos y mensajes de nutrición post-donación | Owner: Luis Gonzalez
+- [ ] **[WV HND]** Armar campaña en Meta con presupuesto aprobado y solicitar adaptaciones a equipo Root para formatos y videos | Owner: Luis Gonzalez
+- [ ] **[WV HND]** Subir información de donantes recientes a HubSpot para monitoreo | Owner: Luis Gonzalez
+- [ ] **[WV HND]** Mantener comunicación continua por Discord y WhatsApp con soporte y ajustes post-evento | Owner: Luis Gonzalez
 - [ ] **[WV HND]** Implementar workflows para nutriciones por correo electrónico | Owner: Luis Gonzalez + Marcos
 - [ ] **[WV HND]** Coordinar con Lucy la creación y optimización de correos para nutriciones y agradecimientos | Owner: Luis Gonzalez
 - [ ] **[WV HND]** Subir datos de donantes y realizar primer contacto esta semana | Owner: Luis Gonzalez
@@ -37,8 +27,12 @@
 #### Migración
 
 #### Digital
+- [ ] **[WV ES]** Compartir enlace del calendario a todos los participantes para asegurar acceso a la reunión | Owner: Esther
+- [ ] **[WV ES]** Revisar negocios con más de 2 contactos en HubSpot, validar asociación correcta y enviar reporte a Sofía | Owner: Sofía
 
 #### Iglesias
+- [ ] **[WV ES]** Confirmar nombres y detalles precisos para etiquetas pagador y sponsor para uso en automatizaciones | Owner: Ángelito
+- [ ] **[WV ES]** Continuar desarrollando modelo de datos en HubSpot con asociaciones y propiedades | Owner: Ángelito
 
 ### WV Chile
 - [ ] **[WV CL]** Ornella: enviar listado de RUTs de donantes ya descontados en clawback para marcar en HubSpot | Owner: Ornella
