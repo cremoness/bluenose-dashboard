@@ -1,6 +1,42 @@
 const TASKS = {
   "urgente": [
     {
+      "text": "🆕 <strong>[WV ES]</strong> Pablo: Sincronizar el campo 'nombre de la iglesia' del objeto 'iglesias' al objeto 'contactos'",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Pablo",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV ES]</strong> Marcos: Videos en emails no se reproducen directamente en bandeja del receptor — se abren en nueva ventana. URL de versión web del email no es pública hasta que el email se ha enviado",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Marcos",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV ES]</strong> Cristian: Investigar la integración de leads con el proveedor externo sin usar el módulo de Operations",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Cristian",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
       "text": "🆕 <strong>[WV ES]</strong> Marcos: Sincronizar los campos Partner ID en HubSpot — flujo creado en https://app-eu1.hubspot.com/workflows/143270595/platform/flow/3990770875/edit",
       "account": "WV",
       "project": "ES",

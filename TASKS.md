@@ -5,6 +5,9 @@
 
 ## 🔴 URGENTE / Hoy mismo
 
+- [ ] 🆕 **[WV ES]** Pablo: Sincronizar el campo 'nombre de la iglesia' del objeto 'iglesias' al objeto 'contactos' | Owner: Pablo
+- [ ] 🆕 **[WV ES]** Marcos: Videos en emails no se reproducen directamente en bandeja del receptor — se abren en nueva ventana. URL de versión web del email no es pública hasta que el email se ha enviado | Owner: Marcos
+- [ ] 🆕 **[WV ES]** Cristian: Investigar la integración de leads con el proveedor externo sin usar el módulo de Operations | Owner: Cristian
 - [ ] 🆕 **[WV ES]** Marcos: Sincronizar los campos Partner ID en HubSpot — flujo creado en https://app-eu1.hubspot.com/workflows/143270595/platform/flow/3990770875/edit | Owner: Marcos
 - [ ] 🆕 **[WV ES]** Sofi: enviará email a Jorge sobre los problemas de migración de datos | Owner: Sofia
 - [ ] 🆕 **[WV ES]** Pablo: Confirmar con Nieves que todos los párrocos asociados a una iglesia tienen un "nombre de la iglesia" asignado (seguimiento 18 de marzo) | Owner: Pablo
