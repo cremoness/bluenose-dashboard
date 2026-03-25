@@ -23,6 +23,7 @@
 - [ ] **[WV HND]** Subir información de donantes recientes a HubSpot para monitoreo | Owner: Luis Gonzalez
 - [ ] **[WV HND]** Coordinar con Lucy plantillas de correos y mensajes de nutrición post-donación | Owner: Luis Gonzalez
 - [ ] **[WV HND]** Mantener comunicación continua por Discord y WhatsApp con soporte y ajustes post-evento | Owner: Luis Gonzalez
+- [ ] 🆕 **[WV HND]** Cristian y Ángel: Están en lista de correos sobre el tema de ExpressPago, cualquier novedad comentarla. | Owner: Cristian
 
 ### WV España
 #### Migración
@@ -47,12 +48,17 @@
 #### VirtualPos
 
 #### Tickets Pendientes
+- [ ] 🆕 **[WV CL]** Cristian: 4 tickets pendientes: Importación de negocios (en manos de Danni), negocios de f2f creados erroneamente (a la espera de la validadicón de Danni), nóminas transdata (se respondió sin respuesta) y la creación de negocios de donantes únicos (solucionado a la espera de la validación del cliente) | Owner: Cliente
 
 #### Proyecto Nuevo F2F
+- [ ] 🆕 **[WV CL]** PROYECTO NUEVO: Facturación de la producción de las agencias de F2F. Enrique le hará seguimiento a Gonzalo. | Owner: Enrique
 
 ### WV Ecuador
+- [ ] 🆕 **[WV EC]** Cristian: 4 tickets pendientes: Fechas de pago se guardan con valor incorrecto (Valeria tiene pendiente confirmar que se solucionó). La propiedad EC-Cedula fue actualizada en un contacto y el pago ya había sido creado, por lo que la actualización de la cedula no se hizo. (Cristian informó que ese proceso se debe hacer de forma manual). x2. Datos personales del donante faltando en el archivo de debitos (Valeria tiene pendiente enviar el archivo). WF mueve pagos (Cristian trabajando en la revisión). | Owner: Cristian
 
 ### WV Perú
+- [ ] 🆕 **[WV PE]** Cristian: Gestión de página web en HubSpot. Maria enviará listado de preguntas, Cristian hizo el recordatorio a maria. | Owner: Cristian
+- [ ] 🆕 **[WV PE]** Cristian: Auditoria de listas: Cliente solicita apoyo en revisión y auditoria. Pablo y Marcos trabajan en el ticket. Maria informa que el equipo interno procederá a la revisión y nos informarán el status del reporte. | Owner: Cristian
 
 ### WV RD
 
@@ -66,6 +72,7 @@
 - [ ] **[UCSP — Simulador de Pensión]** Cristian: proporcionar documentación del API al equipo de base de datos para envío y recepción de datos | Owner: Cristian
 
 #### Mi Propósito
+- [ ] 🆕 **[UCSP — Mi Propósito]** César: se están creando un test vocacional hoy para un colegio y no esta funcionando nos ayudan a verificar si hay algún incoveniente con la plataforma. SE ESTÁ IDENTIFICANDO EL PROBLEMA | Owner: Cristian
 
 #### Cobranzas
 
@@ -74,10 +81,13 @@
 #### Experiencia al Estudiante
 
 #### Admisión Pregrado
+- [ ] 🆕 **[UCSP — Admisión Pregrado]** Pablo: Propuesta de agente de WhatsApp para documentos de matrícula, la tarea es coordinar la reunión con el equipo operativo | Owner: Enrique
 
 #### HubSpot SpotLight
+- [ ] 🆕 **[UCSP — HubSpot SpotLight]** Ángel: Claudia Tapia le había comentado a Anita que pensaba aplicarlo en la calculadora de pensiones. Pablo, darle una mirada a la presentación | Owner: Pablo
 
 #### Centro de Idiomas
+- [ ] 🆕 **[UCSP — Centro de Idiomas]** Ángel: Consultarle a Enrique cómo le fue con la entrevista del viernes y los pasos a seguir. | Owner: Enrique
 
 #### CENDES
 
@@ -97,6 +107,18 @@
 ---
 
 ## 🟢 PRÓXIMO MES
+
+### UCSP — Cobranzas
+- [ ] 🆕 **[UCSP — Cobranzas]** Enrique: No hay novedades | Owner: Enrique
+
+### UCSP — Comunicaciones
+- [ ] 🆕 **[UCSP — Comunicaciones]** Enrique: Pasó a Paul y él lo iba a manejar con Angello para integrarlo al gran proyecto de CRM para estudiantes y egresados | Owner: Enrique
+
+### UCSP — Experiencia al Estudiante
+- [ ] 🆕 **[UCSP — Experiencia al Estudiante]** Enrique: Brief enviado para la propuesta de agentes para la matrícula | Owner: Enrique
+
+### UCSP — CENDES
+- [ ] 🆕 **[UCSP — CENDES]** Enrique: A la espera de su respuesta | Owner: Cliente
 
 
 
