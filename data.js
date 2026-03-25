@@ -398,6 +398,30 @@ const TASKS = {
       "isNew": true
     },
     {
+      "text": "🆕 <strong>[WV PE]</strong> Ángel y Cristian: Aaron reportó que las transacciones de NIUBIZ se producen correctamente pero no llegan a HubSpot — se creó el ticket pero Aaron no responde a las consultas de Cristian.",
+      "account": "WV",
+      "project": "PE",
+      "tag": "PE",
+      "tagClass": "tag-wv",
+      "owner": "Cristian",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV PE]</strong> Pablo: Ale Bárcena quería saber si la integración funciona y cómo se llama el módulo donde se almacena esa información en HubSpot — se agendará reunión el 6 de abril con Maria Regalado.",
+      "account": "WV",
+      "project": "PE",
+      "tag": "PE",
+      "tagClass": "tag-wv",
+      "owner": "Pablo",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
       "text": "César: confirmar con el equipo cuál WordPress se usará para el formulario y evaluar posibles implicancias técnicas",
       "account": "UCSP",
       "project": "Simulador de Pensión",

@@ -62,6 +62,8 @@
 ### WV Perú
 - [ ] 🆕 **[WV PE]** Cristian: Gestión de página web en HubSpot. Maria enviará listado de preguntas, Cristian hizo el recordatorio a maria. | Owner: Cristian
 - [ ] 🆕 **[WV PE]** Cristian: Auditoria de listas: Cliente solicita apoyo en revisión y auditoria. Pablo y Marcos trabajan en el ticket. Maria informa que el equipo interno procederá a la revisión y nos informarán el status del reporte. | Owner: Cristian
+- [ ] 🆕 **[WV PE]** Ángel y Cristian: Aaron reportó que las transacciones de NIUBIZ se producen correctamente pero no llegan a HubSpot — se creó el ticket pero Aaron no responde a las consultas de Cristian. | Owner: Cristian
+- [ ] 🆕 **[WV PE]** Pablo: Ale Bárcena quería saber si la integración funciona y cómo se llama el módulo donde se almacena esa información en HubSpot — se agendará reunión el 6 de abril con Maria Regalado. | Owner: Pablo
 
 ### WV RD
 
