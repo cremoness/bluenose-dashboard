@@ -1,10 +1,15 @@
 # TASKS — Ángelito Chanamé
-> Última actualización: 2026-03-24 | Reunión Fireflies: WV HN | Estatus semanal Smartimper | Blue Nose 24.03
+> Última actualización: 2026-03-25 | Excel sync: WV ES nuevas tareas + WV CL Rendiciones F2F
 
 ---
 
 ## 🔴 URGENTE / Hoy mismo
 
+- [ ] 🆕 **[WV ES]** Marcos: Sincronizar los campos Partner ID en HubSpot — flujo creado en https://app-eu1.hubspot.com/workflows/143270595/platform/flow/3990770875/edit | Owner: Marcos
+- [ ] 🆕 **[WV ES]** Sofi: enviará email a Jorge sobre los problemas de migración de datos | Owner: Sofia
+- [ ] 🆕 **[WV ES]** Pablo: Confirmar con Nieves que todos los párrocos asociados a una iglesia tienen un "nombre de la iglesia" asignado (seguimiento 18 de marzo) | Owner: Pablo
+- [ ] 🆕 **[WV ES]** Nieves: ficheros "Diario de prospección de los promotores" creados con datos ficticios — coordinar con Pablo para preparar la sincronización | Owner: Pablo
+- [ ] 🆕 **[WV ES]** Pablo: aprobó la prueba de prefijo en pedidos propuesta por Juan Trejo para filtrar e implementar en WordPress | Owner: Pablo
 - [ ] **[UPSJB]** Enrique + Pablo: análisis de gestión de leads campaña examen domingo — 11k impactados, 5k aperturas, 325 respuestas, 95% sin gestión comercial. Campaña de emergencia WhatsApp en marcha. Esperar número exacto de matriculados el miércoles | Owner: Enrique + Pablo
 
 ---
@@ -21,37 +26,35 @@
 - [ ] **[WV HND]** Agregar íconos de seguridad PCI DSS a landing page y coordinar con Express Pago para incluirlos en pasarela de pagos iframe | Owner: Luis Gonzalez
 - [ ] **[WV HND]** Armar campaña en Meta con presupuesto aprobado y solicitar adaptaciones a equipo Root para formatos y videos | Owner: Luis Gonzalez
 - [ ] **[WV HND]** Subir información de donantes recientes a HubSpot para monitoreo | Owner: Luis Gonzalez
-- [ ] **[WV HND]** Coordinar con Lucy plantillas de correos y mensajes de nutrición post-donación | Owner: Luis Gonzalez
-- [ ] **[WV HND]** Mantener comunicación continua por Discord y WhatsApp con soporte y ajustes post-evento | Owner: Luis Gonzalez
+- [x] **[WV HND]** Coordinar con Lucy plantillas de correos y mensajes de nutrición post-donación | Owner: Luis Gonzalez
+- [x] **[WV HND]** Mantener comunicación continua por Discord y WhatsApp con soporte y ajustes post-evento | Owner: Luis Gonzalez
 - [ ] 🆕 **[WV HND]** Cristian y Ángel: Están en lista de correos sobre el tema de ExpressPago, cualquier novedad comentarla. | Owner: Cristian
 
 ### WV España
 #### Migración
 
 #### Digital
-- [ ] **[WV ES]** Compartir enlace del calendario a todos los participantes para asegurar acceso a la reunión | Owner: Esther
-- [ ] **[WV ES]** Revisar negocios con más de 2 contactos en HubSpot, validar asociación correcta y enviar reporte a Sofía | Owner: Sofía
+- [x] **[WV ES]** Compartir enlace del calendario a todos los participantes para asegurar acceso a la reunión | Owner: Esther
+- [x] **[WV ES]** Revisar negocios con más de 2 contactos en HubSpot, validar asociación correcta y enviar reporte a Sofía | Owner: Sofía
 
 #### Iglesias
-- [ ] **[WV ES]** Confirmar nombres y detalles precisos para etiquetas pagador y sponsor para uso en automatizaciones | Owner: Ángelito
-- [ ] **[WV ES]** Continuar desarrollando modelo de datos en HubSpot con asociaciones y propiedades | Owner: Ángelito
+- [x] **[WV ES]** Confirmar nombres y detalles precisos para etiquetas pagador y sponsor para uso en automatizaciones | Owner: Ángelito
+- [x] **[WV ES]** Continuar desarrollando modelo de datos en HubSpot con asociaciones y propiedades | Owner: Ángelito
 
 ### WV Chile
-- [ ] **[WV CL]** Ornella: enviar listado de RUTs de donantes ya descontados en clawback para marcar en HubSpot | Owner: Ornella
-- [ ] **[WV CL]** Pablo Pérez: crear propiedad en HubSpot para marcar donantes que ya pasaron por clawback | Owner: Pablo
-- [ ] **[WV CL]** Pablo Pérez: ajustar la app con reglas del contrato Más Recursos y preparar versión para producción | Owner: Pablo
-- [ ] **[WV CL]** Gonzalo: diagramar proceso completo de aprobaciones para facturación | Owner: Gonzalo
-- [ ] **[WV CL]** Gonzalo: compartir diagrama y documentos con reglas de negocio y contratos | Owner: Gonzalo
-- [ ] **[WV CL]** Gonzalo: confirmar temas administrativos | Owner: Gonzalo
-- [ ] **[WV CL]** Gonzalo: organizar reunión con agencia Más Recursos para presentar la herramienta | Owner: Gonzalo
 
-#### VirtualPos
+#### Rendiciones agencias F2F
+- [ ] **[WV CL — Rendiciones F2F]** Ornella: enviar listado de RUTs de donantes ya descontados en clawback para marcar en HubSpot | Owner: Ornella
+- [ ] **[WV CL — Rendiciones F2F]** Pablo Pérez: crear propiedad en HubSpot para marcar donantes que ya pasaron por clawback | Owner: Pablo
+- [ ] **[WV CL — Rendiciones F2F]** Pablo Pérez: ajustar la app con reglas del contrato Más Recursos y preparar versión para producción | Owner: Pablo
+- [ ] **[WV CL — Rendiciones F2F]** Gonzalo: diagramar proceso completo de aprobaciones para facturación | Owner: Gonzalo
+- [ ] **[WV CL — Rendiciones F2F]** Gonzalo: compartir diagrama y documentos con reglas de negocio y contratos | Owner: Gonzalo
+- [ ] **[WV CL — Rendiciones F2F]** Gonzalo: confirmar temas administrativos | Owner: Gonzalo
+- [ ] **[WV CL — Rendiciones F2F]** Gonzalo: organizar reunión con agencia Más Recursos para presentar la herramienta | Owner: Gonzalo
+- [ ] 🆕 **[WV CL — Rendiciones F2F]** PROYECTO NUEVO: Facturación de la producción de las agencias de F2F. Enrique le hará seguimiento a Gonzalo. | Owner: Enrique
 
 #### Tickets Pendientes
 - [ ] 🆕 **[WV CL]** Cristian: 4 tickets pendientes: Importación de negocios (en manos de Danni), negocios de f2f creados erroneamente (a la espera de la validadicón de Danni), nóminas transdata (se respondió sin respuesta) y la creación de negocios de donantes únicos (solucionado a la espera de la validación del cliente) | Owner: Cliente
-
-#### Proyecto Nuevo F2F
-- [ ] 🆕 **[WV CL]** PROYECTO NUEVO: Facturación de la producción de las agencias de F2F. Enrique le hará seguimiento a Gonzalo. | Owner: Enrique
 
 ### WV Ecuador
 - [ ] 🆕 **[WV EC]** Cristian: 4 tickets pendientes: Fechas de pago se guardan con valor incorrecto (Valeria tiene pendiente confirmar que se solucionó). La propiedad EC-Cedula fue actualizada en un contacto y el pago ya había sido creado, por lo que la actualización de la cedula no se hizo. (Cristian informó que ese proceso se debe hacer de forma manual). x2. Datos personales del donante faltando en el archivo de debitos (Valeria tiene pendiente enviar el archivo). WF mueve pagos (Cristian trabajando en la revisión). | Owner: Cristian

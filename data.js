@@ -1,6 +1,66 @@
 const TASKS = {
   "urgente": [
     {
+      "text": "🆕 <strong>[WV ES]</strong> Marcos: Sincronizar los campos Partner ID en HubSpot — flujo creado en https://app-eu1.hubspot.com/workflows/143270595/platform/flow/3990770875/edit",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Marcos",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV ES]</strong> Sofi: enviará email a Jorge sobre los problemas de migración de datos",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Sofia",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV ES]</strong> Pablo: Confirmar con Nieves que todos los párrocos asociados a una iglesia tienen un \"nombre de la iglesia\" asignado (seguimiento 18 de marzo)",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Pablo",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV ES]</strong> Nieves: ficheros \"Diario de prospección de los promotores\" creados con datos ficticios — coordinar con Pablo para preparar la sincronización",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Pablo",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV ES]</strong> Pablo: aprobó la prueba de prefijo en pedidos propuesta por Juan Trejo para filtrar e implementar en WordPress",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Pablo",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
       "text": "Enrique + Pablo: análisis de gestión de leads campaña examen domingo — 11k impactados, 5k aperturas, 325 respuestas, 95% sin gestión comercial. Campaña de emergencia WhatsApp en marcha. Esperar número exacto de matriculados el miércoles",
       "account": "UPSJB",
       "project": "General",
@@ -125,7 +185,8 @@ const TASKS = {
       "owner": "Luis Gonzalez",
       "clients": [
         "WV"
-      ]
+      ],
+      "isCompleted": true
     },
     {
       "text": "Mantener comunicación continua por Discord y WhatsApp con soporte y ajustes post-evento",
@@ -136,7 +197,8 @@ const TASKS = {
       "owner": "Luis Gonzalez",
       "clients": [
         "WV"
-      ]
+      ],
+      "isCompleted": true
     },
     {
       "text": "🆕 <strong>[WV HND]</strong> Cristian y Ángel: Están en lista de correos sobre el tema de ExpressPago, cualquier novedad comentarla.",
@@ -159,7 +221,8 @@ const TASKS = {
       "owner": "Esther",
       "clients": [
         "WV"
-      ]
+      ],
+      "isCompleted": true
     },
     {
       "text": "Revisar negocios con más de 2 contactos en HubSpot, validar asociación correcta y enviar reporte a Sofía",
@@ -170,7 +233,8 @@ const TASKS = {
       "owner": "Sofía",
       "clients": [
         "WV"
-      ]
+      ],
+      "isCompleted": true
     },
     {
       "text": "Confirmar nombres y detalles precisos para etiquetas pagador y sponsor para uso en automatizaciones",
@@ -181,7 +245,8 @@ const TASKS = {
       "owner": "Ángelito",
       "clients": [
         "WV"
-      ]
+      ],
+      "isCompleted": true
     },
     {
       "text": "Continuar desarrollando modelo de datos en HubSpot con asociaciones y propiedades",
@@ -192,13 +257,14 @@ const TASKS = {
       "owner": "Ángelito",
       "clients": [
         "WV"
-      ]
+      ],
+      "isCompleted": true
     },
     {
       "text": "Ornella: enviar listado de RUTs de donantes ya descontados en clawback para marcar en HubSpot",
       "account": "WV",
-      "project": "CL",
-      "tag": "CL",
+      "project": "Rendiciones F2F",
+      "tag": "Rendiciones F2F",
       "tagClass": "tag-wv",
       "owner": "Ornella",
       "clients": [
@@ -208,8 +274,8 @@ const TASKS = {
     {
       "text": "Pablo Pérez: crear propiedad en HubSpot para marcar donantes que ya pasaron por clawback",
       "account": "WV",
-      "project": "CL",
-      "tag": "CL",
+      "project": "Rendiciones F2F",
+      "tag": "Rendiciones F2F",
       "tagClass": "tag-wv",
       "owner": "Pablo",
       "clients": [
@@ -219,8 +285,8 @@ const TASKS = {
     {
       "text": "Pablo Pérez: ajustar la app con reglas del contrato Más Recursos y preparar versión para producción",
       "account": "WV",
-      "project": "CL",
-      "tag": "CL",
+      "project": "Rendiciones F2F",
+      "tag": "Rendiciones F2F",
       "tagClass": "tag-wv",
       "owner": "Pablo",
       "clients": [
@@ -230,8 +296,8 @@ const TASKS = {
     {
       "text": "Gonzalo: diagramar proceso completo de aprobaciones para facturación",
       "account": "WV",
-      "project": "CL",
-      "tag": "CL",
+      "project": "Rendiciones F2F",
+      "tag": "Rendiciones F2F",
       "tagClass": "tag-wv",
       "owner": "Gonzalo",
       "clients": [
@@ -241,8 +307,8 @@ const TASKS = {
     {
       "text": "Gonzalo: compartir diagrama y documentos con reglas de negocio y contratos",
       "account": "WV",
-      "project": "CL",
-      "tag": "CL",
+      "project": "Rendiciones F2F",
+      "tag": "Rendiciones F2F",
       "tagClass": "tag-wv",
       "owner": "Gonzalo",
       "clients": [
@@ -252,8 +318,8 @@ const TASKS = {
     {
       "text": "Gonzalo: confirmar temas administrativos",
       "account": "WV",
-      "project": "CL",
-      "tag": "CL",
+      "project": "Rendiciones F2F",
+      "tag": "Rendiciones F2F",
       "tagClass": "tag-wv",
       "owner": "Gonzalo",
       "clients": [
@@ -263,13 +329,25 @@ const TASKS = {
     {
       "text": "Gonzalo: organizar reunión con agencia Más Recursos para presentar la herramienta",
       "account": "WV",
-      "project": "CL",
-      "tag": "CL",
+      "project": "Rendiciones F2F",
+      "tag": "Rendiciones F2F",
       "tagClass": "tag-wv",
       "owner": "Gonzalo",
       "clients": [
         "WV"
       ]
+    },
+    {
+      "text": "🆕 <strong>[WV CL — Rendiciones F2F]</strong> PROYECTO NUEVO: Facturación de la producción de las agencias de F2F. Enrique le hará seguimiento a Gonzalo.",
+      "account": "WV",
+      "project": "Rendiciones F2F",
+      "tag": "Rendiciones F2F",
+      "tagClass": "tag-wv",
+      "owner": "Enrique",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
     },
     {
       "text": "🆕 <strong>[WV CL]</strong> Cristian: 4 tickets pendientes: Importación de negocios (en manos de Danni), negocios de f2f creados erroneamente (a la espera de la validadicón de Danni), nóminas transdata (se respondió sin respuesta) y la creación de negocios de donantes únicos (solucionado a la espera de la validación del cliente)",
@@ -278,18 +356,6 @@ const TASKS = {
       "tag": "CL",
       "tagClass": "tag-wv",
       "owner": "Cliente",
-      "clients": [
-        "WV"
-      ],
-      "isNew": true
-    },
-    {
-      "text": "🆕 <strong>[WV CL]</strong> PROYECTO NUEVO: Facturación de la producción de las agencias de F2F. Enrique le hará seguimiento a Gonzalo.",
-      "account": "WV",
-      "project": "CL",
-      "tag": "CL",
-      "tagClass": "tag-wv",
-      "owner": "Enrique",
       "clients": [
         "WV"
       ],
