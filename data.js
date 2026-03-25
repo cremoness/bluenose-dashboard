@@ -139,6 +139,18 @@ const TASKS = {
       ]
     },
     {
+      "text": "🆕 <strong>[WV HND]</strong> Cristian y Ángel: Están en lista de correos sobre el tema de ExpressPago, cualquier novedad comentarla.",
+      "account": "WV",
+      "project": "HND",
+      "tag": "HND",
+      "tagClass": "tag-wv",
+      "owner": "Cristian",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
       "text": "Compartir enlace del calendario a todos los participantes para asegurar acceso a la reunión",
       "account": "WV",
       "project": "ES",
@@ -260,6 +272,66 @@ const TASKS = {
       ]
     },
     {
+      "text": "🆕 <strong>[WV CL]</strong> Cristian: 4 tickets pendientes: Importación de negocios (en manos de Danni), negocios de f2f creados erroneamente (a la espera de la validadicón de Danni), nóminas transdata (se respondió sin respuesta) y la creación de negocios de donantes únicos (solucionado a la espera de la validación del cliente)",
+      "account": "WV",
+      "project": "CL",
+      "tag": "CL",
+      "tagClass": "tag-wv",
+      "owner": "Cliente",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV CL]</strong> PROYECTO NUEVO: Facturación de la producción de las agencias de F2F. Enrique le hará seguimiento a Gonzalo.",
+      "account": "WV",
+      "project": "CL",
+      "tag": "CL",
+      "tagClass": "tag-wv",
+      "owner": "Enrique",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV EC]</strong> Cristian: 4 tickets pendientes: Fechas de pago se guardan con valor incorrecto (Valeria tiene pendiente confirmar que se solucionó). La propiedad EC-Cedula fue actualizada en un contacto y el pago ya había sido creado, por lo que la actualización de la cedula no se hizo. (Cristian informó que ese proceso se debe hacer de forma manual). x2. Datos personales del donante faltando en el archivo de debitos (Valeria tiene pendiente enviar el archivo). WF mueve pagos (Cristian trabajando en la revisión).",
+      "account": "WV",
+      "project": "EC",
+      "tag": "EC",
+      "tagClass": "tag-wv",
+      "owner": "Cristian",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV PE]</strong> Cristian: Gestión de página web en HubSpot. Maria enviará listado de preguntas, Cristian hizo el recordatorio a maria.",
+      "account": "WV",
+      "project": "PE",
+      "tag": "PE",
+      "tagClass": "tag-wv",
+      "owner": "Cristian",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV PE]</strong> Cristian: Auditoria de listas: Cliente solicita apoyo en revisión y auditoria. Pablo y Marcos trabajan en el ticket. Maria informa que el equipo interno procederá a la revisión y nos informarán el status del reporte.",
+      "account": "WV",
+      "project": "PE",
+      "tag": "PE",
+      "tagClass": "tag-wv",
+      "owner": "Cristian",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
       "text": "César: confirmar con el equipo cuál WordPress se usará para el formulario y evaluar posibles implicancias técnicas",
       "account": "UCSP",
       "project": "Simulador de Pensión",
@@ -324,6 +396,54 @@ const TASKS = {
       "clients": [
         "UCSP"
       ]
+    },
+    {
+      "text": "🆕 <strong>[UCSP — Mi Propósito]</strong> César: se están creando un test vocacional hoy para un colegio y no esta funcionando nos ayudan a verificar si hay algún incoveniente con la plataforma. SE ESTÁ IDENTIFICANDO EL PROBLEMA",
+      "account": "UCSP",
+      "project": "Mi Propósito",
+      "tag": "Mi Propósito",
+      "tagClass": "tag-uc",
+      "owner": "Cristian",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UCSP — Admisión Pregrado]</strong> Pablo: Propuesta de agente de WhatsApp para documentos de matrícula, la tarea es coordinar la reunión con el equipo operativo",
+      "account": "UCSP",
+      "project": "Admisión Pregrado",
+      "tag": "Admisión Pregrado",
+      "tagClass": "tag-uc",
+      "owner": "Enrique",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UCSP — HubSpot SpotLight]</strong> Ángel: Claudia Tapia le había comentado a Anita que pensaba aplicarlo en la calculadora de pensiones. Pablo, darle una mirada a la presentación",
+      "account": "UCSP",
+      "project": "HubSpot SpotLight",
+      "tag": "HubSpot SpotLight",
+      "tagClass": "tag-uc",
+      "owner": "Pablo",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UCSP — Centro de Idiomas]</strong> Ángel: Consultarle a Enrique cómo le fue con la entrevista del viernes y los pasos a seguir.",
+      "account": "UCSP",
+      "project": "Centro de Idiomas",
+      "tag": "Centro de Idiomas",
+      "tagClass": "tag-uc",
+      "owner": "Enrique",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
     },
     {
       "text": "Estuardo: enviar buyer persona de padres de Lima para validación del equipo",
@@ -403,7 +523,56 @@ const TASKS = {
       ]
     }
   ],
-  "mes": [],
+  "mes": [
+    {
+      "text": "🆕 <strong>[UCSP — Cobranzas]</strong> Enrique: No hay novedades",
+      "account": "UCSP",
+      "project": "Cobranzas",
+      "tag": "Cobranzas",
+      "tagClass": "tag-uc",
+      "owner": "Enrique",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UCSP — Comunicaciones]</strong> Enrique: Pasó a Paul y él lo iba a manejar con Angello para integrarlo al gran proyecto de CRM para estudiantes y egresados",
+      "account": "UCSP",
+      "project": "Comunicaciones",
+      "tag": "Comunicaciones",
+      "tagClass": "tag-uc",
+      "owner": "Enrique",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UCSP — Experiencia al Estudiante]</strong> Enrique: Brief enviado para la propuesta de agentes para la matrícula",
+      "account": "UCSP",
+      "project": "Experiencia al Estudiante",
+      "tag": "Experiencia al Estudiante",
+      "tagClass": "tag-uc",
+      "owner": "Enrique",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UCSP — CENDES]</strong> Enrique: A la espera de su respuesta",
+      "account": "UCSP",
+      "project": "CENDES",
+      "tag": "CENDES",
+      "tagClass": "tag-uc",
+      "owner": "Cliente",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    }
+  ],
   "done": [
     {
       "text": "World Vision Brasil — sin novedad",
