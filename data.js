@@ -1,6 +1,18 @@
 const TASKS = {
   "urgente": [
     {
+      "text": "🆕 <strong>[WV RD]</strong> Ángel: enviar informe mensual de WV RD hoy — estructura ya trabajada con Anita, pasar borrador a Pablo y Enrique primero",
+      "account": "WV",
+      "project": "RD",
+      "tag": "RD",
+      "tagClass": "tag-wv",
+      "owner": "Ángelito",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
       "text": "Pablo: Sincronizar el campo 'nombre de la iglesia' del objeto 'iglesias' al objeto 'contactos'",
       "account": "WV",
       "project": "ES",
@@ -79,6 +91,42 @@ const TASKS = {
       "tag": "ES",
       "tagClass": "tag-wv",
       "owner": "Pablo",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV ES]</strong> Ángel: verificar inclusión en correos de Sofía sobre importación WV ES — si no está incluido, hablar con Sofi para que lo agregue",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Ángelito",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV ES]</strong> Pablo: informar a Sofía que co_partner_id es el campo definitivo del Partner ID — etiquetarla en Discord",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Pablo",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV ES]</strong> Nieves: enviar URLs de Google Sheets/Excel de ficheros de promotores para que Pablo inserte en el panel de seguimiento",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Nieves",
       "clients": [
         "WV"
       ],
@@ -169,6 +217,18 @@ const TASKS = {
     }
   ],
   "semana": [
+    {
+      "text": "🆕 <strong>[WV HND]</strong> Pablo/Ángel: coordinar con Luis González revisión de paneles HubSpot para medir retornos y eficacia de campañas activas",
+      "account": "WV",
+      "project": "HND",
+      "tag": "HND",
+      "tagClass": "tag-wv",
+      "owner": "Pablo",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
     {
       "text": "Implementar workflows para nutriciones por correo electrónico",
       "account": "WV",
@@ -434,7 +494,7 @@ const TASKS = {
       ]
     },
     {
-      "text": "🆕 <strong>[WV CL — Rendiciones F2F]</strong> PROYECTO NUEVO: Facturación de la producción de las agencias de F2F. Enrique le hará seguimiento a Gonzalo.",
+      "text": "🆕 <strong>[WV CL — Rendiciones F2F]</strong> Enrique: hacer seguimiento a Gonzalo — tiene reunión con Marta (su jefa) para gestionar presupuesto administrativo de facturación F2F",
       "account": "WV",
       "project": "Rendiciones F2F",
       "tag": "Rendiciones F2F",
@@ -444,6 +504,19 @@ const TASKS = {
         "WV"
       ],
       "isNew": true
+    },
+    {
+      "text": "PROYECTO NUEVO: Facturación de la producción de las agencias de F2F. Enrique le hará seguimiento a Gonzalo.",
+      "account": "WV",
+      "project": "Rendiciones F2F",
+      "tag": "Rendiciones F2F",
+      "tagClass": "tag-wv",
+      "owner": "Enrique",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true,
+      "isCompleted": true
     },
     {
       "text": "🆕 <strong>[WV CL]</strong> Cristian: 4 tickets pendientes: Importación de negocios (en manos de Danni), negocios de f2f creados erroneamente (a la espera de la validadicón de Danni), nóminas transdata (se respondió sin respuesta) y la creación de negocios de donantes únicos (solucionado a la espera de la validación del cliente)",
@@ -620,6 +693,30 @@ const TASKS = {
       "isNew": true
     },
     {
+      "text": "🆕 <strong>[UCSP — Centro de Idiomas]</strong> Enrique: confirmar cómo le fue en la reunión del viernes con Centro de Idiomas y próximos pasos",
+      "account": "UCSP",
+      "project": "Centro de Idiomas",
+      "tag": "Centro de Idiomas",
+      "tagClass": "tag-uc",
+      "owner": "Enrique",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UCSP — Centro de Idiomas]</strong> Ángel: revisar documento de ideas de indagación para todos los públicos (egresados, alumnos, desertores) — Renzo confirmó que asume presupuesto de estudios adicionales",
+      "account": "UCSP",
+      "project": "Centro de Idiomas",
+      "tag": "Centro de Idiomas",
+      "tagClass": "tag-uc",
+      "owner": "Ángelito",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
       "text": "🆕 <strong>[UCSP — Centro de Idiomas]</strong> Ángel: Consultarle a Enrique cómo le fue con la entrevista del viernes y los pasos a seguir.",
       "account": "UCSP",
       "project": "Centro de Idiomas",
@@ -784,6 +881,18 @@ const TASKS = {
     }
   ],
   "done": [
+    {
+      "text": "Cristian: correcciones en app Face to Face Chile listas — subiendo a producción",
+      "account": "WV",
+      "project": "Rendiciones F2F",
+      "tag": "Rendiciones F2F",
+      "tagClass": "tag-wv",
+      "owner": "Cristian",
+      "clients": [
+        "WV"
+      ],
+      "isCompleted": true
+    },
     {
       "text": "World Vision Brasil — sin novedad",
       "account": "General",

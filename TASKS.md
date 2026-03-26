@@ -5,6 +5,8 @@
 
 ## 🔴 URGENTE / Hoy mismo
 
+- [ ] 🆕 **[WV RD]** Ángel: enviar informe mensual de WV RD hoy — estructura ya trabajada con Anita, pasar borrador a Pablo y Enrique primero | Owner: Ángelito
+
 - [x] **[WV ES]** Pablo: Sincronizar el campo 'nombre de la iglesia' del objeto 'iglesias' al objeto 'contactos' | Owner: Pablo
 - [x] **[WV ES]** Marcos: Sincronizar los campos Partner ID en HubSpot — co_partner_id queda como propiedad definitiva, el resto viajan a esta | Owner: Marcos
 - [x] **[WV ES]** Pablo: Prefijo en pedidos implementado — nuevos negocios muestran Renovación / Inicial correctamente | Owner: Pablo
@@ -12,6 +14,9 @@
 - [ ] 🆕 **[WV ES]** Cristian: Investigar la integración de leads con el proveedor externo sin usar el módulo de Operations | Owner: Cristian
 - [ ] 🆕 **[WV ES]** Sofi: enviará email a Jorge sobre los problemas de migración de datos | Owner: Sofia
 - [ ] 🆕 **[WV ES]** Nieves: ficheros "Diario de prospección de los promotores" creados con datos ficticios — coordinar con Pablo para preparar la sincronización | Owner: Pablo
+- [ ] 🆕 **[WV ES]** Ángel: verificar inclusión en correos de Sofía sobre importación WV ES — si no está incluido, hablar con Sofi para que lo agregue | Owner: Ángelito
+- [ ] 🆕 **[WV ES]** Pablo: informar a Sofía que co_partner_id es el campo definitivo del Partner ID — etiquetarla en Discord | Owner: Pablo
+- [ ] 🆕 **[WV ES]** Nieves: enviar URLs de Google Sheets/Excel de ficheros de promotores para que Pablo inserte en el panel de seguimiento | Owner: Nieves
 - [ ] 🆕 **[WV ES]** Jesús/Esther: enviar fichero con ID de pedido + valor (Renovación u Original) para hacer retroactiva la automatización del prefijo en pedidos | Owner: Jesús
 - [ ] 🆕 **[WV ES]** Pablo: reunión con Sofía para validar modelo de datos de motivations — crear propiedades por categoría en vez de pre-motivation | Owner: Pablo
 - [ ] 🆕 **[WV ES]** Pablo: incluir a Vicente y Nieves en reuniones de modelo de datos — tienen requerimientos de finanzas sobre motivations y designations | Owner: Pablo
@@ -25,6 +30,7 @@
 ## 🟡 PRÓXIMAS / Esta semana
 
 ### WV Honduras
+- [ ] 🆕 **[WV HND]** Pablo/Ángel: coordinar con Luis González revisión de paneles HubSpot para medir retornos y eficacia de campañas activas | Owner: Pablo
 - [ ] **[WV HND]** Implementar workflows para nutriciones por correo electrónico | Owner: Luis Gonzalez + Marcos
 - [x] **[WV HND]** Coordinar con Lucy la creación y optimización de correos para nutriciones y agradecimientos | Owner: Luis Gonzalez
 - [x] **[WV HND]** Subir datos de donantes y realizar primer contacto esta semana | Owner: Luis Gonzalez
@@ -59,7 +65,8 @@
 - [ ] **[WV CL — Rendiciones F2F]** Gonzalo: compartir diagrama y documentos con reglas de negocio y contratos | Owner: Gonzalo
 - [ ] **[WV CL — Rendiciones F2F]** Gonzalo: confirmar temas administrativos | Owner: Gonzalo
 - [ ] **[WV CL — Rendiciones F2F]** Gonzalo: organizar reunión con agencia Más Recursos para presentar la herramienta | Owner: Gonzalo
-- [ ] 🆕 **[WV CL — Rendiciones F2F]** PROYECTO NUEVO: Facturación de la producción de las agencias de F2F. Enrique le hará seguimiento a Gonzalo. | Owner: Enrique
+- [ ] 🆕 **[WV CL — Rendiciones F2F]** Enrique: hacer seguimiento a Gonzalo — tiene reunión con Marta (su jefa) para gestionar presupuesto administrativo de facturación F2F | Owner: Enrique
+- [x] **[WV CL — Rendiciones F2F]** PROYECTO NUEVO: Facturación de la producción de las agencias de F2F. Enrique le hará seguimiento a Gonzalo. | Owner: Enrique
 
 #### Tickets Pendientes
 - [ ] 🆕 **[WV CL]** Cristian: 4 tickets pendientes: Importación de negocios (en manos de Danni), negocios de f2f creados erroneamente (a la espera de la validadicón de Danni), nóminas transdata (se respondió sin respuesta) y la creación de negocios de donantes únicos (solucionado a la espera de la validación del cliente) | Owner: Cliente
@@ -100,6 +107,8 @@
 - [ ] 🆕 **[UCSP — HubSpot SpotLight]** Ángel: Claudia Tapia le había comentado a Anita que pensaba aplicarlo en la calculadora de pensiones. Pablo, darle una mirada a la presentación | Owner: Pablo
 
 #### Centro de Idiomas
+- [ ] 🆕 **[UCSP — Centro de Idiomas]** Enrique: confirmar cómo le fue en la reunión del viernes con Centro de Idiomas y próximos pasos | Owner: Enrique
+- [ ] 🆕 **[UCSP — Centro de Idiomas]** Ángel: revisar documento de ideas de indagación para todos los públicos (egresados, alumnos, desertores) — Renzo confirmó que asume presupuesto de estudios adicionales | Owner: Ángelito
 - [ ] 🆕 **[UCSP — Centro de Idiomas]** Ángel: Consultarle a Enrique cómo le fue con la entrevista del viernes y los pasos a seguir. | Owner: Enrique
 
 #### CENDES
@@ -143,7 +152,7 @@
 
 ## ✅ COMPLETADO
 
-
+- [x] **[WV CL — Rendiciones F2F]** Cristian: correcciones en app Face to Face Chile listas — subiendo a producción | Owner: Cristian
 
 ---
 
