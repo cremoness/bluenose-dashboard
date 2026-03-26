@@ -521,8 +521,55 @@ function toggleCard(id) {
   document.getElementById('body-' + id).classList.toggle('open');
 }
 function toggle(el) {
-  el.querySelector('.si-chk').classList.toggle('on');
-  el.classList.toggle('done');
+  const chk     = el.querySelector('.si-chk');
+  const isDone  = chk.classList.toggle('on');
+  el.classList.toggle('done', isDone);
+  syncToggle(el, isDone);
+}
+
+async function syncToggle(el, markDone) {
+  const token = localStorage.getItem('gh-token');
+  if (!token) return; // silencioso si no hay token
+  const taskText = el.dataset.taskText || '';
+  if (!taskText) return;
+  setSyncDot('syncing');
+  try {
+    const metaRes = await fetch(
+      `https://api.github.com/repos/${GH_REPO}/contents/${GH_FILE}`,
+      { headers: { Authorization: `token ${token}`, Accept: 'application/vnd.github.v3+json' } }
+    );
+    if (!metaRes.ok) throw new Error(`GitHub ${metaRes.status}`);
+    const meta    = await metaRes.json();
+    const bytes   = Uint8Array.from(atob(meta.content.replace(/\n/g,'')), c => c.charCodeAt(0));
+    const content = new TextDecoder('utf-8').decode(bytes);
+    const norm    = taskText.replace(/\s+/g,' ').trim().toLowerCase();
+    let   changed = false;
+    const newLines = content.split('\n').map(line => {
+      if (!/^\s*- \[[ x]\]/.test(line)) return line;
+      const raw = line.replace(/^\s*- \[[ x]\]\s*/,'').replace(/\*\*\[.*?\]\*\*\s*/g,'').replace(/\| Owner:.*/,'').replace(/\s+/g,' ').trim().toLowerCase();
+      if (raw !== norm) return line;
+      changed = true;
+      return markDone
+        ? line.replace(/^(\s*- )\[ \]/, '$1[x]')
+        : line.replace(/^(\s*- )\[x\]/i, '$1[ ]');
+    });
+    if (!changed) { setSyncDot('idle'); return; }
+    const b64 = btoa(String.fromCharCode(...new TextEncoder().encode(newLines.join('\n'))));
+    const res = await fetch(
+      `https://api.github.com/repos/${GH_REPO}/contents/${GH_FILE}`,
+      {
+        method: 'PUT',
+        headers: { Authorization: `token ${token}`, Accept: 'application/vnd.github.v3+json', 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: `status: mark task ${markDone ? 'done' : 'undone'} [skip ci]`, content: b64, sha: meta.sha })
+      }
+    );
+    if (!res.ok) { const e = await res.json(); throw new Error(e.message || res.status); }
+    setSyncDot('ok');
+    showToast(markDone ? '✅ Tarea marcada como completada' : '↩ Tarea reabierta');
+  } catch(e) {
+    setSyncDot('err');
+    showToast('Error al sincronizar: ' + e.message, 'err');
+  }
 }
 
 function expandAll() {
