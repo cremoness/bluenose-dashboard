@@ -5,14 +5,19 @@
 
 ## 🔴 URGENTE / Hoy mismo
 
-- [ ] 🆕 **[WV ES]** Pablo: Sincronizar el campo 'nombre de la iglesia' del objeto 'iglesias' al objeto 'contactos' | Owner: Pablo
+- [x] **[WV ES]** Pablo: Sincronizar el campo 'nombre de la iglesia' del objeto 'iglesias' al objeto 'contactos' | Owner: Pablo
+- [x] **[WV ES]** Marcos: Sincronizar los campos Partner ID en HubSpot — co_partner_id queda como propiedad definitiva, el resto viajan a esta | Owner: Marcos
+- [x] **[WV ES]** Pablo: Prefijo en pedidos implementado — nuevos negocios muestran Renovación / Inicial correctamente | Owner: Pablo
 - [ ] 🆕 **[WV ES]** Marcos: Videos en emails no se reproducen directamente en bandeja del receptor — se abren en nueva ventana. URL de versión web del email no es pública hasta que el email se ha enviado | Owner: Marcos
 - [ ] 🆕 **[WV ES]** Cristian: Investigar la integración de leads con el proveedor externo sin usar el módulo de Operations | Owner: Cristian
-- [ ] 🆕 **[WV ES]** Marcos: Sincronizar los campos Partner ID en HubSpot — flujo creado en https://app-eu1.hubspot.com/workflows/143270595/platform/flow/3990770875/edit | Owner: Marcos
 - [ ] 🆕 **[WV ES]** Sofi: enviará email a Jorge sobre los problemas de migración de datos | Owner: Sofia
-- [ ] 🆕 **[WV ES]** Pablo: Confirmar con Nieves que todos los párrocos asociados a una iglesia tienen un "nombre de la iglesia" asignado (seguimiento 18 de marzo) | Owner: Pablo
 - [ ] 🆕 **[WV ES]** Nieves: ficheros "Diario de prospección de los promotores" creados con datos ficticios — coordinar con Pablo para preparar la sincronización | Owner: Pablo
-- [ ] 🆕 **[WV ES]** Pablo: aprobó la prueba de prefijo en pedidos propuesta por Juan Trejo para filtrar e implementar en WordPress | Owner: Pablo
+- [ ] 🆕 **[WV ES]** Jesús/Esther: enviar fichero con ID de pedido + valor (Renovación u Original) para hacer retroactiva la automatización del prefijo en pedidos | Owner: Jesús
+- [ ] 🆕 **[WV ES]** Pablo: reunión con Sofía para validar modelo de datos de motivations — crear propiedades por categoría en vez de pre-motivation | Owner: Pablo
+- [ ] 🆕 **[WV ES]** Pablo: incluir a Vicente y Nieves en reuniones de modelo de datos — tienen requerimientos de finanzas sobre motivations y designations | Owner: Pablo
+- [ ] 🆕 **[WV ES]** Cristian: enviar a Jesús por Discord requerimientos técnicos del servidor para integración de leads (espacio, IP, DNS) | Owner: Cristian
+- [ ] 🆕 **[WV ES]** Jesús: consultar con desarrolladores del hosting disponibilidad de espacio para alojar aplicaciones de BlueNose | Owner: Jesús
+- [ ] 🆕 **[WV ES]** Esther/Nieves: revisar y probar resumen enviado por Marcos sobre video incrustado en emails y URL de versión web | Owner: Esther
 - [ ] **[UPSJB]** Enrique + Pablo: análisis de gestión de leads campaña examen domingo — 11k impactados, 5k aperturas, 325 respuestas, 95% sin gestión comercial. Campaña de emergencia WhatsApp en marcha. Esperar número exacto de matriculados el miércoles | Owner: Enrique + Pablo
 
 ---
@@ -115,6 +120,10 @@
 ---
 
 ## 🟢 PRÓXIMO MES
+
+### WV España
+- [ ] 🆕 **[WV ES]** Pablo: preguntar al mayorista SMS sobre condiciones para nombre propio o número personalizado en envíos | Owner: Pablo
+- [ ] 🆕 **[WV ES]** Equipo: evaluar compra/alquiler de servidor propio (~20€/mes) para alojar aplicaciones BlueNose — abrir conversación después de Semana Santa | Owner: Jesús
 
 ### UCSP — Cobranzas
 - [ ] 🆕 **[UCSP — Cobranzas]** Enrique: No hay novedades | Owner: Enrique

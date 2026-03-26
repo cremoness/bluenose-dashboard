@@ -1,7 +1,7 @@
 const TASKS = {
   "urgente": [
     {
-      "text": "🆕 <strong>[WV ES]</strong> Pablo: Sincronizar el campo 'nombre de la iglesia' del objeto 'iglesias' al objeto 'contactos'",
+      "text": "Pablo: Sincronizar el campo 'nombre de la iglesia' del objeto 'iglesias' al objeto 'contactos'",
       "account": "WV",
       "project": "ES",
       "tag": "ES",
@@ -10,7 +10,31 @@ const TASKS = {
       "clients": [
         "WV"
       ],
-      "isNew": true
+      "isCompleted": true
+    },
+    {
+      "text": "Marcos: Sincronizar los campos Partner ID en HubSpot — co_partner_id queda como propiedad definitiva, el resto viajan a esta",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Marcos",
+      "clients": [
+        "WV"
+      ],
+      "isCompleted": true
+    },
+    {
+      "text": "Pablo: Prefijo en pedidos implementado — nuevos negocios muestran Renovación / Inicial correctamente",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Pablo",
+      "clients": [
+        "WV"
+      ],
+      "isCompleted": true
     },
     {
       "text": "🆕 <strong>[WV ES]</strong> Marcos: Videos en emails no se reproducen directamente en bandeja del receptor — se abren en nueva ventana. URL de versión web del email no es pública hasta que el email se ha enviado",
@@ -37,36 +61,12 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV ES]</strong> Marcos: Sincronizar los campos Partner ID en HubSpot — flujo creado en https://app-eu1.hubspot.com/workflows/143270595/platform/flow/3990770875/edit",
-      "account": "WV",
-      "project": "ES",
-      "tag": "ES",
-      "tagClass": "tag-wv",
-      "owner": "Marcos",
-      "clients": [
-        "WV"
-      ],
-      "isNew": true
-    },
-    {
       "text": "🆕 <strong>[WV ES]</strong> Sofi: enviará email a Jorge sobre los problemas de migración de datos",
       "account": "WV",
       "project": "ES",
       "tag": "ES",
       "tagClass": "tag-wv",
       "owner": "Sofia",
-      "clients": [
-        "WV"
-      ],
-      "isNew": true
-    },
-    {
-      "text": "🆕 <strong>[WV ES]</strong> Pablo: Confirmar con Nieves que todos los párrocos asociados a una iglesia tienen un \"nombre de la iglesia\" asignado (seguimiento 18 de marzo)",
-      "account": "WV",
-      "project": "ES",
-      "tag": "ES",
-      "tagClass": "tag-wv",
-      "owner": "Pablo",
       "clients": [
         "WV"
       ],
@@ -85,12 +85,72 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV ES]</strong> Pablo: aprobó la prueba de prefijo en pedidos propuesta por Juan Trejo para filtrar e implementar en WordPress",
+      "text": "🆕 <strong>[WV ES]</strong> Jesús/Esther: enviar fichero con ID de pedido + valor (Renovación u Original) para hacer retroactiva la automatización del prefijo en pedidos",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Jesús",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV ES]</strong> Pablo: reunión con Sofía para validar modelo de datos de motivations — crear propiedades por categoría en vez de pre-motivation",
       "account": "WV",
       "project": "ES",
       "tag": "ES",
       "tagClass": "tag-wv",
       "owner": "Pablo",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV ES]</strong> Pablo: incluir a Vicente y Nieves en reuniones de modelo de datos — tienen requerimientos de finanzas sobre motivations y designations",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Pablo",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV ES]</strong> Cristian: enviar a Jesús por Discord requerimientos técnicos del servidor para integración de leads (espacio, IP, DNS)",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Cristian",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV ES]</strong> Jesús: consultar con desarrolladores del hosting disponibilidad de espacio para alojar aplicaciones de BlueNose",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Jesús",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV ES]</strong> Esther/Nieves: revisar y probar resumen enviado por Marcos sobre video incrustado en emails y URL de versión web",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Esther",
       "clients": [
         "WV"
       ],
@@ -650,6 +710,30 @@ const TASKS = {
     }
   ],
   "mes": [
+    {
+      "text": "🆕 <strong>[WV ES]</strong> Pablo: preguntar al mayorista SMS sobre condiciones para nombre propio o número personalizado en envíos",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Pablo",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV ES]</strong> Equipo: evaluar compra/alquiler de servidor propio (~20€/mes) para alojar aplicaciones BlueNose — abrir conversación después de Semana Santa",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Jesús",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
     {
       "text": "🆕 <strong>[UCSP — Cobranzas]</strong> Enrique: No hay novedades",
       "account": "UCSP",
