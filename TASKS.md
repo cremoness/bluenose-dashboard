@@ -31,7 +31,7 @@
 
 ### WV Honduras
 - [ ] 🆕 **[WV HND]** Pablo/Ángel: coordinar con Luis González revisión de paneles HubSpot para medir retornos y eficacia de campañas activas | Owner: Pablo
-- [ ] **[WV HND]** Implementar workflows para nutriciones por correo electrónico | Owner: Luis Gonzalez + Marcos
+- [x] **[WV HND]** Implementar workflows para nutriciones por correo electrónico | Owner: Luis Gonzalez + Marcos
 - [x] **[WV HND]** Coordinar con Lucy la creación y optimización de correos para nutriciones y agradecimientos | Owner: Luis Gonzalez
 - [x] **[WV HND]** Subir datos de donantes y realizar primer contacto esta semana | Owner: Luis Gonzalez
 - [x] **[WV HND]** Obtener aprobación del presupuesto para lanzar campaña en Meta | Owner: Luis Gonzalez
