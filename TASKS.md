@@ -38,7 +38,7 @@
 - [x] **[WV HND]** Realizar cambios recomendados por Pablo en Google Ads para la campaña Wash | Owner: Luis Gonzalez
 - [x] **[WV HND]** Implementar landing page y flujos para convertir donantes únicos en mensuales mediante correos personalizados | Owner: Luis Gonzalez
 - [x] **[WV HND]** Agregar íconos de seguridad PCI DSS a landing page y coordinar con Express Pago para incluirlos en pasarela de pagos iframe | Owner: Luis Gonzalez
-- [ ] **[WV HND]** Armar campaña en Meta con presupuesto aprobado y solicitar adaptaciones a equipo Root para formatos y videos | Owner: Luis Gonzalez
+- [x] **[WV HND]** Armar campaña en Meta con presupuesto aprobado y solicitar adaptaciones a equipo Root para formatos y videos | Owner: Luis Gonzalez
 - [ ] **[WV HND]** Subir información de donantes recientes a HubSpot para monitoreo | Owner: Luis Gonzalez
 - [x] **[WV HND]** Coordinar con Lucy plantillas de correos y mensajes de nutrición post-donación | Owner: Luis Gonzalez
 - [x] **[WV HND]** Mantener comunicación continua por Discord y WhatsApp con soporte y ajustes post-evento | Owner: Luis Gonzalez
