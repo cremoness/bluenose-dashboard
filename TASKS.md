@@ -23,7 +23,7 @@
 - [ ] 🆕 **[WV ES]** Cristian: enviar a Jesús por Discord requerimientos técnicos del servidor para integración de leads (espacio, IP, DNS) | Owner: Cristian
 - [ ] 🆕 **[WV ES]** Jesús: consultar con desarrolladores del hosting disponibilidad de espacio para alojar aplicaciones de BlueNose | Owner: Jesús
 - [ ] 🆕 **[WV ES]** Esther/Nieves: revisar y probar resumen enviado por Marcos sobre video incrustado en emails y URL de versión web | Owner: Esther
-- [ ] **[UPSJB]** Enrique + Pablo: análisis de gestión de leads campaña examen domingo — 11k impactados, 5k aperturas, 325 respuestas, 95% sin gestión comercial. Campaña de emergencia WhatsApp en marcha. Esperar número exacto de matriculados el miércoles | Owner: Enrique + Pablo
+- [x] **[UPSJB]** Enrique + Pablo: análisis de gestión de leads campaña examen domingo — 11k impactados, 5k aperturas, 325 respuestas, 95% sin gestión comercial. Campaña de emergencia WhatsApp en marcha. Esperar número exacto de matriculados el miércoles | Owner: Enrique + Pablo
 
 ---
 
