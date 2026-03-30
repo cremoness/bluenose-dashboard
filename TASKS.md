@@ -58,7 +58,7 @@
 ### WV Chile
 
 #### Rendiciones agencias F2F
-- [x] **[WV CL — Rendiciones F2F]** Ornella: enviar listado de RUTs de donantes ya descontados en clawback para marcar en HubSpot | Owner: Ornella
+- [ ] **[WV CL — Rendiciones F2F]** Ornella: enviar listado de RUTs de donantes ya descontados en clawback para marcar en HubSpot | Owner: Ornella
 - [ ] **[WV CL — Rendiciones F2F]** Pablo Pérez: crear propiedad en HubSpot para marcar donantes que ya pasaron por clawback | Owner: Pablo
 - [ ] **[WV CL — Rendiciones F2F]** Pablo Pérez: ajustar la app con reglas del contrato Más Recursos y preparar versión para producción | Owner: Pablo
 - [ ] **[WV CL — Rendiciones F2F]** Gonzalo: diagramar proceso completo de aprobaciones para facturación | Owner: Gonzalo
