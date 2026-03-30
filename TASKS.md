@@ -5,13 +5,13 @@
 
 ## 🔴 URGENTE / Hoy mismo
 
-- [ ] 🆕 **[WV RD]** Ángel: enviar informe mensual de WV RD hoy — estructura ya trabajada con Anita, pasar borrador a Pablo y Enrique primero | Owner: Ángelito
+- [x] **[WV RD]** Ángel: enviar informe mensual de WV RD hoy — estructura ya trabajada con Anita, pasar borrador a Pablo y Enrique primero | Owner: Ángelito
 
 - [x] **[WV ES]** Pablo: Sincronizar el campo 'nombre de la iglesia' del objeto 'iglesias' al objeto 'contactos' | Owner: Pablo
 - [x] **[WV ES]** Marcos: Sincronizar los campos Partner ID en HubSpot — co_partner_id queda como propiedad definitiva, el resto viajan a esta | Owner: Marcos
 - [x] **[WV ES]** Pablo: Prefijo en pedidos implementado — nuevos negocios muestran Renovación / Inicial correctamente | Owner: Pablo
 - [ ] 🆕 **[WV ES]** Marcos: Videos en emails no se reproducen directamente en bandeja del receptor — se abren en nueva ventana. URL de versión web del email no es pública hasta que el email se ha enviado | Owner: Marcos
-- [ ] 🆕 **[WV ES]** Cristian: Investigar la integración de leads con el proveedor externo sin usar el módulo de Operations | Owner: Cristian
+- [x] **[WV ES]** Cristian: Investigar la integración de leads con el proveedor externo sin usar el módulo de Operations | Owner: Cristian
 - [ ] 🆕 **[WV ES]** Sofi: enviará email a Jorge sobre los problemas de migración de datos | Owner: Sofia
 - [ ] 🆕 **[WV ES]** Nieves: ficheros "Diario de prospección de los promotores" creados con datos ficticios — coordinar con Pablo para preparar la sincronización | Owner: Pablo
 - [ ] 🆕 **[WV ES]** Ángel: verificar inclusión en correos de Sofía sobre importación WV ES — si no está incluido, hablar con Sofi para que lo agregue | Owner: Ángelito
@@ -24,6 +24,8 @@
 - [ ] 🆕 **[WV ES]** Jesús: consultar con desarrolladores del hosting disponibilidad de espacio para alojar aplicaciones de BlueNose | Owner: Jesús
 - [ ] 🆕 **[WV ES]** Esther/Nieves: revisar y probar resumen enviado por Marcos sobre video incrustado en emails y URL de versión web | Owner: Esther
 - [ ] **[UPSJB]** Enrique + Pablo: análisis de gestión de leads campaña examen domingo — 11k impactados, 5k aperturas, 325 respuestas, 95% sin gestión comercial. Campaña de emergencia WhatsApp en marcha. Esperar número exacto de matriculados el miércoles | Owner: Enrique + Pablo
+- [ ] 🆕 **[WV RD]** Ángel: asistir a reunión de status final/cierre de WV RD mañana — Juanito la agendó como reunión de cierre de contrato | Owner: Ángelito
+- [ ] 🆕 **[WV EC]** Cristian: avisar por Discord que el documento de Ecuador fue actualizado | Owner: Cristian
 
 ---
 
@@ -58,9 +60,9 @@
 ### WV Chile
 
 #### Rendiciones agencias F2F
-- [ ] **[WV CL — Rendiciones F2F]** Ornella: enviar listado de RUTs de donantes ya descontados en clawback para marcar en HubSpot | Owner: Ornella
+- [x] **[WV CL — Rendiciones F2F]** Ornella: enviar listado de RUTs de donantes ya descontados en clawback para marcar en HubSpot | Owner: Ornella
 - [ ] **[WV CL — Rendiciones F2F]** Pablo Pérez: crear propiedad en HubSpot para marcar donantes que ya pasaron por clawback | Owner: Pablo
-- [ ] **[WV CL — Rendiciones F2F]** Pablo Pérez: ajustar la app con reglas del contrato Más Recursos y preparar versión para producción | Owner: Pablo
+- [x] **[WV CL — Rendiciones F2F]** Pablo Pérez: ajustar la app con reglas del contrato Más Recursos y preparar versión para producción — primer prototipo enviado, equipo de cliente encontró casos adicionales a resolver | Owner: Pablo
 - [ ] **[WV CL — Rendiciones F2F]** Gonzalo: diagramar proceso completo de aprobaciones para facturación | Owner: Gonzalo
 - [ ] **[WV CL — Rendiciones F2F]** Gonzalo: compartir diagrama y documentos con reglas de negocio y contratos | Owner: Gonzalo
 - [ ] **[WV CL — Rendiciones F2F]** Gonzalo: confirmar temas administrativos | Owner: Gonzalo
@@ -90,6 +92,7 @@
 - [ ] **[UCSP — Simulador de Pensión]** César: informar a Paul y Jorge sobre fecha de habilitación del ambiente de prueba para actualizar planificación | Owner: César
 - [ ] **[UCSP — Simulador de Pensión]** Cristian: apoyar en creación y pruebas del formulario en WordPress, crear página de ejemplo para evitar impactos en producción | Owner: Cristian
 - [ ] **[UCSP — Simulador de Pensión]** Cristian: proporcionar documentación del API al equipo de base de datos para envío y recepción de datos | Owner: Cristian
+- [ ] 🆕 **[UCSP — Simulador de Pensión]** César: coordinar reunión de onboarding/recorrido de la plataforma antes de dar acceso de administrador a BlueNose — propuesto por el equipo UCSP | Owner: César
 
 #### Mi Propósito
 - [ ] 🆕 **[UCSP — Mi Propósito]** César: se están creando un test vocacional hoy para un colegio y no esta funcionando nos ayudan a verificar si hay algún incoveniente con la plataforma. SE ESTÁ IDENTIFICANDO EL PROBLEMA | Owner: Cristian
@@ -105,6 +108,7 @@
 
 #### HubSpot SpotLight
 - [ ] 🆕 **[UCSP — HubSpot SpotLight]** Ángel: Claudia Tapia le había comentado a Anita que pensaba aplicarlo en la calculadora de pensiones. Pablo, darle una mirada a la presentación | Owner: Pablo
+- [ ] 🆕 **[UCSP — HubSpot SpotLight]** Ángel: reescribir storytelling de la presentación de Eventos Inteligentes — usar brief original + transcripciones de reunión interna, hacer prompt a IA para narrativa clara y ejecutiva lista para cliente difícil. Listo para reunión del miércoles | Owner: Ángelito
 
 #### Centro de Idiomas
 - [ ] 🆕 **[UCSP — Centro de Idiomas]** Enrique: confirmar cómo le fue en la reunión del viernes con Centro de Idiomas y próximos pasos | Owner: Enrique
@@ -112,6 +116,8 @@
 - [ ] 🆕 **[UCSP — Centro de Idiomas]** Ángel: Consultarle a Enrique cómo le fue con la entrevista del viernes y los pasos a seguir. | Owner: Enrique
 
 #### CENDES
+- [ ] 🆕 **[UCSP — CENDES]** Ángel: responder correo de María Berlanga (Sendes) confirmando que el manual de flujos no tendrá costo adicional — ya se decidió usar software de captura de pantallas automático | Owner: Ángelito
+- [ ] 🆕 **[UCSP — CENDES]** Marcos: revisar documento de comentarios de María Berlanga sobre HubSpot y coordinar con Ángel para agendar reunión de revisión de flujos | Owner: Marcos
 
 ### UPSJB
 - [ ] **[UPSJB]** Estuardo: enviar buyer persona de padres de Lima para validación del equipo | Owner: Estuardo
@@ -121,10 +127,16 @@
 - [ ] **[UPSJB]** Carlos: completar depuración de registros duplicados en HubSpot — negocios huérfanos y cautivos ya limpios, falta duplicados en distintas etapas del embudo | Owner: Carlos
 - [ ] **[UPSJB]** Carlos: confirmar con consultora Atom novedades sobre entrega del MVP — Pablo indica que ya deberían estar entregando la implementación | Owner: Carlos
 - [ ] **[UPSJB]** Carlos: socializar internamente el estudio de mercado de Administración y Contabilidad y remitir a Blue Nose para evaluación | Owner: Carlos
+- [ ] 🆕 **[UPSJB]** Equipo: planificación estratégica de campaña 26-2 — paneles ya montados por Enrique, falta definir estrategia, objetivos y acciones del nuevo ciclo | Owner: Enrique + Pablo
 
 ### Smartimper
 
 ### Blue Nose
+
+### AGÉNTICA
+- [ ] 🆕 **[AGÉNTICA]** Ángel: crear maqueta de landing page de AGÉNTICA — nueva unidad de BlueNose, inspirada en estructura de Conversia/Impulse, por verticales/sectores, con branding BlueNose. Lista para revisión con Enrique el jueves | Owner: Ángelito
+- [ ] 🆕 **[AGÉNTICA]** Ángel: preparar reporte macro y micro de la campaña BlueNose — resultados por vertical, segmento, nivel jerárquico y canal. Enrique quiere ver si funciona o no y qué ajustar | Owner: Ángelito
+- [ ] 🆕 **[AGÉNTICA]** Enrique: evaluar con Pati y Pablo contratación de HubSpot Marketing Pro — necesario para habilitar nurturing automatizado, secuencias y mayor alcance de campaña | Owner: Enrique
 
 ---
 
@@ -133,6 +145,7 @@
 ### WV España
 - [ ] 🆕 **[WV ES]** Pablo: preguntar al mayorista SMS sobre condiciones para nombre propio o número personalizado en envíos | Owner: Pablo
 - [ ] 🆕 **[WV ES]** Equipo: evaluar compra/alquiler de servidor propio (~20€/mes) para alojar aplicaciones BlueNose — abrir conversación después de Semana Santa | Owner: Jesús
+- [ ] 🆕 **[WV ES]** Jesús: enviar histórico del pipeline de e-commerce para identificar qué donaciones son recurrentes vs iniciales — ya están llegando donaciones al panel, pendiente clasificación | Owner: Jesús
 
 ### UCSP — Cobranzas
 - [ ] 🆕 **[UCSP — Cobranzas]** Enrique: No hay novedades | Owner: Enrique
@@ -145,6 +158,9 @@
 
 ### UCSP — CENDES
 - [ ] 🆕 **[UCSP — CENDES]** Enrique: A la espera de su respuesta | Owner: Cliente
+
+### AGÉNTICA
+- [ ] 🆕 **[AGÉNTICA]** Ángel + Mirela: continuar publicando posts individuales por agente en LinkedIn — misma estructura del PDF "8 agentes, cero excusas". Coordinar con Marcos el calendario de envíos | Owner: Ángelito
 
 
 

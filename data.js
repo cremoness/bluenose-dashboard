@@ -1,7 +1,7 @@
 const TASKS = {
   "urgente": [
     {
-      "text": "🆕 <strong>[WV RD]</strong> Ángel: enviar informe mensual de WV RD hoy — estructura ya trabajada con Anita, pasar borrador a Pablo y Enrique primero",
+      "text": "Ángel: enviar informe mensual de WV RD hoy — estructura ya trabajada con Anita, pasar borrador a Pablo y Enrique primero",
       "account": "WV",
       "project": "RD",
       "tag": "RD",
@@ -10,7 +10,7 @@ const TASKS = {
       "clients": [
         "WV"
       ],
-      "isNew": true
+      "isCompleted": true
     },
     {
       "text": "Pablo: Sincronizar el campo 'nombre de la iglesia' del objeto 'iglesias' al objeto 'contactos'",
@@ -61,7 +61,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV ES]</strong> Cristian: Investigar la integración de leads con el proveedor externo sin usar el módulo de Operations",
+      "text": "Cristian: Investigar la integración de leads con el proveedor externo sin usar el módulo de Operations",
       "account": "WV",
       "project": "ES",
       "tag": "ES",
@@ -70,7 +70,7 @@ const TASKS = {
       "clients": [
         "WV"
       ],
-      "isNew": true
+      "isCompleted": true
     },
     {
       "text": "🆕 <strong>[WV ES]</strong> Sofi: enviará email a Jorge sobre los problemas de migración de datos",
@@ -214,6 +214,30 @@ const TASKS = {
       "clients": [
         "UPSJB"
       ]
+    },
+    {
+      "text": "🆕 <strong>[WV RD]</strong> Ángel: asistir a reunión de status final/cierre de WV RD mañana — Juanito la agendó como reunión de cierre de contrato",
+      "account": "WV",
+      "project": "RD",
+      "tag": "RD",
+      "tagClass": "tag-wv",
+      "owner": "Ángelito",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV EC]</strong> Cristian: avisar por Discord que el documento de Ecuador fue actualizado",
+      "account": "WV",
+      "project": "EC",
+      "tag": "EC",
+      "tagClass": "tag-wv",
+      "owner": "Cristian",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
     }
   ],
   "semana": [
@@ -298,7 +322,8 @@ const TASKS = {
       "owner": "Luis Gonzalez",
       "clients": [
         "WV"
-      ]
+      ],
+      "isCompleted": true
     },
     {
       "text": "Agregar íconos de seguridad PCI DSS a landing page y coordinar con Express Pago para incluirlos en pasarela de pagos iframe",
@@ -309,7 +334,8 @@ const TASKS = {
       "owner": "Luis Gonzalez",
       "clients": [
         "WV"
-      ]
+      ],
+      "isCompleted": true
     },
     {
       "text": "Armar campaña en Meta con presupuesto aprobado y solicitar adaptaciones a equipo Root para formatos y videos",
@@ -320,7 +346,8 @@ const TASKS = {
       "owner": "Luis Gonzalez",
       "clients": [
         "WV"
-      ]
+      ],
+      "isCompleted": true
     },
     {
       "text": "Subir información de donantes recientes a HubSpot para monitoreo",
@@ -331,7 +358,8 @@ const TASKS = {
       "owner": "Luis Gonzalez",
       "clients": [
         "WV"
-      ]
+      ],
+      "isCompleted": true
     },
     {
       "text": "Coordinar con Lucy plantillas de correos y mensajes de nutrición post-donación",
@@ -426,7 +454,8 @@ const TASKS = {
       "owner": "Ornella",
       "clients": [
         "WV"
-      ]
+      ],
+      "isCompleted": true
     },
     {
       "text": "Pablo Pérez: crear propiedad en HubSpot para marcar donantes que ya pasaron por clawback",
@@ -440,7 +469,7 @@ const TASKS = {
       ]
     },
     {
-      "text": "Pablo Pérez: ajustar la app con reglas del contrato Más Recursos y preparar versión para producción",
+      "text": "Pablo Pérez: ajustar la app con reglas del contrato Más Recursos y preparar versión para producción — primer prototipo enviado, equipo de cliente encontró casos adicionales a resolver",
       "account": "WV",
       "project": "Rendiciones F2F",
       "tag": "Rendiciones F2F",
@@ -448,7 +477,8 @@ const TASKS = {
       "owner": "Pablo",
       "clients": [
         "WV"
-      ]
+      ],
+      "isCompleted": true
     },
     {
       "text": "Gonzalo: diagramar proceso completo de aprobaciones para facturación",
@@ -658,6 +688,18 @@ const TASKS = {
       ]
     },
     {
+      "text": "🆕 <strong>[UCSP — Simulador de Pensión]</strong> César: coordinar reunión de onboarding/recorrido de la plataforma antes de dar acceso de administrador a BlueNose — propuesto por el equipo UCSP",
+      "account": "UCSP",
+      "project": "Simulador de Pensión",
+      "tag": "Simulador de Pensión",
+      "tagClass": "tag-uc",
+      "owner": "César",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
       "text": "🆕 <strong>[UCSP — Mi Propósito]</strong> César: se están creando un test vocacional hoy para un colegio y no esta funcionando nos ayudan a verificar si hay algún incoveniente con la plataforma. SE ESTÁ IDENTIFICANDO EL PROBLEMA",
       "account": "UCSP",
       "project": "Mi Propósito",
@@ -694,6 +736,18 @@ const TASKS = {
       "isNew": true
     },
     {
+      "text": "🆕 <strong>[UCSP — HubSpot SpotLight]</strong> Ángel: reescribir storytelling de la presentación de Eventos Inteligentes — usar brief original + transcripciones de reunión interna, hacer prompt a IA para narrativa clara y ejecutiva lista para cliente difícil. Listo para reunión del miércoles",
+      "account": "UCSP",
+      "project": "HubSpot SpotLight",
+      "tag": "HubSpot SpotLight",
+      "tagClass": "tag-uc",
+      "owner": "Ángelito",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
       "text": "🆕 <strong>[UCSP — Centro de Idiomas]</strong> Enrique: confirmar cómo le fue en la reunión del viernes con Centro de Idiomas y próximos pasos",
       "account": "UCSP",
       "project": "Centro de Idiomas",
@@ -724,6 +778,30 @@ const TASKS = {
       "tag": "Centro de Idiomas",
       "tagClass": "tag-uc",
       "owner": "Enrique",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UCSP — CENDES]</strong> Ángel: responder correo de María Berlanga (Sendes) confirmando que el manual de flujos no tendrá costo adicional — ya se decidió usar software de captura de pantallas automático",
+      "account": "UCSP",
+      "project": "CENDES",
+      "tag": "CENDES",
+      "tagClass": "tag-uc",
+      "owner": "Ángelito",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UCSP — CENDES]</strong> Marcos: revisar documento de comentarios de María Berlanga sobre HubSpot y coordinar con Ángel para agendar reunión de revisión de flujos",
+      "account": "UCSP",
+      "project": "CENDES",
+      "tag": "CENDES",
+      "tagClass": "tag-uc",
+      "owner": "Marcos",
       "clients": [
         "UCSP"
       ],
@@ -805,6 +883,54 @@ const TASKS = {
       "clients": [
         "UPSJB"
       ]
+    },
+    {
+      "text": "🆕 <strong>[UPSJB]</strong> Equipo: planificación estratégica de campaña 26-2 — paneles ya montados por Enrique, falta definir estrategia, objetivos y acciones del nuevo ciclo",
+      "account": "UPSJB",
+      "project": "General",
+      "tag": "UPSJB",
+      "tagClass": "tag-up",
+      "owner": "Enrique + Pablo",
+      "clients": [
+        "UPSJB"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[AGÉNTICA]</strong> Ángel: crear maqueta de landing page de AGÉNTICA — nueva unidad de BlueNose, inspirada en estructura de Conversia/Impulse, por verticales/sectores, con branding BlueNose. Lista para revisión con Enrique el jueves",
+      "account": "Ica",
+      "project": "General",
+      "tag": "Ica",
+      "tagClass": "tag-ci",
+      "owner": "Ángelito",
+      "clients": [
+        "Ica"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[AGÉNTICA]</strong> Ángel: preparar reporte macro y micro de la campaña BlueNose — resultados por vertical, segmento, nivel jerárquico y canal. Enrique quiere ver si funciona o no y qué ajustar",
+      "account": "Ica",
+      "project": "General",
+      "tag": "Ica",
+      "tagClass": "tag-ci",
+      "owner": "Ángelito",
+      "clients": [
+        "Ica"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[AGÉNTICA]</strong> Enrique: evaluar con Pati y Pablo contratación de HubSpot Marketing Pro — necesario para habilitar nurturing automatizado, secuencias y mayor alcance de campaña",
+      "account": "Ica",
+      "project": "General",
+      "tag": "Ica",
+      "tagClass": "tag-ci",
+      "owner": "Enrique",
+      "clients": [
+        "Ica"
+      ],
+      "isNew": true
     }
   ],
   "mes": [
@@ -822,6 +948,18 @@ const TASKS = {
     },
     {
       "text": "🆕 <strong>[WV ES]</strong> Equipo: evaluar compra/alquiler de servidor propio (~20€/mes) para alojar aplicaciones BlueNose — abrir conversación después de Semana Santa",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Jesús",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV ES]</strong> Jesús: enviar histórico del pipeline de e-commerce para identificar qué donaciones son recurrentes vs iniciales — ya están llegando donaciones al panel, pendiente clasificación",
       "account": "WV",
       "project": "ES",
       "tag": "ES",
@@ -877,6 +1015,18 @@ const TASKS = {
       "owner": "Cliente",
       "clients": [
         "UCSP"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[AGÉNTICA]</strong> Ángel + Mirela: continuar publicando posts individuales por agente en LinkedIn — misma estructura del PDF \"8 agentes, cero excusas\". Coordinar con Marcos el calendario de envíos",
+      "account": "Ica",
+      "project": "General",
+      "tag": "Ica",
+      "tagClass": "tag-ci",
+      "owner": "Ángelito",
+      "clients": [
+        "Ica"
       ],
       "isNew": true
     }
