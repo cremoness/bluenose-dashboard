@@ -529,7 +529,15 @@ function toggle(el) {
 
 async function syncToggle(el, markDone) {
   const token = localStorage.getItem('gh-token');
-  if (!token) return; // silencioso si no hay token
+  if (!token) {
+    showToast('Configura tu token GitHub primero ⚙', 'err');
+    openTokenModal();
+    // revertir visual
+    const chk = el.querySelector('.si-chk');
+    chk.classList.toggle('on', !markDone);
+    el.classList.toggle('done', !markDone);
+    return;
+  }
   const taskText = el.dataset.taskText || '';
   if (!taskText) return;
   setSyncDot('syncing');
