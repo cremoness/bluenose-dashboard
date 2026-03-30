@@ -238,7 +238,8 @@ const TASKS = {
       "owner": "Luis Gonzalez + Marcos",
       "clients": [
         "WV"
-      ]
+      ],
+      "isCompleted": true
     },
     {
       "text": "Coordinar con Lucy la creación y optimización de correos para nutriciones y agradecimientos",
