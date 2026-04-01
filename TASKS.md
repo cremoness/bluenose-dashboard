@@ -45,6 +45,7 @@
 - [x] **[WV HND]** Coordinar con Lucy plantillas de correos y mensajes de nutrición post-donación | Owner: Luis Gonzalez
 - [x] **[WV HND]** Mantener comunicación continua por Discord y WhatsApp con soporte y ajustes post-evento | Owner: Luis Gonzalez
 - [ ] 🆕 **[WV HND]** Cristian y Ángel: Están en lista de correos sobre el tema de ExpressPago, cualquier novedad comentarla. | Owner: Cristian
+- [ ] 🆕 **[WV HND]** Luis Gustavo: crear y enviar plantilla de recontacto para WhatsApp y correos a Marcos y Comunicaciones BN para construir workflows — coordinar en la tarde | Owner: Luis Gustavo
 
 ### WV España
 #### Migración
@@ -70,11 +71,22 @@
 - [ ] 🆕 **[WV CL — Rendiciones F2F]** Enrique: hacer seguimiento a Gonzalo — tiene reunión con Marta (su jefa) para gestionar presupuesto administrativo de facturación F2F | Owner: Enrique
 - [x] **[WV CL — Rendiciones F2F]** PROYECTO NUEVO: Facturación de la producción de las agencias de F2F. Enrique le hará seguimiento a Gonzalo. | Owner: Enrique
 
+#### Nóminas / Cobranza
+- [ ] 🆕 **[WV CL]** Cristian: compartir nómina corregida de HubSpot para validación de Ornella — objetivo reducir diferencia de ~600 a ~20 pagos vs CIMA | Owner: Cristian
+- [ ] 🆕 **[WV CL]** Ornella: subir nómina del 5 de abril el jueves 02/04 tras recibir respuesta del banco | Owner: Ornella
+- [ ] 🆕 **[WV CL]** Ornella: evaluar si usar nómina CIMA o HubSpot una vez validada la nómina corregida de Cristian | Owner: Ornella
+- [ ] 🆕 **[WV CL — Rendiciones F2F]** Pablo + Cristian: cambiar propiedades de test a propiedades reales en HubSpot una vez validadas las rendiciones F2F en producción | Owner: Pablo
+
 #### Tickets Pendientes
 - [ ] 🆕 **[WV CL]** Cristian: 4 tickets pendientes: Importación de negocios (en manos de Danni), negocios de f2f creados erroneamente (a la espera de la validadicón de Danni), nóminas transdata (se respondió sin respuesta) y la creación de negocios de donantes únicos (solucionado a la espera de la validación del cliente) | Owner: Cliente
 
 ### WV Ecuador
-- [ ] 🆕 **[WV EC]** Cristian: 4 tickets pendientes: Fechas de pago se guardan con valor incorrecto (Valeria tiene pendiente confirmar que se solucionó). La propiedad EC-Cedula fue actualizada en un contacto y el pago ya había sido creado, por lo que la actualización de la cedula no se hizo. (Cristian informó que ese proceso se debe hacer de forma manual). x2. Datos personales del donante faltando en el archivo de debitos (Valeria tiene pendiente enviar el archivo). WF mueve pagos (Cristian trabajando en la revisión). | Owner: Cristian
+- [x] **[WV EC]** Ticket: Fechas de pago se guardan con valor incorrecto — Martha confirmó corrección, Cristian cerró el ticket | Owner: Cristian
+- [x] **[WV EC]** Ticket: WF mueve pagos — workflow corregido, todos los pagos tienen fecha asignada | Owner: Cristian
+- [ ] 🆕 **[WV EC]** Cristian: revisar por qué la cédula no se copia correctamente del contacto al pago — error encontrado en documentación, pendiente confirmar proceso correcto | Owner: Cristian
+- [ ] 🆕 **[WV EC]** Cristian: investigar y resolver problema del portal que se resetea y no reconoce archivos cargados — respuesta antes del viernes | Owner: Cristian
+- [ ] 🆕 **[WV EC]** Cristian: implementar columnas adicionales en archivos bancarios (fecha de pago aceptado y periodo) para automatizar lectura en HubSpot | Owner: Cristian
+- [ ] 🆕 **[WV EC]** Cristian: documentar y comunicar que la generación automática de pagos en HubSpot es independiente de la acción manual en el portal | Owner: Cristian
 
 ### WV Perú
 - [ ] 🆕 **[WV PE]** Cristian: Gestión de página web en HubSpot. Maria enviará listado de preguntas, Cristian hizo el recordatorio a maria. | Owner: Cristian

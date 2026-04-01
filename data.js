@@ -398,6 +398,18 @@ const TASKS = {
       "isNew": true
     },
     {
+      "text": "🆕 <strong>[WV HND]</strong> Luis Gustavo: crear y enviar plantilla de recontacto para WhatsApp y correos a Marcos y Comunicaciones BN para construir workflows — coordinar en la tarde",
+      "account": "WV",
+      "project": "HND",
+      "tag": "HND",
+      "tagClass": "tag-wv",
+      "owner": "Luis Gustavo",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
       "text": "Compartir enlace del calendario a todos los participantes para asegurar acceso a la reunión",
       "account": "WV",
       "project": "ES",
@@ -550,6 +562,54 @@ const TASKS = {
       "isCompleted": true
     },
     {
+      "text": "🆕 <strong>[WV CL]</strong> Cristian: compartir nómina corregida de HubSpot para validación de Ornella — objetivo reducir diferencia de ~600 a ~20 pagos vs CIMA",
+      "account": "WV",
+      "project": "CL",
+      "tag": "CL",
+      "tagClass": "tag-wv",
+      "owner": "Cristian",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV CL]</strong> Ornella: subir nómina del 5 de abril el jueves 02/04 tras recibir respuesta del banco",
+      "account": "WV",
+      "project": "CL",
+      "tag": "CL",
+      "tagClass": "tag-wv",
+      "owner": "Ornella",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV CL]</strong> Ornella: evaluar si usar nómina CIMA o HubSpot una vez validada la nómina corregida de Cristian",
+      "account": "WV",
+      "project": "CL",
+      "tag": "CL",
+      "tagClass": "tag-wv",
+      "owner": "Ornella",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV CL — Rendiciones F2F]</strong> Pablo + Cristian: cambiar propiedades de test a propiedades reales en HubSpot una vez validadas las rendiciones F2F en producción",
+      "account": "WV",
+      "project": "Rendiciones F2F",
+      "tag": "Rendiciones F2F",
+      "tagClass": "tag-wv",
+      "owner": "Pablo",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
       "text": "🆕 <strong>[WV CL]</strong> Cristian: 4 tickets pendientes: Importación de negocios (en manos de Danni), negocios de f2f creados erroneamente (a la espera de la validadicón de Danni), nóminas transdata (se respondió sin respuesta) y la creación de negocios de donantes únicos (solucionado a la espera de la validación del cliente)",
       "account": "WV",
       "project": "CL",
@@ -562,7 +622,67 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV EC]</strong> Cristian: 4 tickets pendientes: Fechas de pago se guardan con valor incorrecto (Valeria tiene pendiente confirmar que se solucionó). La propiedad EC-Cedula fue actualizada en un contacto y el pago ya había sido creado, por lo que la actualización de la cedula no se hizo. (Cristian informó que ese proceso se debe hacer de forma manual). x2. Datos personales del donante faltando en el archivo de debitos (Valeria tiene pendiente enviar el archivo). WF mueve pagos (Cristian trabajando en la revisión).",
+      "text": "Ticket: Fechas de pago se guardan con valor incorrecto — Martha confirmó corrección, Cristian cerró el ticket",
+      "account": "WV",
+      "project": "EC",
+      "tag": "EC",
+      "tagClass": "tag-wv",
+      "owner": "Cristian",
+      "clients": [
+        "WV"
+      ],
+      "isCompleted": true
+    },
+    {
+      "text": "Ticket: WF mueve pagos — workflow corregido, todos los pagos tienen fecha asignada",
+      "account": "WV",
+      "project": "EC",
+      "tag": "EC",
+      "tagClass": "tag-wv",
+      "owner": "Cristian",
+      "clients": [
+        "WV"
+      ],
+      "isCompleted": true
+    },
+    {
+      "text": "🆕 <strong>[WV EC]</strong> Cristian: revisar por qué la cédula no se copia correctamente del contacto al pago — error encontrado en documentación, pendiente confirmar proceso correcto",
+      "account": "WV",
+      "project": "EC",
+      "tag": "EC",
+      "tagClass": "tag-wv",
+      "owner": "Cristian",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV EC]</strong> Cristian: investigar y resolver problema del portal que se resetea y no reconoce archivos cargados — respuesta antes del viernes",
+      "account": "WV",
+      "project": "EC",
+      "tag": "EC",
+      "tagClass": "tag-wv",
+      "owner": "Cristian",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV EC]</strong> Cristian: implementar columnas adicionales en archivos bancarios (fecha de pago aceptado y periodo) para automatizar lectura en HubSpot",
+      "account": "WV",
+      "project": "EC",
+      "tag": "EC",
+      "tagClass": "tag-wv",
+      "owner": "Cristian",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV EC]</strong> Cristian: documentar y comunicar que la generación automática de pagos en HubSpot es independiente de la acción manual en el portal",
       "account": "WV",
       "project": "EC",
       "tag": "EC",
