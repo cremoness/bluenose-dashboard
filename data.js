@@ -458,6 +458,18 @@ const TASKS = {
       "isCompleted": true
     },
     {
+      "text": "🆕 <strong>[WV ES]</strong> Cristian + Ángel: revisar y confirmar propiedades necesarias para generación de ficheros de pagos y sincronización con banco — incluye validar si propiedad SEPA/número de cuenta puede importarse o debe tratarse como no-sensible (como en otros países)",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Cristian + Ángelito",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
       "text": "Ornella: enviar listado de RUTs de donantes ya descontados en clawback para marcar en HubSpot",
       "account": "WV",
       "project": "Rendiciones F2F",
@@ -616,6 +628,18 @@ const TASKS = {
       "tag": "CL",
       "tagClass": "tag-wv",
       "owner": "Cliente",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV CL]</strong> Cristian: investigar ticket de Diana sobre propiedad del nombre de la agencia que a veces aparece sin valor",
+      "account": "WV",
+      "project": "CL",
+      "tag": "CL",
+      "tagClass": "tag-wv",
+      "owner": "Cristian",
       "clients": [
         "WV"
       ],
@@ -844,6 +868,30 @@ const TASKS = {
       "isNew": true
     },
     {
+      "text": "🆕 <strong>[UCSP — Admisión Pregrado]</strong> Pablo: diseñar primera etapa del sistema de agentes para matrícula — crear campos en HubSpot y conectar agentes para recibir y organizar documentación. Ya tiene montado el sistema base para ventas, admisión y matrícula",
+      "account": "UCSP",
+      "project": "Admisión Pregrado",
+      "tag": "Admisión Pregrado",
+      "tagClass": "tag-uc",
+      "owner": "Pablo",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UCSP — Admisión Pregrado]</strong> Ángel: coordinar y triangular propuesta de Carmen Cari sobre exploración de comportamiento de segmentos (matrícula incompleta, temporánea y no matriculados) — gestionar agendamientos con el cliente",
+      "account": "UCSP",
+      "project": "Admisión Pregrado",
+      "tag": "Admisión Pregrado",
+      "tagClass": "tag-uc",
+      "owner": "Ángelito",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
       "text": "🆕 <strong>[UCSP — HubSpot SpotLight]</strong> Ángel: Claudia Tapia le había comentado a Anita que pensaba aplicarlo en la calculadora de pensiones. Pablo, darle una mirada a la presentación",
       "account": "UCSP",
       "project": "HubSpot SpotLight",
@@ -856,7 +904,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UCSP — HubSpot SpotLight]</strong> Ángel: reescribir storytelling de la presentación de Eventos Inteligentes — usar brief original + transcripciones de reunión interna, hacer prompt a IA para narrativa clara y ejecutiva lista para cliente difícil. Listo para reunión del miércoles",
+      "text": "Ángel: reescribir storytelling de la presentación de Eventos Inteligentes — usar brief original + transcripciones de reunión interna, hacer prompt a IA para narrativa clara y ejecutiva lista para cliente difícil. Reunión con Claudia agendada por Pablo",
       "account": "UCSP",
       "project": "HubSpot SpotLight",
       "tag": "HubSpot SpotLight",
@@ -865,7 +913,7 @@ const TASKS = {
       "clients": [
         "UCSP"
       ],
-      "isNew": true
+      "isCompleted": true
     },
     {
       "text": "🆕 <strong>[UCSP — Centro de Idiomas]</strong> Enrique: confirmar cómo le fue en la reunión del viernes con Centro de Idiomas y próximos pasos",
@@ -904,6 +952,18 @@ const TASKS = {
       "isNew": true
     },
     {
+      "text": "🆕 <strong>[UCSP — Centro de Idiomas]</strong> Ángel: armar Gantt con fechas tentativas para entrevistas adicionales — Focus Group (supeditado a agendamiento interno para conseguir participantes) y estudios cuantitativos de Enrique",
+      "account": "UCSP",
+      "project": "Centro de Idiomas",
+      "tag": "Centro de Idiomas",
+      "tagClass": "tag-uc",
+      "owner": "Ángelito",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
       "text": "🆕 <strong>[UCSP — CENDES]</strong> Ángel: responder correo de María Berlanga (Sendes) confirmando que el manual de flujos no tendrá costo adicional — ya se decidió usar software de captura de pantallas automático",
       "account": "UCSP",
       "project": "CENDES",
@@ -916,12 +976,24 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UCSP — CENDES]</strong> Marcos: revisar documento de comentarios de María Berlanga sobre HubSpot y coordinar con Ángel para agendar reunión de revisión de flujos",
+      "text": "Marcos: revisar documento de comentarios de María Berlanga sobre HubSpot y coordinar con Ángel para agendar reunión de revisión de flujos — manual ya enviado a Ángel",
       "account": "UCSP",
       "project": "CENDES",
       "tag": "CENDES",
       "tagClass": "tag-uc",
       "owner": "Marcos",
+      "clients": [
+        "UCSP"
+      ],
+      "isCompleted": true
+    },
+    {
+      "text": "🆕 <strong>[UCSP — CENDES]</strong> Ángel: dar formato al manual enviado por Marcos y enviarlo a María Berlanga",
+      "account": "UCSP",
+      "project": "CENDES",
+      "tag": "CENDES",
+      "tagClass": "tag-uc",
+      "owner": "Ángelito",
       "clients": [
         "UCSP"
       ],
@@ -1005,14 +1077,132 @@ const TASKS = {
       ]
     },
     {
-      "text": "🆕 <strong>[UPSJB]</strong> Equipo: planificación estratégica de campaña 26-2 — paneles ya montados por Enrique, falta definir estrategia, objetivos y acciones del nuevo ciclo",
+      "text": "🆕 <strong>[UPSJB]</strong> Equipo: planificación estratégica de campaña 26-2 — documento Excel en notebook/drive con post-mortem de 26-1, KPIs, lecciones aprendidas y drivers estratégicos para 26-2. Engloba: ventas, buyer persona padre, plan a distancia, carreras y agentes IA",
       "account": "UPSJB",
       "project": "General",
       "tag": "UPSJB",
       "tagClass": "tag-up",
-      "owner": "Enrique + Pablo",
+      "owner": "Enrique + Ángelito",
       "clients": [
         "UPSJB"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UPSJB]</strong> Ángel: cuantificar impacto de las ineficiencias en gestión de leads de ventas — leads desatendidos, tiempo de respuesta, porcentaje de conversión perdida. Presentar a Edgar para que tome acción correctiva",
+      "account": "UPSJB",
+      "project": "General",
+      "tag": "UPSJB",
+      "tagClass": "tag-up",
+      "owner": "Ángelito",
+      "clients": [
+        "UPSJB"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UPSJB]</strong> Pablo / Marcos / Estuardo: implementar buyer persona padre en HubSpot — configurar propiedades, segmentación y nurturing multicanal (WhatsApp, correo, redes, SMS) alineado a nuevos hallazgos del buyer persona",
+      "account": "UPSJB",
+      "project": "General",
+      "tag": "UPSJB",
+      "tagClass": "tag-up",
+      "owner": "Pablo",
+      "clients": [
+        "UPSJB"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UPSJB]</strong> Pablo / Marcos: crear panel de medición del buyer persona padre — fit/no-fit, canales de interacción y resultados del nurturing",
+      "account": "UPSJB",
+      "project": "General",
+      "tag": "UPSJB",
+      "tagClass": "tag-up",
+      "owner": "Pablo",
+      "clients": [
+        "UPSJB"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UPSJB]</strong> Ángel: convertir documento Word de análisis estratégico \"Plan a Distancia\" en checklist ejecutable con IA — campos: recomendado, ejecutado, responsable, fecha",
+      "account": "UPSJB",
+      "project": "General",
+      "tag": "UPSJB",
+      "tagClass": "tag-up",
+      "owner": "Ángelito",
+      "clients": [
+        "UPSJB"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UPSJB]</strong> Enrique: comentar a Edgar la situación de las carreras de Administración y Contabilidad — sin propuesta de valor ni estudio de mercado, no se puede tomar decisión de cierre",
+      "account": "UPSJB",
+      "project": "General",
+      "tag": "UPSJB",
+      "tagClass": "tag-up",
+      "owner": "Enrique",
+      "clients": [
+        "UPSJB"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UPSJB]</strong> Pablo: escribir a Estuardo y/o Carlos para dar seguimiento a propuesta de agente Bot y WhatsApp — si no responden por escrito, tocarlo en reunión con Edgar presente",
+      "account": "UPSJB",
+      "project": "General",
+      "tag": "UPSJB",
+      "tagClass": "tag-up",
+      "owner": "Pablo",
+      "clients": [
+        "UPSJB"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UPSJB]</strong> Ángel: hacer seguimiento a Pablo sobre respuesta de Estuardo/Carlos a la propuesta de agente Bot y WhatsApp",
+      "account": "UPSJB",
+      "project": "General",
+      "tag": "UPSJB",
+      "tagClass": "tag-up",
+      "owner": "Ángelito",
+      "clients": [
+        "UPSJB"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[Caja Ica]</strong> Pablo: inicio de proyecto de implementación Marketing Cloud (Salesforce) — aprobado formalmente. Trabajando con equipo desarrollador en Brasil, partners de Salesforce. Próximos pasos: Service Cloud y Cels Cloud en meses siguientes",
+      "account": "Ica",
+      "project": "Ica",
+      "tag": "Ica",
+      "tagClass": "tag-ci",
+      "owner": "Pablo",
+      "clients": [
+        "Ica"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[Buenaventura]</strong> Pablo / Enrique: proyecto de onboarding y adopción de IA aprobado informalmente — taller dos jornadas Full Day con gerente general, CEO y vicepresidentes de Buenaventura Minera. Pendiente aprobación formal",
+      "account": "General",
+      "project": "Buenaventura",
+      "tag": "Buenaventura",
+      "tagClass": "tag-def",
+      "owner": "Pablo + Enrique",
+      "clients": [],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[AGÉNTICA]</strong> Ángel: subir maqueta HTML de landing de Agéntica a repositorio GitHub para revisión de Pablo y Enrique",
+      "account": "Ica",
+      "project": "General",
+      "tag": "Ica",
+      "tagClass": "tag-ci",
+      "owner": "Ángelito",
+      "clients": [
+        "Ica"
       ],
       "isNew": true
     },

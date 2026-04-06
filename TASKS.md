@@ -58,6 +58,9 @@
 - [x] **[WV ES]** Confirmar nombres y detalles precisos para etiquetas pagador y sponsor para uso en automatizaciones | Owner: Ángelito
 - [x] **[WV ES]** Continuar desarrollando modelo de datos en HubSpot con asociaciones y propiedades | Owner: Ángelito
 
+#### Pagos y Banco
+- [ ] 🆕 **[WV ES]** Cristian + Ángel: revisar y confirmar propiedades necesarias para generación de ficheros de pagos y sincronización con banco — incluye validar si propiedad SEPA/número de cuenta puede importarse o debe tratarse como no-sensible (como en otros países) | Owner: Cristian + Ángelito
+
 ### WV Chile
 
 #### Rendiciones agencias F2F
@@ -79,6 +82,7 @@
 
 #### Tickets Pendientes
 - [ ] 🆕 **[WV CL]** Cristian: 4 tickets pendientes: Importación de negocios (en manos de Danni), negocios de f2f creados erroneamente (a la espera de la validadicón de Danni), nóminas transdata (se respondió sin respuesta) y la creación de negocios de donantes únicos (solucionado a la espera de la validación del cliente) | Owner: Cliente
+- [ ] 🆕 **[WV CL]** Cristian: investigar ticket de Diana sobre propiedad del nombre de la agencia que a veces aparece sin valor | Owner: Cristian
 
 ### WV Ecuador
 - [x] **[WV EC]** Ticket: Fechas de pago se guardan con valor incorrecto — Martha confirmó corrección, Cristian cerró el ticket | Owner: Cristian
@@ -117,19 +121,23 @@
 
 #### Admisión Pregrado
 - [ ] 🆕 **[UCSP — Admisión Pregrado]** Pablo: Propuesta de agente de WhatsApp para documentos de matrícula, la tarea es coordinar la reunión con el equipo operativo | Owner: Enrique
+- [ ] 🆕 **[UCSP — Admisión Pregrado]** Pablo: diseñar primera etapa del sistema de agentes para matrícula — crear campos en HubSpot y conectar agentes para recibir y organizar documentación. Ya tiene montado el sistema base para ventas, admisión y matrícula | Owner: Pablo
+- [ ] 🆕 **[UCSP — Admisión Pregrado]** Ángel: coordinar y triangular propuesta de Carmen Cari sobre exploración de comportamiento de segmentos (matrícula incompleta, temporánea y no matriculados) — gestionar agendamientos con el cliente | Owner: Ángelito
 
 #### HubSpot SpotLight
 - [ ] 🆕 **[UCSP — HubSpot SpotLight]** Ángel: Claudia Tapia le había comentado a Anita que pensaba aplicarlo en la calculadora de pensiones. Pablo, darle una mirada a la presentación | Owner: Pablo
-- [ ] 🆕 **[UCSP — HubSpot SpotLight]** Ángel: reescribir storytelling de la presentación de Eventos Inteligentes — usar brief original + transcripciones de reunión interna, hacer prompt a IA para narrativa clara y ejecutiva lista para cliente difícil. Listo para reunión del miércoles | Owner: Ángelito
+- [x] **[UCSP — HubSpot SpotLight]** Ángel: reescribir storytelling de la presentación de Eventos Inteligentes — usar brief original + transcripciones de reunión interna, hacer prompt a IA para narrativa clara y ejecutiva lista para cliente difícil. Reunión con Claudia agendada por Pablo | Owner: Ángelito
 
 #### Centro de Idiomas
 - [ ] 🆕 **[UCSP — Centro de Idiomas]** Enrique: confirmar cómo le fue en la reunión del viernes con Centro de Idiomas y próximos pasos | Owner: Enrique
 - [ ] 🆕 **[UCSP — Centro de Idiomas]** Ángel: revisar documento de ideas de indagación para todos los públicos (egresados, alumnos, desertores) — Renzo confirmó que asume presupuesto de estudios adicionales | Owner: Ángelito
 - [ ] 🆕 **[UCSP — Centro de Idiomas]** Ángel: Consultarle a Enrique cómo le fue con la entrevista del viernes y los pasos a seguir. | Owner: Enrique
+- [ ] 🆕 **[UCSP — Centro de Idiomas]** Ángel: armar Gantt con fechas tentativas para entrevistas adicionales — Focus Group (supeditado a agendamiento interno para conseguir participantes) y estudios cuantitativos de Enrique | Owner: Ángelito
 
 #### CENDES
 - [ ] 🆕 **[UCSP — CENDES]** Ángel: responder correo de María Berlanga (Sendes) confirmando que el manual de flujos no tendrá costo adicional — ya se decidió usar software de captura de pantallas automático | Owner: Ángelito
-- [ ] 🆕 **[UCSP — CENDES]** Marcos: revisar documento de comentarios de María Berlanga sobre HubSpot y coordinar con Ángel para agendar reunión de revisión de flujos | Owner: Marcos
+- [x] **[UCSP — CENDES]** Marcos: revisar documento de comentarios de María Berlanga sobre HubSpot y coordinar con Ángel para agendar reunión de revisión de flujos — manual ya enviado a Ángel | Owner: Marcos
+- [ ] 🆕 **[UCSP — CENDES]** Ángel: dar formato al manual enviado por Marcos y enviarlo a María Berlanga | Owner: Ángelito
 
 ### UPSJB
 - [ ] **[UPSJB]** Estuardo: enviar buyer persona de padres de Lima para validación del equipo | Owner: Estuardo
@@ -139,13 +147,27 @@
 - [ ] **[UPSJB]** Carlos: completar depuración de registros duplicados en HubSpot — negocios huérfanos y cautivos ya limpios, falta duplicados en distintas etapas del embudo | Owner: Carlos
 - [ ] **[UPSJB]** Carlos: confirmar con consultora Atom novedades sobre entrega del MVP — Pablo indica que ya deberían estar entregando la implementación | Owner: Carlos
 - [ ] **[UPSJB]** Carlos: socializar internamente el estudio de mercado de Administración y Contabilidad y remitir a Blue Nose para evaluación | Owner: Carlos
-- [ ] 🆕 **[UPSJB]** Equipo: planificación estratégica de campaña 26-2 — paneles ya montados por Enrique, falta definir estrategia, objetivos y acciones del nuevo ciclo | Owner: Enrique + Pablo
+- [ ] 🆕 **[UPSJB]** Equipo: planificación estratégica de campaña 26-2 — documento Excel en notebook/drive con post-mortem de 26-1, KPIs, lecciones aprendidas y drivers estratégicos para 26-2. Engloba: ventas, buyer persona padre, plan a distancia, carreras y agentes IA | Owner: Enrique + Ángelito
+- [ ] 🆕 **[UPSJB]** Ángel: cuantificar impacto de las ineficiencias en gestión de leads de ventas — leads desatendidos, tiempo de respuesta, porcentaje de conversión perdida. Presentar a Edgar para que tome acción correctiva | Owner: Ángelito
+- [ ] 🆕 **[UPSJB]** Pablo / Marcos / Estuardo: implementar buyer persona padre en HubSpot — configurar propiedades, segmentación y nurturing multicanal (WhatsApp, correo, redes, SMS) alineado a nuevos hallazgos del buyer persona | Owner: Pablo
+- [ ] 🆕 **[UPSJB]** Pablo / Marcos: crear panel de medición del buyer persona padre — fit/no-fit, canales de interacción y resultados del nurturing | Owner: Pablo
+- [ ] 🆕 **[UPSJB]** Ángel: convertir documento Word de análisis estratégico "Plan a Distancia" en checklist ejecutable con IA — campos: recomendado, ejecutado, responsable, fecha | Owner: Ángelito
+- [ ] 🆕 **[UPSJB]** Enrique: comentar a Edgar la situación de las carreras de Administración y Contabilidad — sin propuesta de valor ni estudio de mercado, no se puede tomar decisión de cierre | Owner: Enrique
+- [ ] 🆕 **[UPSJB]** Pablo: escribir a Estuardo y/o Carlos para dar seguimiento a propuesta de agente Bot y WhatsApp — si no responden por escrito, tocarlo en reunión con Edgar presente | Owner: Pablo
+- [ ] 🆕 **[UPSJB]** Ángel: hacer seguimiento a Pablo sobre respuesta de Estuardo/Carlos a la propuesta de agente Bot y WhatsApp | Owner: Ángelito
 
 ### Smartimper
 
 ### Blue Nose
 
+### Caja Ica
+- [ ] 🆕 **[Caja Ica]** Pablo: inicio de proyecto de implementación Marketing Cloud (Salesforce) — aprobado formalmente. Trabajando con equipo desarrollador en Brasil, partners de Salesforce. Próximos pasos: Service Cloud y Cels Cloud en meses siguientes | Owner: Pablo
+
+### Buenaventura
+- [ ] 🆕 **[Buenaventura]** Pablo / Enrique: proyecto de onboarding y adopción de IA aprobado informalmente — taller dos jornadas Full Day con gerente general, CEO y vicepresidentes de Buenaventura Minera. Pendiente aprobación formal | Owner: Pablo + Enrique
+
 ### AGÉNTICA
+- [ ] 🆕 **[AGÉNTICA]** Ángel: subir maqueta HTML de landing de Agéntica a repositorio GitHub para revisión de Pablo y Enrique | Owner: Ángelito
 - [ ] 🆕 **[AGÉNTICA]** Ángel: crear maqueta de landing page de AGÉNTICA — nueva unidad de BlueNose, inspirada en estructura de Conversia/Impulse, por verticales/sectores, con branding BlueNose. Lista para revisión con Enrique el jueves | Owner: Ángelito
 - [ ] 🆕 **[AGÉNTICA]** Ángel: preparar reporte macro y micro de la campaña BlueNose — resultados por vertical, segmento, nivel jerárquico y canal. Enrique quiere ver si funciona o no y qué ajustar | Owner: Ángelito
 - [ ] 🆕 **[AGÉNTICA]** Enrique: evaluar con Pati y Pablo contratación de HubSpot Marketing Pro — necesario para habilitar nurturing automatizado, secuencias y mayor alcance de campaña | Owner: Enrique
