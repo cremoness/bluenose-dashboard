@@ -411,6 +411,18 @@ const TASKS = {
       "isNew": true
     },
     {
+      "text": "🆕 <strong>[UCSP — Exploración Segmentos Matrícula]</strong> Ángel: iniciar proyecto de exploración del comportamiento de segmentos específicos de estudiantes en matrículas — segmentos: matrícula incompleta, temporánea y no matriculados",
+      "account": "UCSP",
+      "project": "Exploración Segmentos Matrícula",
+      "tag": "Exploración Segmentos Matrícula",
+      "tagClass": "tag-uc",
+      "owner": "Ángelito",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
       "text": "Ángel: reescribir storytelling de la presentación de Eventos Inteligentes — usar brief original + transcripciones de reunión interna, hacer prompt a IA para narrativa clara y ejecutiva lista para cliente difícil. Reunión con Claudia agendada por Pablo",
       "account": "UCSP",
       "project": "HubSpot SpotLight",
@@ -520,6 +532,18 @@ const TASKS = {
     },
     {
       "text": "🆕 <strong>[UCSP — Centro de Idiomas]</strong> Ángel: armar Gantt con fechas tentativas para entrevistas adicionales — Focus Group (supeditado a agendamiento interno para conseguir participantes) y estudios cuantitativos de Enrique",
+      "account": "UCSP",
+      "project": "Centro de Idiomas",
+      "tag": "Centro de Idiomas",
+      "tagClass": "tag-uc",
+      "owner": "Ángelito",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UCSP — Centro de Idiomas]</strong> Ángel: enviar Gantt del proyecto Centro de Idiomas al cliente",
       "account": "UCSP",
       "project": "Centro de Idiomas",
       "tag": "Centro de Idiomas",

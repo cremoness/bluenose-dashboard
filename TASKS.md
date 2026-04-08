@@ -63,6 +63,7 @@
 #### Admisión Pregrado
 - [ ] 🆕 **[UCSP — Admisión Pregrado]** Pablo: diseñar primera etapa del sistema de agentes para matrícula — crear campos en HubSpot y conectar agentes para recibir y organizar documentación. Ya tiene montado el sistema base para ventas, admisión y matrícula | Owner: Pablo
 - [ ] 🆕 **[UCSP — Admisión Pregrado]** Ángel: coordinar y triangular propuesta de Carmen Cari sobre exploración de comportamiento de segmentos (matrícula incompleta, temporánea y no matriculados) — gestionar agendamientos con el cliente | Owner: Ángelito
+- [ ] 🆕 **[UCSP — Exploración Segmentos Matrícula]** Ángel: iniciar proyecto de exploración del comportamiento de segmentos específicos de estudiantes en matrículas — segmentos: matrícula incompleta, temporánea y no matriculados | Owner: Ángelito
 
 #### HubSpot SpotLight
 - [x] **[UCSP — HubSpot SpotLight]** Ángel: reescribir storytelling de la presentación de Eventos Inteligentes — usar brief original + transcripciones de reunión interna, hacer prompt a IA para narrativa clara y ejecutiva lista para cliente difícil. Reunión con Claudia agendada por Pablo | Owner: Ángelito
@@ -77,6 +78,7 @@
 
 #### Centro de Idiomas
 - [ ] 🆕 **[UCSP — Centro de Idiomas]** Ángel: armar Gantt con fechas tentativas para entrevistas adicionales — Focus Group (supeditado a agendamiento interno para conseguir participantes) y estudios cuantitativos de Enrique | Owner: Ángelito
+- [ ] 🆕 **[UCSP — Centro de Idiomas]** Ángel: enviar Gantt del proyecto Centro de Idiomas al cliente | Owner: Ángelito
 
 #### CENDES
 - [ ] 🆕 **[UCSP — CENDES]** Ángel: responder correo de María Berlanga (Sendes) confirmando que el manual de flujos no tendrá costo adicional — ya se decidió usar software de captura de pantallas automático | Owner: Ángelito
