@@ -398,12 +398,72 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV HND]</strong> Luis Gustavo: crear y enviar plantilla de recontacto para WhatsApp y correos a Marcos y Comunicaciones BN para construir workflows — coordinar en la tarde",
+      "text": "Luis Gustavo: crear y enviar plantilla de recontacto para WhatsApp y correos a Marcos y Comunicaciones BN — 4 plantillas WA listas, 2 correos hechos, links enviados tras la reunión",
       "account": "WV",
       "project": "HND",
       "tag": "HND",
       "tagClass": "tag-wv",
       "owner": "Luis Gustavo",
+      "clients": [
+        "WV"
+      ],
+      "isCompleted": true
+    },
+    {
+      "text": "🆕 <strong>[WV HND]</strong> Luis Gustavo: modificar campaña de Wash — cambiar de lead ads a campaña con destino landing page (agregar formulario de \"más información\", mantener botón \"Donar ahora\")",
+      "account": "WV",
+      "project": "HND",
+      "tag": "HND",
+      "tagClass": "tag-wv",
+      "owner": "Luis Gustavo",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV HND]</strong> Luis Gustavo: crear formulario de registro dentro de la landing page de Cultivando Futuros",
+      "account": "WV",
+      "project": "HND",
+      "tag": "HND",
+      "tagClass": "tag-wv",
+      "owner": "Luis Gustavo",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV HND]</strong> Luis Gustavo: compartir documento/diapositiva de proyección financiera (ROI a 10 años) con el equipo",
+      "account": "WV",
+      "project": "HND",
+      "tag": "HND",
+      "tagClass": "tag-wv",
+      "owner": "Luis Gustavo",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV HND]</strong> René: continuar desarrollo técnico de integración Express Pago - HubSpot — mapeo de propiedades entre plataformas, en espera de que René termine para continuar el desarrollo",
+      "account": "WV",
+      "project": "HND",
+      "tag": "HND",
+      "tagClass": "tag-wv",
+      "owner": "René",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV HND]</strong> Enrique: revisar proyección financiera de Luis y elaborar documento de planeamiento numérico con metas, KPIs y pipeline para campaña Honduras",
+      "account": "WV",
+      "project": "HND",
+      "tag": "HND",
+      "tagClass": "tag-wv",
+      "owner": "Enrique",
       "clients": [
         "WV"
       ],
@@ -574,6 +634,66 @@ const TASKS = {
       "isCompleted": true
     },
     {
+      "text": "🆕 <strong>[WV CL — Rendiciones F2F]</strong> Juana: poner en contacto a Enrique con el equipo para gestionar temas administrativos del proyecto Payment Platform en Chile",
+      "account": "WV",
+      "project": "Rendiciones F2F",
+      "tag": "Rendiciones F2F",
+      "tagClass": "tag-wv",
+      "owner": "Juana (cliente)",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV CL — Rendiciones F2F]</strong> Gonzalo: enviar flujo de aprobaciones a Pablo — pendiente desde reunión anterior",
+      "account": "WV",
+      "project": "Rendiciones F2F",
+      "tag": "Rendiciones F2F",
+      "tagClass": "tag-wv",
+      "owner": "Gonzalo",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV CL — Rendiciones F2F]</strong> Pablo: agregar resumen de motivos de rechazo con sumatorios y filtros en la vista \"rechazos mes actual\" de la plataforma — facilita disputas y ajustes contractuales con la agencia",
+      "account": "WV",
+      "project": "Rendiciones F2F",
+      "tag": "Rendiciones F2F",
+      "tagClass": "tag-wv",
+      "owner": "Pablo",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV CL — Rendiciones F2F]</strong> Cristian + Marcos: investigar y resolver fallo de configuración en transmisión de datos VirtualPost → HubSpot — root, teléfono y fecha de nacimiento no viajan en algunos casos (pago aprobado existe en VirtualPost pero no llega a HubSpot)",
+      "account": "WV",
+      "project": "Rendiciones F2F",
+      "tag": "Rendiciones F2F",
+      "tagClass": "tag-wv",
+      "owner": "Cristian",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV CL — Rendiciones F2F]</strong> Ornella + Gonzalo: practicar casos en la plataforma de rendiciones mientras Cristian identifica el error de VirtualPost",
+      "account": "WV",
+      "project": "Rendiciones F2F",
+      "tag": "Rendiciones F2F",
+      "tagClass": "tag-wv",
+      "owner": "Ornella",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
       "text": "🆕 <strong>[WV CL]</strong> Cristian: compartir nómina corregida de HubSpot para validación de Ornella — objetivo reducir diferencia de ~600 a ~20 pagos vs CIMA",
       "account": "WV",
       "project": "CL",
@@ -616,6 +736,78 @@ const TASKS = {
       "tag": "Rendiciones F2F",
       "tagClass": "tag-wv",
       "owner": "Pablo",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV CL]</strong> Cristian: realizar backfill de pagos faltantes en HubSpot usando ID y suscripción de VirtualPost — crear pagos que no se generaron por el fallo de transmisión",
+      "account": "WV",
+      "project": "CL",
+      "tag": "CL",
+      "tagClass": "tag-wv",
+      "owner": "Cristian",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV CL]</strong> Cristian: evaluar y ajustar configuración del CAPTCHA en formulario de inicio de donación — cambiar versión para resolver conflicto con envío de formulario sin eliminar protección contra bots",
+      "account": "WV",
+      "project": "CL",
+      "tag": "CL",
+      "tagClass": "tag-wv",
+      "owner": "Cristian",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV CL]</strong> Cristian: generar listado de carritos abandonados (contactos que rellenaron formulario 1: nombre, correo, teléfono, root) para base de recuperación y acción por WhatsApp",
+      "account": "WV",
+      "project": "CL",
+      "tag": "CL",
+      "tagClass": "tag-wv",
+      "owner": "Cristian",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV CL]</strong> Cristian + Marcos: estandarizar propiedad root — verificar y activar fórmula de conversión que transforme root normal a root sin formato",
+      "account": "WV",
+      "project": "CL",
+      "tag": "CL",
+      "tagClass": "tag-wv",
+      "owner": "Cristian",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV CL]</strong> Ángel: consultar a Sofía qué data de nóminas fue importada y hasta qué fecha — determinar si hay pagos de sep-dic faltantes que subir (Pablo lo pidió en reunión de soporte)",
+      "account": "WV",
+      "project": "CL",
+      "tag": "CL",
+      "tagClass": "tag-wv",
+      "owner": "Ángelito",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV CL]</strong> Diana: validar nuevamente propiedad CLCapture / Select Captor en la copia de contacto a negocio — algunos registros no están copiando el valor",
+      "account": "WV",
+      "project": "CL",
+      "tag": "CL",
+      "tagClass": "tag-wv",
+      "owner": "Diana (cliente)",
       "clients": [
         "WV"
       ],
@@ -914,6 +1106,102 @@ const TASKS = {
         "UCSP"
       ],
       "isCompleted": true
+    },
+    {
+      "text": "🆕 <strong>[UCSP — HubSpot SpotLight]</strong> Pablo: ajustar workflow para que solo se genere negocio en HubSpot cuando la tipificación de Atom sea MQL — actualmente se crea negocio al iniciar cualquier conversación",
+      "account": "UCSP",
+      "project": "HubSpot SpotLight",
+      "tag": "HubSpot SpotLight",
+      "tagClass": "tag-uc",
+      "owner": "Pablo",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UCSP — HubSpot SpotLight]</strong> Pablo: enviar propuesta de cotización para sistema de agentes inteligentes multicanal (ventas, admisión, servicio) — Claudia lo solicitó en la reunión",
+      "account": "UCSP",
+      "project": "HubSpot SpotLight",
+      "tag": "HubSpot SpotLight",
+      "tagClass": "tag-uc",
+      "owner": "Pablo",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UCSP — HubSpot SpotLight]</strong> Pablo: configurar tracking de eventos inteligentes e integrar al lead scoring actual — inicio con segmentos concretos para campaña de abril",
+      "account": "UCSP",
+      "project": "HubSpot SpotLight",
+      "tag": "HubSpot SpotLight",
+      "tagClass": "tag-uc",
+      "owner": "Pablo",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UCSP — HubSpot SpotLight]</strong> Claudia: solicitar a Tom listado completo de tipificaciones usadas en campañas outbound para ajustar criterios del workflow",
+      "account": "UCSP",
+      "project": "HubSpot SpotLight",
+      "tag": "HubSpot SpotLight",
+      "tagClass": "tag-uc",
+      "owner": "Claudia (cliente)",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UCSP — HubSpot SpotLight]</strong> Claudia: reunirse con Silvia y Romina para priorizar métricas y definir matriz de eventos inteligentes para campaña de abril",
+      "account": "UCSP",
+      "project": "HubSpot SpotLight",
+      "tag": "HubSpot SpotLight",
+      "tagClass": "tag-uc",
+      "owner": "Claudia (cliente)",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UCSP — HubSpot SpotLight]</strong> Claudia: agendar reunión con Pablo para revisar implementación y limitaciones de integración WhatsApp de asesores",
+      "account": "UCSP",
+      "project": "HubSpot SpotLight",
+      "tag": "HubSpot SpotLight",
+      "tagClass": "tag-uc",
+      "owner": "Claudia (cliente)",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UCSP — HubSpot SpotLight]</strong> Juanjito: desarrollar tabla con metas diarias y % de consecución integrando datos de campañas en HubSpot",
+      "account": "UCSP",
+      "project": "HubSpot SpotLight",
+      "tag": "HubSpot SpotLight",
+      "tagClass": "tag-uc",
+      "owner": "Juanjito (cliente)",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UCSP — HubSpot SpotLight]</strong> Janet: crear propiedad nueva en HubSpot para registrar fuentes de tráfico en negocios sin alterar valores actuales",
+      "account": "UCSP",
+      "project": "HubSpot SpotLight",
+      "tag": "HubSpot SpotLight",
+      "tagClass": "tag-uc",
+      "owner": "Janet (cliente)",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
     },
     {
       "text": "🆕 <strong>[UCSP — Centro de Idiomas]</strong> Enrique: confirmar cómo le fue en la reunión del viernes con Centro de Idiomas y próximos pasos",

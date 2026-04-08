@@ -45,7 +45,12 @@
 - [x] **[WV HND]** Coordinar con Lucy plantillas de correos y mensajes de nutrición post-donación | Owner: Luis Gonzalez
 - [x] **[WV HND]** Mantener comunicación continua por Discord y WhatsApp con soporte y ajustes post-evento | Owner: Luis Gonzalez
 - [ ] 🆕 **[WV HND]** Cristian y Ángel: Están en lista de correos sobre el tema de ExpressPago, cualquier novedad comentarla. | Owner: Cristian
-- [ ] 🆕 **[WV HND]** Luis Gustavo: crear y enviar plantilla de recontacto para WhatsApp y correos a Marcos y Comunicaciones BN para construir workflows — coordinar en la tarde | Owner: Luis Gustavo
+- [x] **[WV HND]** Luis Gustavo: crear y enviar plantilla de recontacto para WhatsApp y correos a Marcos y Comunicaciones BN — 4 plantillas WA listas, 2 correos hechos, links enviados tras la reunión | Owner: Luis Gustavo
+- [ ] 🆕 **[WV HND]** Luis Gustavo: modificar campaña de Wash — cambiar de lead ads a campaña con destino landing page (agregar formulario de "más información", mantener botón "Donar ahora") | Owner: Luis Gustavo
+- [ ] 🆕 **[WV HND]** Luis Gustavo: crear formulario de registro dentro de la landing page de Cultivando Futuros | Owner: Luis Gustavo
+- [ ] 🆕 **[WV HND]** Luis Gustavo: compartir documento/diapositiva de proyección financiera (ROI a 10 años) con el equipo | Owner: Luis Gustavo
+- [ ] 🆕 **[WV HND]** René: continuar desarrollo técnico de integración Express Pago - HubSpot — mapeo de propiedades entre plataformas, en espera de que René termine para continuar el desarrollo | Owner: René
+- [ ] 🆕 **[WV HND]** Enrique: revisar proyección financiera de Luis y elaborar documento de planeamiento numérico con metas, KPIs y pipeline para campaña Honduras | Owner: Enrique
 
 ### WV España
 #### Migración
@@ -73,12 +78,23 @@
 - [ ] **[WV CL — Rendiciones F2F]** Gonzalo: organizar reunión con agencia Más Recursos para presentar la herramienta | Owner: Gonzalo
 - [ ] 🆕 **[WV CL — Rendiciones F2F]** Enrique: hacer seguimiento a Gonzalo — tiene reunión con Marta (su jefa) para gestionar presupuesto administrativo de facturación F2F | Owner: Enrique
 - [x] **[WV CL — Rendiciones F2F]** PROYECTO NUEVO: Facturación de la producción de las agencias de F2F. Enrique le hará seguimiento a Gonzalo. | Owner: Enrique
+- [ ] 🆕 **[WV CL — Rendiciones F2F]** Juana: poner en contacto a Enrique con el equipo para gestionar temas administrativos del proyecto Payment Platform en Chile | Owner: Juana (cliente)
+- [ ] 🆕 **[WV CL — Rendiciones F2F]** Gonzalo: enviar flujo de aprobaciones a Pablo — pendiente desde reunión anterior | Owner: Gonzalo
+- [ ] 🆕 **[WV CL — Rendiciones F2F]** Pablo: agregar resumen de motivos de rechazo con sumatorios y filtros en la vista "rechazos mes actual" de la plataforma — facilita disputas y ajustes contractuales con la agencia | Owner: Pablo
+- [ ] 🆕 **[WV CL — Rendiciones F2F]** Cristian + Marcos: investigar y resolver fallo de configuración en transmisión de datos VirtualPost → HubSpot — root, teléfono y fecha de nacimiento no viajan en algunos casos (pago aprobado existe en VirtualPost pero no llega a HubSpot) | Owner: Cristian
+- [ ] 🆕 **[WV CL — Rendiciones F2F]** Ornella + Gonzalo: practicar casos en la plataforma de rendiciones mientras Cristian identifica el error de VirtualPost | Owner: Ornella
 
 #### Nóminas / Cobranza
 - [ ] 🆕 **[WV CL]** Cristian: compartir nómina corregida de HubSpot para validación de Ornella — objetivo reducir diferencia de ~600 a ~20 pagos vs CIMA | Owner: Cristian
 - [ ] 🆕 **[WV CL]** Ornella: subir nómina del 5 de abril el jueves 02/04 tras recibir respuesta del banco | Owner: Ornella
 - [ ] 🆕 **[WV CL]** Ornella: evaluar si usar nómina CIMA o HubSpot una vez validada la nómina corregida de Cristian | Owner: Ornella
 - [ ] 🆕 **[WV CL — Rendiciones F2F]** Pablo + Cristian: cambiar propiedades de test a propiedades reales en HubSpot una vez validadas las rendiciones F2F en producción | Owner: Pablo
+- [ ] 🆕 **[WV CL]** Cristian: realizar backfill de pagos faltantes en HubSpot usando ID y suscripción de VirtualPost — crear pagos que no se generaron por el fallo de transmisión | Owner: Cristian
+- [ ] 🆕 **[WV CL]** Cristian: evaluar y ajustar configuración del CAPTCHA en formulario de inicio de donación — cambiar versión para resolver conflicto con envío de formulario sin eliminar protección contra bots | Owner: Cristian
+- [ ] 🆕 **[WV CL]** Cristian: generar listado de carritos abandonados (contactos que rellenaron formulario 1: nombre, correo, teléfono, root) para base de recuperación y acción por WhatsApp | Owner: Cristian
+- [ ] 🆕 **[WV CL]** Cristian + Marcos: estandarizar propiedad root — verificar y activar fórmula de conversión que transforme root normal a root sin formato | Owner: Cristian
+- [ ] 🆕 **[WV CL]** Ángel: consultar a Sofía qué data de nóminas fue importada y hasta qué fecha — determinar si hay pagos de sep-dic faltantes que subir (Pablo lo pidió en reunión de soporte) | Owner: Ángelito
+- [ ] 🆕 **[WV CL]** Diana: validar nuevamente propiedad CLCapture / Select Captor en la copia de contacto a negocio — algunos registros no están copiando el valor | Owner: Diana (cliente)
 
 #### Tickets Pendientes
 - [ ] 🆕 **[WV CL]** Cristian: 4 tickets pendientes: Importación de negocios (en manos de Danni), negocios de f2f creados erroneamente (a la espera de la validadicón de Danni), nóminas transdata (se respondió sin respuesta) y la creación de negocios de donantes únicos (solucionado a la espera de la validación del cliente) | Owner: Cliente
@@ -127,6 +143,14 @@
 #### HubSpot SpotLight
 - [ ] 🆕 **[UCSP — HubSpot SpotLight]** Ángel: Claudia Tapia le había comentado a Anita que pensaba aplicarlo en la calculadora de pensiones. Pablo, darle una mirada a la presentación | Owner: Pablo
 - [x] **[UCSP — HubSpot SpotLight]** Ángel: reescribir storytelling de la presentación de Eventos Inteligentes — usar brief original + transcripciones de reunión interna, hacer prompt a IA para narrativa clara y ejecutiva lista para cliente difícil. Reunión con Claudia agendada por Pablo | Owner: Ángelito
+- [ ] 🆕 **[UCSP — HubSpot SpotLight]** Pablo: ajustar workflow para que solo se genere negocio en HubSpot cuando la tipificación de Atom sea MQL — actualmente se crea negocio al iniciar cualquier conversación | Owner: Pablo
+- [ ] 🆕 **[UCSP — HubSpot SpotLight]** Pablo: enviar propuesta de cotización para sistema de agentes inteligentes multicanal (ventas, admisión, servicio) — Claudia lo solicitó en la reunión | Owner: Pablo
+- [ ] 🆕 **[UCSP — HubSpot SpotLight]** Pablo: configurar tracking de eventos inteligentes e integrar al lead scoring actual — inicio con segmentos concretos para campaña de abril | Owner: Pablo
+- [ ] 🆕 **[UCSP — HubSpot SpotLight]** Claudia: solicitar a Tom listado completo de tipificaciones usadas en campañas outbound para ajustar criterios del workflow | Owner: Claudia (cliente)
+- [ ] 🆕 **[UCSP — HubSpot SpotLight]** Claudia: reunirse con Silvia y Romina para priorizar métricas y definir matriz de eventos inteligentes para campaña de abril | Owner: Claudia (cliente)
+- [ ] 🆕 **[UCSP — HubSpot SpotLight]** Claudia: agendar reunión con Pablo para revisar implementación y limitaciones de integración WhatsApp de asesores | Owner: Claudia (cliente)
+- [ ] 🆕 **[UCSP — HubSpot SpotLight]** Juanjito: desarrollar tabla con metas diarias y % de consecución integrando datos de campañas en HubSpot | Owner: Juanjito (cliente)
+- [ ] 🆕 **[UCSP — HubSpot SpotLight]** Janet: crear propiedad nueva en HubSpot para registrar fuentes de tráfico en negocios sin alterar valores actuales | Owner: Janet (cliente)
 
 #### Centro de Idiomas
 - [ ] 🆕 **[UCSP — Centro de Idiomas]** Enrique: confirmar cómo le fue en la reunión del viernes con Centro de Idiomas y próximos pasos | Owner: Enrique
