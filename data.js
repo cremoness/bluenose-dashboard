@@ -111,6 +111,18 @@ const TASKS = {
       "isNew": true
     },
     {
+      "text": "🆕 <strong>[WV ES]</strong> Sofía: coordinar reunión con Esther sobre motivations y designations",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Sofia",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
       "text": "🆕 <strong>[WV ES]</strong> Cristian + Ángel: revisar y confirmar propiedades necesarias para generación de ficheros de pagos y sincronización con banco — incluye validar si propiedad SEPA/número de cuenta puede importarse o debe tratarse como no-sensible (como en otros países)",
       "account": "WV",
       "project": "ES",

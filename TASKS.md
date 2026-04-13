@@ -24,6 +24,9 @@
 #### Status semanal
 - [ ] 🆕 **[WV ES]** Pablo: confirmar a Esther si se mantienen las reuniones semanales de status los miércoles a las 16:00h — Esther preguntó por Discord y está esperando respuesta | Owner: Pablo
 
+#### Modelo de datos — Motivations y Designations
+- [ ] 🆕 **[WV ES]** Sofía: coordinar reunión con Esther sobre motivations y designations | Owner: Sofia
+
 #### Pagos y Banco
 - [ ] 🆕 **[WV ES]** Cristian + Ángel: revisar y confirmar propiedades necesarias para generación de ficheros de pagos y sincronización con banco — incluye validar si propiedad SEPA/número de cuenta puede importarse o debe tratarse como no-sensible (como en otros países) | Owner: Cristian + Ángelito
 
