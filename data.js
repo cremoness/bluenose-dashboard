@@ -123,6 +123,174 @@ const TASKS = {
       "isNew": true
     },
     {
+      "text": "🆕 <strong>[WV ES]</strong> Esther: compartir tabla con agrupación ideal de designaciones y jerarquías para construir el modelo",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Esther (cliente)",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV ES]</strong> Esther: pasar base completa de importación (designaciones + motivaciones) a Sofía para replicar ejemplos en sandbox",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Esther (cliente)",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV ES]</strong> Esther: enviar data de motivaciones y designaciones a Pablo para su análisis",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Esther (cliente)",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV ES]</strong> Sofía: generar panel en sandbox con ejemplos de datos para validación de reportes y estructura del modelo",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Sofia",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV ES]</strong> Sofía: configurar y probar formularios con campos dependientes (motivación + designación) para creación de contactos y negocios",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Sofia",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV ES]</strong> Sofía: hacer pruebas para implementar dependencias de datos sin dispersión excesiva de propiedades en HubSpot",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Sofia",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV ES]</strong> Sofía: armar árbol condicional para evaluar mejor estructura de motivaciones y designaciones",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Sofia",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV ES]</strong> Pablo: revisar y avanzar agrupamiento de ~3.000 motivaciones para reducirlas a ~300–400 términos manejables",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Pablo",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV ES]</strong> Pablo: explorar y crear árboles de dependencias que reflejen vínculos entre motivaciones, designaciones y tipos para sandbox y producción",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Pablo",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV ES]</strong> Vicente: enviar archivo actualizado de datos a Sofía para trabajar con estructura real",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Vicente (cliente)",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV ES]</strong> Vicente: proporcionar ejemplos de informes internacionales para replicar en HubSpot",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Vicente (cliente)",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV ES]</strong> Cristian: evaluar viabilidad de base de datos externa relacional para automatizar asociaciones en HubSpot — evitar miles de propiedades manuales",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Cristian",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV ES]</strong> Cristian: implementar workflows en HubSpot que automaticen llenado de campos asociados (Type 1, Type 2) tras creación de registros",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Cristian",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV ES]</strong> Jesús: compartir acta con pendientes post-Semana Santa para que todos estén al día",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Jesús (cliente)",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
       "text": "🆕 <strong>[WV ES]</strong> Ángel: recordar a Sofía que responda a Nieves sobre la revisión del import de Iglesias",
       "account": "WV",
       "project": "ES",

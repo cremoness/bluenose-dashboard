@@ -26,6 +26,20 @@
 
 #### Modelo de datos — Motivations y Designations
 - [ ] 🆕 **[WV ES]** Sofía: coordinar reunión con Esther sobre motivations y designations | Owner: Sofia
+- [ ] 🆕 **[WV ES]** Esther: compartir tabla con agrupación ideal de designaciones y jerarquías para construir el modelo | Owner: Esther (cliente)
+- [ ] 🆕 **[WV ES]** Esther: pasar base completa de importación (designaciones + motivaciones) a Sofía para replicar ejemplos en sandbox | Owner: Esther (cliente)
+- [ ] 🆕 **[WV ES]** Esther: enviar data de motivaciones y designaciones a Pablo para su análisis | Owner: Esther (cliente)
+- [ ] 🆕 **[WV ES]** Sofía: generar panel en sandbox con ejemplos de datos para validación de reportes y estructura del modelo | Owner: Sofia
+- [ ] 🆕 **[WV ES]** Sofía: configurar y probar formularios con campos dependientes (motivación + designación) para creación de contactos y negocios | Owner: Sofia
+- [ ] 🆕 **[WV ES]** Sofía: hacer pruebas para implementar dependencias de datos sin dispersión excesiva de propiedades en HubSpot | Owner: Sofia
+- [ ] 🆕 **[WV ES]** Sofía: armar árbol condicional para evaluar mejor estructura de motivaciones y designaciones | Owner: Sofia
+- [ ] 🆕 **[WV ES]** Pablo: revisar y avanzar agrupamiento de ~3.000 motivaciones para reducirlas a ~300–400 términos manejables | Owner: Pablo
+- [ ] 🆕 **[WV ES]** Pablo: explorar y crear árboles de dependencias que reflejen vínculos entre motivaciones, designaciones y tipos para sandbox y producción | Owner: Pablo
+- [ ] 🆕 **[WV ES]** Vicente: enviar archivo actualizado de datos a Sofía para trabajar con estructura real | Owner: Vicente (cliente)
+- [ ] 🆕 **[WV ES]** Vicente: proporcionar ejemplos de informes internacionales para replicar en HubSpot | Owner: Vicente (cliente)
+- [ ] 🆕 **[WV ES]** Cristian: evaluar viabilidad de base de datos externa relacional para automatizar asociaciones en HubSpot — evitar miles de propiedades manuales | Owner: Cristian
+- [ ] 🆕 **[WV ES]** Cristian: implementar workflows en HubSpot que automaticen llenado de campos asociados (Type 1, Type 2) tras creación de registros | Owner: Cristian
+- [ ] 🆕 **[WV ES]** Jesús: compartir acta con pendientes post-Semana Santa para que todos estén al día | Owner: Jesús (cliente)
 
 #### Iglesias
 - [ ] 🆕 **[WV ES]** Ángel: recordar a Sofía que responda a Nieves sobre la revisión del import de Iglesias | Owner: Ángelito
