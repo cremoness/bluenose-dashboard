@@ -123,6 +123,18 @@ const TASKS = {
       "isNew": true
     },
     {
+      "text": "🆕 <strong>[WV ES]</strong> Ángel: recordar a Sofía que responda a Nieves sobre la revisión del import de Iglesias",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Ángelito",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
       "text": "🆕 <strong>[WV ES]</strong> Cristian + Ángel: revisar y confirmar propiedades necesarias para generación de ficheros de pagos y sincronización con banco — incluye validar si propiedad SEPA/número de cuenta puede importarse o debe tratarse como no-sensible (como en otros países)",
       "account": "WV",
       "project": "ES",

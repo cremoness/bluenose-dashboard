@@ -27,6 +27,9 @@
 #### Modelo de datos — Motivations y Designations
 - [ ] 🆕 **[WV ES]** Sofía: coordinar reunión con Esther sobre motivations y designations | Owner: Sofia
 
+#### Iglesias
+- [ ] 🆕 **[WV ES]** Ángel: recordar a Sofía que responda a Nieves sobre la revisión del import de Iglesias | Owner: Ángelito
+
 #### Pagos y Banco
 - [ ] 🆕 **[WV ES]** Cristian + Ángel: revisar y confirmar propiedades necesarias para generación de ficheros de pagos y sincronización con banco — incluye validar si propiedad SEPA/número de cuenta puede importarse o debe tratarse como no-sensible (como en otros países) | Owner: Cristian + Ángelito
 
