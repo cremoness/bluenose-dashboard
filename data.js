@@ -603,6 +603,18 @@ const TASKS = {
       "isNew": true
     },
     {
+      "text": "🆕 <strong>[UCSP — Admisión Pregrado]</strong> Pablo: revisar diseño del Agente IA de Admisión (fase final de captación, 1ra matrícula) creado por Ángel",
+      "account": "UCSP",
+      "project": "Admisión Pregrado",
+      "tag": "Admisión Pregrado",
+      "tagClass": "tag-uc",
+      "owner": "Pablo",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
       "text": "🆕 <strong>[UCSP — Admisión Pregrado]</strong> Pablo + Ángel: armar esquema de cómo funcionará el Agente IA de Admisión (fase final de captación, 1ra matrícula) — Pablo ya tiene montado el sistema base de agentes para ventas, admisión y matrícula; solo falta darle forma para este caso específico con la DGA",
       "account": "UCSP",
       "project": "Admisión Pregrado",

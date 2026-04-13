@@ -87,6 +87,7 @@
 - [ ] 🆕 **[UCSP — Mi Propósito]** Ángel: consultar a César conformidad del equipo UCSP-San Pablo con funcionalidades actuales y futuras — necesitamos luz verde del levantamiento de requerimientos. Verificar si Renzo tuvo comentarios sobre los documentos compartidos por correo e internamente | Owner: Ángelito
 
 #### Admisión Pregrado
+- [ ] 🆕 **[UCSP — Admisión Pregrado]** Pablo: revisar diseño del Agente IA de Admisión (fase final de captación, 1ra matrícula) creado por Ángel | Owner: Pablo
 - [ ] 🆕 **[UCSP — Admisión Pregrado]** Pablo + Ángel: armar esquema de cómo funcionará el Agente IA de Admisión (fase final de captación, 1ra matrícula) — Pablo ya tiene montado el sistema base de agentes para ventas, admisión y matrícula; solo falta darle forma para este caso específico con la DGA | Owner: Pablo
 - [ ] 🆕 **[UCSP — Admisión Pregrado]** Pablo: crear todos los campos de información en HubSpot para el Agente IA de Admisión — campos que permitan al agente recibir y organizar documentación del proceso de matrícula | Owner: Pablo
 - [ ] 🆕 **[UCSP — Admisión Pregrado]** Pablo: conectar campos de HubSpot al agente y diseñar primera etapa del flujo — recepción y organización de documentación de matrícula | Owner: Pablo
