@@ -1,5 +1,5 @@
 # TASKS — Ángelito Chanamé
-> Última actualización: 2026-04-08 | Limpieza: tareas desde 30 de marzo
+> Última actualización: 2026-04-13 | Limpieza: tareas desde 30 de marzo
 
 ---
 
@@ -19,6 +19,8 @@
 - [ ] 🆕 **[WV HND]** Luis Gustavo: compartir documento/diapositiva de proyección financiera (ROI a 10 años) con el equipo | Owner: Luis Gustavo
 - [ ] 🆕 **[WV HND]** René: continuar desarrollo técnico de integración Express Pago - HubSpot — mapeo de propiedades entre plataformas, en espera de que René termine para continuar el desarrollo | Owner: René
 - [ ] 🆕 **[WV HND]** Enrique: revisar proyección financiera de Luis y elaborar documento de planeamiento numérico con metas, KPIs y pipeline para campaña Honduras | Owner: Enrique
+- [ ] 🆕 **[WV HND]** Enrique: pedir a Luis Gustavo el documento Excel de planificación Honduras y confirmar supuestos (meta = 100 donantes/$10k, 100% de origen en pauta, CPL $4.25, tasa de conversión 3.9%) — para cerrar planificación numérica 26 | Owner: Enrique
+- [ ] 🆕 **[WV CL]** Cristian: comunicar a Diana que no es posible generar listado de carritos abandonados para contactos que no pasaron por el formulario — no hay datos de contacto disponibles | Owner: Cristian
 
 ### WV España
 #### Status semanal
@@ -29,17 +31,20 @@
 - [ ] 🆕 **[WV ES]** Esther: compartir tabla con agrupación ideal de designaciones y jerarquías para construir el modelo | Owner: Esther (cliente)
 - [ ] 🆕 **[WV ES]** Esther: pasar base completa de importación (designaciones + motivaciones) a Sofía para replicar ejemplos en sandbox | Owner: Esther (cliente)
 - [ ] 🆕 **[WV ES]** Esther: enviar data de motivaciones y designaciones a Pablo para su análisis | Owner: Esther (cliente)
-- [ ] 🆕 **[WV ES]** Sofía: generar panel en sandbox con ejemplos de datos para validación de reportes y estructura del modelo | Owner: Sofia
+- [x] **[WV ES]** Sofía: generar panel en sandbox con ejemplos de datos para validación de reportes y estructura del modelo — Pablo solucionó la arquitectura con workflows de código personalizado; ya no se necesita asociar objetos, el valor del negocio viaja por workflow a cada pago | Owner: Sofia / Pablo
 - [ ] 🆕 **[WV ES]** Sofía: configurar y probar formularios con campos dependientes (motivación + designación) para creación de contactos y negocios | Owner: Sofia
 - [ ] 🆕 **[WV ES]** Sofía: hacer pruebas para implementar dependencias de datos sin dispersión excesiva de propiedades en HubSpot | Owner: Sofia
 - [ ] 🆕 **[WV ES]** Sofía: armar árbol condicional para evaluar mejor estructura de motivaciones y designaciones | Owner: Sofia
 - [ ] 🆕 **[WV ES]** Pablo: revisar y avanzar agrupamiento de ~3.000 motivaciones para reducirlas a ~300–400 términos manejables | Owner: Pablo
-- [ ] 🆕 **[WV ES]** Pablo: explorar y crear árboles de dependencias que reflejen vínculos entre motivaciones, designaciones y tipos para sandbox y producción | Owner: Pablo
+- [x] **[WV ES]** Pablo: explorar y crear árboles de dependencias que reflejen vínculos entre motivaciones, designaciones y tipos para sandbox y producción — RESUELTO con automatizaciones de código personalizado: Workflow envía valor del negocio a cada pago generado; genera Motivation, Designation, Type 1, Type 2 automáticamente al crearse el pago | Owner: Pablo
 - [ ] 🆕 **[WV ES]** Vicente: enviar archivo actualizado de datos a Sofía para trabajar con estructura real | Owner: Vicente (cliente)
 - [ ] 🆕 **[WV ES]** Vicente: proporcionar ejemplos de informes internacionales para replicar en HubSpot | Owner: Vicente (cliente)
-- [ ] 🆕 **[WV ES]** Cristian: evaluar viabilidad de base de datos externa relacional para automatizar asociaciones en HubSpot — evitar miles de propiedades manuales | Owner: Cristian
-- [ ] 🆕 **[WV ES]** Cristian: implementar workflows en HubSpot que automaticen llenado de campos asociados (Type 1, Type 2) tras creación de registros | Owner: Cristian
+- [x] **[WV ES]** Cristian: evaluar viabilidad de base de datos externa relacional para automatizar asociaciones en HubSpot — Pablo encontró solución alternativa con workflows de código personalizado; ya no es necesaria la BD externa | Owner: Cristian / Pablo
+- [x] **[WV ES]** Cristian: implementar workflows en HubSpot que automaticen llenado de campos asociados (Type 1, Type 2) tras creación de registros — RESUELTO por Pablo con automatizaciones de código personalizado | Owner: Pablo
 - [ ] 🆕 **[WV ES]** Jesús: compartir acta con pendientes post-Semana Santa para que todos estén al día | Owner: Jesús (cliente)
+
+- [ ] 🆕 **[WV ES]** Marcos: conocer y documentar las automatizaciones de código personalizado creadas por Pablo para Motivations/Designations — Pablo los explicó en status interno; Marcos necesita estar al tanto para soporte y futuros ajustes | Owner: Marcos
+- [ ] 🆕 **[WV ES]** Pablo + Ángel: enviar al cliente cuadrito con previsión de necesidades a futuro (desarrollo, servidores, licencias, etc.) — acordado en reunión de España de hoy | Owner: Pablo + Ángelito
 
 #### Iglesias
 - [ ] 🆕 **[WV ES]** Ángel: recordar a Sofía que responda a Nieves sobre la revisión del import de Iglesias | Owner: Ángelito
@@ -87,6 +92,10 @@
 #### Mi Propósito
 - [ ] 🆕 **[UCSP — Mi Propósito]** Ángel: consultar a César conformidad del equipo UCSP-San Pablo con funcionalidades actuales y futuras — necesitamos luz verde del levantamiento de requerimientos. Verificar si Renzo tuvo comentarios sobre los documentos compartidos por correo e internamente | Owner: Ángelito
 - [ ] 🆕 **[UCSP — Mi Propósito]** Edgardo: confirmar a Enrique que todo está ok y nada está pendiente o incompleto — Claudia no dará conformidad hasta que Ventas cierre y apruebe (exige esa aprobación el lunes). Evitar que el cliente nos devuelva la responsabilidad | Owner: Edgardo
+- [ ] 🆕 **[UCSP — Mi Propósito]** Ángel: enviar recordatorios recurrentes a Edgardo en canal Discord para que dé estatus actualizado — Claudia Tapia confirmó que presionará a Ventas para obtener conformidad; hay que asegurar que nada quede pendiente de nuestro lado | Owner: Ángelito
+
+#### Mesa de Ayuda (nuevo proyecto)
+- [ ] 🆕 **[UCSP — Mesa de Ayuda]** Pablo + Ángel: armar propuesta para proyecto de optimización de Mesa de Ayuda con IA para UCSP (área de César Puma / Experiencia del Estudiante) — TDR recibido, presupuesto dado para 2026, abierto a 2-3 años. Meta: propuesta año 1 que encaje en presupuesto actual, introduzca IA sin grandes cambios estructurales y mejore primeros SLAs. César está abierto a cuestionar CRM actual (Softhop), procesos y canales | Owner: Pablo + Ángelito
 
 #### Admisión Pregrado
 - [ ] 🆕 **[UCSP — Admisión Pregrado]** Pablo: revisar diseño del Agente IA de Admisión (fase final de captación, 1ra matrícula) creado por Ángel | Owner: Pablo
@@ -125,18 +134,25 @@
 - [ ] 🆕 **[UPSJB]** Enrique: comentar a Edgar la situación de las carreras de Administración y Contabilidad — sin propuesta de valor ni estudio de mercado, no se puede tomar decisión de cierre | Owner: Enrique
 - [ ] 🆕 **[UPSJB]** Pablo: escribir a Estuardo y/o Carlos para dar seguimiento a propuesta de agente Bot y WhatsApp — si no responden por escrito, tocarlo en reunión con Edgar presente | Owner: Pablo
 - [ ] 🆕 **[UPSJB]** Ángel: hacer seguimiento a Pablo sobre respuesta de Estuardo/Carlos a la propuesta de agente Bot y WhatsApp | Owner: Ángelito
+- [ ] 🆕 **[UPSJB]** Ángel: consultar a Pablo si el cliente compartió formalmente las metas 26-2 (total y por campus) y de dónde extraer CPL y tasa de conversión para la planificación numérica | Owner: Ángelito
+- [ ] 🆕 **[UPSJB]** Ángel: reunirse con Enrique post-status (briefing ~5 min) para revisar KPIs y paneles de HubSpot a usar en cuantificación de impacto de leads 26-1 | Owner: Ángelito + Enrique
+- [ ] 🆕 **[UPSJB]** Enrique: preguntar a Estuardo en la reunión quincenal de hoy sobre implementación del buyer persona (quién lo hace: cliente o BN) y acordar pasos concretos — si Estuardo dice que lo hace después, hacer seguimiento inmediato (2 horas) | Owner: Enrique
 
 ### Caja Ica
 - [ ] 🆕 **[Caja Ica]** Pablo: inicio de proyecto de implementación Marketing Cloud (Salesforce) — aprobado formalmente. Trabajando con equipo desarrollador en Brasil, partners de Salesforce. Próximos pasos: Service Cloud y Cels Cloud en meses siguientes | Owner: Pablo
 
 ### Buenaventura
-- [ ] 🆕 **[Buenaventura]** Pablo / Enrique: proyecto de onboarding y adopción de IA aprobado informalmente — taller dos jornadas Full Day con gerente general, CEO y vicepresidentes de Buenaventura Minera. Pendiente aprobación formal | Owner: Pablo + Enrique
+- [x] **[Buenaventura]** Pablo / Enrique: proyecto de onboarding y adopción de IA aprobado informalmente — CONFIRMADO FORMALMENTE: VP de Finanzas de Buenaventura envió mensaje de felicitación por el proyecto adjudicado | Owner: Pablo + Enrique
+- [ ] 🆕 **[Buenaventura]** Pablo + Enrique: preparar contenido y logística del taller de IA Full Day para Buenaventura — dos jornadas con CEO, gerente general y vicepresidentes. Proyecto confirmado, pendiente que el cliente avise con tiempo para preparación | Owner: Pablo + Enrique
 
 ### AGÉNTICA
 - [ ] 🆕 **[AGÉNTICA]** Ángel: subir maqueta HTML de landing de Agéntica a repositorio GitHub para revisión de Pablo y Enrique | Owner: Ángelito
 - [ ] 🆕 **[AGÉNTICA]** Ángel: crear maqueta de landing page de AGÉNTICA — nueva unidad de BlueNose, inspirada en estructura de Conversia/Impulse, por verticales/sectores, con branding BlueNose. Lista para revisión con Enrique el jueves | Owner: Ángelito
 - [ ] 🆕 **[AGÉNTICA]** Ángel: preparar reporte macro y micro de la campaña BlueNose — resultados por vertical, segmento, nivel jerárquico y canal. Enrique quiere ver si funciona o no y qué ajustar | Owner: Ángelito
 - [ ] 🆕 **[AGÉNTICA]** Enrique: evaluar con Pati y Pablo contratación de HubSpot Marketing Pro — necesario para habilitar nurturing automatizado, secuencias y mayor alcance de campaña | Owner: Enrique
+- [ ] 🆕 **[AGÉNTICA]** Pablo: finalizar y preparar para lanzamiento el agente Community Manager automatizado — casi listo, primer cliente confirmado en España (gimnasio de pilates). Prioridad alta por potencial de venta | Owner: Pablo
+- [ ] 🆕 **[AGÉNTICA]** Ángel: elaborar y enviar documento con mensajes personalizados para los 5 segmentos de la red de contactos — para activar campaña de outreach | Owner: Ángelito
+- [ ] 🆕 **[AGÉNTICA]** Ángel + Mirela: publicar carruseles de LinkedIn por agente ya listos en Drive — coordinar calendario de publicación con Marcos | Owner: Ángelito + Mirela
 
 ---
 
@@ -155,6 +171,10 @@
 - [x] **[WV HND]** Luis Gustavo: crear y enviar plantilla de recontacto para WhatsApp y correos a Marcos y Comunicaciones BN — 4 plantillas WA listas, 2 correos hechos, links enviados tras la reunión | Owner: Luis Gustavo
 - [x] **[WV EC]** Ticket: Fechas de pago se guardan con valor incorrecto — Martha confirmó corrección, Cristian cerró el ticket | Owner: Cristian
 - [x] **[WV EC]** Ticket: WF mueve pagos — workflow corregido, todos los pagos tienen fecha asignada | Owner: Cristian
+- [x] **[WV ES]** Pablo: solucionar arquitectura de Motivations/Designations — implementadas automatizaciones con código personalizado; Workflow envía valor del negocio a cada pago y genera Motivation, Designation, Type 1, Type 2, etc. automáticamente. No se necesita BD externa ni asociación masiva de objetos | Owner: Pablo
+- [x] **[WV ES]** Cristian: evaluar viabilidad de base de datos externa relacional — Pablo encontró solución alternativa con workflows de código personalizado | Owner: Pablo
+- [x] **[WV ES]** Cristian: implementar workflows que automaticen llenado de campos asociados (Type 1, Type 2) — RESUELTO por Pablo con código personalizado en automatizaciones | Owner: Pablo
+- [x] **[Buenaventura]** Adjudicación formal del taller de IA — VP de Finanzas confirmó por mensaje el sábado. Proyecto seguro | Owner: Pablo + Enrique
 - [x] **[UCSP — HubSpot SpotLight]** Ángel: reescribir storytelling de la presentación de Eventos Inteligentes — usar brief original + transcripciones de reunión interna, hacer prompt a IA para narrativa clara y ejecutiva lista para cliente difícil. Reunión con Claudia agendada por Pablo | Owner: Ángelito
 - [x] **[UCSP — CENDES]** Marcos: revisar documento de comentarios de María Berlanga sobre HubSpot y coordinar con Ángel para agendar reunión de revisión de flujos — manual ya enviado a Ángel | Owner: Marcos
 
