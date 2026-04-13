@@ -99,6 +99,30 @@ const TASKS = {
       "isNew": true
     },
     {
+      "text": "🆕 <strong>[WV HND]</strong> Enrique: pedir a Luis Gustavo el documento Excel de planificación Honduras y confirmar supuestos (meta = 100 donantes/$10k, 100% de origen en pauta, CPL $4.25, tasa de conversión 3.9%) — para cerrar planificación numérica 26",
+      "account": "WV",
+      "project": "HND",
+      "tag": "HND",
+      "tagClass": "tag-wv",
+      "owner": "Enrique",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV CL]</strong> Cristian: comunicar a Diana que no es posible generar listado de carritos abandonados para contactos que no pasaron por el formulario — no hay datos de contacto disponibles",
+      "account": "WV",
+      "project": "CL",
+      "tag": "CL",
+      "tagClass": "tag-wv",
+      "owner": "Cristian",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
       "text": "🆕 <strong>[WV ES]</strong> Pablo: confirmar a Esther si se mantienen las reuniones semanales de status los miércoles a las 16:00h — Esther preguntó por Discord y está esperando respuesta",
       "account": "WV",
       "project": "ES",
@@ -159,16 +183,16 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV ES]</strong> Sofía: generar panel en sandbox con ejemplos de datos para validación de reportes y estructura del modelo",
+      "text": "Sofía: generar panel en sandbox con ejemplos de datos para validación de reportes y estructura del modelo — Pablo solucionó la arquitectura con workflows de código personalizado; ya no se necesita asociar objetos, el valor del negocio viaja por workflow a cada pago",
       "account": "WV",
       "project": "ES",
       "tag": "ES",
       "tagClass": "tag-wv",
-      "owner": "Sofia",
+      "owner": "Sofia / Pablo",
       "clients": [
         "WV"
       ],
-      "isNew": true
+      "isCompleted": true
     },
     {
       "text": "🆕 <strong>[WV ES]</strong> Sofía: configurar y probar formularios con campos dependientes (motivación + designación) para creación de contactos y negocios",
@@ -219,7 +243,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV ES]</strong> Pablo: explorar y crear árboles de dependencias que reflejen vínculos entre motivaciones, designaciones y tipos para sandbox y producción",
+      "text": "Pablo: explorar y crear árboles de dependencias que reflejen vínculos entre motivaciones, designaciones y tipos para sandbox y producción — RESUELTO con automatizaciones de código personalizado: Workflow envía valor del negocio a cada pago generado; genera Motivation, Designation, Type 1, Type 2 automáticamente al crearse el pago",
       "account": "WV",
       "project": "ES",
       "tag": "ES",
@@ -228,7 +252,7 @@ const TASKS = {
       "clients": [
         "WV"
       ],
-      "isNew": true
+      "isCompleted": true
     },
     {
       "text": "🆕 <strong>[WV ES]</strong> Vicente: enviar archivo actualizado de datos a Sofía para trabajar con estructura real",
@@ -255,28 +279,28 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV ES]</strong> Cristian: evaluar viabilidad de base de datos externa relacional para automatizar asociaciones en HubSpot — evitar miles de propiedades manuales",
+      "text": "Cristian: evaluar viabilidad de base de datos externa relacional para automatizar asociaciones en HubSpot — Pablo encontró solución alternativa con workflows de código personalizado; ya no es necesaria la BD externa",
       "account": "WV",
       "project": "ES",
       "tag": "ES",
       "tagClass": "tag-wv",
-      "owner": "Cristian",
+      "owner": "Cristian / Pablo",
       "clients": [
         "WV"
       ],
-      "isNew": true
+      "isCompleted": true
     },
     {
-      "text": "🆕 <strong>[WV ES]</strong> Cristian: implementar workflows en HubSpot que automaticen llenado de campos asociados (Type 1, Type 2) tras creación de registros",
+      "text": "Cristian: implementar workflows en HubSpot que automaticen llenado de campos asociados (Type 1, Type 2) tras creación de registros — RESUELTO por Pablo con automatizaciones de código personalizado",
       "account": "WV",
       "project": "ES",
       "tag": "ES",
       "tagClass": "tag-wv",
-      "owner": "Cristian",
+      "owner": "Pablo",
       "clients": [
         "WV"
       ],
-      "isNew": true
+      "isCompleted": true
     },
     {
       "text": "🆕 <strong>[WV ES]</strong> Jesús: compartir acta con pendientes post-Semana Santa para que todos estén al día",
@@ -285,6 +309,30 @@ const TASKS = {
       "tag": "ES",
       "tagClass": "tag-wv",
       "owner": "Jesús (cliente)",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV ES]</strong> Marcos: conocer y documentar las automatizaciones de código personalizado creadas por Pablo para Motivations/Designations — Pablo los explicó en status interno; Marcos necesita estar al tanto para soporte y futuros ajustes",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Marcos",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV ES]</strong> Pablo + Ángel: enviar al cliente cuadrito con previsión de necesidades a futuro (desarrollo, servidores, licencias, etc.) — acordado en reunión de España de hoy",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Pablo + Ángelito",
       "clients": [
         "WV"
       ],
@@ -627,6 +675,30 @@ const TASKS = {
       "isNew": true
     },
     {
+      "text": "🆕 <strong>[UCSP — Mi Propósito]</strong> Ángel: enviar recordatorios recurrentes a Edgardo en canal Discord para que dé estatus actualizado — Claudia Tapia confirmó que presionará a Ventas para obtener conformidad; hay que asegurar que nada quede pendiente de nuestro lado",
+      "account": "UCSP",
+      "project": "Mi Propósito",
+      "tag": "Mi Propósito",
+      "tagClass": "tag-uc",
+      "owner": "Ángelito",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UCSP — Mesa de Ayuda]</strong> Pablo + Ángel: armar propuesta para proyecto de optimización de Mesa de Ayuda con IA para UCSP (área de César Puma / Experiencia del Estudiante) — TDR recibido, presupuesto dado para 2026, abierto a 2-3 años. Meta: propuesta año 1 que encaje en presupuesto actual, introduzca IA sin grandes cambios estructurales y mejore primeros SLAs. César está abierto a cuestionar CRM actual (Softhop), procesos y canales",
+      "account": "UCSP",
+      "project": "Mesa de Ayuda",
+      "tag": "Mesa de Ayuda",
+      "tagClass": "tag-uc",
+      "owner": "Pablo + Ángelito",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
       "text": "🆕 <strong>[UCSP — Admisión Pregrado]</strong> Pablo: revisar diseño del Agente IA de Admisión (fase final de captación, 1ra matrícula) creado por Ángel",
       "account": "UCSP",
       "project": "Admisión Pregrado",
@@ -963,6 +1035,42 @@ const TASKS = {
       "isNew": true
     },
     {
+      "text": "🆕 <strong>[UPSJB]</strong> Ángel: consultar a Pablo si el cliente compartió formalmente las metas 26-2 (total y por campus) y de dónde extraer CPL y tasa de conversión para la planificación numérica",
+      "account": "UPSJB",
+      "project": "General",
+      "tag": "UPSJB",
+      "tagClass": "tag-up",
+      "owner": "Ángelito",
+      "clients": [
+        "UPSJB"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UPSJB]</strong> Ángel: reunirse con Enrique post-status (briefing ~5 min) para revisar KPIs y paneles de HubSpot a usar en cuantificación de impacto de leads 26-1",
+      "account": "UPSJB",
+      "project": "General",
+      "tag": "UPSJB",
+      "tagClass": "tag-up",
+      "owner": "Ángelito + Enrique",
+      "clients": [
+        "UPSJB"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UPSJB]</strong> Enrique: preguntar a Estuardo en la reunión quincenal de hoy sobre implementación del buyer persona (quién lo hace: cliente o BN) y acordar pasos concretos — si Estuardo dice que lo hace después, hacer seguimiento inmediato (2 horas)",
+      "account": "UPSJB",
+      "project": "General",
+      "tag": "UPSJB",
+      "tagClass": "tag-up",
+      "owner": "Enrique",
+      "clients": [
+        "UPSJB"
+      ],
+      "isNew": true
+    },
+    {
       "text": "🆕 <strong>[Caja Ica]</strong> Pablo: inicio de proyecto de implementación Marketing Cloud (Salesforce) — aprobado formalmente. Trabajando con equipo desarrollador en Brasil, partners de Salesforce. Próximos pasos: Service Cloud y Cels Cloud en meses siguientes",
       "account": "Ica",
       "project": "Ica",
@@ -975,7 +1083,17 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[Buenaventura]</strong> Pablo / Enrique: proyecto de onboarding y adopción de IA aprobado informalmente — taller dos jornadas Full Day con gerente general, CEO y vicepresidentes de Buenaventura Minera. Pendiente aprobación formal",
+      "text": "Pablo / Enrique: proyecto de onboarding y adopción de IA aprobado informalmente — CONFIRMADO FORMALMENTE: VP de Finanzas de Buenaventura envió mensaje de felicitación por el proyecto adjudicado",
+      "account": "General",
+      "project": "Buenaventura",
+      "tag": "Buenaventura",
+      "tagClass": "tag-def",
+      "owner": "Pablo + Enrique",
+      "clients": [],
+      "isCompleted": true
+    },
+    {
+      "text": "🆕 <strong>[Buenaventura]</strong> Pablo + Enrique: preparar contenido y logística del taller de IA Full Day para Buenaventura — dos jornadas con CEO, gerente general y vicepresidentes. Proyecto confirmado, pendiente que el cliente avise con tiempo para preparación",
       "account": "General",
       "project": "Buenaventura",
       "tag": "Buenaventura",
@@ -1027,6 +1145,42 @@ const TASKS = {
       "tag": "Ica",
       "tagClass": "tag-ci",
       "owner": "Enrique",
+      "clients": [
+        "Ica"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[AGÉNTICA]</strong> Pablo: finalizar y preparar para lanzamiento el agente Community Manager automatizado — casi listo, primer cliente confirmado en España (gimnasio de pilates). Prioridad alta por potencial de venta",
+      "account": "Ica",
+      "project": "General",
+      "tag": "Ica",
+      "tagClass": "tag-ci",
+      "owner": "Pablo",
+      "clients": [
+        "Ica"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[AGÉNTICA]</strong> Ángel: elaborar y enviar documento con mensajes personalizados para los 5 segmentos de la red de contactos — para activar campaña de outreach",
+      "account": "Ica",
+      "project": "General",
+      "tag": "Ica",
+      "tagClass": "tag-ci",
+      "owner": "Ángelito",
+      "clients": [
+        "Ica"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[AGÉNTICA]</strong> Ángel + Mirela: publicar carruseles de LinkedIn por agente ya listos en Drive — coordinar calendario de publicación con Marcos",
+      "account": "Ica",
+      "project": "General",
+      "tag": "Ica",
+      "tagClass": "tag-ci",
+      "owner": "Ángelito + Mirela",
       "clients": [
         "Ica"
       ],
@@ -1094,6 +1248,52 @@ const TASKS = {
       "clients": [
         "WV"
       ],
+      "isCompleted": true
+    },
+    {
+      "text": "Pablo: solucionar arquitectura de Motivations/Designations — implementadas automatizaciones con código personalizado; Workflow envía valor del negocio a cada pago y genera Motivation, Designation, Type 1, Type 2, etc. automáticamente. No se necesita BD externa ni asociación masiva de objetos",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Pablo",
+      "clients": [
+        "WV"
+      ],
+      "isCompleted": true
+    },
+    {
+      "text": "Cristian: evaluar viabilidad de base de datos externa relacional — Pablo encontró solución alternativa con workflows de código personalizado",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Pablo",
+      "clients": [
+        "WV"
+      ],
+      "isCompleted": true
+    },
+    {
+      "text": "Cristian: implementar workflows que automaticen llenado de campos asociados (Type 1, Type 2) — RESUELTO por Pablo con código personalizado en automatizaciones",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Pablo",
+      "clients": [
+        "WV"
+      ],
+      "isCompleted": true
+    },
+    {
+      "text": "Adjudicación formal del taller de IA — VP de Finanzas confirmó por mensaje el sábado. Proyecto seguro",
+      "account": "General",
+      "project": "Buenaventura",
+      "tag": "Buenaventura",
+      "tagClass": "tag-def",
+      "owner": "Pablo + Enrique",
+      "clients": [],
       "isCompleted": true
     },
     {
