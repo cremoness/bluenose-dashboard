@@ -99,6 +99,18 @@ const TASKS = {
       "isNew": true
     },
     {
+      "text": "🆕 <strong>[WV ES]</strong> Pablo: confirmar a Esther si se mantienen las reuniones semanales de status los miércoles a las 16:00h — Esther preguntó por Discord y está esperando respuesta",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Pablo",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
       "text": "🆕 <strong>[WV ES]</strong> Cristian + Ángel: revisar y confirmar propiedades necesarias para generación de ficheros de pagos y sincronización con banco — incluye validar si propiedad SEPA/número de cuenta puede importarse o debe tratarse como no-sensible (como en otros países)",
       "account": "WV",
       "project": "ES",
@@ -381,6 +393,18 @@ const TASKS = {
       "tag": "Simulador de Pensión",
       "tagClass": "tag-uc",
       "owner": "César",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UCSP — Mi Propósito]</strong> Ángel: consultar a César conformidad del equipo UCSP-San Pablo con funcionalidades actuales y futuras — necesitamos luz verde del levantamiento de requerimientos. Verificar si Renzo tuvo comentarios sobre los documentos compartidos por correo e internamente",
+      "account": "UCSP",
+      "project": "Mi Propósito",
+      "tag": "Mi Propósito",
+      "tagClass": "tag-uc",
+      "owner": "Ángelito",
       "clients": [
         "UCSP"
       ],

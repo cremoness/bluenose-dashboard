@@ -21,6 +21,9 @@
 - [ ] 🆕 **[WV HND]** Enrique: revisar proyección financiera de Luis y elaborar documento de planeamiento numérico con metas, KPIs y pipeline para campaña Honduras | Owner: Enrique
 
 ### WV España
+#### Status semanal
+- [ ] 🆕 **[WV ES]** Pablo: confirmar a Esther si se mantienen las reuniones semanales de status los miércoles a las 16:00h — Esther preguntó por Discord y está esperando respuesta | Owner: Pablo
+
 #### Pagos y Banco
 - [ ] 🆕 **[WV ES]** Cristian + Ángel: revisar y confirmar propiedades necesarias para generación de ficheros de pagos y sincronización con banco — incluye validar si propiedad SEPA/número de cuenta puede importarse o debe tratarse como no-sensible (como en otros países) | Owner: Cristian + Ángelito
 
@@ -59,6 +62,9 @@
 ### UCSP
 #### Simulador de Pensión
 - [ ] 🆕 **[UCSP — Simulador de Pensión]** César: coordinar reunión de onboarding/recorrido de la plataforma antes de dar acceso de administrador a BlueNose — propuesto por el equipo UCSP | Owner: César
+
+#### Mi Propósito
+- [ ] 🆕 **[UCSP — Mi Propósito]** Ángel: consultar a César conformidad del equipo UCSP-San Pablo con funcionalidades actuales y futuras — necesitamos luz verde del levantamiento de requerimientos. Verificar si Renzo tuvo comentarios sobre los documentos compartidos por correo e internamente | Owner: Ángelito
 
 #### Admisión Pregrado
 - [ ] 🆕 **[UCSP — Admisión Pregrado]** Pablo + Ángel: armar esquema de cómo funcionará el Agente IA de Admisión (fase final de captación, 1ra matrícula) — Pablo ya tiene montado el sistema base de agentes para ventas, admisión y matrícula; solo falta darle forma para este caso específico con la DGA | Owner: Pablo
