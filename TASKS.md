@@ -70,6 +70,7 @@
 
 #### Tickets Pendientes
 - [ ] 🆕 **[WV CL]** Cristian: investigar ticket de Diana sobre propiedad del nombre de la agencia que a veces aparece sin valor | Owner: Cristian
+- [ ] 🆕 **[WV CL]** Marcos: revisar y resolver ticket HubSpot #44377462606 de WV Chile | Owner: Marcos
 
 ### WV Ecuador
 - [x] **[WV EC]** Ticket: Fechas de pago se guardan con valor incorrecto — Martha confirmó corrección, Cristian cerró el ticket | Owner: Cristian

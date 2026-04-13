@@ -507,6 +507,18 @@ const TASKS = {
       "isNew": true
     },
     {
+      "text": "🆕 <strong>[WV CL]</strong> Marcos: revisar y resolver ticket HubSpot #44377462606 de WV Chile",
+      "account": "WV",
+      "project": "CL",
+      "tag": "CL",
+      "tagClass": "tag-wv",
+      "owner": "Marcos",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
       "text": "Ticket: Fechas de pago se guardan con valor incorrecto — Martha confirmó corrección, Cristian cerró el ticket",
       "account": "WV",
       "project": "EC",
