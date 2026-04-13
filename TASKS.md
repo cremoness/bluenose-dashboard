@@ -61,7 +61,9 @@
 - [ ] 🆕 **[UCSP — Simulador de Pensión]** César: coordinar reunión de onboarding/recorrido de la plataforma antes de dar acceso de administrador a BlueNose — propuesto por el equipo UCSP | Owner: César
 
 #### Admisión Pregrado
-- [ ] 🆕 **[UCSP — Admisión Pregrado]** Pablo: diseñar primera etapa del sistema de agentes para matrícula — crear campos en HubSpot y conectar agentes para recibir y organizar documentación. Ya tiene montado el sistema base para ventas, admisión y matrícula | Owner: Pablo
+- [ ] 🆕 **[UCSP — Admisión Pregrado]** Pablo + Ángel: armar esquema de cómo funcionará el Agente IA de Admisión (fase final de captación, 1ra matrícula) — Pablo ya tiene montado el sistema base de agentes para ventas, admisión y matrícula; solo falta darle forma para este caso específico con la DGA | Owner: Pablo
+- [ ] 🆕 **[UCSP — Admisión Pregrado]** Pablo: crear todos los campos de información en HubSpot para el Agente IA de Admisión — campos que permitan al agente recibir y organizar documentación del proceso de matrícula | Owner: Pablo
+- [ ] 🆕 **[UCSP — Admisión Pregrado]** Pablo: conectar campos de HubSpot al agente y diseñar primera etapa del flujo — recepción y organización de documentación de matrícula | Owner: Pablo
 - [ ] 🆕 **[UCSP — Admisión Pregrado]** Ángel: coordinar y triangular propuesta de Carmen Cari sobre exploración de comportamiento de segmentos (matrícula incompleta, temporánea y no matriculados) — gestionar agendamientos con el cliente | Owner: Ángelito
 - [ ] 🆕 **[UCSP — Exploración Segmentos Matrícula]** Ángel: iniciar proyecto de exploración del comportamiento de segmentos específicos de estudiantes en matrículas — segmentos: matrícula incompleta, temporánea y no matriculados | Owner: Ángelito
 

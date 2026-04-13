@@ -387,7 +387,31 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UCSP — Admisión Pregrado]</strong> Pablo: diseñar primera etapa del sistema de agentes para matrícula — crear campos en HubSpot y conectar agentes para recibir y organizar documentación. Ya tiene montado el sistema base para ventas, admisión y matrícula",
+      "text": "🆕 <strong>[UCSP — Admisión Pregrado]</strong> Pablo + Ángel: armar esquema de cómo funcionará el Agente IA de Admisión (fase final de captación, 1ra matrícula) — Pablo ya tiene montado el sistema base de agentes para ventas, admisión y matrícula; solo falta darle forma para este caso específico con la DGA",
+      "account": "UCSP",
+      "project": "Admisión Pregrado",
+      "tag": "Admisión Pregrado",
+      "tagClass": "tag-uc",
+      "owner": "Pablo",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UCSP — Admisión Pregrado]</strong> Pablo: crear todos los campos de información en HubSpot para el Agente IA de Admisión — campos que permitan al agente recibir y organizar documentación del proceso de matrícula",
+      "account": "UCSP",
+      "project": "Admisión Pregrado",
+      "tag": "Admisión Pregrado",
+      "tagClass": "tag-uc",
+      "owner": "Pablo",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UCSP — Admisión Pregrado]</strong> Pablo: conectar campos de HubSpot al agente y diseñar primera etapa del flujo — recepción y organización de documentación de matrícula",
       "account": "UCSP",
       "project": "Admisión Pregrado",
       "tag": "Admisión Pregrado",
