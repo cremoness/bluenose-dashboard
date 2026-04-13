@@ -85,6 +85,7 @@
 
 #### Mi Propósito
 - [ ] 🆕 **[UCSP — Mi Propósito]** Ángel: consultar a César conformidad del equipo UCSP-San Pablo con funcionalidades actuales y futuras — necesitamos luz verde del levantamiento de requerimientos. Verificar si Renzo tuvo comentarios sobre los documentos compartidos por correo e internamente | Owner: Ángelito
+- [ ] 🆕 **[UCSP — Mi Propósito]** Edgardo: confirmar a Enrique que todo está ok y nada está pendiente o incompleto — Claudia no dará conformidad hasta que Ventas cierre y apruebe (exige esa aprobación el lunes). Evitar que el cliente nos devuelva la responsabilidad | Owner: Edgardo
 
 #### Admisión Pregrado
 - [ ] 🆕 **[UCSP — Admisión Pregrado]** Pablo: revisar diseño del Agente IA de Admisión (fase final de captación, 1ra matrícula) creado por Ángel | Owner: Pablo

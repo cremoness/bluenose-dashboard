@@ -603,6 +603,18 @@ const TASKS = {
       "isNew": true
     },
     {
+      "text": "🆕 <strong>[UCSP — Mi Propósito]</strong> Edgardo: confirmar a Enrique que todo está ok y nada está pendiente o incompleto — Claudia no dará conformidad hasta que Ventas cierre y apruebe (exige esa aprobación el lunes). Evitar que el cliente nos devuelva la responsabilidad",
+      "account": "UCSP",
+      "project": "Mi Propósito",
+      "tag": "Mi Propósito",
+      "tagClass": "tag-uc",
+      "owner": "Edgardo",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
       "text": "🆕 <strong>[UCSP — Admisión Pregrado]</strong> Pablo: revisar diseño del Agente IA de Admisión (fase final de captación, 1ra matrícula) creado por Ángel",
       "account": "UCSP",
       "project": "Admisión Pregrado",
