@@ -1,6 +1,18 @@
 const TASKS = {
   "urgente": [
     {
+      "text": "🆕 <strong>[WV PE]</strong> Cristian + Marcos: investigar y eliminar pagos duplicados en archivo TXT de Débito BCP — cobros duplicados detectados en primera quincena de abril, monto total excede valores habituales. Mientras sigan en proceso de cobro seguirán apareciendo en el TXT. CRÍTICO durante fecha de cobro",
+      "account": "WV",
+      "project": "PE",
+      "tag": "PE",
+      "tagClass": "tag-wv",
+      "owner": "Cristian + Marcos",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
       "text": "🆕 <strong>[WV RD]</strong> Ángel: asistir a reunión de status final/cierre de WV RD mañana — Juanito la agendó como reunión de cierre de contrato",
       "account": "WV",
       "project": "RD",
@@ -423,7 +435,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV CL]</strong> Cristian: compartir nómina corregida de HubSpot para validación de Ornella — objetivo reducir diferencia de ~600 a ~20 pagos vs CIMA",
+      "text": "Cristian: compartir nómina corregida de HubSpot para validación de Ornella — objetivo reducir diferencia de ~600 a ~20 pagos vs CIMA — Nóminas de marzo procesadas y compartidas por correo con Excel de resultados. 87% positivo",
       "account": "WV",
       "project": "CL",
       "tag": "CL",
@@ -432,10 +444,10 @@ const TASKS = {
       "clients": [
         "WV"
       ],
-      "isNew": true
+      "isCompleted": true
     },
     {
-      "text": "🆕 <strong>[WV CL]</strong> Ornella: subir nómina del 5 de abril el jueves 02/04 tras recibir respuesta del banco",
+      "text": "Ornella: subir nómina del 5 de abril el jueves 02/04 tras recibir respuesta del banco",
       "account": "WV",
       "project": "CL",
       "tag": "CL",
@@ -444,7 +456,7 @@ const TASKS = {
       "clients": [
         "WV"
       ],
-      "isNew": true
+      "isCompleted": true
     },
     {
       "text": "🆕 <strong>[WV CL]</strong> Ornella: evaluar si usar nómina CIMA o HubSpot una vez validada la nómina corregida de Cristian",
@@ -507,7 +519,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV CL]</strong> Cristian + Marcos: estandarizar propiedad root — verificar y activar fórmula de conversión que transforme root normal a root sin formato",
+      "text": "Cristian + Marcos: estandarizar propiedad root — verificar y activar fórmula de conversión que transforme root normal a root sin formato — Resuelto al corregir el problema del doble ID de SIMMA; importados 16.945 contactos actualizados y 458 nuevos",
       "account": "WV",
       "project": "CL",
       "tag": "CL",
@@ -516,7 +528,7 @@ const TASKS = {
       "clients": [
         "WV"
       ],
-      "isNew": true
+      "isCompleted": true
     },
     {
       "text": "🆕 <strong>[WV CL]</strong> Ángel: consultar a Sofía qué data de nóminas fue importada y hasta qué fecha — determinar si hay pagos de sep-dic faltantes que subir (Pablo lo pidió en reunión de soporte)",
@@ -567,6 +579,78 @@ const TASKS = {
       "isNew": true
     },
     {
+      "text": "🆕 <strong>[WV CL]</strong> Cristian: importar pagos y suscripciones faltantes de VirtualPost a HubSpot y compartir reporte el lunes — ya encontrados, proceder a importación",
+      "account": "WV",
+      "project": "CL",
+      "tag": "CL",
+      "tagClass": "tag-wv",
+      "owner": "Cristian",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV CL]</strong> Ornella: contactar a Andrés (ejecutivo Virtual Post) para presionar respuesta sobre desconexión 13-15 marzo — Jorge no ha respondido desde la semana pasada",
+      "account": "WV",
+      "project": "CL",
+      "tag": "CL",
+      "tagClass": "tag-wv",
+      "owner": "Ornella",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV CL]</strong> Cristian: investigar y resolver duplicados en nómina de abril — se detectaron ~5.000 IDs vs ~2.000 estimados, coordinar con HubSpot para identificar origen",
+      "account": "WV",
+      "project": "CL",
+      "tag": "CL",
+      "tagClass": "tag-wv",
+      "owner": "Cristian",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV CL]</strong> Diana: actualizar propiedades y crear negocios para contactos de agencias (archivo compartido) — quedan ~200-300 sin match que requieren decisión",
+      "account": "WV",
+      "project": "CL",
+      "tag": "CL",
+      "tagClass": "tag-wv",
+      "owner": "Diana (cliente)",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV CL]</strong> Paola: solicitar a Víctor estado final del documento de ajustes de pasarela de pagos y agregar punto de doble envío de formulario (desde integración + HubSpot) para evitar pérdida de datos de carritos abandonados",
+      "account": "WV",
+      "project": "CL",
+      "tag": "CL",
+      "tagClass": "tag-wv",
+      "owner": "Paola",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV CL]</strong> Cristian + Paola: agregar punto de doble validación de formularios al documento de trabajo con Víctor — envío desde integración como respaldo independiente de HubSpot",
+      "account": "WV",
+      "project": "CL",
+      "tag": "CL",
+      "tagClass": "tag-wv",
+      "owner": "Cristian + Paola",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
       "text": "Ticket: Fechas de pago se guardan con valor incorrecto — Martha confirmó corrección, Cristian cerró el ticket",
       "account": "WV",
       "project": "EC",
@@ -591,7 +675,7 @@ const TASKS = {
       "isCompleted": true
     },
     {
-      "text": "🆕 <strong>[WV EC]</strong> Cristian: revisar por qué la cédula no se copia correctamente del contacto al pago — error encontrado en documentación, pendiente confirmar proceso correcto",
+      "text": "Cristian: revisar por qué la cédula no se copia correctamente del contacto al pago — Validado: caso Kerly (Banco Pichincha) revisado en pagos feb/mar/abr, cédula se copia correctamente. Mapeo de banco corregido",
       "account": "WV",
       "project": "EC",
       "tag": "EC",
@@ -600,7 +684,7 @@ const TASKS = {
       "clients": [
         "WV"
       ],
-      "isNew": true
+      "isCompleted": true
     },
     {
       "text": "🆕 <strong>[WV EC]</strong> Cristian: investigar y resolver problema del portal que se resetea y no reconoce archivos cargados — respuesta antes del viernes",
@@ -633,6 +717,54 @@ const TASKS = {
       "tag": "EC",
       "tagClass": "tag-wv",
       "owner": "Cristian",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV EC]</strong> Cristian: confirmar qué propiedad usar oficialmente para captador: \"captador\" o \"captador face to face\" — equipo de ventas necesita unificar reportes de captaciones por facer",
+      "account": "WV",
+      "project": "EC",
+      "tag": "EC",
+      "tagClass": "tag-wv",
+      "owner": "Cristian",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV EC]</strong> Cristian: investigar pago faltante de donante — 3 pagos en Pimentes pero solo 2 registrados en HubSpot. Hacer match con historial de transacciones",
+      "account": "WV",
+      "project": "EC",
+      "tag": "EC",
+      "tagClass": "tag-wv",
+      "owner": "Cristian",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV EC]</strong> Cristian: revisar documento \"experiencia del donante\" y dar avance antes de la próxima reunión — incluye automatización de cambio de frecuencia de pago",
+      "account": "WV",
+      "project": "EC",
+      "tag": "EC",
+      "tagClass": "tag-wv",
+      "owner": "Cristian",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV EC]</strong> Vale: enviar resumen por correo (a Pablo y Enrique) de tickets de garantía: puntos 1, 2, 3, 6 cerrados ✓; punto 5 pendiente (próximas respuestas de contabilidad); punto 4 pendiente (inicios de mayo, archivo sin campos en blanco)",
+      "account": "WV",
+      "project": "EC",
+      "tag": "EC",
+      "tagClass": "tag-wv",
+      "owner": "Vale (cliente)",
       "clients": [
         "WV"
       ],
@@ -681,6 +813,102 @@ const TASKS = {
       "tag": "Mi Propósito",
       "tagClass": "tag-uc",
       "owner": "Ángelito",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UCSP — Mi Propósito]</strong> César: consultar con Paul tiempos de respuesta estándar para solicitudes y modificaciones en DevOps — necesario para detectar dilaciones",
+      "account": "UCSP",
+      "project": "Mi Propósito",
+      "tag": "Mi Propósito",
+      "tagClass": "tag-uc",
+      "owner": "César (cliente)",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UCSP — Mi Propósito]</strong> César: informar a Paul que levante los ambientes con repositorios GitHub ya compartidos (backend + frontend) para que el proveedor inicie despliegue",
+      "account": "UCSP",
+      "project": "Mi Propósito",
+      "tag": "Mi Propósito",
+      "tagClass": "tag-uc",
+      "owner": "César (cliente)",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UCSP — Mi Propósito]</strong> César: obtener aprobación formal del equipo de ventas para la matriz gráfica y diseños Figma compartidos — necesario para que Blue Nose continúe creando pantallas",
+      "account": "UCSP",
+      "project": "Mi Propósito",
+      "tag": "Mi Propósito",
+      "tagClass": "tag-uc",
+      "owner": "César (cliente)",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UCSP — Mi Propósito]</strong> César: listar pantallas nuevas y modificaciones que el equipo de ventas desea ver — para que Blue Nose las prepare en Figma con secuencia lógica",
+      "account": "UCSP",
+      "project": "Mi Propósito",
+      "tag": "Mi Propósito",
+      "tagClass": "tag-uc",
+      "owner": "César (cliente)",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UCSP — Mi Propósito]</strong> César: notificar a Paul para gestionar permisos de creación de máquinas virtuales y accesos admin en Azure para el equipo de Blue Nose",
+      "account": "UCSP",
+      "project": "Mi Propósito",
+      "tag": "Mi Propósito",
+      "tagClass": "tag-uc",
+      "owner": "César (cliente)",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UCSP — Mi Propósito]</strong> Edgardo: crear mockups en Figma para funcionalidades nuevas (simulacro masivo integrado, encuestas de satisfacción por herramienta) con secuencia lógica de pantallas para presentación al equipo de ventas",
+      "account": "UCSP",
+      "project": "Mi Propósito",
+      "tag": "Mi Propósito",
+      "tagClass": "tag-uc",
+      "owner": "Edgardo (cliente)",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UCSP — Mi Propósito]</strong> Edgardo: crear pantallas administrativas (inicio → herramientas → reportes → encuestas) con flujo claro para aprobación de ventas — avanzar con entorno de prueba existente",
+      "account": "UCSP",
+      "project": "Mi Propósito",
+      "tag": "Mi Propósito",
+      "tagClass": "tag-uc",
+      "owner": "Edgardo (cliente)",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UCSP — Mi Propósito]</strong> Edgardo: enviar a César listado detallado de accesos y permisos necesarios para Azure (incluyendo creación de máquinas virtuales)",
+      "account": "UCSP",
+      "project": "Mi Propósito",
+      "tag": "Mi Propósito",
+      "tagClass": "tag-uc",
+      "owner": "Edgardo (cliente)",
       "clients": [
         "UCSP"
       ],
@@ -933,6 +1161,102 @@ const TASKS = {
       "tag": "CENDES",
       "tagClass": "tag-uc",
       "owner": "Ángelito",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UCSP — Nuevas Carreras]</strong> Ángel: armar Gantt para lanzamiento de Educación Secundaria — URGENTE, debe estar lista antes del 13 de agosto (CADE Educación, aparece en toda la publicidad del evento)",
+      "account": "UCSP",
+      "project": "Nuevas Carreras",
+      "tag": "Nuevas Carreras",
+      "tagClass": "tag-uc",
+      "owner": "Ángelito",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UCSP — Nuevas Carreras]</strong> Ángel: armar Gantt para Ciencia Política — inicio de trabajo de campo mediados de mayo (aprobación final prevista junio)",
+      "account": "UCSP",
+      "project": "Nuevas Carreras",
+      "tag": "Nuevas Carreras",
+      "tagClass": "tag-uc",
+      "owner": "Ángelito",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UCSP — Nuevas Carreras]</strong> Ángel: coordinar visita presencial conjunta para levantar información de las tres carreras en una sola visita (Educación Secundaria, Ciencia Política, Derecho) — reducir costos y optimizar tiempos",
+      "account": "UCSP",
+      "project": "Nuevas Carreras",
+      "tag": "Nuevas Carreras",
+      "tagClass": "tag-uc",
+      "owner": "Ángelito",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UCSP — Nuevas Carreras]</strong> Renzo: entregar brief y plan curricular de Educación Secundaria la próxima semana — aprobación de Rectorado ya realizada",
+      "account": "UCSP",
+      "project": "Nuevas Carreras",
+      "tag": "Nuevas Carreras",
+      "tagClass": "tag-uc",
+      "owner": "Renzo (cliente)",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UCSP — Nuevas Carreras]</strong> Renzo: compartir análisis competitivo y datos de Ciencias Políticas para inicio de planificación estratégica",
+      "account": "UCSP",
+      "project": "Nuevas Carreras",
+      "tag": "Nuevas Carreras",
+      "tagClass": "tag-uc",
+      "owner": "Renzo (cliente)",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UCSP — Nuevas Carreras]</strong> Cintia: coordinar disponibilidad del equipo académico para entrevistas, focus groups y reuniones de levantamiento de información",
+      "account": "UCSP",
+      "project": "Nuevas Carreras",
+      "tag": "Nuevas Carreras",
+      "tagClass": "tag-uc",
+      "owner": "Cintia (cliente)",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UCSP — Nuevas Carreras]</strong> Enrique: elaborar propuesta de valor y estrategia creativa para Educación Secundaria y Ciencia Política — una vez recibido el brief de Renzo",
+      "account": "UCSP",
+      "project": "Nuevas Carreras",
+      "tag": "Nuevas Carreras",
+      "tagClass": "tag-uc",
+      "owner": "Enrique",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UCSP — Nuevas Carreras]</strong> Enrique: preparar programa y agenda para consultoría sectorial UCSP — inicio en mayo, incluye reunión de kick-off y reuniones recurrentes",
+      "account": "UCSP",
+      "project": "Nuevas Carreras",
+      "tag": "Nuevas Carreras",
+      "tagClass": "tag-uc",
+      "owner": "Enrique",
       "clients": [
         "UCSP"
       ],
@@ -1214,6 +1538,42 @@ const TASKS = {
     }
   ],
   "done": [
+    {
+      "text": "Pablo: crear acceso en plataforma para Francisco Vallejo (gerente de Más Recursos) para revisión previa a reunión — REALIZADO",
+      "account": "WV",
+      "project": "CL",
+      "tag": "CL",
+      "tagClass": "tag-wv",
+      "owner": "Pablo",
+      "clients": [
+        "WV"
+      ],
+      "isCompleted": true
+    },
+    {
+      "text": "Cristian: importar y actualizar contactos de VirtualPost en HubSpot — 16.945 contactos actualizados (rut/fecha de nacimiento) y 458 nuevos creados; listas compartidas",
+      "account": "WV",
+      "project": "CL",
+      "tag": "CL",
+      "tagClass": "tag-wv",
+      "owner": "Cristian",
+      "clients": [
+        "WV"
+      ],
+      "isCompleted": true
+    },
+    {
+      "text": "Cristian: revisar por qué la cédula no se copia correctamente del contacto al pago — validado para caso Kerly y similares (Banco Pichincha): pagos feb/mar/abr copian cédula correctamente; mapeo de banco corregido",
+      "account": "WV",
+      "project": "EC",
+      "tag": "EC",
+      "tagClass": "tag-wv",
+      "owner": "Cristian",
+      "clients": [
+        "WV"
+      ],
+      "isCompleted": true
+    },
     {
       "text": "Luis Gustavo: crear y enviar plantilla de recontacto para WhatsApp y correos a Marcos y Comunicaciones BN — 4 plantillas WA listas, 2 correos hechos, links enviados tras la reunión",
       "account": "WV",
