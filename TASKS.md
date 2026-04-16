@@ -1,10 +1,11 @@
 # TASKS — Ángelito Chanamé
-> Última actualización: 2026-04-13 | Limpieza: tareas desde 30 de marzo
+> Última actualización: 2026-04-15 | Limpieza: tareas desde 30 de marzo
 
 ---
 
 ## 🔴 URGENTE / Hoy mismo
 
+- [ ] 🆕 **[WV PE]** Cristian + Marcos: investigar y eliminar pagos duplicados en archivo TXT de Débito BCP — cobros duplicados detectados en primera quincena de abril, monto total excede valores habituales. Mientras sigan en proceso de cobro seguirán apareciendo en el TXT. CRÍTICO durante fecha de cobro | Owner: Cristian + Marcos
 - [ ] 🆕 **[WV RD]** Ángel: asistir a reunión de status final/cierre de WV RD mañana — Juanito la agendó como reunión de cierre de contrato | Owner: Ángelito
 - [ ] 🆕 **[WV EC]** Cristian: avisar por Discord que el documento de Ecuador fue actualizado | Owner: Cristian
 
@@ -62,14 +63,14 @@
 - [ ] 🆕 **[WV CL — Rendiciones F2F]** Ornella + Gonzalo: practicar casos en la plataforma de rendiciones mientras Cristian identifica el error de VirtualPost | Owner: Ornella
 
 #### Nóminas / Cobranza
-- [ ] 🆕 **[WV CL]** Cristian: compartir nómina corregida de HubSpot para validación de Ornella — objetivo reducir diferencia de ~600 a ~20 pagos vs CIMA | Owner: Cristian
-- [ ] 🆕 **[WV CL]** Ornella: subir nómina del 5 de abril el jueves 02/04 tras recibir respuesta del banco | Owner: Ornella
+- [x] **[WV CL]** Cristian: compartir nómina corregida de HubSpot para validación de Ornella — objetivo reducir diferencia de ~600 a ~20 pagos vs CIMA — Nóminas de marzo procesadas y compartidas por correo con Excel de resultados. 87% positivo | Owner: Cristian
+- [x] **[WV CL]** Ornella: subir nómina del 5 de abril el jueves 02/04 tras recibir respuesta del banco | Owner: Ornella
 - [ ] 🆕 **[WV CL]** Ornella: evaluar si usar nómina CIMA o HubSpot una vez validada la nómina corregida de Cristian | Owner: Ornella
 - [ ] 🆕 **[WV CL — Rendiciones F2F]** Pablo + Cristian: cambiar propiedades de test a propiedades reales en HubSpot una vez validadas las rendiciones F2F en producción | Owner: Pablo
 - [ ] 🆕 **[WV CL]** Cristian: realizar backfill de pagos faltantes en HubSpot usando ID y suscripción de VirtualPost — crear pagos que no se generaron por el fallo de transmisión | Owner: Cristian
 - [ ] 🆕 **[WV CL]** Cristian: evaluar y ajustar configuración del CAPTCHA en formulario de inicio de donación — cambiar versión para resolver conflicto con envío de formulario sin eliminar protección contra bots | Owner: Cristian
 - [ ] 🆕 **[WV CL]** Cristian: generar listado de carritos abandonados (contactos que rellenaron formulario 1: nombre, correo, teléfono, root) para base de recuperación y acción por WhatsApp | Owner: Cristian
-- [ ] 🆕 **[WV CL]** Cristian + Marcos: estandarizar propiedad root — verificar y activar fórmula de conversión que transforme root normal a root sin formato | Owner: Cristian
+- [x] **[WV CL]** Cristian + Marcos: estandarizar propiedad root — verificar y activar fórmula de conversión que transforme root normal a root sin formato — Resuelto al corregir el problema del doble ID de SIMMA; importados 16.945 contactos actualizados y 458 nuevos | Owner: Cristian
 - [ ] 🆕 **[WV CL]** Ángel: consultar a Sofía qué data de nóminas fue importada y hasta qué fecha — determinar si hay pagos de sep-dic faltantes que subir (Pablo lo pidió en reunión de soporte) | Owner: Ángelito
 - [ ] 🆕 **[WV CL]** Diana: validar nuevamente propiedad CLCapture / Select Captor en la copia de contacto a negocio — algunos registros no están copiando el valor | Owner: Diana (cliente)
 
@@ -77,13 +78,25 @@
 - [ ] 🆕 **[WV CL]** Cristian: investigar ticket de Diana sobre propiedad del nombre de la agencia que a veces aparece sin valor | Owner: Cristian
 - [ ] 🆕 **[WV CL]** Marcos: revisar y resolver ticket HubSpot #44377462606 de WV Chile | Owner: Marcos
 
+#### Importación y sincronización Virtual Post
+- [ ] 🆕 **[WV CL]** Cristian: importar pagos y suscripciones faltantes de VirtualPost a HubSpot y compartir reporte el lunes — ya encontrados, proceder a importación | Owner: Cristian
+- [ ] 🆕 **[WV CL]** Ornella: contactar a Andrés (ejecutivo Virtual Post) para presionar respuesta sobre desconexión 13-15 marzo — Jorge no ha respondido desde la semana pasada | Owner: Ornella
+- [ ] 🆕 **[WV CL]** Cristian: investigar y resolver duplicados en nómina de abril — se detectaron ~5.000 IDs vs ~2.000 estimados, coordinar con HubSpot para identificar origen | Owner: Cristian
+- [ ] 🆕 **[WV CL]** Diana: actualizar propiedades y crear negocios para contactos de agencias (archivo compartido) — quedan ~200-300 sin match que requieren decisión | Owner: Diana (cliente)
+- [ ] 🆕 **[WV CL]** Paola: solicitar a Víctor estado final del documento de ajustes de pasarela de pagos y agregar punto de doble envío de formulario (desde integración + HubSpot) para evitar pérdida de datos de carritos abandonados | Owner: Paola
+- [ ] 🆕 **[WV CL]** Cristian + Paola: agregar punto de doble validación de formularios al documento de trabajo con Víctor — envío desde integración como respaldo independiente de HubSpot | Owner: Cristian + Paola
+
 ### WV Ecuador
 - [x] **[WV EC]** Ticket: Fechas de pago se guardan con valor incorrecto — Martha confirmó corrección, Cristian cerró el ticket | Owner: Cristian
 - [x] **[WV EC]** Ticket: WF mueve pagos — workflow corregido, todos los pagos tienen fecha asignada | Owner: Cristian
-- [ ] 🆕 **[WV EC]** Cristian: revisar por qué la cédula no se copia correctamente del contacto al pago — error encontrado en documentación, pendiente confirmar proceso correcto | Owner: Cristian
+- [x] **[WV EC]** Cristian: revisar por qué la cédula no se copia correctamente del contacto al pago — Validado: caso Kerly (Banco Pichincha) revisado en pagos feb/mar/abr, cédula se copia correctamente. Mapeo de banco corregido | Owner: Cristian
 - [ ] 🆕 **[WV EC]** Cristian: investigar y resolver problema del portal que se resetea y no reconoce archivos cargados — respuesta antes del viernes | Owner: Cristian
 - [ ] 🆕 **[WV EC]** Cristian: implementar columnas adicionales en archivos bancarios (fecha de pago aceptado y periodo) para automatizar lectura en HubSpot | Owner: Cristian
 - [ ] 🆕 **[WV EC]** Cristian: documentar y comunicar que la generación automática de pagos en HubSpot es independiente de la acción manual en el portal | Owner: Cristian
+- [ ] 🆕 **[WV EC]** Cristian: confirmar qué propiedad usar oficialmente para captador: "captador" o "captador face to face" — equipo de ventas necesita unificar reportes de captaciones por facer | Owner: Cristian
+- [ ] 🆕 **[WV EC]** Cristian: investigar pago faltante de donante — 3 pagos en Pimentes pero solo 2 registrados en HubSpot. Hacer match con historial de transacciones | Owner: Cristian
+- [ ] 🆕 **[WV EC]** Cristian: revisar documento "experiencia del donante" y dar avance antes de la próxima reunión — incluye automatización de cambio de frecuencia de pago | Owner: Cristian
+- [ ] 🆕 **[WV EC]** Vale: enviar resumen por correo (a Pablo y Enrique) de tickets de garantía: puntos 1, 2, 3, 6 cerrados ✓; punto 5 pendiente (próximas respuestas de contabilidad); punto 4 pendiente (inicios de mayo, archivo sin campos en blanco) | Owner: Vale (cliente)
 
 ### UCSP
 #### Simulador de Pensión
@@ -93,6 +106,14 @@
 - [ ] 🆕 **[UCSP — Mi Propósito]** Ángel: consultar a César conformidad del equipo UCSP-San Pablo con funcionalidades actuales y futuras — necesitamos luz verde del levantamiento de requerimientos. Verificar si Renzo tuvo comentarios sobre los documentos compartidos por correo e internamente | Owner: Ángelito
 - [ ] 🆕 **[UCSP — Mi Propósito]** Edgardo: confirmar a Enrique que todo está ok y nada está pendiente o incompleto — Claudia no dará conformidad hasta que Ventas cierre y apruebe (exige esa aprobación el lunes). Evitar que el cliente nos devuelva la responsabilidad | Owner: Edgardo
 - [ ] 🆕 **[UCSP — Mi Propósito]** Ángel: enviar recordatorios recurrentes a Edgardo en canal Discord para que dé estatus actualizado — Claudia Tapia confirmó que presionará a Ventas para obtener conformidad; hay que asegurar que nada quede pendiente de nuestro lado | Owner: Ángelito
+- [ ] 🆕 **[UCSP — Mi Propósito]** César: consultar con Paul tiempos de respuesta estándar para solicitudes y modificaciones en DevOps — necesario para detectar dilaciones | Owner: César (cliente)
+- [ ] 🆕 **[UCSP — Mi Propósito]** César: informar a Paul que levante los ambientes con repositorios GitHub ya compartidos (backend + frontend) para que el proveedor inicie despliegue | Owner: César (cliente)
+- [ ] 🆕 **[UCSP — Mi Propósito]** César: obtener aprobación formal del equipo de ventas para la matriz gráfica y diseños Figma compartidos — necesario para que Blue Nose continúe creando pantallas | Owner: César (cliente)
+- [ ] 🆕 **[UCSP — Mi Propósito]** César: listar pantallas nuevas y modificaciones que el equipo de ventas desea ver — para que Blue Nose las prepare en Figma con secuencia lógica | Owner: César (cliente)
+- [ ] 🆕 **[UCSP — Mi Propósito]** César: notificar a Paul para gestionar permisos de creación de máquinas virtuales y accesos admin en Azure para el equipo de Blue Nose | Owner: César (cliente)
+- [ ] 🆕 **[UCSP — Mi Propósito]** Edgardo: crear mockups en Figma para funcionalidades nuevas (simulacro masivo integrado, encuestas de satisfacción por herramienta) con secuencia lógica de pantallas para presentación al equipo de ventas | Owner: Edgardo (cliente)
+- [ ] 🆕 **[UCSP — Mi Propósito]** Edgardo: crear pantallas administrativas (inicio → herramientas → reportes → encuestas) con flujo claro para aprobación de ventas — avanzar con entorno de prueba existente | Owner: Edgardo (cliente)
+- [ ] 🆕 **[UCSP — Mi Propósito]** Edgardo: enviar a César listado detallado de accesos y permisos necesarios para Azure (incluyendo creación de máquinas virtuales) | Owner: Edgardo (cliente)
 
 #### Mesa de Ayuda (nuevo proyecto)
 - [ ] 🆕 **[UCSP — Mesa de Ayuda]** Pablo + Ángel: armar propuesta para proyecto de optimización de Mesa de Ayuda con IA para UCSP (área de César Puma / Experiencia del Estudiante) — TDR recibido, presupuesto dado para 2026, abierto a 2-3 años. Meta: propuesta año 1 que encaje en presupuesto actual, introduzca IA sin grandes cambios estructurales y mejore primeros SLAs. César está abierto a cuestionar CRM actual (Softhop), procesos y canales | Owner: Pablo + Ángelito
@@ -124,6 +145,16 @@
 - [ ] 🆕 **[UCSP — CENDES]** Ángel: responder correo de María Berlanga (Sendes) confirmando que el manual de flujos no tendrá costo adicional — ya se decidió usar software de captura de pantallas automático | Owner: Ángelito
 - [x] **[UCSP — CENDES]** Marcos: revisar documento de comentarios de María Berlanga sobre HubSpot y coordinar con Ángel para agendar reunión de revisión de flujos — manual ya enviado a Ángel | Owner: Marcos
 - [ ] 🆕 **[UCSP — CENDES]** Ángel: dar formato al manual enviado por Marcos y enviarlo a María Berlanga | Owner: Ángelito
+
+#### Nuevas Carreras (Educación Secundaria, Ciencia Política, Derecho)
+- [ ] 🆕 **[UCSP — Nuevas Carreras]** Ángel: armar Gantt para lanzamiento de Educación Secundaria — URGENTE, debe estar lista antes del 13 de agosto (CADE Educación, aparece en toda la publicidad del evento) | Owner: Ángelito
+- [ ] 🆕 **[UCSP — Nuevas Carreras]** Ángel: armar Gantt para Ciencia Política — inicio de trabajo de campo mediados de mayo (aprobación final prevista junio) | Owner: Ángelito
+- [ ] 🆕 **[UCSP — Nuevas Carreras]** Ángel: coordinar visita presencial conjunta para levantar información de las tres carreras en una sola visita (Educación Secundaria, Ciencia Política, Derecho) — reducir costos y optimizar tiempos | Owner: Ángelito
+- [ ] 🆕 **[UCSP — Nuevas Carreras]** Renzo: entregar brief y plan curricular de Educación Secundaria la próxima semana — aprobación de Rectorado ya realizada | Owner: Renzo (cliente)
+- [ ] 🆕 **[UCSP — Nuevas Carreras]** Renzo: compartir análisis competitivo y datos de Ciencias Políticas para inicio de planificación estratégica | Owner: Renzo (cliente)
+- [ ] 🆕 **[UCSP — Nuevas Carreras]** Cintia: coordinar disponibilidad del equipo académico para entrevistas, focus groups y reuniones de levantamiento de información | Owner: Cintia (cliente)
+- [ ] 🆕 **[UCSP — Nuevas Carreras]** Enrique: elaborar propuesta de valor y estrategia creativa para Educación Secundaria y Ciencia Política — una vez recibido el brief de Renzo | Owner: Enrique
+- [ ] 🆕 **[UCSP — Nuevas Carreras]** Enrique: preparar programa y agenda para consultoría sectorial UCSP — inicio en mayo, incluye reunión de kick-off y reuniones recurrentes | Owner: Enrique
 
 ### UPSJB
 - [ ] 🆕 **[UPSJB]** Equipo: planificación estratégica de campaña 26-2 — documento Excel en notebook/drive con post-mortem de 26-1, KPIs, lecciones aprendidas y drivers estratégicos para 26-2. Engloba: ventas, buyer persona padre, plan a distancia, carreras y agentes IA | Owner: Enrique + Ángelito
@@ -168,6 +199,9 @@
 
 ## ✅ COMPLETADO
 
+- [x] **[WV CL]** Pablo: crear acceso en plataforma para Francisco Vallejo (gerente de Más Recursos) para revisión previa a reunión — REALIZADO | Owner: Pablo
+- [x] **[WV CL]** Cristian: importar y actualizar contactos de VirtualPost en HubSpot — 16.945 contactos actualizados (rut/fecha de nacimiento) y 458 nuevos creados; listas compartidas | Owner: Cristian
+- [x] **[WV EC]** Cristian: revisar por qué la cédula no se copia correctamente del contacto al pago — validado para caso Kerly y similares (Banco Pichincha): pagos feb/mar/abr copian cédula correctamente; mapeo de banco corregido | Owner: Cristian
 - [x] **[WV HND]** Luis Gustavo: crear y enviar plantilla de recontacto para WhatsApp y correos a Marcos y Comunicaciones BN — 4 plantillas WA listas, 2 correos hechos, links enviados tras la reunión | Owner: Luis Gustavo
 - [x] **[WV EC]** Ticket: Fechas de pago se guardan con valor incorrecto — Martha confirmó corrección, Cristian cerró el ticket | Owner: Cristian
 - [x] **[WV EC]** Ticket: WF mueve pagos — workflow corregido, todos los pagos tienen fecha asignada | Owner: Cristian
