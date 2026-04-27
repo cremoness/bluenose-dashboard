@@ -1,7 +1,7 @@
 const TASKS = {
   "urgente": [
     {
-      "text": "🆕 <strong>[WV PE]</strong> Cristian + Marcos: investigar y eliminar pagos duplicados en archivo TXT de Débito BCP — cobros duplicados detectados en primera quincena de abril, monto total excede valores habituales. Mientras sigan en proceso de cobro seguirán apareciendo en el TXT. CRÍTICO durante fecha de cobro",
+      "text": "Cristian + Marcos: investigar y eliminar pagos duplicados en archivo TXT de Débito BCP — RESUELTO: validado HubSpot y sistema de pagos, no se encontraron duplicados en ambas quincenas. Se agregaron validaciones en WFs de creación de pagos para evitar duplicación futura",
       "account": "WV",
       "project": "PE",
       "tag": "PE",
@@ -10,7 +10,7 @@ const TASKS = {
       "clients": [
         "WV"
       ],
-      "isNew": true
+      "isCompleted": true
     },
     {
       "text": "🆕 <strong>[WV RD]</strong> Ángel: asistir a reunión de status final/cierre de WV RD mañana — Juanito la agendó como reunión de cierre de contrato",
@@ -26,6 +26,90 @@ const TASKS = {
     },
     {
       "text": "🆕 <strong>[WV EC]</strong> Cristian: avisar por Discord que el documento de Ecuador fue actualizado",
+      "account": "WV",
+      "project": "EC",
+      "tag": "EC",
+      "tagClass": "tag-wv",
+      "owner": "Cristian",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UPSJB]</strong> Estuardo: reunirse con logística para gestionar cotizaciones urgentes de IA/WhatsApp con al menos 2 proveedores — requerimiento de auditoría SUNAT",
+      "account": "UPSJB",
+      "project": "General",
+      "tag": "UPSJB",
+      "tagClass": "tag-up",
+      "owner": "Estuardo (cliente)",
+      "clients": [
+        "UPSJB"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UPSJB]</strong> Estuardo + Diego: actualizar cuadro de inversión con tasas de conversión del intake 26.1 castigadas y compartir en Discord hoy",
+      "account": "UPSJB",
+      "project": "General",
+      "tag": "UPSJB",
+      "tagClass": "tag-up",
+      "owner": "Estuardo + Diego (cliente)",
+      "clients": [
+        "UPSJB"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UPSJB]</strong> Diego: enviar correo a agencia SEO (con Pablo en copia) para analizar posicionamiento de landings y confirmar alta en Google Search Console",
+      "account": "UPSJB",
+      "project": "General",
+      "tag": "UPSJB",
+      "tagClass": "tag-up",
+      "owner": "Diego (cliente)",
+      "clients": [
+        "UPSJB"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV PE]</strong> Cristian: 23Abril — corregir automatización de cobros duplicados en archivo TXT — Rodrigo Benites detectó que los duplicados corresponden a negocios de segunda quincena; mañana es el último día de plazo para enviar a proceso de cobro",
+      "account": "WV",
+      "project": "PE",
+      "tag": "PE",
+      "tagClass": "tag-wv",
+      "owner": "Cristian",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UCSP — Centro de Idiomas]</strong> Ángel: 23Abril — asistir al 2do focus group de hoy",
+      "account": "UCSP",
+      "project": "Centro de Idiomas",
+      "tag": "Centro de Idiomas",
+      "tagClass": "tag-uc",
+      "owner": "Ángelito",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV HND]</strong> Cristian + Ángel: 23Abril — conciliar horas consumidas de WV Honduras de marzo y febrero por país usando reporte Excel (no automatizado) — pasar info a Patty urgente para emitir informe correcto y poder facturar",
+      "account": "WV",
+      "project": "HND",
+      "tag": "HND",
+      "tagClass": "tag-wv",
+      "owner": "Cristian + Ángelito",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV EC]</strong> Cristian: 23Abril — revisar caso donante BP con 3 cobros generados — Valeria Yanza reportó reclamo formal, HubSpot no identificó el duplicado",
       "account": "WV",
       "project": "EC",
       "tag": "EC",
@@ -117,6 +201,102 @@ const TASKS = {
       "tag": "HND",
       "tagClass": "tag-wv",
       "owner": "Enrique",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV HND]</strong> Luis Gustavo: 23Abril — definir indicadores clave para piloto de integración (horas reducidas, niños alcanzados, personas beneficiadas en Cultivando Futuros y Wash) y enviar al equipo técnico",
+      "account": "WV",
+      "project": "HND",
+      "tag": "HND",
+      "tagClass": "tag-wv",
+      "owner": "Luis Gustavo",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV HND]</strong> Luis Gustavo: 23Abril — revisar y enviar plantillas de WhatsApp corregidas antes del jueves para actualizar workflows — variables corregidas a formato \"first name\" todo junto y en minúsculas",
+      "account": "WV",
+      "project": "HND",
+      "tag": "HND",
+      "tagClass": "tag-wv",
+      "owner": "Luis Gustavo",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV HND]</strong> Luis Gustavo: 23Abril — coordinar sesión con Eric para revisión técnica de APIs e indicadores de integración",
+      "account": "WV",
+      "project": "HND",
+      "tag": "HND",
+      "tagClass": "tag-wv",
+      "owner": "Luis Gustavo",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV HND]</strong> Luis Gustavo: 23Abril — incluir plan de medios en hoja de ruta compartida para seguimiento en HubSpot",
+      "account": "WV",
+      "project": "HND",
+      "tag": "HND",
+      "tagClass": "tag-wv",
+      "owner": "Luis Gustavo",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV HND]</strong> Luis Gustavo: 23Abril — enviar recordatorio a Esperfago por pendientes de variables transaccionales",
+      "account": "WV",
+      "project": "HND",
+      "tag": "HND",
+      "tagClass": "tag-wv",
+      "owner": "Luis Gustavo",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV HND]</strong> Erick: 23Abril — compartir APIs configuradas por proyecto y realizar sesión para explicar campos, fórmulas y disponibilidad de indicadores para la prueba piloto",
+      "account": "WV",
+      "project": "HND",
+      "tag": "HND",
+      "tagClass": "tag-wv",
+      "owner": "Erick (cliente)",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV HND]</strong> Marcos: 23Abril — confirmar activación de plantillas WhatsApp corregidas y avisar al equipo cuando estén listas para los workflows",
+      "account": "WV",
+      "project": "HND",
+      "tag": "HND",
+      "tagClass": "tag-wv",
+      "owner": "Marcos",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV HND]</strong> Comunicaciones BN: 23Abril — coordinar armado de workflow de Cultivando Futuros cuando estén activas las plantillas y coordinar próxima reunión de KPIs con Luis para optimizar CPL y tasa de conversión",
+      "account": "WV",
+      "project": "HND",
+      "tag": "HND",
+      "tagClass": "tag-wv",
+      "owner": "Comunicaciones BN",
       "clients": [
         "WV"
       ],
@@ -321,6 +501,150 @@ const TASKS = {
       "tag": "ES",
       "tagClass": "tag-wv",
       "owner": "Jesús (cliente)",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV ES]</strong> Pablo: 23Abril — revisar checklist del contrato HubSpot y preparar escenarios para negociar actualización con Internacional — Operations + reducción de contactos de 120k a 80-90k",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Pablo",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV ES]</strong> Pablo: 23Abril — enviar propuesta de esquema de licencias y costes HubSpot para iniciar conversaciones con Internacional",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Pablo",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV ES]</strong> Isa: 23Abril — coordinar con Pablo para definir requerimientos concretos de HubSpot antes de negociar con Internacional",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Isa (cliente)",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV ES]</strong> Pablo: 23Abril — escribir a Jorge para desbloquear migración de base de datos y gestionar horarios o recursos necesarios",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Pablo",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV ES]</strong> Isa: 23Abril — contactar a Roberto Barsayo (jefe de Jorge) para gestionar soporte técnico y recursos para migración",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Isa (cliente)",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV ES]</strong> Isa: 23Abril — enviar comunicación a dirección de Italia solicitando apoyo o recursos conforme a necesidades detectadas",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Isa (cliente)",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV ES]</strong> Mario Gómez: 23Abril — reenviar informes a Pablo y Sofía para armar reportes consolidados y mejorar visibilidad de datos clave",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Mario Gómez (cliente)",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV ES]</strong> Esther: 23Abril — solicitar a Sofía templates para subida de altas y gestionar liberación de correos en cuarentena",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Esther (cliente)",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV ES]</strong> Jesús: 23Abril — gestionar con agencia obtención del archivo histórico de pedidos para actualizar HubSpot",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Jesús (cliente)",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV ES]</strong> Jesús: 23Abril — confirmar invitación al sandbox con equipo para completar migración y actualización",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Jesús (cliente)",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV ES]</strong> Pablo: 23Abril — asistir a Esther para configurar workflows de llamada de bienvenida con propiedad personalizada \"llamada de bienvenida\" (Sí/No) en HubSpot",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Pablo",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV ES]</strong> Esther: 23Abril — preparar diseño de emails y bases de datos para automatización de bienvenida y coordinar con Pablo para implementación",
+      "account": "WV",
+      "project": "ES",
+      "tag": "ES",
+      "tagClass": "tag-wv",
+      "owner": "Esther (cliente)",
       "clients": [
         "WV"
       ],
@@ -579,6 +903,30 @@ const TASKS = {
       "isNew": true
     },
     {
+      "text": "🆕 <strong>[WV CL]</strong> Cristian: 23Abril — revisar archivo de importación de pagos enviado por Marcos (aceptados y rechazados desde 1 dic 2025) — confirmar columnas de la pestaña \"Importar\"",
+      "account": "WV",
+      "project": "CL",
+      "tag": "CL",
+      "tagClass": "tag-wv",
+      "owner": "Cristian",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV CL]</strong> Equipo: 23Abril — investigar compromisos de Brasil detectados en la base de WV Chile al revisar pagos mensuales por método de pago",
+      "account": "WV",
+      "project": "CL",
+      "tag": "CL",
+      "tagClass": "tag-wv",
+      "owner": "Equipo",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
       "text": "🆕 <strong>[WV CL]</strong> Cristian: importar pagos y suscripciones faltantes de VirtualPost a HubSpot y compartir reporte el lunes — ya encontrados, proceder a importación",
       "account": "WV",
       "project": "CL",
@@ -645,6 +993,90 @@ const TASKS = {
       "tag": "CL",
       "tagClass": "tag-wv",
       "owner": "Cristian + Paola",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV CL]</strong> Cristian + Pablo: crear panel de visualización de performance de conversiones por canal web — cliente envió lista de variables a activar",
+      "account": "WV",
+      "project": "CL",
+      "tag": "CL",
+      "tagClass": "tag-wv",
+      "owner": "Cristian + Pablo",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV CL]</strong> Marcos: validar con muestra de pagos del archivo si el cliente los creó sin ID de pago — si no los hay, importar y agregar propiedad adicional para ubicarlos fácilmente en caso de ajuste; actualizar documento",
+      "account": "WV",
+      "project": "CL",
+      "tag": "CL",
+      "tagClass": "tag-wv",
+      "owner": "Marcos",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV CL]</strong> Pablo: investigar y solucionar sincronización de root con VirtualPost — root no aparece en vista de la agencia aunque sí en módulo administrativo; importar datos desde API para evitar pérdidas",
+      "account": "WV",
+      "project": "CL",
+      "tag": "CL",
+      "tagClass": "tag-wv",
+      "owner": "Pablo",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV CL]</strong> Pablo: actualizar buscador de la plataforma para mostrar root como campo visible en interfaz — evitar confusión con correos de captadores y mejorar precisión en búsqueda",
+      "account": "WV",
+      "project": "CL",
+      "tag": "CL",
+      "tagClass": "tag-wv",
+      "owner": "Pablo",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV CL]</strong> Gonzalo: formalizar con Francisco el plazo de baja automática para socios morosos — evaluar si 90 o 120 días (3-4 ciclos sin pago) es el tiempo adecuado para mantener base limpia",
+      "account": "WV",
+      "project": "CL",
+      "tag": "CL",
+      "tagClass": "tag-wv",
+      "owner": "Gonzalo (cliente)",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV CL]</strong> Gonzalo + Diana: revisar caso de apellido cambiado inesperadamente en CRM por normalizador externo (Bambe) — corregir configuración para evitar discrepancias en datos",
+      "account": "WV",
+      "project": "CL",
+      "tag": "CL",
+      "tagClass": "tag-wv",
+      "owner": "Gonzalo (cliente) + Diana (cliente)",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[WV CL]</strong> Francisco: enviar resumen de observaciones y pruebas de la plataforma por correo a todos los participantes",
+      "account": "WV",
+      "project": "CL",
+      "tag": "CL",
+      "tagClass": "tag-wv",
+      "owner": "Francisco (cliente)",
       "clients": [
         "WV"
       ],
@@ -771,12 +1203,36 @@ const TASKS = {
       "isNew": true
     },
     {
+      "text": "🆕 <strong>[WV EC]</strong> Valeria Yanza: revisar la solución implementada por Cristian y confirmar si los cambios están correctos",
+      "account": "WV",
+      "project": "EC",
+      "tag": "EC",
+      "tagClass": "tag-wv",
+      "owner": "Valeria (cliente)",
+      "clients": [
+        "WV"
+      ],
+      "isNew": true
+    },
+    {
       "text": "🆕 <strong>[UCSP — Simulador de Pensión]</strong> César: coordinar reunión de onboarding/recorrido de la plataforma antes de dar acceso de administrador a BlueNose — propuesto por el equipo UCSP",
       "account": "UCSP",
       "project": "Simulador de Pensión",
       "tag": "Simulador de Pensión",
       "tagClass": "tag-uc",
       "owner": "César",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UCSP — Mi Propósito]</strong> Ángel: 23Abril — reunión con César mañana 24 de abril a las 9 am",
+      "account": "UCSP",
+      "project": "Mi Propósito",
+      "tag": "Mi Propósito",
+      "tagClass": "tag-uc",
+      "owner": "Ángelito",
       "clients": [
         "UCSP"
       ],
@@ -975,6 +1431,30 @@ const TASKS = {
       "isNew": true
     },
     {
+      "text": "🆕 <strong>[UCSP — Admisión Pregrado]</strong> Pablo: 23Abril — actualizar esquema del Agente IA de Admisión para automatizar y documentar todo en HubSpot sin conexiones SGA ni Nexus",
+      "account": "UCSP",
+      "project": "Admisión Pregrado",
+      "tag": "Admisión Pregrado",
+      "tagClass": "tag-uc",
+      "owner": "Pablo",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UCSP — Experiencia del Estudiante]</strong> Ángel: 23Abril — asistir a reunión el lunes al mediodía",
+      "account": "UCSP",
+      "project": "Experiencia del Estudiante",
+      "tag": "Experiencia del Estudiante",
+      "tagClass": "tag-uc",
+      "owner": "Ángelito",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
       "text": "🆕 <strong>[UCSP — Admisión Pregrado]</strong> Ángel: coordinar y triangular propuesta de Carmen Cari sobre exploración de comportamiento de segmentos (matrícula incompleta, temporánea y no matriculados) — gestionar agendamientos con el cliente",
       "account": "UCSP",
       "project": "Admisión Pregrado",
@@ -1107,6 +1587,18 @@ const TASKS = {
       "isNew": true
     },
     {
+      "text": "🆕 <strong>[UCSP — HubSpot SpotLight]</strong> Pablo + Cristian: identificar qué formulario está asociado al dominio \"cdpn.io\" que está generando conversiones no reconocidas — solicitud urgente de Claudia Tapia (23/04)",
+      "account": "UCSP",
+      "project": "HubSpot SpotLight",
+      "tag": "HubSpot SpotLight",
+      "tagClass": "tag-uc",
+      "owner": "Pablo + Cristian",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
       "text": "🆕 <strong>[UCSP — Centro de Idiomas]</strong> Ángel: armar Gantt con fechas tentativas para entrevistas adicionales — Focus Group (supeditado a agendamiento interno para conseguir participantes) y estudios cuantitativos de Enrique",
       "account": "UCSP",
       "project": "Centro de Idiomas",
@@ -1233,6 +1725,18 @@ const TASKS = {
       "tag": "Nuevas Carreras",
       "tagClass": "tag-uc",
       "owner": "Cintia (cliente)",
+      "clients": [
+        "UCSP"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UCSP — Nuevas Carreras]</strong> Enrique: 23Abril — revisar Gantt de nuevas carreras subido ayer",
+      "account": "UCSP",
+      "project": "Nuevas Carreras",
+      "tag": "Nuevas Carreras",
+      "tagClass": "tag-uc",
+      "owner": "Enrique",
       "clients": [
         "UCSP"
       ],
@@ -1395,6 +1899,78 @@ const TASKS = {
       "isNew": true
     },
     {
+      "text": "🆕 <strong>[UPSJB]</strong> Estuardo: consultar al equipo de Atom sobre gestión de mensajes duplicados cuando el número está conectado simultáneamente en HubSpot y Atom",
+      "account": "UPSJB",
+      "project": "General",
+      "tag": "UPSJB",
+      "tagClass": "tag-up",
+      "owner": "Estuardo (cliente)",
+      "clients": [
+        "UPSJB"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UPSJB]</strong> Estuardo: gestionar creación de landings diferenciadas por semestre (26.2 y 27.1) para Lima y filiales — sin nofollow para no afectar posicionamiento",
+      "account": "UPSJB",
+      "project": "General",
+      "tag": "UPSJB",
+      "tagClass": "tag-up",
+      "owner": "Estuardo (cliente)",
+      "clients": [
+        "UPSJB"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UPSJB]</strong> Pablo: revisar viabilidad de renombrar landings por semestre y coordinar con Leslie y agencia SEO para preservar posicionamiento SEO",
+      "account": "UPSJB",
+      "project": "General",
+      "tag": "UPSJB",
+      "tagClass": "tag-up",
+      "owner": "Pablo",
+      "clients": [
+        "UPSJB"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UPSJB]</strong> Equipo: definir estrategia de pauta diferenciada por carrera y sede — Lima separado de Ica/Chincha, presupuesto segmentado",
+      "account": "UPSJB",
+      "project": "General",
+      "tag": "UPSJB",
+      "tagClass": "tag-up",
+      "owner": "Equipo",
+      "clients": [
+        "UPSJB"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UPSJB]</strong> Pablo + Enrique + Estuardo: programar reunión de planeamiento macro para cerrar estrategia general antes de bajar a micro por sede/carrera",
+      "account": "UPSJB",
+      "project": "General",
+      "tag": "UPSJB",
+      "tagClass": "tag-up",
+      "owner": "Pablo + Enrique",
+      "clients": [
+        "UPSJB"
+      ],
+      "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[UPSJB]</strong> Enrique + Pablo: 23Abril — realizar ejercicio de planeamiento macro con presupuesto aprobado y TC ajustadas compartidas por Estuardo — luego bajar al micro para cotejo",
+      "account": "UPSJB",
+      "project": "General",
+      "tag": "UPSJB",
+      "tagClass": "tag-up",
+      "owner": "Enrique + Pablo",
+      "clients": [
+        "UPSJB"
+      ],
+      "isNew": true
+    },
+    {
       "text": "🆕 <strong>[Caja Ica]</strong> Pablo: inicio de proyecto de implementación Marketing Cloud (Salesforce) — aprobado formalmente. Trabajando con equipo desarrollador en Brasil, partners de Salesforce. Próximos pasos: Service Cloud y Cels Cloud en meses siguientes",
       "account": "Ica",
       "project": "Ica",
@@ -1509,6 +2085,18 @@ const TASKS = {
         "Ica"
       ],
       "isNew": true
+    },
+    {
+      "text": "🆕 <strong>[AGÉNTICA]</strong> Ángel + Marcos: 23Abril — armar listas de públicos para agentes IA (las que sea posible)",
+      "account": "Ica",
+      "project": "General",
+      "tag": "Ica",
+      "tagClass": "tag-ci",
+      "owner": "Ángelito + Marcos",
+      "clients": [
+        "Ica"
+      ],
+      "isNew": true
     }
   ],
   "mes": [
@@ -1538,6 +2126,18 @@ const TASKS = {
     }
   ],
   "done": [
+    {
+      "text": "Cristian + Marcos: pagos duplicados TXT Débito BCP — RESUELTO: no se encontraron duplicados en ambas quincenas. Se agregaron validaciones en WFs para evitar duplicación futura",
+      "account": "WV",
+      "project": "PE",
+      "tag": "PE",
+      "tagClass": "tag-wv",
+      "owner": "Cristian",
+      "clients": [
+        "WV"
+      ],
+      "isCompleted": true
+    },
     {
       "text": "Pablo: crear acceso en plataforma para Francisco Vallejo (gerente de Más Recursos) para revisión previa a reunión — REALIZADO",
       "account": "WV",
