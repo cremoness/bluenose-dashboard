@@ -13,7 +13,7 @@ const TASKS = {
       "isCompleted": true
     },
     {
-      "text": "🆕 <strong>[WV RD]</strong> Ángel: asistir a reunión de status final/cierre de WV RD mañana — Juanito la agendó como reunión de cierre de contrato",
+      "text": "🆕 <strong>[WV RD]</strong> Ángel: Lunes27 — asistir a reunión de status final/cierre de WV RD mañana — Juanito la agendó como reunión de cierre de contrato",
       "account": "WV",
       "project": "RD",
       "tag": "RD",
@@ -25,7 +25,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV EC]</strong> Cristian: avisar por Discord que el documento de Ecuador fue actualizado",
+      "text": "🆕 <strong>[WV EC]</strong> Cristian: Lunes27 — avisar por Discord que el documento de Ecuador fue actualizado",
       "account": "WV",
       "project": "EC",
       "tag": "EC",
@@ -37,7 +37,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UPSJB]</strong> Estuardo: reunirse con logística para gestionar cotizaciones urgentes de IA/WhatsApp con al menos 2 proveedores — requerimiento de auditoría SUNAT",
+      "text": "🆕 <strong>[UPSJB]</strong> Estuardo: Lunes27 — reunirse con logística para gestionar cotizaciones urgentes de IA/WhatsApp con al menos 2 proveedores — requerimiento de auditoría SUNAT",
       "account": "UPSJB",
       "project": "General",
       "tag": "UPSJB",
@@ -49,7 +49,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UPSJB]</strong> Estuardo + Diego: actualizar cuadro de inversión con tasas de conversión del intake 26.1 castigadas y compartir en Discord hoy",
+      "text": "🆕 <strong>[UPSJB]</strong> Estuardo + Diego: Lunes27 — actualizar cuadro de inversión con tasas de conversión del intake 26.1 castigadas y compartir en Discord hoy",
       "account": "UPSJB",
       "project": "General",
       "tag": "UPSJB",
@@ -61,7 +61,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UPSJB]</strong> Diego: enviar correo a agencia SEO (con Pablo en copia) para analizar posicionamiento de landings y confirmar alta en Google Search Console",
+      "text": "🆕 <strong>[UPSJB]</strong> Diego: Lunes27 — enviar correo a agencia SEO (con Pablo en copia) para analizar posicionamiento de landings y confirmar alta en Google Search Console",
       "account": "UPSJB",
       "project": "General",
       "tag": "UPSJB",
@@ -73,7 +73,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV PE]</strong> Cristian: 23Abril — corregir automatización de cobros duplicados en archivo TXT — Rodrigo Benites detectó que los duplicados corresponden a negocios de segunda quincena; mañana es el último día de plazo para enviar a proceso de cobro",
+      "text": "🆕 <strong>[WV PE]</strong> Cristian: Lunes27 — 23Abril — corregir automatización de cobros duplicados en archivo TXT — Rodrigo Benites detectó que los duplicados corresponden a negocios de segunda quincena; mañana es el último día de plazo para enviar a proceso de cobro",
       "account": "WV",
       "project": "PE",
       "tag": "PE",
@@ -85,7 +85,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UCSP — Centro de Idiomas]</strong> Ángel: 23Abril — asistir al 2do focus group de hoy",
+      "text": "🆕 <strong>[UCSP — Centro de Idiomas]</strong> Ángel: Lunes27 — 23Abril — asistir al 2do focus group de hoy",
       "account": "UCSP",
       "project": "Centro de Idiomas",
       "tag": "Centro de Idiomas",
@@ -97,7 +97,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV HND]</strong> Cristian + Ángel: 23Abril — conciliar horas consumidas de WV Honduras de marzo y febrero por país usando reporte Excel (no automatizado) — pasar info a Patty urgente para emitir informe correcto y poder facturar",
+      "text": "🆕 <strong>[WV HND]</strong> Cristian + Ángel: Lunes27 — 23Abril — conciliar horas consumidas de WV Honduras de marzo y febrero por país usando reporte Excel (no automatizado) — pasar info a Patty urgente para emitir informe correcto y poder facturar",
       "account": "WV",
       "project": "HND",
       "tag": "HND",
@@ -109,7 +109,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV EC]</strong> Cristian: 23Abril — revisar caso donante BP con 3 cobros generados — Valeria Yanza reportó reclamo formal, HubSpot no identificó el duplicado",
+      "text": "🆕 <strong>[WV EC]</strong> Cristian: Lunes27 — 23Abril — revisar caso donante BP con 3 cobros generados — Valeria Yanza reportó reclamo formal, HubSpot no identificó el duplicado",
       "account": "WV",
       "project": "EC",
       "tag": "EC",
@@ -135,7 +135,7 @@ const TASKS = {
       "isCompleted": true
     },
     {
-      "text": "🆕 <strong>[WV HND]</strong> Luis Gustavo: modificar campaña de Wash — cambiar de lead ads a campaña con destino landing page (agregar formulario de \"más información\", mantener botón \"Donar ahora\")",
+      "text": "🆕 <strong>[WV HND]</strong> Luis Gustavo: Lunes27 — modificar campaña de Wash — cambiar de lead ads a campaña con destino landing page (agregar formulario de \"más información\", mantener botón \"Donar ahora\")",
       "account": "WV",
       "project": "HND",
       "tag": "HND",
@@ -147,7 +147,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV HND]</strong> Luis Gustavo: crear formulario de registro dentro de la landing page de Cultivando Futuros",
+      "text": "🆕 <strong>[WV HND]</strong> Luis Gustavo: Lunes27 — crear formulario de registro dentro de la landing page de Cultivando Futuros",
       "account": "WV",
       "project": "HND",
       "tag": "HND",
@@ -159,7 +159,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV HND]</strong> Luis Gustavo: compartir documento/diapositiva de proyección financiera (ROI a 10 años) con el equipo",
+      "text": "🆕 <strong>[WV HND]</strong> Luis Gustavo: Lunes27 — compartir documento/diapositiva de proyección financiera (ROI a 10 años) con el equipo",
       "account": "WV",
       "project": "HND",
       "tag": "HND",
@@ -171,7 +171,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV HND]</strong> René: continuar desarrollo técnico de integración Express Pago - HubSpot — mapeo de propiedades entre plataformas, en espera de que René termine para continuar el desarrollo",
+      "text": "🆕 <strong>[WV HND]</strong> René: Lunes27 — continuar desarrollo técnico de integración Express Pago - HubSpot — mapeo de propiedades entre plataformas, en espera de que René termine para continuar el desarrollo",
       "account": "WV",
       "project": "HND",
       "tag": "HND",
@@ -183,7 +183,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV HND]</strong> Enrique: revisar proyección financiera de Luis y elaborar documento de planeamiento numérico con metas, KPIs y pipeline para campaña Honduras",
+      "text": "🆕 <strong>[WV HND]</strong> Enrique: Lunes27 — revisar proyección financiera de Luis y elaborar documento de planeamiento numérico con metas, KPIs y pipeline para campaña Honduras",
       "account": "WV",
       "project": "HND",
       "tag": "HND",
@@ -195,7 +195,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV HND]</strong> Enrique: pedir a Luis Gustavo el documento Excel de planificación Honduras y confirmar supuestos (meta = 100 donantes/$10k, 100% de origen en pauta, CPL $4.25, tasa de conversión 3.9%) — para cerrar planificación numérica 26",
+      "text": "🆕 <strong>[WV HND]</strong> Enrique: Lunes27 — pedir a Luis Gustavo el documento Excel de planificación Honduras y confirmar supuestos (meta = 100 donantes/$10k, 100% de origen en pauta, CPL $4.25, tasa de conversión 3.9%) — para cerrar planificación numérica 26",
       "account": "WV",
       "project": "HND",
       "tag": "HND",
@@ -207,7 +207,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV HND]</strong> Luis Gustavo: 23Abril — definir indicadores clave para piloto de integración (horas reducidas, niños alcanzados, personas beneficiadas en Cultivando Futuros y Wash) y enviar al equipo técnico",
+      "text": "🆕 <strong>[WV HND]</strong> Luis Gustavo: Lunes27 — 23Abril — definir indicadores clave para piloto de integración (horas reducidas, niños alcanzados, personas beneficiadas en Cultivando Futuros y Wash) y enviar al equipo técnico",
       "account": "WV",
       "project": "HND",
       "tag": "HND",
@@ -219,7 +219,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV HND]</strong> Luis Gustavo: 23Abril — revisar y enviar plantillas de WhatsApp corregidas antes del jueves para actualizar workflows — variables corregidas a formato \"first name\" todo junto y en minúsculas",
+      "text": "🆕 <strong>[WV HND]</strong> Luis Gustavo: Lunes27 — 23Abril — revisar y enviar plantillas de WhatsApp corregidas antes del jueves para actualizar workflows — variables corregidas a formato \"first name\" todo junto y en minúsculas",
       "account": "WV",
       "project": "HND",
       "tag": "HND",
@@ -231,7 +231,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV HND]</strong> Luis Gustavo: 23Abril — coordinar sesión con Eric para revisión técnica de APIs e indicadores de integración",
+      "text": "🆕 <strong>[WV HND]</strong> Luis Gustavo: Lunes27 — 23Abril — coordinar sesión con Eric para revisión técnica de APIs e indicadores de integración",
       "account": "WV",
       "project": "HND",
       "tag": "HND",
@@ -243,7 +243,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV HND]</strong> Luis Gustavo: 23Abril — incluir plan de medios en hoja de ruta compartida para seguimiento en HubSpot",
+      "text": "🆕 <strong>[WV HND]</strong> Luis Gustavo: Lunes27 — 23Abril — incluir plan de medios en hoja de ruta compartida para seguimiento en HubSpot",
       "account": "WV",
       "project": "HND",
       "tag": "HND",
@@ -255,7 +255,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV HND]</strong> Luis Gustavo: 23Abril — enviar recordatorio a Esperfago por pendientes de variables transaccionales",
+      "text": "🆕 <strong>[WV HND]</strong> Luis Gustavo: Lunes27 — 23Abril — enviar recordatorio a Esperfago por pendientes de variables transaccionales",
       "account": "WV",
       "project": "HND",
       "tag": "HND",
@@ -267,7 +267,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV HND]</strong> Erick: 23Abril — compartir APIs configuradas por proyecto y realizar sesión para explicar campos, fórmulas y disponibilidad de indicadores para la prueba piloto",
+      "text": "🆕 <strong>[WV HND]</strong> Erick: Lunes27 — 23Abril — compartir APIs configuradas por proyecto y realizar sesión para explicar campos, fórmulas y disponibilidad de indicadores para la prueba piloto",
       "account": "WV",
       "project": "HND",
       "tag": "HND",
@@ -279,7 +279,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV HND]</strong> Marcos: 23Abril — confirmar activación de plantillas WhatsApp corregidas y avisar al equipo cuando estén listas para los workflows",
+      "text": "🆕 <strong>[WV HND]</strong> Marcos: Lunes27 — 23Abril — confirmar activación de plantillas WhatsApp corregidas y avisar al equipo cuando estén listas para los workflows",
       "account": "WV",
       "project": "HND",
       "tag": "HND",
@@ -291,7 +291,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV HND]</strong> Comunicaciones BN: 23Abril — coordinar armado de workflow de Cultivando Futuros cuando estén activas las plantillas y coordinar próxima reunión de KPIs con Luis para optimizar CPL y tasa de conversión",
+      "text": "🆕 <strong>[WV HND]</strong> Comunicaciones BN: Lunes27 — 23Abril — coordinar armado de workflow de Cultivando Futuros cuando estén activas las plantillas y coordinar próxima reunión de KPIs con Luis para optimizar CPL y tasa de conversión",
       "account": "WV",
       "project": "HND",
       "tag": "HND",
@@ -303,7 +303,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV CL]</strong> Cristian: comunicar a Diana que no es posible generar listado de carritos abandonados para contactos que no pasaron por el formulario — no hay datos de contacto disponibles",
+      "text": "🆕 <strong>[WV CL]</strong> Cristian: Lunes27 — comunicar a Diana que no es posible generar listado de carritos abandonados para contactos que no pasaron por el formulario — no hay datos de contacto disponibles",
       "account": "WV",
       "project": "CL",
       "tag": "CL",
@@ -315,7 +315,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV ES]</strong> Pablo: confirmar a Esther si se mantienen las reuniones semanales de status los miércoles a las 16:00h — Esther preguntó por Discord y está esperando respuesta",
+      "text": "🆕 <strong>[WV ES]</strong> Pablo: Lunes27 — confirmar a Esther si se mantienen las reuniones semanales de status los miércoles a las 16:00h — Esther preguntó por Discord y está esperando respuesta",
       "account": "WV",
       "project": "ES",
       "tag": "ES",
@@ -327,7 +327,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV ES]</strong> Sofía: coordinar reunión con Esther sobre motivations y designations",
+      "text": "🆕 <strong>[WV ES]</strong> Sofía: Lunes27 — coordinar reunión con Esther sobre motivations y designations",
       "account": "WV",
       "project": "ES",
       "tag": "ES",
@@ -339,7 +339,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV ES]</strong> Esther: compartir tabla con agrupación ideal de designaciones y jerarquías para construir el modelo",
+      "text": "🆕 <strong>[WV ES]</strong> Esther: Lunes27 — compartir tabla con agrupación ideal de designaciones y jerarquías para construir el modelo",
       "account": "WV",
       "project": "ES",
       "tag": "ES",
@@ -351,7 +351,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV ES]</strong> Esther: pasar base completa de importación (designaciones + motivaciones) a Sofía para replicar ejemplos en sandbox",
+      "text": "🆕 <strong>[WV ES]</strong> Esther: Lunes27 — pasar base completa de importación (designaciones + motivaciones) a Sofía para replicar ejemplos en sandbox",
       "account": "WV",
       "project": "ES",
       "tag": "ES",
@@ -363,7 +363,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV ES]</strong> Esther: enviar data de motivaciones y designaciones a Pablo para su análisis",
+      "text": "🆕 <strong>[WV ES]</strong> Esther: Lunes27 — enviar data de motivaciones y designaciones a Pablo para su análisis",
       "account": "WV",
       "project": "ES",
       "tag": "ES",
@@ -387,7 +387,7 @@ const TASKS = {
       "isCompleted": true
     },
     {
-      "text": "🆕 <strong>[WV ES]</strong> Sofía: configurar y probar formularios con campos dependientes (motivación + designación) para creación de contactos y negocios",
+      "text": "🆕 <strong>[WV ES]</strong> Sofía: Lunes27 — configurar y probar formularios con campos dependientes (motivación + designación) para creación de contactos y negocios",
       "account": "WV",
       "project": "ES",
       "tag": "ES",
@@ -399,7 +399,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV ES]</strong> Sofía: hacer pruebas para implementar dependencias de datos sin dispersión excesiva de propiedades en HubSpot",
+      "text": "🆕 <strong>[WV ES]</strong> Sofía: Lunes27 — hacer pruebas para implementar dependencias de datos sin dispersión excesiva de propiedades en HubSpot",
       "account": "WV",
       "project": "ES",
       "tag": "ES",
@@ -411,7 +411,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV ES]</strong> Sofía: armar árbol condicional para evaluar mejor estructura de motivaciones y designaciones",
+      "text": "🆕 <strong>[WV ES]</strong> Sofía: Lunes27 — armar árbol condicional para evaluar mejor estructura de motivaciones y designaciones",
       "account": "WV",
       "project": "ES",
       "tag": "ES",
@@ -423,7 +423,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV ES]</strong> Pablo: revisar y avanzar agrupamiento de ~3.000 motivaciones para reducirlas a ~300–400 términos manejables",
+      "text": "🆕 <strong>[WV ES]</strong> Pablo: Lunes27 — revisar y avanzar agrupamiento de ~3.000 motivaciones para reducirlas a ~300–400 términos manejables",
       "account": "WV",
       "project": "ES",
       "tag": "ES",
@@ -447,7 +447,7 @@ const TASKS = {
       "isCompleted": true
     },
     {
-      "text": "🆕 <strong>[WV ES]</strong> Vicente: enviar archivo actualizado de datos a Sofía para trabajar con estructura real",
+      "text": "🆕 <strong>[WV ES]</strong> Vicente: Lunes27 — enviar archivo actualizado de datos a Sofía para trabajar con estructura real",
       "account": "WV",
       "project": "ES",
       "tag": "ES",
@@ -459,7 +459,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV ES]</strong> Vicente: proporcionar ejemplos de informes internacionales para replicar en HubSpot",
+      "text": "🆕 <strong>[WV ES]</strong> Vicente: Lunes27 — proporcionar ejemplos de informes internacionales para replicar en HubSpot",
       "account": "WV",
       "project": "ES",
       "tag": "ES",
@@ -495,7 +495,7 @@ const TASKS = {
       "isCompleted": true
     },
     {
-      "text": "🆕 <strong>[WV ES]</strong> Jesús: compartir acta con pendientes post-Semana Santa para que todos estén al día",
+      "text": "🆕 <strong>[WV ES]</strong> Jesús: Lunes27 — compartir acta con pendientes post-Semana Santa para que todos estén al día",
       "account": "WV",
       "project": "ES",
       "tag": "ES",
@@ -507,7 +507,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV ES]</strong> Pablo: 23Abril — revisar checklist del contrato HubSpot y preparar escenarios para negociar actualización con Internacional — Operations + reducción de contactos de 120k a 80-90k",
+      "text": "🆕 <strong>[WV ES]</strong> Pablo: Lunes27 — 23Abril — revisar checklist del contrato HubSpot y preparar escenarios para negociar actualización con Internacional — Operations + reducción de contactos de 120k a 80-90k",
       "account": "WV",
       "project": "ES",
       "tag": "ES",
@@ -519,7 +519,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV ES]</strong> Pablo: 23Abril — enviar propuesta de esquema de licencias y costes HubSpot para iniciar conversaciones con Internacional",
+      "text": "🆕 <strong>[WV ES]</strong> Pablo: Lunes27 — 23Abril — enviar propuesta de esquema de licencias y costes HubSpot para iniciar conversaciones con Internacional",
       "account": "WV",
       "project": "ES",
       "tag": "ES",
@@ -531,7 +531,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV ES]</strong> Isa: 23Abril — coordinar con Pablo para definir requerimientos concretos de HubSpot antes de negociar con Internacional",
+      "text": "🆕 <strong>[WV ES]</strong> Isa: Lunes27 — 23Abril — coordinar con Pablo para definir requerimientos concretos de HubSpot antes de negociar con Internacional",
       "account": "WV",
       "project": "ES",
       "tag": "ES",
@@ -543,7 +543,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV ES]</strong> Pablo: 23Abril — escribir a Jorge para desbloquear migración de base de datos y gestionar horarios o recursos necesarios",
+      "text": "🆕 <strong>[WV ES]</strong> Pablo: Lunes27 — 23Abril — escribir a Jorge para desbloquear migración de base de datos y gestionar horarios o recursos necesarios",
       "account": "WV",
       "project": "ES",
       "tag": "ES",
@@ -555,7 +555,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV ES]</strong> Isa: 23Abril — contactar a Roberto Barsayo (jefe de Jorge) para gestionar soporte técnico y recursos para migración",
+      "text": "🆕 <strong>[WV ES]</strong> Isa: Lunes27 — 23Abril — contactar a Roberto Barsayo (jefe de Jorge) para gestionar soporte técnico y recursos para migración",
       "account": "WV",
       "project": "ES",
       "tag": "ES",
@@ -567,7 +567,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV ES]</strong> Isa: 23Abril — enviar comunicación a dirección de Italia solicitando apoyo o recursos conforme a necesidades detectadas",
+      "text": "🆕 <strong>[WV ES]</strong> Isa: Lunes27 — 23Abril — enviar comunicación a dirección de Italia solicitando apoyo o recursos conforme a necesidades detectadas",
       "account": "WV",
       "project": "ES",
       "tag": "ES",
@@ -579,7 +579,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV ES]</strong> Mario Gómez: 23Abril — reenviar informes a Pablo y Sofía para armar reportes consolidados y mejorar visibilidad de datos clave",
+      "text": "🆕 <strong>[WV ES]</strong> Mario Gómez: Lunes27 — 23Abril — reenviar informes a Pablo y Sofía para armar reportes consolidados y mejorar visibilidad de datos clave",
       "account": "WV",
       "project": "ES",
       "tag": "ES",
@@ -591,7 +591,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV ES]</strong> Esther: 23Abril — solicitar a Sofía templates para subida de altas y gestionar liberación de correos en cuarentena",
+      "text": "🆕 <strong>[WV ES]</strong> Esther: Lunes27 — 23Abril — solicitar a Sofía templates para subida de altas y gestionar liberación de correos en cuarentena",
       "account": "WV",
       "project": "ES",
       "tag": "ES",
@@ -603,7 +603,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV ES]</strong> Jesús: 23Abril — gestionar con agencia obtención del archivo histórico de pedidos para actualizar HubSpot",
+      "text": "🆕 <strong>[WV ES]</strong> Jesús: Lunes27 — 23Abril — gestionar con agencia obtención del archivo histórico de pedidos para actualizar HubSpot",
       "account": "WV",
       "project": "ES",
       "tag": "ES",
@@ -615,7 +615,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV ES]</strong> Jesús: 23Abril — confirmar invitación al sandbox con equipo para completar migración y actualización",
+      "text": "🆕 <strong>[WV ES]</strong> Jesús: Lunes27 — 23Abril — confirmar invitación al sandbox con equipo para completar migración y actualización",
       "account": "WV",
       "project": "ES",
       "tag": "ES",
@@ -627,7 +627,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV ES]</strong> Pablo: 23Abril — asistir a Esther para configurar workflows de llamada de bienvenida con propiedad personalizada \"llamada de bienvenida\" (Sí/No) en HubSpot",
+      "text": "🆕 <strong>[WV ES]</strong> Pablo: Lunes27 — 23Abril — asistir a Esther para configurar workflows de llamada de bienvenida con propiedad personalizada \"llamada de bienvenida\" (Sí/No) en HubSpot",
       "account": "WV",
       "project": "ES",
       "tag": "ES",
@@ -639,7 +639,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV ES]</strong> Esther: 23Abril — preparar diseño de emails y bases de datos para automatización de bienvenida y coordinar con Pablo para implementación",
+      "text": "🆕 <strong>[WV ES]</strong> Esther: Lunes27 — 23Abril — preparar diseño de emails y bases de datos para automatización de bienvenida y coordinar con Pablo para implementación",
       "account": "WV",
       "project": "ES",
       "tag": "ES",
@@ -651,7 +651,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV ES]</strong> Marcos: conocer y documentar las automatizaciones de código personalizado creadas por Pablo para Motivations/Designations — Pablo los explicó en status interno; Marcos necesita estar al tanto para soporte y futuros ajustes",
+      "text": "🆕 <strong>[WV ES]</strong> Marcos: Lunes27 — conocer y documentar las automatizaciones de código personalizado creadas por Pablo para Motivations/Designations — Pablo los explicó en status interno; Marcos necesita estar al tanto para soporte y futuros ajustes",
       "account": "WV",
       "project": "ES",
       "tag": "ES",
@@ -663,7 +663,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV ES]</strong> Pablo + Ángel: enviar al cliente cuadrito con previsión de necesidades a futuro (desarrollo, servidores, licencias, etc.) — acordado en reunión de España de hoy",
+      "text": "🆕 <strong>[WV ES]</strong> Pablo + Ángel: Lunes27 — enviar al cliente cuadrito con previsión de necesidades a futuro (desarrollo, servidores, licencias, etc.) — acordado en reunión de España de hoy",
       "account": "WV",
       "project": "ES",
       "tag": "ES",
@@ -675,7 +675,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV ES]</strong> Ángel: recordar a Sofía que responda a Nieves sobre la revisión del import de Iglesias",
+      "text": "🆕 <strong>[WV ES]</strong> Ángel: Lunes27 — recordar a Sofía que responda a Nieves sobre la revisión del import de Iglesias",
       "account": "WV",
       "project": "ES",
       "tag": "ES",
@@ -687,7 +687,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV ES]</strong> Cristian + Ángel: revisar y confirmar propiedades necesarias para generación de ficheros de pagos y sincronización con banco — incluye validar si propiedad SEPA/número de cuenta puede importarse o debe tratarse como no-sensible (como en otros países)",
+      "text": "🆕 <strong>[WV ES]</strong> Cristian + Ángel: Lunes27 — revisar y confirmar propiedades necesarias para generación de ficheros de pagos y sincronización con banco — incluye validar si propiedad SEPA/número de cuenta puede importarse o debe tratarse como no-sensible (como en otros países)",
       "account": "WV",
       "project": "ES",
       "tag": "ES",
@@ -699,7 +699,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV CL — Rendiciones F2F]</strong> Juana: poner en contacto a Enrique con el equipo para gestionar temas administrativos del proyecto Payment Platform en Chile",
+      "text": "🆕 <strong>[WV CL — Rendiciones F2F]</strong> Juana: Lunes27 — poner en contacto a Enrique con el equipo para gestionar temas administrativos del proyecto Payment Platform en Chile",
       "account": "WV",
       "project": "Rendiciones F2F",
       "tag": "Rendiciones F2F",
@@ -711,7 +711,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV CL — Rendiciones F2F]</strong> Gonzalo: enviar flujo de aprobaciones a Pablo — pendiente desde reunión anterior",
+      "text": "🆕 <strong>[WV CL — Rendiciones F2F]</strong> Gonzalo: Lunes27 — enviar flujo de aprobaciones a Pablo — pendiente desde reunión anterior",
       "account": "WV",
       "project": "Rendiciones F2F",
       "tag": "Rendiciones F2F",
@@ -723,7 +723,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV CL — Rendiciones F2F]</strong> Pablo: agregar resumen de motivos de rechazo con sumatorios y filtros en la vista \"rechazos mes actual\" de la plataforma — facilita disputas y ajustes contractuales con la agencia",
+      "text": "🆕 <strong>[WV CL — Rendiciones F2F]</strong> Pablo: Lunes27 — agregar resumen de motivos de rechazo con sumatorios y filtros en la vista \"rechazos mes actual\" de la plataforma — facilita disputas y ajustes contractuales con la agencia",
       "account": "WV",
       "project": "Rendiciones F2F",
       "tag": "Rendiciones F2F",
@@ -735,7 +735,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV CL — Rendiciones F2F]</strong> Cristian + Marcos: investigar y resolver fallo de configuración en transmisión de datos VirtualPost → HubSpot — root, teléfono y fecha de nacimiento no viajan en algunos casos (pago aprobado existe en VirtualPost pero no llega a HubSpot)",
+      "text": "🆕 <strong>[WV CL — Rendiciones F2F]</strong> Cristian + Marcos: Lunes27 — investigar y resolver fallo de configuración en transmisión de datos VirtualPost → HubSpot — root, teléfono y fecha de nacimiento no viajan en algunos casos (pago aprobado existe en VirtualPost pero no llega a HubSpot)",
       "account": "WV",
       "project": "Rendiciones F2F",
       "tag": "Rendiciones F2F",
@@ -747,7 +747,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV CL — Rendiciones F2F]</strong> Ornella + Gonzalo: practicar casos en la plataforma de rendiciones mientras Cristian identifica el error de VirtualPost",
+      "text": "🆕 <strong>[WV CL — Rendiciones F2F]</strong> Ornella + Gonzalo: Lunes27 — practicar casos en la plataforma de rendiciones mientras Cristian identifica el error de VirtualPost",
       "account": "WV",
       "project": "Rendiciones F2F",
       "tag": "Rendiciones F2F",
@@ -783,7 +783,7 @@ const TASKS = {
       "isCompleted": true
     },
     {
-      "text": "🆕 <strong>[WV CL]</strong> Ornella: evaluar si usar nómina CIMA o HubSpot una vez validada la nómina corregida de Cristian",
+      "text": "🆕 <strong>[WV CL]</strong> Ornella: Lunes27 — evaluar si usar nómina CIMA o HubSpot una vez validada la nómina corregida de Cristian",
       "account": "WV",
       "project": "CL",
       "tag": "CL",
@@ -795,7 +795,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV CL — Rendiciones F2F]</strong> Pablo + Cristian: cambiar propiedades de test a propiedades reales en HubSpot una vez validadas las rendiciones F2F en producción",
+      "text": "🆕 <strong>[WV CL — Rendiciones F2F]</strong> Pablo + Cristian: Lunes27 — cambiar propiedades de test a propiedades reales en HubSpot una vez validadas las rendiciones F2F en producción",
       "account": "WV",
       "project": "Rendiciones F2F",
       "tag": "Rendiciones F2F",
@@ -807,7 +807,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV CL]</strong> Cristian: realizar backfill de pagos faltantes en HubSpot usando ID y suscripción de VirtualPost — crear pagos que no se generaron por el fallo de transmisión",
+      "text": "🆕 <strong>[WV CL]</strong> Cristian: Lunes27 — realizar backfill de pagos faltantes en HubSpot usando ID y suscripción de VirtualPost — crear pagos que no se generaron por el fallo de transmisión",
       "account": "WV",
       "project": "CL",
       "tag": "CL",
@@ -819,7 +819,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV CL]</strong> Cristian: evaluar y ajustar configuración del CAPTCHA en formulario de inicio de donación — cambiar versión para resolver conflicto con envío de formulario sin eliminar protección contra bots",
+      "text": "🆕 <strong>[WV CL]</strong> Cristian: Lunes27 — evaluar y ajustar configuración del CAPTCHA en formulario de inicio de donación — cambiar versión para resolver conflicto con envío de formulario sin eliminar protección contra bots",
       "account": "WV",
       "project": "CL",
       "tag": "CL",
@@ -831,7 +831,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV CL]</strong> Cristian: generar listado de carritos abandonados (contactos que rellenaron formulario 1: nombre, correo, teléfono, root) para base de recuperación y acción por WhatsApp",
+      "text": "🆕 <strong>[WV CL]</strong> Cristian: Lunes27 — generar listado de carritos abandonados (contactos que rellenaron formulario 1: nombre, correo, teléfono, root) para base de recuperación y acción por WhatsApp",
       "account": "WV",
       "project": "CL",
       "tag": "CL",
@@ -855,7 +855,7 @@ const TASKS = {
       "isCompleted": true
     },
     {
-      "text": "🆕 <strong>[WV CL]</strong> Ángel: consultar a Sofía qué data de nóminas fue importada y hasta qué fecha — determinar si hay pagos de sep-dic faltantes que subir (Pablo lo pidió en reunión de soporte)",
+      "text": "🆕 <strong>[WV CL]</strong> Ángel: Lunes27 — consultar a Sofía qué data de nóminas fue importada y hasta qué fecha — determinar si hay pagos de sep-dic faltantes que subir (Pablo lo pidió en reunión de soporte)",
       "account": "WV",
       "project": "CL",
       "tag": "CL",
@@ -867,7 +867,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV CL]</strong> Diana: validar nuevamente propiedad CLCapture / Select Captor en la copia de contacto a negocio — algunos registros no están copiando el valor",
+      "text": "🆕 <strong>[WV CL]</strong> Diana: Lunes27 — validar nuevamente propiedad CLCapture / Select Captor en la copia de contacto a negocio — algunos registros no están copiando el valor",
       "account": "WV",
       "project": "CL",
       "tag": "CL",
@@ -879,7 +879,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV CL]</strong> Cristian: investigar ticket de Diana sobre propiedad del nombre de la agencia que a veces aparece sin valor",
+      "text": "🆕 <strong>[WV CL]</strong> Cristian: Lunes27 — investigar ticket de Diana sobre propiedad del nombre de la agencia que a veces aparece sin valor",
       "account": "WV",
       "project": "CL",
       "tag": "CL",
@@ -891,7 +891,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV CL]</strong> Marcos: revisar y resolver ticket HubSpot #44377462606 de WV Chile",
+      "text": "🆕 <strong>[WV CL]</strong> Marcos: Lunes27 — revisar y resolver ticket HubSpot #44377462606 de WV Chile",
       "account": "WV",
       "project": "CL",
       "tag": "CL",
@@ -903,7 +903,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV CL]</strong> Cristian: 23Abril — revisar archivo de importación de pagos enviado por Marcos (aceptados y rechazados desde 1 dic 2025) — confirmar columnas de la pestaña \"Importar\"",
+      "text": "🆕 <strong>[WV CL]</strong> Cristian: Lunes27 — 23Abril — revisar archivo de importación de pagos enviado por Marcos (aceptados y rechazados desde 1 dic 2025) — confirmar columnas de la pestaña \"Importar\"",
       "account": "WV",
       "project": "CL",
       "tag": "CL",
@@ -915,7 +915,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV CL]</strong> Equipo: 23Abril — investigar compromisos de Brasil detectados en la base de WV Chile al revisar pagos mensuales por método de pago",
+      "text": "🆕 <strong>[WV CL]</strong> Equipo: Lunes27 — 23Abril — investigar compromisos de Brasil detectados en la base de WV Chile al revisar pagos mensuales por método de pago",
       "account": "WV",
       "project": "CL",
       "tag": "CL",
@@ -927,7 +927,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV CL]</strong> Cristian: importar pagos y suscripciones faltantes de VirtualPost a HubSpot y compartir reporte el lunes — ya encontrados, proceder a importación",
+      "text": "🆕 <strong>[WV CL]</strong> Cristian: Lunes27 — importar pagos y suscripciones faltantes de VirtualPost a HubSpot y compartir reporte el lunes — ya encontrados, proceder a importación",
       "account": "WV",
       "project": "CL",
       "tag": "CL",
@@ -939,7 +939,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV CL]</strong> Ornella: contactar a Andrés (ejecutivo Virtual Post) para presionar respuesta sobre desconexión 13-15 marzo — Jorge no ha respondido desde la semana pasada",
+      "text": "🆕 <strong>[WV CL]</strong> Ornella: Lunes27 — contactar a Andrés (ejecutivo Virtual Post) para presionar respuesta sobre desconexión 13-15 marzo — Jorge no ha respondido desde la semana pasada",
       "account": "WV",
       "project": "CL",
       "tag": "CL",
@@ -951,7 +951,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV CL]</strong> Cristian: investigar y resolver duplicados en nómina de abril — se detectaron ~5.000 IDs vs ~2.000 estimados, coordinar con HubSpot para identificar origen",
+      "text": "🆕 <strong>[WV CL]</strong> Cristian: Lunes27 — investigar y resolver duplicados en nómina de abril — se detectaron ~5.000 IDs vs ~2.000 estimados, coordinar con HubSpot para identificar origen",
       "account": "WV",
       "project": "CL",
       "tag": "CL",
@@ -963,7 +963,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV CL]</strong> Diana: actualizar propiedades y crear negocios para contactos de agencias (archivo compartido) — quedan ~200-300 sin match que requieren decisión",
+      "text": "🆕 <strong>[WV CL]</strong> Diana: Lunes27 — actualizar propiedades y crear negocios para contactos de agencias (archivo compartido) — quedan ~200-300 sin match que requieren decisión",
       "account": "WV",
       "project": "CL",
       "tag": "CL",
@@ -975,7 +975,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV CL]</strong> Paola: solicitar a Víctor estado final del documento de ajustes de pasarela de pagos y agregar punto de doble envío de formulario (desde integración + HubSpot) para evitar pérdida de datos de carritos abandonados",
+      "text": "🆕 <strong>[WV CL]</strong> Paola: Lunes27 — solicitar a Víctor estado final del documento de ajustes de pasarela de pagos y agregar punto de doble envío de formulario (desde integración + HubSpot) para evitar pérdida de datos de carritos abandonados",
       "account": "WV",
       "project": "CL",
       "tag": "CL",
@@ -987,7 +987,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV CL]</strong> Cristian + Paola: agregar punto de doble validación de formularios al documento de trabajo con Víctor — envío desde integración como respaldo independiente de HubSpot",
+      "text": "🆕 <strong>[WV CL]</strong> Cristian + Paola: Lunes27 — agregar punto de doble validación de formularios al documento de trabajo con Víctor — envío desde integración como respaldo independiente de HubSpot",
       "account": "WV",
       "project": "CL",
       "tag": "CL",
@@ -999,7 +999,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV CL]</strong> Cristian + Pablo: crear panel de visualización de performance de conversiones por canal web — cliente envió lista de variables a activar",
+      "text": "🆕 <strong>[WV CL]</strong> Cristian + Pablo: Lunes27 — crear panel de visualización de performance de conversiones por canal web — cliente envió lista de variables a activar",
       "account": "WV",
       "project": "CL",
       "tag": "CL",
@@ -1011,7 +1011,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV CL]</strong> Marcos: validar con muestra de pagos del archivo si el cliente los creó sin ID de pago — si no los hay, importar y agregar propiedad adicional para ubicarlos fácilmente en caso de ajuste; actualizar documento",
+      "text": "🆕 <strong>[WV CL]</strong> Marcos: Lunes27 — validar con muestra de pagos del archivo si el cliente los creó sin ID de pago — si no los hay, importar y agregar propiedad adicional para ubicarlos fácilmente en caso de ajuste; actualizar documento",
       "account": "WV",
       "project": "CL",
       "tag": "CL",
@@ -1023,7 +1023,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV CL]</strong> Pablo: investigar y solucionar sincronización de root con VirtualPost — root no aparece en vista de la agencia aunque sí en módulo administrativo; importar datos desde API para evitar pérdidas",
+      "text": "🆕 <strong>[WV CL]</strong> Pablo: Lunes27 — investigar y solucionar sincronización de root con VirtualPost — root no aparece en vista de la agencia aunque sí en módulo administrativo; importar datos desde API para evitar pérdidas",
       "account": "WV",
       "project": "CL",
       "tag": "CL",
@@ -1035,7 +1035,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV CL]</strong> Pablo: actualizar buscador de la plataforma para mostrar root como campo visible en interfaz — evitar confusión con correos de captadores y mejorar precisión en búsqueda",
+      "text": "🆕 <strong>[WV CL]</strong> Pablo: Lunes27 — actualizar buscador de la plataforma para mostrar root como campo visible en interfaz — evitar confusión con correos de captadores y mejorar precisión en búsqueda",
       "account": "WV",
       "project": "CL",
       "tag": "CL",
@@ -1047,7 +1047,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV CL]</strong> Gonzalo: formalizar con Francisco el plazo de baja automática para socios morosos — evaluar si 90 o 120 días (3-4 ciclos sin pago) es el tiempo adecuado para mantener base limpia",
+      "text": "🆕 <strong>[WV CL]</strong> Gonzalo: Lunes27 — formalizar con Francisco el plazo de baja automática para socios morosos — evaluar si 90 o 120 días (3-4 ciclos sin pago) es el tiempo adecuado para mantener base limpia",
       "account": "WV",
       "project": "CL",
       "tag": "CL",
@@ -1059,7 +1059,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV CL]</strong> Gonzalo + Diana: revisar caso de apellido cambiado inesperadamente en CRM por normalizador externo (Bambe) — corregir configuración para evitar discrepancias en datos",
+      "text": "🆕 <strong>[WV CL]</strong> Gonzalo + Diana: Lunes27 — revisar caso de apellido cambiado inesperadamente en CRM por normalizador externo (Bambe) — corregir configuración para evitar discrepancias en datos",
       "account": "WV",
       "project": "CL",
       "tag": "CL",
@@ -1071,7 +1071,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV CL]</strong> Francisco: enviar resumen de observaciones y pruebas de la plataforma por correo a todos los participantes",
+      "text": "🆕 <strong>[WV CL]</strong> Francisco: Lunes27 — enviar resumen de observaciones y pruebas de la plataforma por correo a todos los participantes",
       "account": "WV",
       "project": "CL",
       "tag": "CL",
@@ -1119,7 +1119,7 @@ const TASKS = {
       "isCompleted": true
     },
     {
-      "text": "🆕 <strong>[WV EC]</strong> Cristian: investigar y resolver problema del portal que se resetea y no reconoce archivos cargados — respuesta antes del viernes",
+      "text": "🆕 <strong>[WV EC]</strong> Cristian: Lunes27 — investigar y resolver problema del portal que se resetea y no reconoce archivos cargados — respuesta antes del viernes",
       "account": "WV",
       "project": "EC",
       "tag": "EC",
@@ -1131,7 +1131,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV EC]</strong> Cristian: implementar columnas adicionales en archivos bancarios (fecha de pago aceptado y periodo) para automatizar lectura en HubSpot",
+      "text": "🆕 <strong>[WV EC]</strong> Cristian: Lunes27 — implementar columnas adicionales en archivos bancarios (fecha de pago aceptado y periodo) para automatizar lectura en HubSpot",
       "account": "WV",
       "project": "EC",
       "tag": "EC",
@@ -1143,7 +1143,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV EC]</strong> Cristian: documentar y comunicar que la generación automática de pagos en HubSpot es independiente de la acción manual en el portal",
+      "text": "🆕 <strong>[WV EC]</strong> Cristian: Lunes27 — documentar y comunicar que la generación automática de pagos en HubSpot es independiente de la acción manual en el portal",
       "account": "WV",
       "project": "EC",
       "tag": "EC",
@@ -1155,7 +1155,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV EC]</strong> Cristian: confirmar qué propiedad usar oficialmente para captador: \"captador\" o \"captador face to face\" — equipo de ventas necesita unificar reportes de captaciones por facer",
+      "text": "🆕 <strong>[WV EC]</strong> Cristian: Lunes27 — confirmar qué propiedad usar oficialmente para captador: \"captador\" o \"captador face to face\" — equipo de ventas necesita unificar reportes de captaciones por facer",
       "account": "WV",
       "project": "EC",
       "tag": "EC",
@@ -1167,7 +1167,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV EC]</strong> Cristian: investigar pago faltante de donante — 3 pagos en Pimentes pero solo 2 registrados en HubSpot. Hacer match con historial de transacciones",
+      "text": "🆕 <strong>[WV EC]</strong> Cristian: Lunes27 — investigar pago faltante de donante — 3 pagos en Pimentes pero solo 2 registrados en HubSpot. Hacer match con historial de transacciones",
       "account": "WV",
       "project": "EC",
       "tag": "EC",
@@ -1179,7 +1179,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV EC]</strong> Cristian: revisar documento \"experiencia del donante\" y dar avance antes de la próxima reunión — incluye automatización de cambio de frecuencia de pago",
+      "text": "🆕 <strong>[WV EC]</strong> Cristian: Lunes27 — revisar documento \"experiencia del donante\" y dar avance antes de la próxima reunión — incluye automatización de cambio de frecuencia de pago",
       "account": "WV",
       "project": "EC",
       "tag": "EC",
@@ -1191,7 +1191,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV EC]</strong> Vale: enviar resumen por correo (a Pablo y Enrique) de tickets de garantía: puntos 1, 2, 3, 6 cerrados ✓; punto 5 pendiente (próximas respuestas de contabilidad); punto 4 pendiente (inicios de mayo, archivo sin campos en blanco)",
+      "text": "🆕 <strong>[WV EC]</strong> Vale: Lunes27 — enviar resumen por correo (a Pablo y Enrique) de tickets de garantía: puntos 1, 2, 3, 6 cerrados ✓; punto 5 pendiente (próximas respuestas de contabilidad); punto 4 pendiente (inicios de mayo, archivo sin campos en blanco)",
       "account": "WV",
       "project": "EC",
       "tag": "EC",
@@ -1203,7 +1203,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[WV EC]</strong> Valeria Yanza: revisar la solución implementada por Cristian y confirmar si los cambios están correctos",
+      "text": "🆕 <strong>[WV EC]</strong> Valeria Yanza: Lunes27 — revisar la solución implementada por Cristian y confirmar si los cambios están correctos",
       "account": "WV",
       "project": "EC",
       "tag": "EC",
@@ -1215,7 +1215,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UCSP — Simulador de Pensión]</strong> César: coordinar reunión de onboarding/recorrido de la plataforma antes de dar acceso de administrador a BlueNose — propuesto por el equipo UCSP",
+      "text": "🆕 <strong>[UCSP — Simulador de Pensión]</strong> César: Lunes27 — coordinar reunión de onboarding/recorrido de la plataforma antes de dar acceso de administrador a BlueNose — propuesto por el equipo UCSP",
       "account": "UCSP",
       "project": "Simulador de Pensión",
       "tag": "Simulador de Pensión",
@@ -1227,7 +1227,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UCSP — Mi Propósito]</strong> Ángel: 23Abril — reunión con César mañana 24 de abril a las 9 am",
+      "text": "🆕 <strong>[UCSP — Mi Propósito]</strong> Ángel: Lunes27 — 23Abril — reunión con César mañana 24 de abril a las 9 am",
       "account": "UCSP",
       "project": "Mi Propósito",
       "tag": "Mi Propósito",
@@ -1239,7 +1239,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UCSP — Mi Propósito]</strong> Ángel: consultar a César conformidad del equipo UCSP-San Pablo con funcionalidades actuales y futuras — necesitamos luz verde del levantamiento de requerimientos. Verificar si Renzo tuvo comentarios sobre los documentos compartidos por correo e internamente",
+      "text": "🆕 <strong>[UCSP — Mi Propósito]</strong> Ángel: Lunes27 — consultar a César conformidad del equipo UCSP-San Pablo con funcionalidades actuales y futuras — necesitamos luz verde del levantamiento de requerimientos. Verificar si Renzo tuvo comentarios sobre los documentos compartidos por correo e internamente",
       "account": "UCSP",
       "project": "Mi Propósito",
       "tag": "Mi Propósito",
@@ -1251,7 +1251,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UCSP — Mi Propósito]</strong> Edgardo: confirmar a Enrique que todo está ok y nada está pendiente o incompleto — Claudia no dará conformidad hasta que Ventas cierre y apruebe (exige esa aprobación el lunes). Evitar que el cliente nos devuelva la responsabilidad",
+      "text": "🆕 <strong>[UCSP — Mi Propósito]</strong> Edgardo: Lunes27 — confirmar a Enrique que todo está ok y nada está pendiente o incompleto — Claudia no dará conformidad hasta que Ventas cierre y apruebe (exige esa aprobación el lunes). Evitar que el cliente nos devuelva la responsabilidad",
       "account": "UCSP",
       "project": "Mi Propósito",
       "tag": "Mi Propósito",
@@ -1263,7 +1263,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UCSP — Mi Propósito]</strong> Ángel: enviar recordatorios recurrentes a Edgardo en canal Discord para que dé estatus actualizado — Claudia Tapia confirmó que presionará a Ventas para obtener conformidad; hay que asegurar que nada quede pendiente de nuestro lado",
+      "text": "🆕 <strong>[UCSP — Mi Propósito]</strong> Ángel: Lunes27 — enviar recordatorios recurrentes a Edgardo en canal Discord para que dé estatus actualizado — Claudia Tapia confirmó que presionará a Ventas para obtener conformidad; hay que asegurar que nada quede pendiente de nuestro lado",
       "account": "UCSP",
       "project": "Mi Propósito",
       "tag": "Mi Propósito",
@@ -1275,7 +1275,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UCSP — Mi Propósito]</strong> César: consultar con Paul tiempos de respuesta estándar para solicitudes y modificaciones en DevOps — necesario para detectar dilaciones",
+      "text": "🆕 <strong>[UCSP — Mi Propósito]</strong> César: Lunes27 — consultar con Paul tiempos de respuesta estándar para solicitudes y modificaciones en DevOps — necesario para detectar dilaciones",
       "account": "UCSP",
       "project": "Mi Propósito",
       "tag": "Mi Propósito",
@@ -1287,7 +1287,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UCSP — Mi Propósito]</strong> César: informar a Paul que levante los ambientes con repositorios GitHub ya compartidos (backend + frontend) para que el proveedor inicie despliegue",
+      "text": "🆕 <strong>[UCSP — Mi Propósito]</strong> César: Lunes27 — informar a Paul que levante los ambientes con repositorios GitHub ya compartidos (backend + frontend) para que el proveedor inicie despliegue",
       "account": "UCSP",
       "project": "Mi Propósito",
       "tag": "Mi Propósito",
@@ -1299,7 +1299,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UCSP — Mi Propósito]</strong> César: obtener aprobación formal del equipo de ventas para la matriz gráfica y diseños Figma compartidos — necesario para que Blue Nose continúe creando pantallas",
+      "text": "🆕 <strong>[UCSP — Mi Propósito]</strong> César: Lunes27 — obtener aprobación formal del equipo de ventas para la matriz gráfica y diseños Figma compartidos — necesario para que Blue Nose continúe creando pantallas",
       "account": "UCSP",
       "project": "Mi Propósito",
       "tag": "Mi Propósito",
@@ -1311,7 +1311,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UCSP — Mi Propósito]</strong> César: listar pantallas nuevas y modificaciones que el equipo de ventas desea ver — para que Blue Nose las prepare en Figma con secuencia lógica",
+      "text": "🆕 <strong>[UCSP — Mi Propósito]</strong> César: Lunes27 — listar pantallas nuevas y modificaciones que el equipo de ventas desea ver — para que Blue Nose las prepare en Figma con secuencia lógica",
       "account": "UCSP",
       "project": "Mi Propósito",
       "tag": "Mi Propósito",
@@ -1323,7 +1323,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UCSP — Mi Propósito]</strong> César: notificar a Paul para gestionar permisos de creación de máquinas virtuales y accesos admin en Azure para el equipo de Blue Nose",
+      "text": "🆕 <strong>[UCSP — Mi Propósito]</strong> César: Lunes27 — notificar a Paul para gestionar permisos de creación de máquinas virtuales y accesos admin en Azure para el equipo de Blue Nose",
       "account": "UCSP",
       "project": "Mi Propósito",
       "tag": "Mi Propósito",
@@ -1335,7 +1335,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UCSP — Mi Propósito]</strong> Edgardo: crear mockups en Figma para funcionalidades nuevas (simulacro masivo integrado, encuestas de satisfacción por herramienta) con secuencia lógica de pantallas para presentación al equipo de ventas",
+      "text": "🆕 <strong>[UCSP — Mi Propósito]</strong> Edgardo: Lunes27 — crear mockups en Figma para funcionalidades nuevas (simulacro masivo integrado, encuestas de satisfacción por herramienta) con secuencia lógica de pantallas para presentación al equipo de ventas",
       "account": "UCSP",
       "project": "Mi Propósito",
       "tag": "Mi Propósito",
@@ -1347,7 +1347,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UCSP — Mi Propósito]</strong> Edgardo: crear pantallas administrativas (inicio → herramientas → reportes → encuestas) con flujo claro para aprobación de ventas — avanzar con entorno de prueba existente",
+      "text": "🆕 <strong>[UCSP — Mi Propósito]</strong> Edgardo: Lunes27 — crear pantallas administrativas (inicio → herramientas → reportes → encuestas) con flujo claro para aprobación de ventas — avanzar con entorno de prueba existente",
       "account": "UCSP",
       "project": "Mi Propósito",
       "tag": "Mi Propósito",
@@ -1359,7 +1359,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UCSP — Mi Propósito]</strong> Edgardo: enviar a César listado detallado de accesos y permisos necesarios para Azure (incluyendo creación de máquinas virtuales)",
+      "text": "🆕 <strong>[UCSP — Mi Propósito]</strong> Edgardo: Lunes27 — enviar a César listado detallado de accesos y permisos necesarios para Azure (incluyendo creación de máquinas virtuales)",
       "account": "UCSP",
       "project": "Mi Propósito",
       "tag": "Mi Propósito",
@@ -1371,7 +1371,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UCSP — Mesa de Ayuda]</strong> Pablo + Ángel: armar propuesta para proyecto de optimización de Mesa de Ayuda con IA para UCSP (área de César Puma / Experiencia del Estudiante) — TDR recibido, presupuesto dado para 2026, abierto a 2-3 años. Meta: propuesta año 1 que encaje en presupuesto actual, introduzca IA sin grandes cambios estructurales y mejore primeros SLAs. César está abierto a cuestionar CRM actual (Softhop), procesos y canales",
+      "text": "🆕 <strong>[UCSP — Mesa de Ayuda]</strong> Pablo + Ángel: Lunes27 — armar propuesta para proyecto de optimización de Mesa de Ayuda con IA para UCSP (área de César Puma / Experiencia del Estudiante) — TDR recibido, presupuesto dado para 2026, abierto a 2-3 años. Meta: propuesta año 1 que encaje en presupuesto actual, introduzca IA sin grandes cambios estructurales y mejore primeros SLAs. César está abierto a cuestionar CRM actual (Softhop), procesos y canales",
       "account": "UCSP",
       "project": "Mesa de Ayuda",
       "tag": "Mesa de Ayuda",
@@ -1383,7 +1383,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UCSP — Admisión Pregrado]</strong> Pablo: revisar diseño del Agente IA de Admisión (fase final de captación, 1ra matrícula) creado por Ángel",
+      "text": "🆕 <strong>[UCSP — Admisión Pregrado]</strong> Pablo: Lunes27 — revisar diseño del Agente IA de Admisión (fase final de captación, 1ra matrícula) creado por Ángel",
       "account": "UCSP",
       "project": "Admisión Pregrado",
       "tag": "Admisión Pregrado",
@@ -1395,7 +1395,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UCSP — Admisión Pregrado]</strong> Pablo + Ángel: armar esquema de cómo funcionará el Agente IA de Admisión (fase final de captación, 1ra matrícula) — Pablo ya tiene montado el sistema base de agentes para ventas, admisión y matrícula; solo falta darle forma para este caso específico con la DGA",
+      "text": "🆕 <strong>[UCSP — Admisión Pregrado]</strong> Pablo + Ángel: Lunes27 — armar esquema de cómo funcionará el Agente IA de Admisión (fase final de captación, 1ra matrícula) — Pablo ya tiene montado el sistema base de agentes para ventas, admisión y matrícula; solo falta darle forma para este caso específico con la DGA",
       "account": "UCSP",
       "project": "Admisión Pregrado",
       "tag": "Admisión Pregrado",
@@ -1407,7 +1407,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UCSP — Admisión Pregrado]</strong> Pablo: crear todos los campos de información en HubSpot para el Agente IA de Admisión — campos que permitan al agente recibir y organizar documentación del proceso de matrícula",
+      "text": "🆕 <strong>[UCSP — Admisión Pregrado]</strong> Pablo: Lunes27 — crear todos los campos de información en HubSpot para el Agente IA de Admisión — campos que permitan al agente recibir y organizar documentación del proceso de matrícula",
       "account": "UCSP",
       "project": "Admisión Pregrado",
       "tag": "Admisión Pregrado",
@@ -1419,7 +1419,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UCSP — Admisión Pregrado]</strong> Pablo: conectar campos de HubSpot al agente y diseñar primera etapa del flujo — recepción y organización de documentación de matrícula",
+      "text": "🆕 <strong>[UCSP — Admisión Pregrado]</strong> Pablo: Lunes27 — conectar campos de HubSpot al agente y diseñar primera etapa del flujo — recepción y organización de documentación de matrícula",
       "account": "UCSP",
       "project": "Admisión Pregrado",
       "tag": "Admisión Pregrado",
@@ -1431,7 +1431,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UCSP — Admisión Pregrado]</strong> Pablo: 23Abril — actualizar esquema del Agente IA de Admisión para automatizar y documentar todo en HubSpot sin conexiones SGA ni Nexus",
+      "text": "🆕 <strong>[UCSP — Admisión Pregrado]</strong> Pablo: Lunes27 — 23Abril — actualizar esquema del Agente IA de Admisión para automatizar y documentar todo en HubSpot sin conexiones SGA ni Nexus",
       "account": "UCSP",
       "project": "Admisión Pregrado",
       "tag": "Admisión Pregrado",
@@ -1443,7 +1443,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UCSP — Experiencia del Estudiante]</strong> Ángel: 23Abril — asistir a reunión el lunes al mediodía",
+      "text": "🆕 <strong>[UCSP — Experiencia del Estudiante]</strong> Ángel: Lunes27 — 23Abril — asistir a reunión el lunes al mediodía",
       "account": "UCSP",
       "project": "Experiencia del Estudiante",
       "tag": "Experiencia del Estudiante",
@@ -1455,7 +1455,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UCSP — Admisión Pregrado]</strong> Ángel: coordinar y triangular propuesta de Carmen Cari sobre exploración de comportamiento de segmentos (matrícula incompleta, temporánea y no matriculados) — gestionar agendamientos con el cliente",
+      "text": "🆕 <strong>[UCSP — Admisión Pregrado]</strong> Ángel: Lunes27 — coordinar y triangular propuesta de Carmen Cari sobre exploración de comportamiento de segmentos (matrícula incompleta, temporánea y no matriculados) — gestionar agendamientos con el cliente",
       "account": "UCSP",
       "project": "Admisión Pregrado",
       "tag": "Admisión Pregrado",
@@ -1467,7 +1467,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UCSP — Exploración Segmentos Matrícula]</strong> Ángel: iniciar proyecto de exploración del comportamiento de segmentos específicos de estudiantes en matrículas — segmentos: matrícula incompleta, temporánea y no matriculados",
+      "text": "🆕 <strong>[UCSP — Exploración Segmentos Matrícula]</strong> Ángel: Lunes27 — iniciar proyecto de exploración del comportamiento de segmentos específicos de estudiantes en matrículas — segmentos: matrícula incompleta, temporánea y no matriculados",
       "account": "UCSP",
       "project": "Exploración Segmentos Matrícula",
       "tag": "Exploración Segmentos Matrícula",
@@ -1491,7 +1491,7 @@ const TASKS = {
       "isCompleted": true
     },
     {
-      "text": "🆕 <strong>[UCSP — HubSpot SpotLight]</strong> Pablo: ajustar workflow para que solo se genere negocio en HubSpot cuando la tipificación de Atom sea MQL — actualmente se crea negocio al iniciar cualquier conversación",
+      "text": "🆕 <strong>[UCSP — HubSpot SpotLight]</strong> Pablo: Lunes27 — ajustar workflow para que solo se genere negocio en HubSpot cuando la tipificación de Atom sea MQL — actualmente se crea negocio al iniciar cualquier conversación",
       "account": "UCSP",
       "project": "HubSpot SpotLight",
       "tag": "HubSpot SpotLight",
@@ -1503,7 +1503,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UCSP — HubSpot SpotLight]</strong> Pablo: enviar propuesta de cotización para sistema de agentes inteligentes multicanal (ventas, admisión, servicio) — Claudia lo solicitó en la reunión",
+      "text": "🆕 <strong>[UCSP — HubSpot SpotLight]</strong> Pablo: Lunes27 — enviar propuesta de cotización para sistema de agentes inteligentes multicanal (ventas, admisión, servicio) — Claudia lo solicitó en la reunión",
       "account": "UCSP",
       "project": "HubSpot SpotLight",
       "tag": "HubSpot SpotLight",
@@ -1515,7 +1515,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UCSP — HubSpot SpotLight]</strong> Pablo: configurar tracking de eventos inteligentes e integrar al lead scoring actual — inicio con segmentos concretos para campaña de abril",
+      "text": "🆕 <strong>[UCSP — HubSpot SpotLight]</strong> Pablo: Lunes27 — configurar tracking de eventos inteligentes e integrar al lead scoring actual — inicio con segmentos concretos para campaña de abril",
       "account": "UCSP",
       "project": "HubSpot SpotLight",
       "tag": "HubSpot SpotLight",
@@ -1527,7 +1527,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UCSP — HubSpot SpotLight]</strong> Claudia: solicitar a Tom listado completo de tipificaciones usadas en campañas outbound para ajustar criterios del workflow",
+      "text": "🆕 <strong>[UCSP — HubSpot SpotLight]</strong> Claudia: Lunes27 — solicitar a Tom listado completo de tipificaciones usadas en campañas outbound para ajustar criterios del workflow",
       "account": "UCSP",
       "project": "HubSpot SpotLight",
       "tag": "HubSpot SpotLight",
@@ -1539,7 +1539,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UCSP — HubSpot SpotLight]</strong> Claudia: reunirse con Silvia y Romina para priorizar métricas y definir matriz de eventos inteligentes para campaña de abril",
+      "text": "🆕 <strong>[UCSP — HubSpot SpotLight]</strong> Claudia: Lunes27 — reunirse con Silvia y Romina para priorizar métricas y definir matriz de eventos inteligentes para campaña de abril",
       "account": "UCSP",
       "project": "HubSpot SpotLight",
       "tag": "HubSpot SpotLight",
@@ -1551,7 +1551,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UCSP — HubSpot SpotLight]</strong> Claudia: agendar reunión con Pablo para revisar implementación y limitaciones de integración WhatsApp de asesores",
+      "text": "🆕 <strong>[UCSP — HubSpot SpotLight]</strong> Claudia: Lunes27 — agendar reunión con Pablo para revisar implementación y limitaciones de integración WhatsApp de asesores",
       "account": "UCSP",
       "project": "HubSpot SpotLight",
       "tag": "HubSpot SpotLight",
@@ -1563,7 +1563,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UCSP — HubSpot SpotLight]</strong> Juanjito: desarrollar tabla con metas diarias y % de consecución integrando datos de campañas en HubSpot",
+      "text": "🆕 <strong>[UCSP — HubSpot SpotLight]</strong> Juanjito: Lunes27 — desarrollar tabla con metas diarias y % de consecución integrando datos de campañas en HubSpot",
       "account": "UCSP",
       "project": "HubSpot SpotLight",
       "tag": "HubSpot SpotLight",
@@ -1575,7 +1575,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UCSP — HubSpot SpotLight]</strong> Janet: crear propiedad nueva en HubSpot para registrar fuentes de tráfico en negocios sin alterar valores actuales",
+      "text": "🆕 <strong>[UCSP — HubSpot SpotLight]</strong> Janet: Lunes27 — crear propiedad nueva en HubSpot para registrar fuentes de tráfico en negocios sin alterar valores actuales",
       "account": "UCSP",
       "project": "HubSpot SpotLight",
       "tag": "HubSpot SpotLight",
@@ -1587,7 +1587,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UCSP — HubSpot SpotLight]</strong> Pablo + Cristian: identificar qué formulario está asociado al dominio \"cdpn.io\" que está generando conversiones no reconocidas — solicitud urgente de Claudia Tapia (23/04)",
+      "text": "🆕 <strong>[UCSP — HubSpot SpotLight]</strong> Pablo + Cristian: Lunes27 — identificar qué formulario está asociado al dominio \"cdpn.io\" que está generando conversiones no reconocidas — solicitud urgente de Claudia Tapia (23/04)",
       "account": "UCSP",
       "project": "HubSpot SpotLight",
       "tag": "HubSpot SpotLight",
@@ -1599,7 +1599,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UCSP — Centro de Idiomas]</strong> Ángel: armar Gantt con fechas tentativas para entrevistas adicionales — Focus Group (supeditado a agendamiento interno para conseguir participantes) y estudios cuantitativos de Enrique",
+      "text": "🆕 <strong>[UCSP — Centro de Idiomas]</strong> Ángel: Lunes27 — armar Gantt con fechas tentativas para entrevistas adicionales — Focus Group (supeditado a agendamiento interno para conseguir participantes) y estudios cuantitativos de Enrique",
       "account": "UCSP",
       "project": "Centro de Idiomas",
       "tag": "Centro de Idiomas",
@@ -1611,7 +1611,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UCSP — Centro de Idiomas]</strong> Ángel: enviar Gantt del proyecto Centro de Idiomas al cliente",
+      "text": "🆕 <strong>[UCSP — Centro de Idiomas]</strong> Ángel: Lunes27 — enviar Gantt del proyecto Centro de Idiomas al cliente",
       "account": "UCSP",
       "project": "Centro de Idiomas",
       "tag": "Centro de Idiomas",
@@ -1623,7 +1623,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UCSP — CENDES]</strong> Ángel: responder correo de María Berlanga (Sendes) confirmando que el manual de flujos no tendrá costo adicional — ya se decidió usar software de captura de pantallas automático",
+      "text": "🆕 <strong>[UCSP — CENDES]</strong> Ángel: Lunes27 — responder correo de María Berlanga (Sendes) confirmando que el manual de flujos no tendrá costo adicional — ya se decidió usar software de captura de pantallas automático",
       "account": "UCSP",
       "project": "CENDES",
       "tag": "CENDES",
@@ -1647,7 +1647,7 @@ const TASKS = {
       "isCompleted": true
     },
     {
-      "text": "🆕 <strong>[UCSP — CENDES]</strong> Ángel: dar formato al manual enviado por Marcos y enviarlo a María Berlanga",
+      "text": "🆕 <strong>[UCSP — CENDES]</strong> Ángel: Lunes27 — dar formato al manual enviado por Marcos y enviarlo a María Berlanga",
       "account": "UCSP",
       "project": "CENDES",
       "tag": "CENDES",
@@ -1659,7 +1659,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UCSP — Nuevas Carreras]</strong> Ángel: armar Gantt para lanzamiento de Educación Secundaria — URGENTE, debe estar lista antes del 13 de agosto (CADE Educación, aparece en toda la publicidad del evento)",
+      "text": "🆕 <strong>[UCSP — Nuevas Carreras]</strong> Ángel: Lunes27 — armar Gantt para lanzamiento de Educación Secundaria — URGENTE, debe estar lista antes del 13 de agosto (CADE Educación, aparece en toda la publicidad del evento)",
       "account": "UCSP",
       "project": "Nuevas Carreras",
       "tag": "Nuevas Carreras",
@@ -1671,7 +1671,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UCSP — Nuevas Carreras]</strong> Ángel: armar Gantt para Ciencia Política — inicio de trabajo de campo mediados de mayo (aprobación final prevista junio)",
+      "text": "🆕 <strong>[UCSP — Nuevas Carreras]</strong> Ángel: Lunes27 — armar Gantt para Ciencia Política — inicio de trabajo de campo mediados de mayo (aprobación final prevista junio)",
       "account": "UCSP",
       "project": "Nuevas Carreras",
       "tag": "Nuevas Carreras",
@@ -1683,7 +1683,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UCSP — Nuevas Carreras]</strong> Ángel: coordinar visita presencial conjunta para levantar información de las tres carreras en una sola visita (Educación Secundaria, Ciencia Política, Derecho) — reducir costos y optimizar tiempos",
+      "text": "🆕 <strong>[UCSP — Nuevas Carreras]</strong> Ángel: Lunes27 — coordinar visita presencial conjunta para levantar información de las tres carreras en una sola visita (Educación Secundaria, Ciencia Política, Derecho) — reducir costos y optimizar tiempos",
       "account": "UCSP",
       "project": "Nuevas Carreras",
       "tag": "Nuevas Carreras",
@@ -1695,7 +1695,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UCSP — Nuevas Carreras]</strong> Renzo: entregar brief y plan curricular de Educación Secundaria la próxima semana — aprobación de Rectorado ya realizada",
+      "text": "🆕 <strong>[UCSP — Nuevas Carreras]</strong> Renzo: Lunes27 — entregar brief y plan curricular de Educación Secundaria la próxima semana — aprobación de Rectorado ya realizada",
       "account": "UCSP",
       "project": "Nuevas Carreras",
       "tag": "Nuevas Carreras",
@@ -1707,7 +1707,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UCSP — Nuevas Carreras]</strong> Renzo: compartir análisis competitivo y datos de Ciencias Políticas para inicio de planificación estratégica",
+      "text": "🆕 <strong>[UCSP — Nuevas Carreras]</strong> Renzo: Lunes27 — compartir análisis competitivo y datos de Ciencias Políticas para inicio de planificación estratégica",
       "account": "UCSP",
       "project": "Nuevas Carreras",
       "tag": "Nuevas Carreras",
@@ -1719,7 +1719,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UCSP — Nuevas Carreras]</strong> Cintia: coordinar disponibilidad del equipo académico para entrevistas, focus groups y reuniones de levantamiento de información",
+      "text": "🆕 <strong>[UCSP — Nuevas Carreras]</strong> Cintia: Lunes27 — coordinar disponibilidad del equipo académico para entrevistas, focus groups y reuniones de levantamiento de información",
       "account": "UCSP",
       "project": "Nuevas Carreras",
       "tag": "Nuevas Carreras",
@@ -1731,7 +1731,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UCSP — Nuevas Carreras]</strong> Enrique: 23Abril — revisar Gantt de nuevas carreras subido ayer",
+      "text": "🆕 <strong>[UCSP — Nuevas Carreras]</strong> Enrique: Lunes27 — 23Abril — revisar Gantt de nuevas carreras subido ayer",
       "account": "UCSP",
       "project": "Nuevas Carreras",
       "tag": "Nuevas Carreras",
@@ -1743,7 +1743,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UCSP — Nuevas Carreras]</strong> Enrique: elaborar propuesta de valor y estrategia creativa para Educación Secundaria y Ciencia Política — una vez recibido el brief de Renzo",
+      "text": "🆕 <strong>[UCSP — Nuevas Carreras]</strong> Enrique: Lunes27 — elaborar propuesta de valor y estrategia creativa para Educación Secundaria y Ciencia Política — una vez recibido el brief de Renzo",
       "account": "UCSP",
       "project": "Nuevas Carreras",
       "tag": "Nuevas Carreras",
@@ -1755,7 +1755,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UCSP — Nuevas Carreras]</strong> Enrique: preparar programa y agenda para consultoría sectorial UCSP — inicio en mayo, incluye reunión de kick-off y reuniones recurrentes",
+      "text": "🆕 <strong>[UCSP — Nuevas Carreras]</strong> Enrique: Lunes27 — preparar programa y agenda para consultoría sectorial UCSP — inicio en mayo, incluye reunión de kick-off y reuniones recurrentes",
       "account": "UCSP",
       "project": "Nuevas Carreras",
       "tag": "Nuevas Carreras",
@@ -1767,7 +1767,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UPSJB]</strong> Equipo: planificación estratégica de campaña 26-2 — documento Excel en notebook/drive con post-mortem de 26-1, KPIs, lecciones aprendidas y drivers estratégicos para 26-2. Engloba: ventas, buyer persona padre, plan a distancia, carreras y agentes IA",
+      "text": "🆕 <strong>[UPSJB]</strong> Equipo: Lunes27 — planificación estratégica de campaña 26-2 — documento Excel en notebook/drive con post-mortem de 26-1, KPIs, lecciones aprendidas y drivers estratégicos para 26-2. Engloba: ventas, buyer persona padre, plan a distancia, carreras y agentes IA",
       "account": "UPSJB",
       "project": "General",
       "tag": "UPSJB",
@@ -1779,7 +1779,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UPSJB]</strong> Ángel: cuantificar impacto de las ineficiencias en gestión de leads de ventas — leads desatendidos, tiempo de respuesta, porcentaje de conversión perdida. Presentar a Edgar para que tome acción correctiva",
+      "text": "🆕 <strong>[UPSJB]</strong> Ángel: Lunes27 — cuantificar impacto de las ineficiencias en gestión de leads de ventas — leads desatendidos, tiempo de respuesta, porcentaje de conversión perdida. Presentar a Edgar para que tome acción correctiva",
       "account": "UPSJB",
       "project": "General",
       "tag": "UPSJB",
@@ -1791,7 +1791,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UPSJB]</strong> Pablo / Marcos / Estuardo: implementar buyer persona padre en HubSpot — configurar propiedades, segmentación y nurturing multicanal (WhatsApp, correo, redes, SMS) alineado a nuevos hallazgos del buyer persona",
+      "text": "🆕 <strong>[UPSJB]</strong> Pablo / Marcos / Estuardo: Lunes27 — implementar buyer persona padre en HubSpot — configurar propiedades, segmentación y nurturing multicanal (WhatsApp, correo, redes, SMS) alineado a nuevos hallazgos del buyer persona",
       "account": "UPSJB",
       "project": "General",
       "tag": "UPSJB",
@@ -1803,7 +1803,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UPSJB]</strong> Pablo / Marcos: crear panel de medición del buyer persona padre — fit/no-fit, canales de interacción y resultados del nurturing",
+      "text": "🆕 <strong>[UPSJB]</strong> Pablo / Marcos: Lunes27 — crear panel de medición del buyer persona padre — fit/no-fit, canales de interacción y resultados del nurturing",
       "account": "UPSJB",
       "project": "General",
       "tag": "UPSJB",
@@ -1815,7 +1815,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UPSJB]</strong> Ángel: convertir documento Word de análisis estratégico \"Plan a Distancia\" en checklist ejecutable con IA — campos: recomendado, ejecutado, responsable, fecha",
+      "text": "🆕 <strong>[UPSJB]</strong> Ángel: Lunes27 — convertir documento Word de análisis estratégico \"Plan a Distancia\" en checklist ejecutable con IA — campos: recomendado, ejecutado, responsable, fecha",
       "account": "UPSJB",
       "project": "General",
       "tag": "UPSJB",
@@ -1827,7 +1827,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UPSJB]</strong> Enrique: comentar a Edgar la situación de las carreras de Administración y Contabilidad — sin propuesta de valor ni estudio de mercado, no se puede tomar decisión de cierre",
+      "text": "🆕 <strong>[UPSJB]</strong> Enrique: Lunes27 — comentar a Edgar la situación de las carreras de Administración y Contabilidad — sin propuesta de valor ni estudio de mercado, no se puede tomar decisión de cierre",
       "account": "UPSJB",
       "project": "General",
       "tag": "UPSJB",
@@ -1839,7 +1839,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UPSJB]</strong> Pablo: escribir a Estuardo y/o Carlos para dar seguimiento a propuesta de agente Bot y WhatsApp — si no responden por escrito, tocarlo en reunión con Edgar presente",
+      "text": "🆕 <strong>[UPSJB]</strong> Pablo: Lunes27 — escribir a Estuardo y/o Carlos para dar seguimiento a propuesta de agente Bot y WhatsApp — si no responden por escrito, tocarlo en reunión con Edgar presente",
       "account": "UPSJB",
       "project": "General",
       "tag": "UPSJB",
@@ -1851,7 +1851,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UPSJB]</strong> Ángel: hacer seguimiento a Pablo sobre respuesta de Estuardo/Carlos a la propuesta de agente Bot y WhatsApp",
+      "text": "🆕 <strong>[UPSJB]</strong> Ángel: Lunes27 — hacer seguimiento a Pablo sobre respuesta de Estuardo/Carlos a la propuesta de agente Bot y WhatsApp",
       "account": "UPSJB",
       "project": "General",
       "tag": "UPSJB",
@@ -1863,7 +1863,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UPSJB]</strong> Ángel: consultar a Pablo si el cliente compartió formalmente las metas 26-2 (total y por campus) y de dónde extraer CPL y tasa de conversión para la planificación numérica",
+      "text": "🆕 <strong>[UPSJB]</strong> Ángel: Lunes27 — consultar a Pablo si el cliente compartió formalmente las metas 26-2 (total y por campus) y de dónde extraer CPL y tasa de conversión para la planificación numérica",
       "account": "UPSJB",
       "project": "General",
       "tag": "UPSJB",
@@ -1875,7 +1875,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UPSJB]</strong> Ángel: reunirse con Enrique post-status (briefing ~5 min) para revisar KPIs y paneles de HubSpot a usar en cuantificación de impacto de leads 26-1",
+      "text": "🆕 <strong>[UPSJB]</strong> Ángel: Lunes27 — reunirse con Enrique post-status (briefing ~5 min) para revisar KPIs y paneles de HubSpot a usar en cuantificación de impacto de leads 26-1",
       "account": "UPSJB",
       "project": "General",
       "tag": "UPSJB",
@@ -1887,7 +1887,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UPSJB]</strong> Enrique: preguntar a Estuardo en la reunión quincenal de hoy sobre implementación del buyer persona (quién lo hace: cliente o BN) y acordar pasos concretos — si Estuardo dice que lo hace después, hacer seguimiento inmediato (2 horas)",
+      "text": "🆕 <strong>[UPSJB]</strong> Enrique: Lunes27 — preguntar a Estuardo en la reunión quincenal de hoy sobre implementación del buyer persona (quién lo hace: cliente o BN) y acordar pasos concretos — si Estuardo dice que lo hace después, hacer seguimiento inmediato (2 horas)",
       "account": "UPSJB",
       "project": "General",
       "tag": "UPSJB",
@@ -1899,7 +1899,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UPSJB]</strong> Estuardo: consultar al equipo de Atom sobre gestión de mensajes duplicados cuando el número está conectado simultáneamente en HubSpot y Atom",
+      "text": "🆕 <strong>[UPSJB]</strong> Estuardo: Lunes27 — consultar al equipo de Atom sobre gestión de mensajes duplicados cuando el número está conectado simultáneamente en HubSpot y Atom",
       "account": "UPSJB",
       "project": "General",
       "tag": "UPSJB",
@@ -1911,7 +1911,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UPSJB]</strong> Estuardo: gestionar creación de landings diferenciadas por semestre (26.2 y 27.1) para Lima y filiales — sin nofollow para no afectar posicionamiento",
+      "text": "🆕 <strong>[UPSJB]</strong> Estuardo: Lunes27 — gestionar creación de landings diferenciadas por semestre (26.2 y 27.1) para Lima y filiales — sin nofollow para no afectar posicionamiento",
       "account": "UPSJB",
       "project": "General",
       "tag": "UPSJB",
@@ -1923,7 +1923,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UPSJB]</strong> Pablo: revisar viabilidad de renombrar landings por semestre y coordinar con Leslie y agencia SEO para preservar posicionamiento SEO",
+      "text": "🆕 <strong>[UPSJB]</strong> Pablo: Lunes27 — revisar viabilidad de renombrar landings por semestre y coordinar con Leslie y agencia SEO para preservar posicionamiento SEO",
       "account": "UPSJB",
       "project": "General",
       "tag": "UPSJB",
@@ -1935,7 +1935,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UPSJB]</strong> Equipo: definir estrategia de pauta diferenciada por carrera y sede — Lima separado de Ica/Chincha, presupuesto segmentado",
+      "text": "🆕 <strong>[UPSJB]</strong> Equipo: Lunes27 — definir estrategia de pauta diferenciada por carrera y sede — Lima separado de Ica/Chincha, presupuesto segmentado",
       "account": "UPSJB",
       "project": "General",
       "tag": "UPSJB",
@@ -1947,7 +1947,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UPSJB]</strong> Pablo + Enrique + Estuardo: programar reunión de planeamiento macro para cerrar estrategia general antes de bajar a micro por sede/carrera",
+      "text": "🆕 <strong>[UPSJB]</strong> Pablo + Enrique + Estuardo: Lunes27 — programar reunión de planeamiento macro para cerrar estrategia general antes de bajar a micro por sede/carrera",
       "account": "UPSJB",
       "project": "General",
       "tag": "UPSJB",
@@ -1959,7 +1959,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[UPSJB]</strong> Enrique + Pablo: 23Abril — realizar ejercicio de planeamiento macro con presupuesto aprobado y TC ajustadas compartidas por Estuardo — luego bajar al micro para cotejo",
+      "text": "🆕 <strong>[UPSJB]</strong> Enrique + Pablo: Lunes27 — 23Abril — realizar ejercicio de planeamiento macro con presupuesto aprobado y TC ajustadas compartidas por Estuardo — luego bajar al micro para cotejo",
       "account": "UPSJB",
       "project": "General",
       "tag": "UPSJB",
@@ -1971,7 +1971,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[Caja Ica]</strong> Pablo: inicio de proyecto de implementación Marketing Cloud (Salesforce) — aprobado formalmente. Trabajando con equipo desarrollador en Brasil, partners de Salesforce. Próximos pasos: Service Cloud y Cels Cloud en meses siguientes",
+      "text": "🆕 <strong>[Caja Ica]</strong> Pablo: Lunes27 — inicio de proyecto de implementación Marketing Cloud (Salesforce) — aprobado formalmente. Trabajando con equipo desarrollador en Brasil, partners de Salesforce. Próximos pasos: Service Cloud y Cels Cloud en meses siguientes",
       "account": "Ica",
       "project": "Ica",
       "tag": "Ica",
@@ -1993,7 +1993,7 @@ const TASKS = {
       "isCompleted": true
     },
     {
-      "text": "🆕 <strong>[Buenaventura]</strong> Pablo + Enrique: preparar contenido y logística del taller de IA Full Day para Buenaventura — dos jornadas con CEO, gerente general y vicepresidentes. Proyecto confirmado, pendiente que el cliente avise con tiempo para preparación",
+      "text": "🆕 <strong>[Buenaventura]</strong> Pablo + Enrique: Lunes27 — preparar contenido y logística del taller de IA Full Day para Buenaventura — dos jornadas con CEO, gerente general y vicepresidentes. Proyecto confirmado, pendiente que el cliente avise con tiempo para preparación",
       "account": "General",
       "project": "Buenaventura",
       "tag": "Buenaventura",
@@ -2003,7 +2003,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[AGÉNTICA]</strong> Ángel: subir maqueta HTML de landing de Agéntica a repositorio GitHub para revisión de Pablo y Enrique",
+      "text": "🆕 <strong>[AGÉNTICA]</strong> Ángel: Lunes27 — subir maqueta HTML de landing de Agéntica a repositorio GitHub para revisión de Pablo y Enrique",
       "account": "Ica",
       "project": "General",
       "tag": "Ica",
@@ -2015,7 +2015,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[AGÉNTICA]</strong> Ángel: crear maqueta de landing page de AGÉNTICA — nueva unidad de BlueNose, inspirada en estructura de Conversia/Impulse, por verticales/sectores, con branding BlueNose. Lista para revisión con Enrique el jueves",
+      "text": "🆕 <strong>[AGÉNTICA]</strong> Ángel: Lunes27 — crear maqueta de landing page de AGÉNTICA — nueva unidad de BlueNose, inspirada en estructura de Conversia/Impulse, por verticales/sectores, con branding BlueNose. Lista para revisión con Enrique el jueves",
       "account": "Ica",
       "project": "General",
       "tag": "Ica",
@@ -2027,7 +2027,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[AGÉNTICA]</strong> Ángel: preparar reporte macro y micro de la campaña BlueNose — resultados por vertical, segmento, nivel jerárquico y canal. Enrique quiere ver si funciona o no y qué ajustar",
+      "text": "🆕 <strong>[AGÉNTICA]</strong> Ángel: Lunes27 — preparar reporte macro y micro de la campaña BlueNose — resultados por vertical, segmento, nivel jerárquico y canal. Enrique quiere ver si funciona o no y qué ajustar",
       "account": "Ica",
       "project": "General",
       "tag": "Ica",
@@ -2039,7 +2039,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[AGÉNTICA]</strong> Enrique: evaluar con Pati y Pablo contratación de HubSpot Marketing Pro — necesario para habilitar nurturing automatizado, secuencias y mayor alcance de campaña",
+      "text": "🆕 <strong>[AGÉNTICA]</strong> Enrique: Lunes27 — evaluar con Pati y Pablo contratación de HubSpot Marketing Pro — necesario para habilitar nurturing automatizado, secuencias y mayor alcance de campaña",
       "account": "Ica",
       "project": "General",
       "tag": "Ica",
@@ -2051,7 +2051,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[AGÉNTICA]</strong> Pablo: finalizar y preparar para lanzamiento el agente Community Manager automatizado — casi listo, primer cliente confirmado en España (gimnasio de pilates). Prioridad alta por potencial de venta",
+      "text": "🆕 <strong>[AGÉNTICA]</strong> Pablo: Lunes27 — finalizar y preparar para lanzamiento el agente Community Manager automatizado — casi listo, primer cliente confirmado en España (gimnasio de pilates). Prioridad alta por potencial de venta",
       "account": "Ica",
       "project": "General",
       "tag": "Ica",
@@ -2063,7 +2063,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[AGÉNTICA]</strong> Ángel: elaborar y enviar documento con mensajes personalizados para los 5 segmentos de la red de contactos — para activar campaña de outreach",
+      "text": "🆕 <strong>[AGÉNTICA]</strong> Ángel: Lunes27 — elaborar y enviar documento con mensajes personalizados para los 5 segmentos de la red de contactos — para activar campaña de outreach",
       "account": "Ica",
       "project": "General",
       "tag": "Ica",
@@ -2075,7 +2075,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[AGÉNTICA]</strong> Ángel + Mirela: publicar carruseles de LinkedIn por agente ya listos en Drive — coordinar calendario de publicación con Marcos",
+      "text": "🆕 <strong>[AGÉNTICA]</strong> Ángel + Mirela: Lunes27 — publicar carruseles de LinkedIn por agente ya listos en Drive — coordinar calendario de publicación con Marcos",
       "account": "Ica",
       "project": "General",
       "tag": "Ica",
@@ -2087,7 +2087,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[AGÉNTICA]</strong> Ángel + Marcos: 23Abril — armar listas de públicos para agentes IA (las que sea posible)",
+      "text": "🆕 <strong>[AGÉNTICA]</strong> Ángel + Marcos: Lunes27 — 23Abril — armar listas de públicos para agentes IA (las que sea posible)",
       "account": "Ica",
       "project": "General",
       "tag": "Ica",
@@ -2101,7 +2101,7 @@ const TASKS = {
   ],
   "mes": [
     {
-      "text": "🆕 <strong>[WV ES]</strong> Jesús: enviar histórico del pipeline de e-commerce para identificar qué donaciones son recurrentes vs iniciales — ya están llegando donaciones al panel, pendiente clasificación",
+      "text": "🆕 <strong>[WV ES]</strong> Jesús: Lunes27 — enviar histórico del pipeline de e-commerce para identificar qué donaciones son recurrentes vs iniciales — ya están llegando donaciones al panel, pendiente clasificación",
       "account": "WV",
       "project": "ES",
       "tag": "ES",
@@ -2113,7 +2113,7 @@ const TASKS = {
       "isNew": true
     },
     {
-      "text": "🆕 <strong>[AGÉNTICA]</strong> Ángel + Mirela: continuar publicando posts individuales por agente en LinkedIn — misma estructura del PDF \"8 agentes, cero excusas\". Coordinar con Marcos el calendario de envíos",
+      "text": "🆕 <strong>[AGÉNTICA]</strong> Ángel + Mirela: Lunes27 — continuar publicando posts individuales por agente en LinkedIn — misma estructura del PDF \"8 agentes, cero excusas\". Coordinar con Marcos el calendario de envíos",
       "account": "Ica",
       "project": "General",
       "tag": "Ica",
